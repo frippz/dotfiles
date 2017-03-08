@@ -19,6 +19,7 @@ case "$OSTYPE" in
     alias ls="ls --color -F"
     alias l="ls --color -F"
     alias df="df -H"
+    alias free="free -h"
     ;;
 esac
 
