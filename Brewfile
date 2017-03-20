@@ -17,6 +17,7 @@ brew "direnv"
 brew "dnsmasq"
 brew "dos2unix"
 brew "editorconfig"
+brew "heroku"
 brew "gem-completion", args: ["HEAD"]
 brew "git"
 brew "gotty"
