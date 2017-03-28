@@ -7,4 +7,4 @@ windows:
       layout: 35d3,178x47,0,0{127x47,0,0,0,50x47,128,0,1}
       panes:
         - c
-        - c && make local-all
+        - c && make dev
