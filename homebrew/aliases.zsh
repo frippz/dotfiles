@@ -1,4 +1,6 @@
 if command -v brew >/dev/null 2>&1 ; then
   alias brews='brew list --versions'
-  alias bubu='brew update && brew upgrade && brew cleanup'
+  alias bubo='brew update && brew outdated'
+  alias bubc='brew upgrade && brew cleanup'
+  alias bubu='bubo && bubc'
 fi
