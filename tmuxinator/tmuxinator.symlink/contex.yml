@@ -4,7 +4,8 @@ pre_window: eval "$(nodenv init -)"
 
 windows:
   - contex:
-      layout: 35d3,178x47,0,0{127x47,0,0,0,50x47,128,0,1}
+      layout: eb28,318x75,0,0{259x75,0,0,0,58x75,260,0[58x37,260,0,1,58x37,260,38,2]}
       panes:
         - c
         - c && make dev
+        - c
