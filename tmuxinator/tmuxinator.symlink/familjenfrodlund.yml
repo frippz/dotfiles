@@ -1,10 +1,10 @@
 name: familjenfrodlund
 root: ~/Sites/familjenfrodlund.se/
-pre_window: eval "$(nodenv init -)"
+# pre_window: eval "$(nodenv init -)"
 
 windows:
   - familjenfrodlund.se:
       layout: 7124,178x50,0,0{116x50,0,0,0,61x50,117,0,1}
       panes:
         - c
-        - c && npm start
+        - c && nodemon
