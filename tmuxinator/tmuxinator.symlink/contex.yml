@@ -6,6 +6,6 @@ windows:
   - contex:
       layout: eb28,318x75,0,0{259x75,0,0,0,58x75,260,0[58x37,260,0,1,58x37,260,38,2]}
       panes:
-        - c
+        - vim .
         - c && make dev
         - c
