@@ -4,7 +4,7 @@ pre_window: eval "$(nodenv init -)"
 
 windows:
   - frippz.se:
-      layout: 35d3,178x47,0,0{127x47,0,0,0,50x47,128,0,1}
+      layout: 0e1d,254x67,0,0{205x67,0,0,7,48x67,206,0,8}
       panes:
         - c
         - c && yarn start
