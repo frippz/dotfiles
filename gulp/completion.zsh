@@ -1,4 +1,3 @@
-#
 # gulp-autocompletion-zsh
 #
 # Autocompletion for your gulp.js tasks
