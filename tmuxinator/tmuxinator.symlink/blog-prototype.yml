@@ -1,9 +1,0 @@
-name: blog-prototype
-root: ~/Sites/blog-prototype/
-
-windows:
-  - blog-prototype:
-      layout: fa1e,178x50,0,0{117x50,0,0,4,60x50,118,0,6}
-      panes:
-        -
-        - gulp
