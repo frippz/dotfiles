@@ -208,7 +208,10 @@ set linebreak               " Don't break words
 
 " Specify listchars with literal unicode in a :set command
 scriptencoding utf-8
-set list lcs=tab:▸\ ,eol:¬,trail:·
+set list lcs=tab:▸\ ,eol:¬,trail:·,space:·
+
+" Map toggle invisibles to Ctrl-Shift-I
+nnoremap <C-S-I> :set list!<CR>
 
 " Code folding
 " ===========================================================================
