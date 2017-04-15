@@ -4,7 +4,7 @@ pre_window: lazy_node
 
 windows:
   - valleoptik:
-      layout: 60c3,254x67,0,0{200x67,0,0,0,53x67,201,0,1}
+      layout: 0e1d,254x67,0,0{205x67,0,0,7,48x67,206,0,8}
       panes:
         - c
         - c && yarn start
