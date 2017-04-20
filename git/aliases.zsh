@@ -65,6 +65,9 @@ alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 # Cleaning
 alias ggc='git gc'
 
+# Prune local branches no longer on origin
+alias gplb='git branch -r | awk "{print $1}" | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk "{print $1}" | xargs git branch -d'
+
 # Other (unsorted)
 alias gcl='git config --list'
 alias gclean='git reset --hard && git clean -dfx'
