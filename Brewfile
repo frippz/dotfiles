@@ -2,7 +2,6 @@
 tap "homebrew/bundle"
 tap "neovim/neovim"
 tap "rogual/neovim-dot-app"
-tap "yudai/gotty"
 
 # Packages
 brew "ack"
@@ -15,7 +14,6 @@ brew "editorconfig"
 brew "heroku"
 brew "gem-completion", args: ["HEAD"]
 brew "git"
-brew "gotty"
 brew "grc"
 brew "htop-osx"
 brew "imagemagick"
