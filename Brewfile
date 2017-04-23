@@ -1,8 +1,5 @@
 # Taps
 tap "homebrew/bundle"
-tap "homebrew/completions"
-tap "homebrew/dupes"
-tap "homebrew/versions"
 tap "neovim/neovim"
 tap "rogual/neovim-dot-app"
 tap "yudai/gotty"
