@@ -32,7 +32,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'yegappan/greplace'
 
 " Syntax plugins
-Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'JulesWang/css.vim'
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'keith/swift.vim'
