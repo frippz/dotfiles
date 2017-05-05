@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 #
 
+# Versions of Node to install
+NODE_VERSIONS=(
+  "4.2.6"
+  "6.8.0"
+  "6.9.4"
+  "7.8.0"
+)
 # Packages to install globally with npm
 PACKAGES=(
   "autoprefixer"
@@ -51,6 +58,12 @@ else
   echo ""
   echo "  √ Looks like nodenv is already installed. Awesome!"
   echo ""
+  echo ""
+  echo "  √ Installing versions of Node"
+  echo ""
+  for NODE_VERSION in ${NODE_VERSIONS[@]} ; do
+    nodenv install ${NODE_VERSION}
+  done
 fi
 
 # Cache list of already installed global packages
