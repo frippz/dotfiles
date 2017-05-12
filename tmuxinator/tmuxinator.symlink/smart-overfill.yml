@@ -1,0 +1,10 @@
+name: smart-overfill
+root: ~/Sites/smart-overfill/
+pre_window: lazy_node
+
+windows:
+  - smart-overfill:
+      layout: 35d3,178x47,0,0{127x47,0,0,0,50x47,128,0,1}
+      panes:
+        - c
+        - c && yarn start
