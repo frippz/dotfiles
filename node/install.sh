@@ -25,7 +25,6 @@ PACKAGES=(
   "npm-check-updates"
   "stylelint"
   "svgo"
-  "yarn-completions"
 )
 
 set -e
