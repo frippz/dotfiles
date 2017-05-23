@@ -1,16 +1,2 @@
 # Fix npm completion
 eval "$(npm completion 2>/dev/null)"
-
-# Yarn completion
-if type compdef &>/dev/null; then
-  _yarn_completion () {
-    local reply
-    local si=$IFS
-
-    IFS=$'\n' reply=($(COMP_CWORD="$((CURRENT-1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" completions-yarn completion -- "${words[@]}"))
-    IFS=$si
-
-    _describe 'values' reply
-  }
-  compdef _yarn_completion yarn
-fi
