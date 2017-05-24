@@ -1,6 +1,6 @@
 name: contex
 root: ~/Sites/contex/
-pre_window: lazy_node
+pre_window: yarn -V
 
 windows:
   - contex:

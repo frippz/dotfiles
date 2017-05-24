@@ -1,6 +1,5 @@
 name: valleoptik
 root: ~/Sites/valleoptik.se
-pre_window: lazy_node
 
 windows:
   - valleoptik:

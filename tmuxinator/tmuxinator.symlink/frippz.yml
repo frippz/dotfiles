@@ -1,6 +1,5 @@
 name: frippz
 root: ~/Sites/frippz.se/
-pre_window: lazy_node
 
 windows:
   - frippz.se:

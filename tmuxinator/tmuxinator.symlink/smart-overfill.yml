@@ -1,6 +1,5 @@
 name: smart-overfill
 root: ~/Sites/smart-overfill/
-pre_window: lazy_node
 
 windows:
   - smart-overfill:

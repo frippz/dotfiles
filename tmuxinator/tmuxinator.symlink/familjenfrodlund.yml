@@ -1,6 +1,5 @@
 name: familjenfrodlund
 root: ~/Sites/familjenfrodlund.se/
-pre_window: lazy_node
 
 windows:
   - familjenfrodlund.se:

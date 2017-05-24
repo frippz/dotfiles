@@ -1,6 +1,5 @@
 name: oredev-midsite
 root: ~/Sites/oredev-midsite/
-pre_window: lazy_node
 
 windows:
   - oredev-midsite:
