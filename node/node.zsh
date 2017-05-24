@@ -16,16 +16,22 @@ node() {
   node "$@"
 }
 
-npm() {
-  unset -f npm
+nodenv() {
+  unset -f nodenv
   load_nodenv
-  npm "$@"
+  nodenv "$@"
 }
 
 nodemon() {
   unset -f nodemon
   load_nodenv
   nodemon "$@"
+}
+
+npm() {
+  unset -f npm
+  load_nodenv
+  npm "$@"
 }
 
 gulp() {
