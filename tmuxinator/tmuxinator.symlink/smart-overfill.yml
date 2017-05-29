@@ -3,7 +3,7 @@ root: ~/Sites/smart-overfill/
 
 windows:
   - smart-overfill:
-      layout: 35d3,178x47,0,0{127x47,0,0,0,50x47,128,0,1}
+      layout: 800b,254x67,0,0{213x67,0,0,0,40x67,214,0,1}
       panes:
-        - c
+        -
         - c && yarn start
