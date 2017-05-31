@@ -2,6 +2,7 @@
 node_modules
 dist
 target
+_site
 .git
 .hg
 .svn
