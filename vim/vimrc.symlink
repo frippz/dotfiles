@@ -279,6 +279,9 @@ set re=1
 " Default netrw list style
 let g:netrw_liststyle=3
 
+" Allow netrw to remove non-empty local directories
+let g:netrw_localrmdir='rm -r'
+
 " Hide invisibles in netrw and NERDTree
 autocmd FileType netrw setlocal nolist
 autocmd FileType nerdtree setlocal nolist
