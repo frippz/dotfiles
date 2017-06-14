@@ -1,10 +1,10 @@
 name: contex
 root: ~/Sites/contex/
-pre_window: yarn -V
+pre_window: yarn -V && source .env
 
 windows:
   - contex:
       layout: 800b,254x67,0,0{213x67,0,0,0,40x67,214,0,1}
       panes:
-        -
+        - c
         - make dev
