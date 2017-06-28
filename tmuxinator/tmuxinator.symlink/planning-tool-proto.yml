@@ -1,5 +1,6 @@
 name: planning-tool-proto
 root: ~/Sites/planning-tool-proto/
+pre_window: yarn -V
 
 windows:
   - planning-tool-proto:
