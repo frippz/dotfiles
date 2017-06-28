@@ -6,4 +6,4 @@ windows:
       layout: 0e1d,254x67,0,0{205x67,0,0,7,48x67,206,0,8}
       panes:
         - c
-        - c && yarn start
+        - yarn && yarn start
