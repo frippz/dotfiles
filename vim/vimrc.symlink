@@ -286,9 +286,9 @@ let g:netrw_localrmdir='rm -r'
 autocmd FileType netrw setlocal nolist
 autocmd FileType nerdtree setlocal nolist
 
-" Hide files form netrw and NERDTree
-let g:netrw_list_hide= '.*\.DS_Store$'
-let NERDTreeIgnore = ['.DS_Store$']
+" Hide files from netrw and NERDTree
+let g:netrw_list_hide= '.*\.DS_Store$,node_modules,\.git'
+let NERDTreeIgnore = ['.DS_Store$', 'node_modules']
 
 " Map netrw to Ctrl-E
 nnoremap <C-E> :Ex<CR>
