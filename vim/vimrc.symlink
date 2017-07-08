@@ -34,7 +34,7 @@ Plug 'yegappan/greplace'
 " Syntax plugins
 Plug 'JulesWang/css.vim'
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
-Plug 'keith/swift.vim'
+Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'keith/tmux.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
