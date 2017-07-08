@@ -272,6 +272,7 @@ set ttimeoutlen=0
 
 " Use relative line numbers
 set relativenumber
+nnoremap <Leader>l :set relativenumber!<CR>
 
 " Speed up Ruby syntax highlighting
 set re=1
