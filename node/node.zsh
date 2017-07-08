@@ -45,3 +45,9 @@ yarn() {
   load_nodenv
   yarn "$@"
 }
+
+nvim() {
+  unset -f nvim
+  load_nodenv
+  nvim "$@"
+}
