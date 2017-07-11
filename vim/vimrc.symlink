@@ -210,8 +210,8 @@ set linebreak               " Don't break words
 scriptencoding utf-8
 set list lcs=tab:▸\ ,eol:¬,trail:·,space:·
 
-" Map toggle invisibles to Ctrl-Shift-I
-nnoremap <C-S-I> :set list!<CR>
+" Map toggle invisibles
+nnoremap <Leader>i :set list!<CR>
 
 " Code folding
 " ===========================================================================
