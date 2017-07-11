@@ -44,7 +44,7 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'rosstimson/modx.vim', { 'for': 'modx' }
 Plug 'seveas/bind.vim', { 'for': 'bindzone'}
 Plug 'tpope/vim-liquid', { 'for': 'liquid' }
-Plug 'vim-scripts/nginx.vim'
+Plug 'vim-scripts/nginx.vim', { 'for': 'nginx' }
 
 call plug#end()
 
