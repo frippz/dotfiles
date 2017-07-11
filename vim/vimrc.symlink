@@ -206,7 +206,7 @@ set ruler                   " Always show info along bottom.
 set wrap                    " Wrap lines
 set linebreak               " Don't break words
 
-" Specify listchars with literal unicode in a :set command
+" Specify listchars (invisibles) with literal unicode in a :set command
 scriptencoding utf-8
 set list lcs=tab:▸\ ,eol:¬,trail:·,space:·
 
