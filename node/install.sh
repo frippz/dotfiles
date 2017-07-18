@@ -61,7 +61,7 @@ else
   echo "  √ Installing versions of Node"
   echo ""
   for NODE_VERSION in ${NODE_VERSIONS[@]} ; do
-    nodenv install ${NODE_VERSION}
+    nodenv install -s ${NODE_VERSION}
   done
 fi
 
