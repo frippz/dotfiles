@@ -10,16 +10,10 @@ NODE_VERSIONS=(
 # Packages to install globally with npm
 PACKAGES=(
   "autoprefixer"
-  "bower"
   "csscomb"
   "eslint"
-  "grunt"
   "gulp"
   "htmlhint"
-  "http-server"
-  "live-server"
-  "localtunnel"
-  "nodemon"
   "nodemon"
   "npm-check-updates"
   "stylelint"
