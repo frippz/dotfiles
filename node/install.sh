@@ -3,7 +3,6 @@
 
 # Versions of Node to install
 NODE_VERSIONS=(
-  "4.8.4"
   "6.11.1"
   "7.10.1"
 )
