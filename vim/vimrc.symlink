@@ -167,7 +167,8 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " ---------------------------------------------------------------------------
 let g:gitgutter_sign_removed_first_line = "^_"
 let g:gitgutter_max_signs = 1000
-let g:gitgutter_sign_column_always = 1
+
+set signcolumn=yes
 
 " Neomake
 " ---------------------------------------------------------------------------
