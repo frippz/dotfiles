@@ -1,0 +1,11 @@
+name: ordna-frontend
+root: ~/Sites/ordna-frontend/
+pre_window: yarn -V
+
+windows:
+  - ordna-frontend:
+      layout: 0e1d,254x67,0,0{205x67,0,0,7,48x67,206,0,8}
+      panes:
+        - c
+        - yarn && yarn start
+
