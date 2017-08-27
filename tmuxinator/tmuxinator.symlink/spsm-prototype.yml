@@ -1,9 +1,0 @@
-name: spsm-prototype
-root: ~/Sites/spsm-prototype/
-
-windows:
-  - spsm-prototype:
-      layout: 800b,254x67,0,0{213x67,0,0,0,40x67,214,0,1}
-      panes:
-        -
-        - c && yarn start
