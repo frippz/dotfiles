@@ -8,7 +8,11 @@
 .envrc
 
 # node files
-npm-debug.log
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # TextMate config file
 .tm_properties
@@ -37,6 +41,7 @@ Icon
 .TemporaryItems
 .Trashes
 .VolumeIcon.icns
+.com.apple.timemachine.donotpresent
 
 # Directories potentially created on remote AFP share
 .AppleDB
