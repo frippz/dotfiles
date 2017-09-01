@@ -33,7 +33,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'yegappan/greplace'
 
 " Syntax plugins
-Plug 'JulesWang/css.vim'
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'keith/tmux.vim', { 'for': 'tmux' }
