@@ -4,7 +4,7 @@ pre_window: yarn -V
 
 windows:
   - ordna-frontend:
-      layout: 0e1d,254x67,0,0{205x67,0,0,7,48x67,206,0,8}
+      layout: 342e,254x64,0,0{222x64,0,0,11,31x64,223,0,12}
       panes:
         - c
         - yarn && bundle && yarn start
