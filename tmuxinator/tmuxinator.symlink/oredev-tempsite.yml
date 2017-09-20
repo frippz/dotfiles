@@ -1,8 +1,8 @@
-name: oredev-midsite
-root: ~/Sites/oredev-midsite/
+name: oredev-tempsite
+root: ~/Sites/oredev-tempsite/
 
 windows:
-  - oredev-midsite:
+  - oredev-tempsite:
       layout: 800b,254x67,0,0{213x67,0,0,0,40x67,214,0,1}
       panes:
         -
