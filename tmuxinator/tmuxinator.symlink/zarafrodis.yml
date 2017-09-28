@@ -3,7 +3,7 @@ root: ~/Sites/zarafrodis/
 
 windows:
   - zarafrodis:
-      layout: 800b,254x67,0,0{213x67,0,0,0,40x67,214,0,1}
+      layout: even-horizontal
       panes:
-        -
+        - c
         - c && nodemon

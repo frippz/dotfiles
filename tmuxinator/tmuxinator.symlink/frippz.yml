@@ -4,7 +4,7 @@ pre_window: yarn -V
 
 windows:
   - frippz.se:
-      layout: 0e1d,254x67,0,0{205x67,0,0,7,48x67,206,0,8}
+      layout: even-horizontal
       panes:
         - c
-        - yarn && yarn start
+        - yarn && bundle && yarn start
