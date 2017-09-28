@@ -1,5 +1,6 @@
 name: familjenfrodlund
 root: ~/Sites/familjenfrodlund.se/
+pre_window: yarn -v
 
 windows:
   - familjenfrodlund.se:

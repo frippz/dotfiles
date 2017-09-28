@@ -1,5 +1,6 @@
 name: valleoptik
 root: ~/Sites/valleoptik.se
+pre_window: yarn -v
 
 windows:
   - valleoptik:

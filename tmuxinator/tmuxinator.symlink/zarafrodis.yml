@@ -1,5 +1,6 @@
 name: zarafrodis
 root: ~/Sites/zarafrodis/
+pre_window: yarn -v
 
 windows:
   - zarafrodis:
