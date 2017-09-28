@@ -1,6 +1,6 @@
 name: contex
 root: ~/Sites/contex/
-pre_window: yarn -V && source .env
+pre_window: yarn -v && source .env
 
 windows:
   - contex:

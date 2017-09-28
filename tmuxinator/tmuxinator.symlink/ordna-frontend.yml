@@ -1,6 +1,6 @@
 name: ordna-frontend
 root: ~/Sites/ordna-frontend/
-pre_window: yarn -V
+pre_window: yarn -v
 
 windows:
   - ordna-frontend:
