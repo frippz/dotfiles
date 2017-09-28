@@ -1,9 +1,0 @@
-name: smart-overfill
-root: ~/Sites/smart-overfill/
-
-windows:
-  - smart-overfill:
-      layout: even-horizontal
-      panes:
-        - c
-        - c && yarn start
