@@ -1,0 +1,10 @@
+name: atomic-styleguide
+root: ~/Sites/atomic-styleguide/
+pre_window: yarn -v
+
+windows:
+  - atomic-styleguide:
+      layout: even-horizontal
+      panes:
+        - c
+        - yarn && bundle && yarn start
