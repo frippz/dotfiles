@@ -4,7 +4,6 @@
 # Versions of Node to install
 NODE_VERSIONS=(
   "6.11.1"
-  "7.10.1"
 )
 # Packages to install globally with npm
 PACKAGES=(
