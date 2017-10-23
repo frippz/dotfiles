@@ -40,12 +40,6 @@ gulp() {
   gulp "$@"
 }
 
-yarn() {
-  unset -f yarn
-  load_nodenv
-  yarn "$@"
-}
-
 nvim() {
   unset -f nvim
   load_nodenv
