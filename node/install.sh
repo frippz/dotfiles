@@ -43,8 +43,6 @@ if [ ! -d $HOME/.nodenv/bin ] ; then
   echo ""
 
   load_nodenv
-  # export PATH=$HOME/.nodenv/bin:$PATH
-  # eval "$(nodenv init -)"
 
   echo ""
   echo "  √ Installing node-build plugin..."
@@ -74,8 +72,9 @@ else
   echo "  √ Installing versions of Node"
   echo ""
 
+  load_nodenv
+
   for NODE_VERSION in ${NODE_VERSIONS[@]} ; do
-    load_nodenv
     nodenv install -s ${NODE_VERSION}
   done
 
