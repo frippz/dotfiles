@@ -7,13 +7,10 @@ NODE_VERSIONS=(
 )
 # Packages to install globally with npm
 PACKAGES=(
-  "autoprefixer"
   "csscomb"
   "eslint"
-  "gulp"
   "htmlhint"
   "nodemon"
-  "npm-check-updates"
   "stylelint"
   "svgo"
 )
