@@ -78,8 +78,14 @@ else
     load_nodenv
     nodenv install -s ${NODE_VERSION}
   done
+
+  echo ""
+  echo " √ Setting global Node version"
+  echo ""
+  nodenv global system
 fi
 
+echo ""
 echo "  √ Running Node install script"
 echo ""
 
