@@ -59,7 +59,7 @@ alias glgg='git log --graph --max-count=10'
 alias glgga='git log --graph --decorate --all'
 alias glo='git log --oneline --decorate --color'
 alias glog='git log --oneline --decorate --color --graph'
-alias gcount='git shortlog -sn'
+alias gcount='git shortlog -snc'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 
 # Cleaning
