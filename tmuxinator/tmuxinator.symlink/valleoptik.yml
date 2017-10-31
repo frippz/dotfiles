@@ -1,10 +1,10 @@
 name: valleoptik
 root: ~/Sites/valleoptik.se
-pre_window: yarn -v
+pre_window: yarn -v && node -v
 
 windows:
   - valleoptik:
       layout: even-horizontal
       panes:
         - c
-        - c && yarn start
+        - yarn && bundle && yarn start
