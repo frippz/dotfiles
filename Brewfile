@@ -11,7 +11,6 @@ brew "coreutils"
 brew "direnv"
 brew "dos2unix"
 brew "editorconfig"
-brew "fzf"
 brew "gem-completion", args: ["HEAD"]
 brew "git"
 brew "grc"
