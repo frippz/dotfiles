@@ -1,6 +1,5 @@
-if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
-  source /usr/local/opt/fzf/shell/key-bindings.zsh
-  source /usr/local/opt/fzf/shell/completion.zsh
+if [ -e ~/.fzf.zsh ]; then
+  source ~/.fzf.zsh
 fi
 
 export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'

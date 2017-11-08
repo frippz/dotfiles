@@ -11,7 +11,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular'
 Plug 'gregsexton/MatchTag'
 Plug 'groenewege/vim-less'
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
 Plug 'morhetz/gruvbox'
@@ -76,8 +76,8 @@ set background=dark
 
 " fzf
 " ---------------------------------------------------------------------------
-set rtp+=/usr/local/opt/fzf
-nmap <C-p> :Files<CR>
+set rtp+=~/.fzf
+nmap <C-p> :FZF<CR>
 
 " Closetag
 " ---------------------------------------------------------------------------
