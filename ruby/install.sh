@@ -42,6 +42,10 @@ if ! command -v rbenv >/dev/null 2>&1 && [ ! -d $HOME/.rbenv ]; then
   echo ""
   git clone https://github.com/carsomyr/rbenv-bundler.git $HOME/.rbenv/plugins/bundler
   echo ""
+  echo " √ Installing rbenv-bundle-exec"
+  echo ""
+  git clone https://github.com/maljub01/rbenv-bundle-exec.git $HOME/.rbenv/plugins/rbenv-bundle-exec
+  echo ""
   echo "√ Reloading environment"
   echo ""
   export PATH=$HOME/.rbenv/bin:$PATH
