@@ -11,7 +11,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular'
 Plug 'gregsexton/MatchTag'
 Plug 'groenewege/vim-less'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
 Plug 'morhetz/gruvbox'
