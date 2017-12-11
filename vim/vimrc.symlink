@@ -44,7 +44,6 @@ Plug 'rosstimson/modx.vim', { 'for': 'modx' }
 Plug 'seveas/bind.vim', { 'for': 'bindzone'}
 Plug 'tpope/vim-liquid', { 'for': 'liquid' }
 Plug 'vim-scripts/nginx.vim', { 'for': 'nginx' }
-Plug 'lumiliet/vim-twig', { 'for': 'html.twig' }
 
 call plug#end()
 
