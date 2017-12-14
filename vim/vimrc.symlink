@@ -163,7 +163,6 @@ set signcolumn=yes
 " ---------------------------------------------------------------------------
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_css_enabled_makers = ['stylelint']
-let g:neomake_html_enabled_makers = ['htmlhint']
 let g:neomake_swift_enabled_makers = ['swiftpm', 'swiftlint']
 
 " Run NeoMake on file write
