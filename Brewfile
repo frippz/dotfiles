@@ -14,7 +14,6 @@ brew "editorconfig"
 brew "gem-completion", args: ["HEAD"]
 brew "git"
 brew "grc"
-brew "htop-osx"
 brew "imagemagick"
 brew "neovim"
 brew "node"
