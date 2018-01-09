@@ -92,9 +92,6 @@ map <C-n> :NERDTreeToggle<CR>
 " Show invisible files in NERDTree
 let NERDTreeShowHidden=1
 
-" Show NERDTree on the right
-let g:NERDTreeWinPos = "right"
-
 " deoplete (Load only in neovim)
 " ---------------------------------------------------------------------------
 
