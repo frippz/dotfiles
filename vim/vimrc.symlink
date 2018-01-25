@@ -33,8 +33,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'yegappan/greplace'
 
 " Syntax plugins
-Plug 'ap/vim-css-color'
+Plug 'ap/vim-css-color', { 'for': 'css'}
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'keith/tmux.vim', { 'for': 'tmux' }
 Plug 'mustache/vim-mustache-handlebars', { 'for': 'mustache' }
