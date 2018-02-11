@@ -5,6 +5,8 @@ tap "rogual/neovim-dot-app"
 
 # Packages
 brew "ack"
+brew "autoconf"
+brew "automake"
 brew "awscli"
 brew "ccat"
 brew "coreutils"
@@ -15,6 +17,7 @@ brew "gem-completion", args: ["HEAD"]
 brew "git"
 brew "grc"
 brew "imagemagick"
+brew "libtool"
 brew "neovim"
 brew "node"
 brew "python"
