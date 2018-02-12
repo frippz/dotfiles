@@ -29,6 +29,7 @@ alias gc='git commit -v'
 alias gca!='git commit -v -a --amend'
 alias gca='git commit -v -a'
 alias gcmsg='git commit -m'
+alias gcu='git reset HEAD\^'
 
 # Rebase
 alias grb='git rebase'
