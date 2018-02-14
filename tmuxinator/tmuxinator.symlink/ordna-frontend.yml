@@ -8,5 +8,5 @@ windows:
   - ordna-frontend:
       layout: even-horizontal
       panes:
-        - c
+        - vimr . --nvim -c ":source .vimsession" && c
         - yarn && bundle && yarn start
