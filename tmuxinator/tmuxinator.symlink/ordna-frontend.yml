@@ -8,5 +8,5 @@ windows:
   - ordna-frontend:
       layout: even-horizontal
       panes:
-        - vimr -n . && c
+        - c
         - yarn && bundle && yarn start
