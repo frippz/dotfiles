@@ -31,6 +31,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'yegappan/greplace'
+Plug 'majutsushi/tagbar'
 
 " Syntax plugins
 Plug 'ap/vim-css-color', { 'for': 'css'}
@@ -168,6 +169,19 @@ let g:neomake_css_enabled_makers = ['stylelint']
 
 " Run NeoMake on file write
 autocmd! BufWritePost * Neomake
+
+" Tagbar
+" ---------------------------------------------------------------------------
+nmap <F6> :TagbarToggle<CR>
+
+let g:tagbar_type_css = {
+\ 'ctagstype' : 'Css',
+    \ 'kinds'     : [
+        \ 'c:classes',
+        \ 's:selectors',
+        \ 'i:identities'
+    \ ]
+\ }
 
 " Vimgrep
 " ---------------------------------------------------------------------------
