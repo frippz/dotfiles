@@ -29,7 +29,6 @@ Plug 'skwp/greplace.vim'
 Plug 'majutsushi/tagbar'
 
 " Syntax plugins
-Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'keith/tmux.vim', { 'for': 'tmux' }
