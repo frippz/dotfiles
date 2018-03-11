@@ -150,13 +150,6 @@ let delimitMate_matchpairs = "(:),[:],{:}"
 " ---------------------------------------------------------------------------
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
-" GitGutter
-" ---------------------------------------------------------------------------
-let g:gitgutter_sign_removed_first_line = "^_"
-let g:gitgutter_max_signs = 1000
-
-set signcolumn=yes
-
 " Greplace
 " ---------------------------------------------------------------------------
 set grepprg=ag
