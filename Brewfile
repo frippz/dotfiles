@@ -16,6 +16,7 @@ brew "editorconfig"
 brew "gem-completion", args: ["HEAD"]
 brew "git"
 brew "grc"
+brew "hub"
 brew "imagemagick"
 brew "libtool"
 brew "neovim"
