@@ -30,7 +30,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
-Plug 'yegappan/greplace'
+" Plug 'yegappan/greplace'
+Plug 'skwp/greplace.vim'
 Plug 'majutsushi/tagbar'
 
 " Syntax plugins
@@ -161,6 +162,11 @@ let g:gitgutter_sign_removed_first_line = "^_"
 let g:gitgutter_max_signs = 1000
 
 set signcolumn=yes
+
+" Greplace
+" ---------------------------------------------------------------------------
+set grepprg=ag
+let g:grep_cmd_opts = '--line-numbers --noheading'
 
 " Neomake
 " ---------------------------------------------------------------------------
