@@ -1,0 +1,11 @@
+name: stampa-patternlibrary
+root: ~/Sites/stampa-patternlibrary/
+pre_window:
+  - yarn -v
+
+windows:
+  - stampa-patternlibrary:
+      layout: even-horizontal
+      panes:
+        - c
+        - patternlab serve
