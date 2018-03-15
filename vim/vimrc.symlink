@@ -41,6 +41,7 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'rosstimson/modx.vim', { 'for': 'modx' }
 Plug 'tpope/vim-liquid', { 'for': 'liquid' }
 Plug 'vim-scripts/nginx.vim', { 'for': 'nginx' }
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
