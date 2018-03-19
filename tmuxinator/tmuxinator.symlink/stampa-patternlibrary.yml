@@ -2,10 +2,11 @@ name: stampa-patternlibrary
 root: ~/Sites/stampa-patternlibrary/
 pre_window:
   - yarn -v
+  - export AWS_PROFILE=stampa
 
 windows:
   - stampa-patternlibrary:
       layout: even-horizontal
       panes:
         - c
-        - patternlab serve
+        - yarn && bundle && yarn start
