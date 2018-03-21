@@ -1,0 +1,13 @@
+name: ikea-ordna
+root: ~/Sites/
+pre_window:
+  - export AWS_PROFILE=ordna
+
+windows:
+  - ordna:
+      layout: tiled
+      panes:
+        - start_directory: cd ~/Sites/ordna-frontend && c
+        - start_directory: cd ~/Sites/ordna-frontend && yarn && bundle && yarn start
+        - start_directory: cd ~/Sites/ordna-planner && c
+        - start_directory: cd ~/Sites/ordna-planner && yarn && yarn start
