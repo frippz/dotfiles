@@ -1,0 +1,10 @@
+name: stampa
+root: ~/Projects/Stampa/stampa-client
+pre_window: yarn -v && node -v
+
+windows:
+  - stampa:
+      layout: even-horizontal
+      panes:
+        - c
+        - ionic lab
