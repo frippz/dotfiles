@@ -17,7 +17,6 @@ Plug 'neomake/neomake'
 Plug 'raimondi/delimitMate'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'sheerun/vim-polyglot'
 Plug 'shougo/deoplete.nvim'
 Plug 'skwp/greplace.vim'
 Plug 'tmhedberg/matchit'
@@ -29,6 +28,20 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+" Plug 'yegappan/greplace'
+
+" Syntax plugins
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+Plug 'keith/swift.vim', { 'for': 'swift' }
+Plug 'keith/tmux.vim', { 'for': 'tmux' }
+Plug 'mustache/vim-mustache-handlebars', { 'for': 'mustache' }
+Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
+Plug 'othree/html5.vim', { 'for': 'html' }
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'rosstimson/modx.vim', { 'for': 'modx' }
+Plug 'tpope/vim-liquid', { 'for': 'liquid' }
+Plug 'vim-scripts/nginx.vim', { 'for': 'nginx' }
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
