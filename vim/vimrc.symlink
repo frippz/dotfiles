@@ -28,7 +28,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-" Plug 'yegappan/greplace'
 
 " Syntax plugins
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
@@ -41,7 +40,6 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'rosstimson/modx.vim', { 'for': 'modx' }
 Plug 'tpope/vim-liquid', { 'for': 'liquid' }
 Plug 'vim-scripts/nginx.vim', { 'for': 'nginx' }
-Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
