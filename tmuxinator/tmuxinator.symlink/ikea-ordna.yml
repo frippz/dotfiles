@@ -8,6 +8,6 @@ windows:
       layout: tiled
       panes:
         - start_directory: cd ~/Sites/ordna-frontend && c
-        - start_directory: cd ~/Sites/ordna-frontend && yarn && bundle && yarn start
+        - start_directory: cd ~/Sites/ordna-frontend && node -v && yarn && bundle && yarn start
         - start_directory: cd ~/Sites/ordna-planner && c
-        - start_directory: cd ~/Sites/ordna-planner && yarn && yarn start
+        - start_directory: cd ~/Sites/ordna-planner && node -v && yarn && yarn start
