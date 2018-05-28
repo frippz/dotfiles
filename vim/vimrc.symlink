@@ -227,6 +227,9 @@ au BufRead,BufNewFile */nginx/* set filetype=nginx
 " JSON
 au BufRead,BufNewFile *intrc*, set filetype=json
 
+" YAML
+au BufRead,BufNewFile *.yml.*, set filetype=yaml
+
 " Misc
 " ===========================================================================
 
