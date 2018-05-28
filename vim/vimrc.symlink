@@ -16,6 +16,7 @@ Plug 'morhetz/gruvbox'
 Plug 'neomake/neomake'
 Plug 'raimondi/delimitMate'
 Plug 'rking/ag.vim'
+" Plug 'sbdchd/neoformat'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'shougo/deoplete.nvim'
 Plug 'skwp/greplace.vim'
@@ -65,6 +66,10 @@ endif
 
 " Plugs
 " ===========================================================================
+
+" Neoformat
+" ---------------------------------------------------------------------------
+" autocmd BufWritePre *.js,*.css Neoformat
 
 " Gruvbox
 " ---------------------------------------------------------------------------
