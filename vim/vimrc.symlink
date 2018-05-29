@@ -3,6 +3,10 @@
 
 call plug#begin('~/.vim/plugged')
 
+" Color themes
+Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
+
 " Regular plugins
 Plug 'alvan/vim-closetag'
 Plug 'editorconfig/editorconfig-vim'
@@ -12,7 +16,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
-Plug 'morhetz/gruvbox'
 Plug 'neomake/neomake'
 Plug 'raimondi/delimitMate'
 Plug 'rking/ag.vim'
@@ -64,17 +67,28 @@ if has('nvim')
 
 endif
 
+" Themes
+" ===========================================================================
+
+" Gruvbox
+" ---------------------------------------------------------------------------
+" colorscheme gruvbox
+" set background=dark
+" set background=light
+
+" Solarized
+" ===========================================================================
+colorscheme solarized
+" set background=dark
+set background=light
+hi NonText ctermfg=254
+
 " Plugs
 " ===========================================================================
 
 " Neoformat
 " ---------------------------------------------------------------------------
 " autocmd BufWritePre *.js,*.css Neoformat
-
-" Gruvbox
-" ---------------------------------------------------------------------------
-colorscheme gruvbox
-set background=dark
 
 " fzf
 " ---------------------------------------------------------------------------
