@@ -1,6 +1,7 @@
 name: ordna-frontend
 root: ~/Sites/ordna-frontend/
 pre_window:
+  - node -v
   - yarn -v
   - export AWS_PROFILE=ordna
 
