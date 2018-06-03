@@ -72,15 +72,15 @@ endif
 
 " Gruvbox
 " ---------------------------------------------------------------------------
-" colorscheme gruvbox
-" set background=dark
+colorscheme gruvbox
+set background=dark
 
 " Solarized
 " ===========================================================================
-colorscheme solarized
+" colorscheme solarized
 " set background=dark
-set background=light
-hi NonText ctermfg=254
+" set background=light
+" hi NonText ctermfg=254
 
 " Plugs
 " ===========================================================================
