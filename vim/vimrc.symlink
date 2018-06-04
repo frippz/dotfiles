@@ -81,8 +81,6 @@ if has('gui_vimr')
   colorscheme NeoSolarized
   set background=light
   set termguicolors
-  let g:neosolarized_contrast = "normal"
-  let g:neosolarized_visibility = "low"
 endif
 
 " Plugs
