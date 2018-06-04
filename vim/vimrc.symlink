@@ -5,7 +5,7 @@ call plug#begin('~/.vim/plugged')
 
 " Color themes
 Plug 'morhetz/gruvbox'
-Plug 'altercation/vim-colors-solarized'
+Plug 'icymind/NeoSolarized'
 
 " Regular plugins
 Plug 'alvan/vim-closetag'
@@ -77,10 +77,13 @@ set background=dark
 
 " Solarized
 " ===========================================================================
-" colorscheme solarized
-" set background=dark
-" set background=light
-" hi NonText ctermfg=254
+if has('gui_vimr')
+  colorscheme NeoSolarized
+  set background=light
+  set termguicolors
+  let g:neosolarized_contrast = "normal"
+  let g:neosolarized_visibility = "low"
+endif
 
 " Plugs
 " ===========================================================================
