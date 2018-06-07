@@ -1,0 +1,49 @@
+{
+  "_comments": [
+    "Valid terminals include: 'Terminal.app' or 'iTerm'",
+    "In the editor value change 'default' to 'nano', 'vi', or another terminal based editor.",
+    "Hosts will also be read from your ~/.ssh/config or /etc/ssh_config file, if available",
+    "For more information on how to configure, please see http://fitztrev.github.io/shuttle/"
+  ],
+  "editor": "default",
+  "launch_at_login": true,
+  "terminal": "iTerm.app",
+  "iTerm_version": "nightly",
+  "default_theme": "Homebrew",
+  "open_in": "new",
+  "show_ssh_config_hosts": false,
+  "ssh_config_ignore_hosts": [  ],
+  "ssh_config_ignore_keywords": [  ],
+  "hosts": [
+    {
+      "name": "Setsuna",
+      "cmd": "ssh frippz@setsuna.frippz.se",
+      "inTerminal": "tab"
+    },
+    {
+      "name": "Mailserver",
+      "cmd": "ssh frippz@mail.frodlund.se",
+      "inTerminal": "tab"
+    },
+    {
+      "name": "Fredriks iMac",
+      "cmd": "ssh -p40004 home.frippz.se",
+      "inTerminal": "tab"
+    },
+    {
+      "name": "Fredriks Mac Mini",
+      "cmd": "ssh fredrik@10.0.1.3",
+      "inTerminal": "tab"
+    },
+    {
+      "name": "Plex Server",
+      "cmd": "ssh frippz@10.0.1.30",
+      "inTerminal": "tab"
+    },
+    {
+      "name": "VPN Server",
+      "cmd": "ssh -p30003 fredrik@vpn.frippz.se",
+      "inTerminal": "tab"
+    }
+  ]
+}
