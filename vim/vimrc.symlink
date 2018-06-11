@@ -72,16 +72,21 @@ endif
 
 " Gruvbox
 " ---------------------------------------------------------------------------
-colorscheme gruvbox
-set background=dark
+function! Gruvbox()
+  colorscheme gruvbox
+  set background=dark
+endfunction
 
 " Solarized
 " ===========================================================================
-if has('gui_vimr')
+function! NeoSolarized()
   colorscheme NeoSolarized
   set background=light
   set termguicolors
-endif
+endfunction
+
+" Call default theme
+call Gruvbox()
 
 " Plugs
 " ===========================================================================
