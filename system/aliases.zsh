@@ -16,8 +16,8 @@ case "$OSTYPE" in
 
   *linux*)
     # System utils
-    alias ls="ls --color -F"
-    alias l="ls --color -F"
+    alias ls="ls --color -FN"
+    alias l="ls --color -FN"
     alias df="df -H"
     alias free="free -wh"
     ;;
@@ -30,6 +30,7 @@ esac
 # Some nice aliases
 alias ll="ls -lh"
 alias la="ls -lha"
+alias lscount="ls -1 | wc -l"
 alias c="clear"
 alias x="exit"
 alias grep="grep --color"
