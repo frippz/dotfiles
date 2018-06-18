@@ -83,6 +83,11 @@ function! NeoSolarized()
   colorscheme NeoSolarized
   set background=light
   set termguicolors
+  let g:neosolarized_contrast = "high"
+  let g:neosolarized_bold = 1
+  let g:neosolarized_underline = 0
+  let g:neosolarized_italic = 1
+  set nolist
 endfunction
 
 " Call default theme
