@@ -19,6 +19,7 @@ case "$OSTYPE" in
     alias ls="ls --color -FN"
     alias l="ls --color -FN"
     alias df="df -H"
+    alias dfl="df --type btrfs --type ext4 --type ext3 --type ext2 --type vfat --type iso9660"
     alias free="free -wh"
     ;;
 esac
