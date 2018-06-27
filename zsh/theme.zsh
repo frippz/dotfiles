@@ -13,9 +13,9 @@ fi
 
 case "$OSTYPE" in
   *linux*)
-    if [ "$TERM_THEME" == "SolarizedLight" ]; then
+    if [ "$TERM_THEME" = "SolarizedLight" ]; then
       eval `dircolors $HOME/.dircolors.ansi-light`
-    elif [ "$TERM_THEME" == "SolarizedDark" ]; then
+    elif [ "$TERM_THEME" = "SolarizedDark" ]; then
       eval `dircolors $HOME/.dircolors.ansi-dark`
     fi
     ;;
