@@ -13,6 +13,10 @@ fi
 
 case "$OSTYPE" in
   *linux*)
-    eval `dircolors $HOME/.dotfiles/zsh/dircolors.ansi-light`
+    if [ "$TERM_THEME" == "SolarizedLight" ]; then
+      eval `dircolors $HOME/.dotfiles/zsh/dircolors.ansi-light`
+    elif [ "$TERM_THEME" == "SolarizedDark" ]; then
+      eval `dircolors $HOME/.dotfiles/zsh/dircolors.ansi-dark`
+    fi
     ;;
 esac
