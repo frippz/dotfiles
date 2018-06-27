@@ -10,3 +10,9 @@ else
   # Fall back to hard-coded theme value
   export TERM_THEME="SolarizedLight"
 fi
+
+case "$OSTYPE" in
+  *linux*)
+    eval `dircolors $HOME/dotfiles/zsh/dircolors.ansi-light`
+    ;;
+esac
