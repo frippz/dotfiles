@@ -79,7 +79,9 @@ endfunction
 
 " Solarized
 " ===========================================================================
-function! NeoSolarized()
+
+" Light
+function! SolarizedLight()
   colorscheme NeoSolarized
   set background=light
   set termguicolors
@@ -87,12 +89,24 @@ function! NeoSolarized()
   let g:neosolarized_bold = 1
   let g:neosolarized_underline = 0
   let g:neosolarized_italic = 1
-  set nolist
 endfunction
 
-" Set theme based on $TERM_THEME
-if $TERM_THEME == 'Solarized'
-  call NeoSolarized()
+" Dark
+function! SolarizedDark()
+  colorscheme NeoSolarized
+  set background=dark
+  set termguicolors
+  let g:neosolarized_contrast = "high"
+  let g:neosolarized_bold = 1
+  let g:neosolarized_underline = 0
+  let g:neosolarized_italic = 1
+endfunction
+
+" Set theme based on $TERM_THEME (or fall back to Gruvbox)
+if $TERM_THEME == 'SolarizedLight'
+  call SolarizedLight()
+elseif $TERM_THEME == 'SolarizedDark'
+  call SolarizedDark()
 else
   call Gruvbox()
 endif
@@ -204,6 +218,7 @@ set linebreak               " Don't break words
 " Specify listchars (invisibles) with literal unicode in a :set command
 scriptencoding utf-8
 set list lcs=tab:▸\ ,eol:¬,trail:·,space:·
+set nolist
 
 " Map toggle invisibles
 nnoremap <Leader>i :set list!<CR>
