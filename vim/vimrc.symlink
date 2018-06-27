@@ -78,7 +78,7 @@ function! Gruvbox()
 endfunction
 
 " Solarized
-" ===========================================================================
+" ---------------------------------------------------------------------------
 
 " Light
 function! SolarizedLight()
@@ -103,6 +103,7 @@ function! SolarizedDark()
 endfunction
 
 " Set theme based on $TERM_THEME (or fall back to Gruvbox)
+" ---------------------------------------------------------------------------
 if $TERM_THEME == 'SolarizedLight'
   call SolarizedLight()
 elseif $TERM_THEME == 'SolarizedDark'
