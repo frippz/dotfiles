@@ -13,6 +13,6 @@ fi
 
 case "$OSTYPE" in
   *linux*)
-    eval `dircolors $HOME/dotfiles/zsh/dircolors.ansi-light`
+    eval `dircolors $HOME/.dotfiles/zsh/dircolors.ansi-light`
     ;;
 esac
