@@ -90,8 +90,12 @@ function! NeoSolarized()
   set nolist
 endfunction
 
-" Call default theme
-call Gruvbox()
+" Set theme based on $TERM_THEME
+if $TERM_THEME == 'Solarized'
+  call NeoSolarized()
+else
+  call Gruvbox()
+endif
 
 " Plugs
 " ===========================================================================
