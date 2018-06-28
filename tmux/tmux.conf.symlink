@@ -1,6 +1,9 @@
 # tmux configuration
 #
 
+# Don't lose ENV
+set -ga update-environment ' ITERM_PROFILE'
+
 # General settings
 set -g default-terminal "screen-256color"
 
