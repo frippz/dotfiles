@@ -65,6 +65,9 @@ if has('nvim')
   " Allow change of cursor shape
   let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
+  " Remap exit terminal mode
+  tnoremap <Esc> <C-\><C-n>
+
 endif
 
 " Themes
