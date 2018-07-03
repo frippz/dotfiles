@@ -6,6 +6,7 @@ set -ga update-environment ' ITERM_PROFILE'
 
 # General settings
 set -g default-terminal "screen-256color"
+set -g terminal-overrides ',xterm-256color:Tc'
 
 # Reset base index to 1
 set -g base-index 1
