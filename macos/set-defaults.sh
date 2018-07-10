@@ -36,7 +36,7 @@ defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 # Finder                                                                      #
 ###############################################################################
 
-"✔ Use AirDrop over every interface"
+echo "✔ Use AirDrop over every interface"
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
 ###############################################################################
