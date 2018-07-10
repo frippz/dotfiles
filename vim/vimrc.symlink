@@ -319,6 +319,10 @@ set re=1
 " Default netrw list style
 let g:netrw_liststyle=3
 
+" Per default, netrw leaves unmodified buffers open. This autocommand
+" deletes netrw's buffer once it's hidden (using ':q', for example)
+autocmd FileType netrw setl bufhidden=delete
+
 " Allow netrw to remove non-empty local directories
 let g:netrw_localrmdir='rm -r'
 
