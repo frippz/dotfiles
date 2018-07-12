@@ -5,6 +5,9 @@
 NODE_VERSIONS=(
   "6.11.1"
 )
+
+GLOBAL_NODE="6.11.1"
+
 # Packages to install globally with npm
 PACKAGES=(
   "csscomb"
@@ -81,7 +84,7 @@ else
   echo ""
   echo " √ Setting global Node version"
   echo ""
-  nodenv global system
+  nodenv global $GLOBAL_NODE
 fi
 
 echo ""
