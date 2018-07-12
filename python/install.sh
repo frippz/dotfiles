@@ -7,13 +7,13 @@ PIPS=(
 )
 
 echo ""
-echo "  √ Running pip3 install script"
+echo "  ✔ Running pip3 install script"
 echo ""
 
 # Check for rbenv before attempting to install gems
 if command -v pip3 >/dev/null 2>&1 ; then
   echo ""
-  echo " √ Upgrading pip3"
+  echo "  ✔ Upgrading pip3"
   echo ""
   case "$OSTYPE" in
     *darwin*)
@@ -36,18 +36,18 @@ if command -v pip3 >/dev/null 2>&1 ; then
   done
 else
   echo ""
-  echo " ✗ pip3 not found. You may need to install python3 first and/or install pip3."
+  echo "  ✘ pip3 not found. You may need to install python3 first and/or install pip3."
   echo ""
 fi
 
 echo ""
-echo "  √ Running pip2 install script"
+echo "  ✔ Running pip2 install script"
 echo ""
 
 # Check for rbenv before attempting to install gems
 if command -v pip2 >/dev/null 2>&1 ; then
   echo ""
-  echo " √ Upgrading pip2"
+  echo "  ✔ Upgrading pip2"
   echo ""
   case "$OSTYPE" in
     *darwin*)
@@ -70,6 +70,6 @@ if command -v pip2 >/dev/null 2>&1 ; then
   done
 else
   echo ""
-  echo " ✗ pip2 not found. You may need to install python-2.7 first and/or install pip2."
+  echo "  ✘ pip2 not found. You may need to install python-2.7 first and/or install pip2."
   echo ""
 fi

@@ -83,7 +83,7 @@ else
   done
 
   echo ""
-  echo " ✔ Setting global Node version"
+  echo "  ✔ Setting global Node version"
   echo ""
   nodenv global $GLOBAL_NODE
   node -v
