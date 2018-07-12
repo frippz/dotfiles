@@ -1,7 +1,6 @@
 # Taps
 tap "homebrew/bundle"
 tap "neovim/neovim"
-tap "rogual/neovim-dot-app"
 
 # Packages
 brew "ack"
