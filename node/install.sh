@@ -37,31 +37,31 @@ set -e
 # Check for nodenv and install if it’s not installed
 if [ ! -d $HOME/.nodenv/bin ] ; then
   echo ""
-  echo "  √ nodenv not found. Installing now..."
+  echo "  ✔ nodenv not found. Installing now..."
   echo ""
 
   git clone https://github.com/nodenv/nodenv.git $HOME/.nodenv
 
   echo ""
-  echo "  √ Reloading environment"
+  echo "  ✔ Reloading environment"
   echo ""
 
   load_nodenv
 
   echo ""
-  echo "  √ Installing node-build plugin..."
+  echo "  ✔ Installing node-build plugin..."
   echo ""
 
   git clone https://github.com/nodenv/node-build.git $HOME/.nodenv/plugins/node-build
 
   echo ""
-  echo "  √ Installing nodenv-update plugin..."
+  echo "  ✔ Installing nodenv-update plugin..."
   echo ""
 
   git clone https://github.com/nodenv/nodenv-update.git $HOME/.nodenv/plugins/nodenv-update
 
   echo ""
-  echo "  √ Attempting to compile dynamic extensions..."
+  echo "  ✔ Attempting to compile dynamic extensions..."
   echo ""
 
   set +e
@@ -69,11 +69,11 @@ if [ ! -d $HOME/.nodenv/bin ] ; then
   set -e
 else
   echo ""
-  echo "  √ Looks like nodenv is already installed. Awesome!"
+  echo "  ✔ Looks like nodenv is already installed. Awesome!"
   echo ""
 
   echo ""
-  echo "  √ Installing versions of Node"
+  echo "  ✔ Installing versions of Node"
   echo ""
 
   load_nodenv
@@ -83,23 +83,23 @@ else
   done
 
   echo ""
-  echo " √ Setting global Node version"
+  echo " ✔ Setting global Node version"
   echo ""
   nodenv global $GLOBAL_NODE
   node -v
 fi
 
 echo ""
-echo "  √ Running Node install script"
+echo "  ✔ Running Node install script"
 echo ""
 
 # Check for npm if we’re on OS X
 if command -v yarn >/dev/null 2>&1 ; then
-  echo "  √ Looks like yarn is installed. Checking for packages to install."
+  echo "  ✔ Looks like yarn is installed. Checking for packages to install."
   # Install packages globally
   for PACKAGE in ${PACKAGES[@]} ; do
     yarn global add $PACKAGE
   done
 else
-  echo "  ✗ yarn is not installed. Skipping..."
+  echo "  ✘ yarn is not installed. Skipping..."
 fi
