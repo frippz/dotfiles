@@ -4,9 +4,10 @@
 # Versions of Node to install
 NODE_VERSIONS=(
   "6.11.1"
+  "8.11.3"
 )
 
-GLOBAL_NODE="6.11.1"
+GLOBAL_NODE="8.11.3"
 
 # Packages to install globally with npm
 PACKAGES=(
