@@ -7,7 +7,7 @@ case "$OSTYPE" in
     if ! command -v brew >/dev/null 2>&1 ; then
 
       echo ""
-      echo " ✔ Installing Homebrew"
+      echo "  ✔ Installing Homebrew"
       echo ""
 
       HOMEBREW_PREFIX="/usr/local"
