@@ -9,16 +9,6 @@ NODE_VERSIONS=(
 
 GLOBAL_NODE="8.11.3"
 
-# Packages to install globally with npm
-PACKAGES=(
-  "csscomb"
-  "eslint"
-  "htmlhint"
-  "nodemon"
-  "stylelint"
-  "svgo"
-)
-
 # Load nodenv if needed
 function load_nodenv() {
   # Node environment config
@@ -87,19 +77,4 @@ else
   echo ""
   nodenv global $GLOBAL_NODE
   node -v
-fi
-
-echo ""
-echo "  ✔ Running Node install script"
-echo ""
-
-# Check for npm if we’re on OS X
-if command -v yarn >/dev/null 2>&1 ; then
-  echo "  ✔ Looks like yarn is installed. Checking for packages to install."
-  # Install packages globally
-  for PACKAGE in ${PACKAGES[@]} ; do
-    yarn global add $PACKAGE
-  done
-else
-  echo "  ✘ yarn is not installed. Skipping..."
 fi
