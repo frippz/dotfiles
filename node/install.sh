@@ -67,6 +67,7 @@ else
   echo ""
 
   load_nodenv
+  nodenv update
 
   for NODE_VERSION in ${NODE_VERSIONS[@]} ; do
     nodenv install -s ${NODE_VERSION}
