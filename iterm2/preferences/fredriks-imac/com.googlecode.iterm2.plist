@@ -3659,7 +3659,7 @@
 	<key>NSFontPanelAttributes</key>
 	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/.dotfiles/iterm2/preferences</string>
+	<string>~/.dotfiles/iterm2/preferences/fredriks-imac</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 459}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -6263,7 +6263,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/fredrik/.dotfiles/iterm2/preferences</string>
+	<string>/Users/fredrik/.dotfiles/iterm2/preferences/fredriks-imac</string>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
