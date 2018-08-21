@@ -32,6 +32,9 @@ defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 echo " ✔ Follow the keyboard focus while zoomed in"
 defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
+echo " ✔ Change the location of where screenshots are saved to Downloads"
+defaults write com.apple.screencapture location $HOME/Downloads/
+
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
