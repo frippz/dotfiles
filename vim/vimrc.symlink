@@ -298,6 +298,9 @@ au BufRead,BufNewFile *intrc*,*.json.* set filetype=json
 " YAML
 au BufRead,BufNewFile *.yml.*, set filetype=yaml
 
+" CSS
+au BufRead,BufNewFile *.scss, set filetype=css
+
 " Misc
 " ===========================================================================
 
