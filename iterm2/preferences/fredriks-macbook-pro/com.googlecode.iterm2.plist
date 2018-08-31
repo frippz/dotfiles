@@ -9,7 +9,7 @@
 	<key>AdjustWindowForFontSizeChange</key>
 	<false/>
 	<key>AllowClipboardAccess</key>
-	<false/>
+	<true/>
 	<key>AlternateMouseScroll</key>
 	<true/>
 	<key>AnimateDimming</key>
@@ -3707,11 +3707,11 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>1080 966 400 129 0 0 2560 1418 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>970 769 620 392 0 0 2560 1418 </string>
+	<string>410 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 194 609 401 0 0 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>882 653 796 473 0 0 2560 1417 </string>
+	<string>882 715 796 486 0 0 2560 1417 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>431 188 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame com.apple.typography_panel_Menlo-Regular</key>
@@ -3719,7 +3719,7 @@
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 2560 1417 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>999 200 1561 1018 0 0 2560 1418 </string>
+	<string>1285 0 1275 1417 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>364 158 1450 974 0 0 2560 1418 </string>
 	<key>NeverWarnAboutShortLivedSessions_827D23A9-5F77-4065-A152-24635981A7CC</key>
@@ -4344,7 +4344,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>10000</integer>
+			<integer>0</integer>
 			<key>Scrollback With Status Bar</key>
 			<false/>
 			<key>Scrollback in Alternate Screen</key>
@@ -5172,7 +5172,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>10000</integer>
+			<integer>0</integer>
 			<key>Scrollback With Status Bar</key>
 			<false/>
 			<key>Scrollback in Alternate Screen</key>
@@ -6281,7 +6281,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-07-26T14:25:18Z</date>
+	<date>2018-08-29T05:27:54Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -6341,7 +6341,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.7</string>
+	<string>3.2.0</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
