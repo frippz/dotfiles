@@ -301,6 +301,9 @@ au BufRead,BufNewFile *.yml.*, set filetype=yaml
 " CSS
 au BufRead,BufNewFile *.scss, set filetype=css
 
+" Handlebars
+au BufRead,BufNewFile *.hbs, set filetype=mustache
+
 " Misc
 " ===========================================================================
 
