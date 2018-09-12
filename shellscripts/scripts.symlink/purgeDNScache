@@ -1,0 +1,9 @@
+#!/bin/sh
+
+case "$OSTYPE" in
+  *darwin*)
+    sudo killall -HUP mDNSResponder
+    sudo killall mDNSResponderHelper
+    sudo dscacheutil -flushcache
+    ;;
+esac
