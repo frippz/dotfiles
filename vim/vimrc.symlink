@@ -19,7 +19,6 @@ Plug 'mileszs/ack.vim'
 Plug 'neomake/neomake'
 Plug 'raimondi/delimitMate'
 Plug 'rking/ag.vim'
-" Plug 'sbdchd/neoformat'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'shougo/deoplete.nvim'
 Plug 'skwp/greplace.vim'
@@ -128,6 +127,11 @@ endif
 " Neoformat
 " ---------------------------------------------------------------------------
 " autocmd BufWritePre *.js,*.css Neoformat
+
+" augroup fmt
+"   autocmd!
+"   autocmd BufWritePre *.js,*.css undojoin | Neoformat
+" augroup END
 
 " fzf
 " ---------------------------------------------------------------------------
