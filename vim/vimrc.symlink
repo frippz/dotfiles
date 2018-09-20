@@ -32,6 +32,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'w0rp/ale'
 
 " Syntax plugins
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
@@ -123,6 +124,13 @@ endif
 
 " Plugs
 " ===========================================================================
+
+" Ale
+" ---------------------------------------------------------------------------
+let g:ale_fixers = {'javascript': ['prettier','eslint'],'css': ['prettier','stylelint']}
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_javascript_stylelint_use_local_config = 1
 
 " Neoformat
 " ---------------------------------------------------------------------------
