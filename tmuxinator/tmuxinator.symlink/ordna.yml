@@ -7,7 +7,6 @@ pre_window:
 
 windows:
   - ordna-planner:
-      # layout: even-horizontal
       layout: 9978,231x61,0,0{115x61,0,0,5,115x61,116,0[115x30,116,0,6,115x30,116,31,7]}
       panes:
         - c
