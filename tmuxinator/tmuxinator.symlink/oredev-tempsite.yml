@@ -1,5 +1,5 @@
 name: oredev-tempsite
-root: ~/Sites/oredev-tempsite/
+root: ~/Projects/oredev-tempsite/
 pre_window: yarn -v
 
 windows:

@@ -1,5 +1,5 @@
 name: valleoptik
-root: ~/Sites/valleoptik.se
+root: ~/Projects/valleoptik.se
 pre_window: yarn -v && node -v
 
 windows:
