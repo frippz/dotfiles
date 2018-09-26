@@ -1,5 +1,5 @@
 name: ordna-planner
-root: ~/Sites/ordna-planner/
+root: ~/Projects/ordna-planner/
 pre_window:
   - node -v
   - yarn -v
