@@ -1,8 +1,6 @@
 name: ordna
 root: ~/Projects/ordna-planner/
 pre_window:
-  - node -v
-  - yarn -v
   - export AWS_PROFILE=ordna
 
 windows:
