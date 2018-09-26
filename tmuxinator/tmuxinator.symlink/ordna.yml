@@ -1,0 +1,15 @@
+name: ordna
+root: ~/Sites/ordna-planner/
+pre_window:
+  - node -v
+  - yarn -v
+  - export AWS_PROFILE=ordna
+
+windows:
+  - ordna-planner:
+      # layout: even-horizontal
+      layout: 9978,231x61,0,0{115x61,0,0,5,115x61,116,0[115x30,116,0,6,115x30,116,31,7]}
+      panes:
+        - c
+        - yarn && yarn start
+        - cd patternlibrary && bundle && yarn && yarn start
