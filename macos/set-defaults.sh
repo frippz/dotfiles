@@ -36,13 +36,6 @@ echo " ✔ Change the location of where screenshots are saved to Downloads"
 defaults write com.apple.screencapture location $HOME/Downloads/
 
 ###############################################################################
-# Finder                                                                      #
-###############################################################################
-
-echo " ✔ Use AirDrop over every interface"
-defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
-
-###############################################################################
 # Google Chrome & Google Chrome Canary                                        #
 ###############################################################################
 
