@@ -1,6 +1,5 @@
 name: stampa
 root: ~/Projects/stampa-client
-pre_window: node -v && yarn -v
 
 windows:
   - stampa:

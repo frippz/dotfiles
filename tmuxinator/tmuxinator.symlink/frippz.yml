@@ -1,6 +1,5 @@
 name: frippz
 root: ~/Projects/frippz.se/
-pre_window: yarn -v && node -v
 
 windows:
   - frippz.se:
