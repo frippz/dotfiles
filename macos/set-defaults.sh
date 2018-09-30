@@ -25,13 +25,6 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 echo " ✔ Automatically quit printer app once the print jobs complete"
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
-echo " ✔ Use scroll gesture with the Ctrl (^) modifier key to zoom"
-defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
-defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
-
-echo " ✔ Follow the keyboard focus while zoomed in"
-defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
-
 echo " ✔ Change the location of where screenshots are saved to Downloads"
 defaults write com.apple.screencapture location $HOME/Downloads/
 
