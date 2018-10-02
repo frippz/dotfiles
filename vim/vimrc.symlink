@@ -16,7 +16,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake'
 Plug 'raimondi/delimitMate'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -128,18 +128,19 @@ endif
 " Ale
 " ---------------------------------------------------------------------------
 let g:ale_fixers = {'javascript': ['prettier','eslint'],'css': ['prettier','stylelint']}
+
+" Don’t lint while typing
+let g:ale_lint_on_text_changed = 0
+
+" Lint after leaving insert mode instead
+let g:ale_lint_on_insert_leave = 1
+
+" Fix with prettier on save
 let g:ale_fix_on_save = 1
+
+" Make sure linters use local config files
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_javascript_stylelint_use_local_config = 1
-
-" Neoformat
-" ---------------------------------------------------------------------------
-" autocmd BufWritePre *.js,*.css Neoformat
-
-" augroup fmt
-"   autocmd!
-"   autocmd BufWritePre *.js,*.css undojoin | Neoformat
-" augroup END
 
 " fzf
 " ---------------------------------------------------------------------------
@@ -191,12 +192,12 @@ let g:grep_cmd_opts = '--line-numbers --noheading'
 
 " Neomake
 " ---------------------------------------------------------------------------
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_css_enabled_makers = ['stylelint']
-let g:neomake_html_enabled_makers = ['']
+" let g:neomake_javascript_enabled_makers = ['eslint']
+" let g:neomake_css_enabled_makers = ['stylelint']
+" let g:neomake_html_enabled_makers = ['']
 
 " Run NeoMake on file write
-autocmd! BufWritePost * Neomake
+" autocmd! BufWritePost * Neomake
 
 " Tagbar
 " ---------------------------------------------------------------------------
