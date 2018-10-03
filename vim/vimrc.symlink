@@ -118,6 +118,8 @@ if $TERM_THEME == 'SolarizedLight'
   call SolarizedLight()
 elseif $TERM_THEME == 'SolarizedDark'
   call SolarizedDark()
+elseif $TERM_THEME == 'Gruvbox'
+  call Gruvbox()
 else
   call Gruvbox()
 endif
