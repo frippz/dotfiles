@@ -8,7 +8,7 @@ if [ -n "$ITERM_PROFILE" ]; then
   export TERM_THEME="$ITERM_PROFILE"
 else
   # Fall back to hard-coded theme value
-  export TERM_THEME="SolarizedLight"
+  export TERM_THEME="Gruvbox"
 fi
 
 case "$OSTYPE" in
