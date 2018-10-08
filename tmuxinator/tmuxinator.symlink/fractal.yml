@@ -1,0 +1,9 @@
+name: fractal
+root: ~/Projects/fractal/
+
+windows:
+  - fractal:
+      layout: even-horizontal
+      panes:
+        - c
+        - yarn && yarn start
