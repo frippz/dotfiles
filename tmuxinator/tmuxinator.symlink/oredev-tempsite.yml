@@ -1,9 +1,0 @@
-name: oredev-tempsite
-root: ~/Projects/oredev-tempsite/
-
-windows:
-  - oredev-tempsite:
-      layout: even-horizontal
-      panes:
-        - c
-        - yarn && bundle && yarn start
