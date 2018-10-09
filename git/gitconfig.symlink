@@ -26,6 +26,7 @@
   excludesfile = ~/.gitignore
   quotepath = false
   autocrlf = input
+  mergeoptions = --no-edit
 [branch]
   autosetuprebase = always
 [mergetool]
