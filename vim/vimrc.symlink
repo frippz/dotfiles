@@ -35,9 +35,10 @@ Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
 
 " Syntax plugins
+Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
+Plug 'ericpruitt/tmux.vim', { 'for': 'tmux' }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'keith/swift.vim', { 'for': 'swift' }
-Plug 'ericpruitt/tmux.vim', { 'for': 'tmux' }
 Plug 'leafgarland/typescript-vim'
 Plug 'mustache/vim-mustache-handlebars', { 'for': 'mustache' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
@@ -130,6 +131,11 @@ endif
 " Ale
 " ---------------------------------------------------------------------------
 let g:ale_fixers = {'javascript': ['prettier','eslint'],'css': ['prettier','stylelint']}
+
+let g:ale_linters = {'javascript': ['eslint'],'css': ['stylelint']}
+
+" Only run specified linters
+let g:ale_linters_explicit = 1
 
 " Don’t lint while typing
 let g:ale_lint_on_text_changed = 0
@@ -314,7 +320,7 @@ au BufRead,BufNewFile *intrc*,*.json.* set filetype=json
 au BufRead,BufNewFile *.yml.*, set filetype=yaml
 
 " CSS
-au BufRead,BufNewFile *.scss, set filetype=css
+" au BufRead,BufNewFile *.scss, set filetype=css
 
 " Handlebars
 au BufRead,BufNewFile *.hbs, set filetype=mustache
