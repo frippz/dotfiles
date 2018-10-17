@@ -26,8 +26,9 @@ alias gc!='git commit -v --amend'
 
 # Commit
 alias gc='git commit -v'
-alias gca!='git commit -v -a --amend'
 alias gca='git commit -v -a'
+alias gcaa='git commit -v -a --amend'
+alias gcaa!='git commit -v -a --amend --no-edit'
 alias gcmsg='git commit -m'
 alias gcu='git reset HEAD\^'
 
@@ -35,14 +36,12 @@ alias gcu='git reset HEAD\^'
 alias grb='git rebase'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
-alias grbi='git rebase -i'
+alias grbi='git rebase --interactive'
 
 # Diff
 alias gd='git diff'
 alias gd='git diff'
 alias gdc='git diff --cached'
-alias gdt='git diff-tree --no-commit-id --name-only -r'
-alias gdt='git difftool'
 
 # Stashing
 alias gsta='git stash'
