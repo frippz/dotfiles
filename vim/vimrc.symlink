@@ -16,7 +16,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
-" Plug 'neomake/neomake'
 Plug 'raimondi/delimitMate'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -197,15 +196,6 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " ---------------------------------------------------------------------------
 set grepprg=ag
 let g:grep_cmd_opts = '--line-numbers --noheading'
-
-" Neomake
-" ---------------------------------------------------------------------------
-" let g:neomake_javascript_enabled_makers = ['eslint']
-" let g:neomake_css_enabled_makers = ['stylelint']
-" let g:neomake_html_enabled_makers = ['']
-
-" Run NeoMake on file write
-" autocmd! BufWritePost * Neomake
 
 " Tagbar
 " ---------------------------------------------------------------------------
