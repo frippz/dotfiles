@@ -1,0 +1,11 @@
+name: ordna-patternlibrary
+root: ~/Projects/ordna-patternlibrary/
+pre_window:
+  - export AWS_PROFILE=ordna
+
+windows:
+  - ordna-planner:
+      layout: even-horizontal
+      panes:
+        - c
+        - yarn && yarn start
