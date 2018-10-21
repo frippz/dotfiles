@@ -306,7 +306,7 @@ au BufRead,BufNewFile *.yml.*, set filetype=yaml
 " au BufRead,BufNewFile *.scss, set filetype=css
 
 " Handlebars/Mustache
-au BufRead,BufNewFile *.hbs, set filetype=mustache
+au BufRead,BufNewFile *.hbs, set filetype=html.mustache
 
 " Misc
 " ===========================================================================
