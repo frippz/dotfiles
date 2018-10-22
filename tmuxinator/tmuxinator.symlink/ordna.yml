@@ -8,5 +8,5 @@ windows:
       layout: 08b3,231x61,0,0{153x61,0,0,0,77x61,154,0[77x22,154,0,1,77x38,154,23,2]}
       panes:
         - c
-        -
+        - c
         - cd patternlibrary && bundle && yarn && yarn start
