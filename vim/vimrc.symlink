@@ -66,6 +66,9 @@ if has('nvim')
   " Remap exit terminal mode
   tnoremap <Esc> <C-\><C-n>
 
+  " Live substitution
+  set inccommand=nosplit
+
 endif
 
 " Themes
