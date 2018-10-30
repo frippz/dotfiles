@@ -275,7 +275,7 @@ set smarttab                   " use tabs at the start of a line, spaces elsewhe
 set backspace=indent,eol,start " Backspace through anything in insert mode
 
 " allow toggling between local and default mode
-function TabToggle()
+function! TabToggle()
   if &expandtab
     set shiftwidth=8
     set softtabstop=0
