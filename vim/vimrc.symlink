@@ -365,16 +365,6 @@ set clipboard=unnamed
 " Trim trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Disable arrow keys
-inoremap  <Up>     <NOP>
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
-
 " Navigate visual lines (when wrapped)
 nnoremap j gj
 nnoremap k gk
