@@ -13,8 +13,6 @@ RUBY_VERSION="2.4.1"
 # Gems to install
 GEMS=(
   "bundler"
-  "jekyll"
-  "jekyll-paginate"
   "neovim"
   "tmuxinator"
 )
