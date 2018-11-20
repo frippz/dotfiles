@@ -29,18 +29,6 @@ echo " ✔ Change the location of where screenshots are saved to Downloads"
 defaults write com.apple.screencapture location $HOME/Downloads/
 
 ###############################################################################
-# Google Chrome & Google Chrome Canary                                        #
-###############################################################################
-
-echo " ✔ Use the system-native print preview dialog"
-defaults write com.google.Chrome DisablePrintPreview -bool true
-defaults write com.google.Chrome.canary DisablePrintPreview -bool true
-
-echo " ✔ Expand the print dialog by default"
-defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
-defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
-
-###############################################################################
 # Photos                                                                      #
 ###############################################################################
 
@@ -63,3 +51,22 @@ defaults write com.apple.SafariTechnologyPreview IncludeInternalDebugMenu -bool 
 defaults write com.apple.SafariTechnologyPreview IncludeDevelopMenu -bool true
 defaults write com.apple.SafariTechnologyPreview WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.SafariTechnologyPreview "com.apple.SafariTechnologyPreview.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
+
+###############################################################################
+# Google Chrome & Google Chrome Canary                                        #
+###############################################################################
+
+echo " ✔ Use the system-native print preview dialog"
+defaults write com.google.Chrome DisablePrintPreview -bool true
+defaults write com.google.Chrome.canary DisablePrintPreview -bool true
+
+echo " ✔ Expand the print dialog by default"
+defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
+defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
+
+###############################################################################
+# TextMate                                                                    #
+###############################################################################
+
+echo " ✔ Automatically switch theme based on macOS appearance"
+defaults write com.macromates.TextMate changeThemeBasedOnAppearance -bool YES
