@@ -1,1 +1,1 @@
-exclude = "{$excludeDirectoriesInFileChooser,$extraExcludes,node_modules,build,dist}"
+exclude = "{$excludeDirectoriesInFileChooser,$extraExcludes,node_modules,build,dist,_site}"
