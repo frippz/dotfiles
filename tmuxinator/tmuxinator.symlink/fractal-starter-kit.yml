@@ -1,8 +1,8 @@
-name: fractal
-root: ~/Projects/fractal/
+name: fractal-starter-kit
+root: ~/Projects/fractal-starter-kit/
 
 windows:
-  - fractal:
+  - fractal-starter-kit:
       layout: even-horizontal
       panes:
         - c
