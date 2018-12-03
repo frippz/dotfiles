@@ -9,4 +9,4 @@ windows:
       panes:
         - c
         - c
-        - cd patternlibrary && bundle && yarn && yarn start
+        - cd fractal && yarn && yarn start
