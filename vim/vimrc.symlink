@@ -314,6 +314,7 @@ au BufRead,BufNewFile *.yml.*, set filetype=yaml
 
 " Handlebars/Mustache
 au BufRead,BufNewFile *.hbs, set filetype=html.mustache
+let g:mustache_abbreviations = 1
 
 " Misc
 " ===========================================================================
