@@ -17,7 +17,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
-Plug 'raimondi/delimitMate'
+" Plug 'raimondi/delimitMate'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'shougo/deoplete.nvim'
