@@ -186,6 +186,12 @@ let delimitMate_matchpairs = "(:),[:],{:}"
 " ---------------------------------------------------------------------------
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
+" vim-commentary
+" ---------------------------------------------------------------------------
+
+" Mustache/Handlebars
+autocmd FileType html.mustache setlocal commentstring={{!--\ %s\ --}}
+
 " Greplace
 " ---------------------------------------------------------------------------
 set grepprg=ag
