@@ -17,7 +17,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
-" Plug 'raimondi/delimitMate'
+Plug 'raimondi/delimitMate'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'shougo/deoplete.nvim'
@@ -188,6 +188,10 @@ let g:mustache_abbreviations = 1
 let delimitMate_expand_cr = 1
 let delimitMate_matchpairs = "(:),[:],{:}"
 
+" Disable delimitMate per file type
+" ---------------------------------------------------------------------------
+au FileType html.handlebars,html.mustache let b:loaded_delimitMate = 1
+
 " Editorconfig
 " ---------------------------------------------------------------------------
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
@@ -195,11 +199,8 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " vim-commentary
 " ---------------------------------------------------------------------------
 
-" Mustache
-autocmd FileType html.mustache setlocal commentstring={{!--\ %s\ --}}
-
-" Handlebars
-autocmd FileType html.handlebars setlocal commentstring={{!--\ %s\ --}}
+" Mustache / Handlebars
+autocmd FileType html.mustache,html.handlebars setlocal commentstring={{!--\ %s\ --}}
 
 " Greplace
 " ---------------------------------------------------------------------------
