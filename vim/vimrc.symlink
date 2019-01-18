@@ -20,6 +20,7 @@ Plug 'mileszs/ack.vim'
 Plug 'raimondi/delimitMate'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'shougo/deoplete.nvim'
 Plug 'skwp/greplace.vim'
 Plug 'tmhedberg/matchit'
