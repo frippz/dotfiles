@@ -4,9 +4,10 @@
 # Versions of Node to install
 NODE_VERSIONS=(
   "8.12.0"
+  "10.15.0"
 )
 
-GLOBAL_NODE="8.12.0"
+GLOBAL_NODE="10.15.0"
 
 # Load nodenv if needed
 function load_nodenv() {
