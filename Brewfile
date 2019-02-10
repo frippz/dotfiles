@@ -18,7 +18,6 @@ brew "grc"
 brew "imagemagick"
 brew "libtool"
 brew "neovim"
-brew "python"
 brew "python3"
 brew "reattach-to-user-namespace"
 brew "ruby-completion", args: ["HEAD"]
