@@ -8,7 +8,9 @@ Plug 'morhetz/gruvbox'
 Plug 'icymind/NeoSolarized'
 
 " Regular plugins
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'alvan/vim-closetag'
+Plug 'amadeus/vim-convert-color-to'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular'
 Plug 'gregsexton/MatchTag'
@@ -20,7 +22,6 @@ Plug 'mileszs/ack.vim'
 Plug 'raimondi/delimitMate'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'shougo/deoplete.nvim'
 Plug 'skwp/greplace.vim'
 Plug 'tmhedberg/matchit'
@@ -34,7 +35,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
-Plug 'amadeus/vim-convert-color-to'
 
 " Syntax plugins
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
