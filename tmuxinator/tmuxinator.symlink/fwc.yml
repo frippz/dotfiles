@@ -1,9 +1,0 @@
-name: fwc
-root: ~/Projects/fwc-frontend/
-
-windows:
-  - fwc:
-      layout: even-horizontal
-      panes:
-        - c
-        - npm start
