@@ -1,9 +1,0 @@
-name: stampa
-root: ~/Projects/stampa-client
-
-windows:
-  - stampa:
-      layout: even-horizontal
-      panes:
-        - c
-        - ionic serve
