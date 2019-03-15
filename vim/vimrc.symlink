@@ -195,7 +195,7 @@ let delimitMate_matchpairs = "(:),[:],{:}"
 
 " Disable delimitMate per file type
 " ---------------------------------------------------------------------------
-au FileType html.handlebars,html.mustache let b:loaded_delimitMate = 1
+au FileType html.handlebars,html.mustache let b:delimitMate_autoclose = 0
 
 " Editorconfig
 " ---------------------------------------------------------------------------
