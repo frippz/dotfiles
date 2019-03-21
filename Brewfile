@@ -10,6 +10,7 @@ brew "awscli"
 brew "ccat"
 brew "coreutils"
 brew "direnv"
+brew "doctl"
 brew "dos2unix"
 brew "editorconfig"
 brew "gem-completion", args: ["HEAD"]
