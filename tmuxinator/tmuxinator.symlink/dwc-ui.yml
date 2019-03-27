@@ -1,0 +1,9 @@
+name: dwc-ui
+root: ~/Projects/dwc-ui/
+
+windows:
+  - dwc-ui:
+      layout: even-horizontal
+      panes:
+        - c
+        - yarn && yarn start

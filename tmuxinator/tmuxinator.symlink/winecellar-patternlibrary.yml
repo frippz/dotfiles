@@ -1,9 +1,0 @@
-name: winecellar-patternlibrary
-root: ~/Projects/winecellar-patternlibrary/
-
-windows:
-  - winecellar-patternlibrary:
-      layout: even-horizontal
-      panes:
-        - c
-        - yarn && yarn start
