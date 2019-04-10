@@ -39,6 +39,7 @@ Plug 'w0rp/ale'
 " Syntax plugins
 Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'jinja.html' }
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
+Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'ericpruitt/tmux.vim', { 'for': 'tmux' }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'keith/swift.vim', { 'for': 'swift' }
