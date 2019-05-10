@@ -8,7 +8,7 @@ set -e
 export RUBY_CONFIGURE_OPTS=--disable-install-doc
 
 # Version to install with rbenv
-RUBY_VERSION="2.4.5"
+RUBY_VERSION="2.6.3"
 
 # Gems to install
 GEMS=(
