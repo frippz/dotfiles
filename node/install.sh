@@ -3,7 +3,6 @@
 
 # Versions of Node to install
 NODE_VERSIONS=(
-  "8.12.0"
   "10.15.0"
 )
 
