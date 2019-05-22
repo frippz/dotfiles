@@ -13,6 +13,7 @@ brew "direnv"
 brew "doctl"
 brew "dos2unix"
 brew "editorconfig"
+brew "ffmpeg"
 brew "gem-completion", args: ["HEAD"]
 brew "git"
 brew "grc"
