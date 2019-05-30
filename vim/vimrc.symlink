@@ -9,6 +9,7 @@ Plug 'icymind/NeoSolarized'
 
 " Regular plugins
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'amadeus/vim-convert-color-to'
 Plug 'editorconfig/editorconfig-vim'
@@ -35,7 +36,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
-Plug 'airblade/vim-gitgutter'
 
 " Syntax plugins
 Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'jinja.html' }
