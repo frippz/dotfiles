@@ -32,6 +32,10 @@ if ! command -v rbenv >/dev/null 2>&1 && [ ! -d $HOME/.rbenv ]; then
   echo ""
   git clone https://github.com/rbenv/ruby-build.git $HOME/.rbenv/plugins/ruby-build
   echo ""
+  echo "  ✔ Installing rbenv-update..."
+  echo ""
+  git clone https://github.com/rkh/rbenv-update.git $HOME/.rbenv/plugins/rbenv-update
+  echo ""
   echo "  ✔ Installing rbenv-gemset..."
   echo ""
   git clone git://github.com/jf/rbenv-gemset.git $HOME/.rbenv/plugins/rbenv-gemset
