@@ -132,7 +132,7 @@ let g:ale_fixers = {'javascript': ['prettier','eslint'],'css': ['prettier','styl
 let g:ale_linters = {'javascript': ['eslint'],'css': ['stylelint']}
 
 " Suppress eslintignore messages
-let g:ale_javascript_eslint_suppress_eslintignore
+let g:ale_javascript_eslint_suppress_eslintignore = 1
 
 " Only run specified linters
 let g:ale_linters_explicit = 1
