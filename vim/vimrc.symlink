@@ -330,6 +330,9 @@ au BufRead,BufNewFile *intrc*,*.json.* set filetype=json
 " YAML
 au BufRead,BufNewFile *.yml.*, set filetype=yaml
 
+" Nunjucks
+au BufRead,BufNewFile *.nunj set filetype=jinja.html
+
 " Misc
 " ===========================================================================
 
