@@ -6,4 +6,4 @@ windows:
       layout: even-horizontal
       panes:
         - c
-        - yarn start
+        - docker-compose up
