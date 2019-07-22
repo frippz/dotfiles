@@ -1,8 +1,0 @@
-# Ignore file for the Silver Searcher (ag)
-node_modules
-dist
-target
-_site
-.git
-.hg
-.svn
