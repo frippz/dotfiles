@@ -1,0 +1,10 @@
+session_name: ordna-patternlibrary
+start_directory: ~/Projects/ordna-patternlibrary/
+
+windows:
+  - layout: even-horizontal
+    panes:
+      - c
+      - yarn && yarn start
+
+    window_name: ordna-patternlibrary

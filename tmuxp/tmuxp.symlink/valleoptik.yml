@@ -1,0 +1,10 @@
+session_name: valleoptik
+start_directory: ~/Projects/valleoptik.se
+
+windows:
+  - layout: even-horizontal
+    panes:
+      - c
+      - docker-compose up
+
+    window_name: valleoptik

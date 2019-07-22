@@ -4,6 +4,7 @@
 
 PIPS=(
   "pynvim"
+  "tmuxp"
 )
 
 echo ""

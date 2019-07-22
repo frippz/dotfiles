@@ -1,0 +1,10 @@
+session_name: fractal-starter-kit
+start_directory: ~/Projects/fractal-starter-kit/
+
+windows:
+  - layout: even-horizontal
+    panes:
+      - c
+      - yarn && yarn start
+
+    window_name: fractal-starter-kit

@@ -1,9 +1,0 @@
-name: modx
-root: ~/Projects/modx
-
-windows:
-  - modx:
-      layout: even-horizontal
-      panes:
-        - c
-        - docker-compose up

@@ -1,0 +1,10 @@
+session_name: dwc-ui
+start_directory: ~/Projects/dwc-ui/
+
+windows:
+  - layout: even-horizontal
+    panes:
+      - c
+      - docker-compose up
+
+    window_name: dwc-ui
