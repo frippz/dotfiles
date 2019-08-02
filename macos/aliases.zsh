@@ -1,5 +1,6 @@
 # Darwin only aliases
 #
+
 case "$OSTYPE" in
   *darwin*)
     # Clean up "Open with…" menu
