@@ -1,9 +1,0 @@
-name: ordna-patternlibrary
-root: ~/Projects/ordna-patternlibrary/
-
-windows:
-  - ordna-patternlibrary:
-      layout: even-horizontal
-      panes:
-        - c
-        - yarn && yarn start

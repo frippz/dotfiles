@@ -1,9 +1,0 @@
-name: frippz
-root: ~/Projects/frippz.se/
-
-windows:
-  - frippz.se:
-      layout: even-horizontal
-      panes:
-        - c
-        - docker-compose up
