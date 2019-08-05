@@ -4,7 +4,8 @@ start_directory: ~/Projects/frippz.se/
 windows:
   - layout: even-horizontal
     panes:
-      - c
+      -
+        focus: true
       - docker-compose up
 
     window_name: frippz.se

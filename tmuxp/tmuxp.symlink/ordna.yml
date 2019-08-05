@@ -4,7 +4,8 @@ start_directory: ~/Projects/ordna-patternlibrary/
 windows:
   - layout: even-horizontal
     panes:
-      - c
+      -
+        focus: true
       - yarn && yarn start
 
     window_name: ordna-patternlibrary

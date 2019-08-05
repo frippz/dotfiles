@@ -4,7 +4,8 @@ start_directory: ~/Projects/valleoptik.se
 windows:
   - layout: even-horizontal
     panes:
-      - c
+      -
+        focus: true
       - docker-compose up
 
     window_name: valleoptik
