@@ -1,3 +1,4 @@
 if command -v tmuxp >/dev/null 2>&1 ; then
-  alias muxp="tmuxp"
+  # Re-purpose mux command from tmuxinator for tmuxp
+  alias mux="tmuxp load"
 fi
