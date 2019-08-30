@@ -1,0 +1,11 @@
+session_name: justfredrik
+start_directory: ~/Projects/justfredrik.com/
+
+windows:
+  - layout: even-horizontal
+    panes:
+      -
+        focus: true
+      - #docker-compose up
+
+    window_name: justfredrik.com
