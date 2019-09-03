@@ -19,10 +19,10 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'raimondi/delimitMate'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'shougo/deoplete.nvim'
 Plug 'skwp/greplace.vim'
 Plug 'tmhedberg/matchit'
 Plug 'tommcdo/vim-fubitive'
@@ -172,21 +172,29 @@ map <C-n> :NERDTreeToggle<CR>
 " Show invisible files in NERDTree
 let NERDTreeShowHidden=1
 
-" deoplete (Load only in neovim)
+" coc.nvim
+"
+" Extensions
+" :CocInstall coc-vetur coc-html coc-css coc-svg coc-json
 " ---------------------------------------------------------------------------
+set cmdheight=2
+let g:echodoc_enable_at_startup = 1
 
-if has('nvim')
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-  " Enable deoplete
-  let g:deoplete#enable_at_startup = 1
+" Use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
-  " use tab to forward cycle
-  inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
 
-  " use tab to backward cycle
-  inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-
-endif
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Handlebars/Mustache
 " ---------------------------------------------------------------------------
