@@ -175,7 +175,7 @@ let NERDTreeShowHidden=1
 " coc.nvim
 "
 " Extensions
-" :CocInstall coc-vetur coc-html coc-css coc-svg coc-json
+" :CocInstall coc-vetur coc-html coc-css coc-svg coc-json coc-yaml coc-emmet coc-tsserver
 " ---------------------------------------------------------------------------
 set cmdheight=2
 let g:echodoc_enable_at_startup = 1
