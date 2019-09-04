@@ -178,6 +178,10 @@ let NERDTreeShowHidden=1
 " :CocInstall coc-vetur coc-html coc-css coc-svg coc-json coc-yaml coc-emmet coc-tsserver
 " ---------------------------------------------------------------------------
 set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
+
 let g:echodoc_enable_at_startup = 1
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
