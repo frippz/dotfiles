@@ -334,7 +334,7 @@ nmap <F9> mz:execute TabToggle()<CR>'z
 au BufRead,BufNewFile gitconfig.symlink,gitignore.symlink setfiletype gitconfig
 
 " nginx
-au BufRead,BufNewFile */nginx/* set filetype=nginx
+au BufRead,BufNewFile */nginx/*,nginx.conf set filetype=nginx
 
 " JSON
 au BufRead,BufNewFile *intrc*,*.json.* set filetype=json
