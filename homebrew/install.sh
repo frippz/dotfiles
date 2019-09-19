@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 #
 # Setup required taps and install Homebrew packages using Brewfile
 
