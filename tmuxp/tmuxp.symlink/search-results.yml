@@ -1,0 +1,11 @@
+session_name: search-results
+start_directory: ~/Projects/search-results/
+
+windows:
+  - layout: even-horizontal
+    panes:
+      -
+        focus: true
+      - npm run watch
+
+    window_name: search-results

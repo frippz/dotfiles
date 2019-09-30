@@ -1,0 +1,11 @@
+session_name: search-box
+start_directory: ~/Projects/search-box/
+
+windows:
+  - layout: even-horizontal
+    panes:
+      -
+        focus: true
+      - npm run dev
+
+    window_name: search-box
