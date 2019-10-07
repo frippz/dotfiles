@@ -129,7 +129,7 @@ endif
 
 " Ale
 " ---------------------------------------------------------------------------
-let g:ale_fixers = {'javascript': ['prettier','eslint'],'css': ['prettier','stylelint']}
+" let g:ale_fixers = {'javascript': ['prettier','eslint'],'css': ['prettier','stylelint']}
 let g:ale_linters = {'javascript': ['eslint'],'css': ['stylelint']}
 
 " Suppress eslintignore messages
@@ -143,9 +143,6 @@ let g:ale_lint_on_text_changed = 0
 
 " Lint after leaving insert mode instead
 let g:ale_lint_on_insert_leave = 1
-
-" Fix with prettier on save
-let g:ale_fix_on_save = 1
 
 " Make sure linters use local config files
 let g:ale_javascript_prettier_use_local_config = 1
