@@ -9,6 +9,7 @@ Plug 'icymind/NeoSolarized'
 
 " Regular plugins
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'amadeus/vim-convert-color-to'
 Plug 'editorconfig/editorconfig-vim'
@@ -160,6 +161,13 @@ nmap <C-p> :FZF<CR>
 " Closetag
 " ---------------------------------------------------------------------------
 let g:closetag_filenames = "*.html,*.tpl"
+
+" GitGutter
+" ---------------------------------------------------------------------------
+"
+" Make GitGutter work in NeoVim.
+let g:gitgutter_async = 1
+let g:gitgutter_sign_removed_first_line = "^_"
 
 " NERDTree
 " ---------------------------------------------------------------------------
