@@ -130,7 +130,7 @@ endif
 
 " Ale
 " ---------------------------------------------------------------------------
-" let g:ale_fixers = {'javascript': ['prettier','eslint'],'css': ['prettier','stylelint']}
+let g:ale_fixers = {'javascript': ['prettier','eslint'],'css': ['prettier','stylelint']}
 let g:ale_linters = {'javascript': ['eslint'],'css': ['stylelint']}
 
 " Suppress eslintignore messages
