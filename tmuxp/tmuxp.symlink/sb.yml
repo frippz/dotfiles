@@ -1,4 +1,4 @@
-session_name: search-box
+session_name: sb
 start_directory: ~/Projects/search-box/
 
 windows:
