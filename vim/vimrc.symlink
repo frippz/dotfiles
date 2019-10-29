@@ -24,6 +24,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'raimondi/delimitMate'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'sheerun/vim-polyglot'
 Plug 'skwp/greplace.vim'
 Plug 'tmhedberg/matchit'
 Plug 'tommcdo/vim-fubitive'
@@ -36,9 +37,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
-
-" Syntax plugins
-Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
