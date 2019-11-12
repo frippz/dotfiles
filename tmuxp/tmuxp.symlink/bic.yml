@@ -1,0 +1,11 @@
+session_name: beautyincode
+start_directory: ~/Projects/beautyincode.se
+
+windows:
+  - layout: even-horizontal
+    panes:
+      -
+        focus: true
+      - docker-compose up
+
+    window_name: beautyincode
