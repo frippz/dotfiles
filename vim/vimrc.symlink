@@ -19,7 +19,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'machakann/vim-highlightedyank'
 Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'raimondi/delimitMate'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -71,24 +71,11 @@ function! Gruvbox()
   set background=dark
 endfunction
 
-" Solarized
+" Solarized Light
 " ---------------------------------------------------------------------------
-
-" Light
 function! SolarizedLight()
   colorscheme NeoSolarized
   set background=light
-  set termguicolors
-  let g:neosolarized_contrast = "high"
-  let g:neosolarized_bold = 1
-  let g:neosolarized_underline = 0
-  let g:neosolarized_italic = 1
-endfunction
-
-" Dark
-function! SolarizedDark()
-  colorscheme NeoSolarized
-  set background=dark
   set termguicolors
   let g:neosolarized_contrast = "high"
   let g:neosolarized_bold = 1
@@ -100,10 +87,6 @@ endfunction
 " ---------------------------------------------------------------------------
 if $TERM_THEME == 'SolarizedLight'
   call SolarizedLight()
-elseif $TERM_THEME == 'SolarizedDark'
-  call SolarizedDark()
-elseif $TERM_THEME == 'Gruvbox'
-  call Gruvbox()
 else
   call Gruvbox()
 endif
@@ -152,7 +135,7 @@ let g:closetag_filenames = "*.html,*.tpl"
 
 " GitGutter
 " ---------------------------------------------------------------------------
-"
+
 " Make GitGutter work in NeoVim.
 let g:gitgutter_async = 1
 let g:gitgutter_sign_removed_first_line = "^_"
@@ -167,7 +150,7 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 " coc.nvim
-"
+
 " Extensions
 " :CocInstall coc-vetur coc-html coc-css coc-svg coc-json coc-yaml coc-emmet coc-tsserver
 " ---------------------------------------------------------------------------
