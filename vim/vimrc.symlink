@@ -293,6 +293,9 @@ au BufRead,BufNewFile *.nunj set filetype=jinja.html
 " Dockerfile
 au BufRead,BufNewFile Dockerfile* set filetype=dockerfile
 
+" Vue
+let g:vue_pre_processors = []
+
 " Misc
 " ===========================================================================
 
