@@ -20,6 +20,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'psliwka/vim-smoothie'
 Plug 'raimondi/delimitMate'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -127,6 +128,21 @@ nnoremap <leader>c :ConvertColorTo hsl<CR>
 " fzf
 " ---------------------------------------------------------------------------
 set rtp+=~/.fzf
+
+lua require("fzf")
+
+autocmd! FileType fzf
+autocmd  FileType fzf set nonu nornu
+
+" Set environment variables
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+let $FZF_DEFAULT_OPTS='--layout=reverse'
+
+let g:fzf_layout = { 'window': 'lua NavigationFloatingWin()' }
+
+ " Open fzf Files
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(blue)%C(bold)%cr%C(white)"'
+
 nmap <C-p> :FZF<CR>
 
 " Closetag
