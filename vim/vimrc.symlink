@@ -135,6 +135,9 @@ lua require("fzf")
 autocmd! FileType fzf
 autocmd  FileType fzf set nonu nornu
 
+" Allow closing FZF with esc
+autocmd! FileType fzf tnoremap <buffer> <esc> <c-c>
+
 " Set environment variables
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
 let $FZF_DEFAULT_OPTS='--layout=reverse'
