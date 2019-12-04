@@ -15,6 +15,7 @@ Plug 'amadeus/vim-convert-color-to'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular'
 Plug 'gregsexton/MatchTag'
+Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'machakann/vim-highlightedyank'
 Plug 'mattn/emmet-vim'
