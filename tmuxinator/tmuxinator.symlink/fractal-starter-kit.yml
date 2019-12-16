@@ -1,0 +1,9 @@
+name: fractal-starter-kit
+root: ~/Projects/fractal-starter-kit/
+
+windows:
+  - fractal-starter-kit:
+      layout: even-horizontal
+      panes:
+        - c
+        - yarn && yarn start
