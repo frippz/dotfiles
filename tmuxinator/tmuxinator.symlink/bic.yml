@@ -1,0 +1,9 @@
+name: beautyincode
+root: ~/Projects/beautyincode.se
+
+windows:
+  - beautyincode:
+      layout: even-horizontal
+      panes:
+        - c
+        - docker-compose up

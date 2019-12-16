@@ -1,0 +1,9 @@
+name: justfredrik
+root: ~/Projects/justfredrik.com/
+
+windows:
+  - justfredrik.com:
+      layout: even-horizontal
+      panes:
+        - c
+        - docker-compose up

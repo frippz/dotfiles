@@ -1,0 +1,9 @@
+name: sr
+root: ~/Projects/search-results/
+
+windows:
+  - search-results:
+      layout: even-horizontal
+      panes:
+        - c
+        - npm run watch
