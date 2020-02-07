@@ -38,6 +38,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
+Plug 'yuki-ycino/fzf-preview.vim'
 
 call plug#end()
 
