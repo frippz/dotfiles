@@ -40,6 +40,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
+Plug 'wsdjeg/vim-fetch'
 Plug 'yuki-ycino/fzf-preview.vim'
 
 call plug#end()
