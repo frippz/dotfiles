@@ -24,6 +24,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'psliwka/vim-smoothie'
 Plug 'raimondi/delimitMate'
 Plug 'rking/ag.vim'
+Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'sheerun/vim-polyglot'
 Plug 'skwp/greplace.vim'
@@ -37,6 +38,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
 Plug 'yuki-ycino/fzf-preview.vim'
 
@@ -96,6 +98,11 @@ endif
 
 " Plugins
 " ===========================================================================
+
+" Airline
+" ---------------------------------------------------------------------------
+
+let g:airline_powerline_fonts = 1
 
 " Ale
 " ---------------------------------------------------------------------------
