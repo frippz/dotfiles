@@ -156,7 +156,23 @@ let g:fzf_layout = { 'window': 'lua NavigationFloatingWin()' }
  " Open fzf Files
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(blue)%C(bold)%cr%C(white)"'
 
-nmap <C-p> :FZF<CR>
+" nmap <C-p> :FZF<CR>
+
+" fzf-preview
+" ---------------------------------------------------------------------------
+let g:fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages -g \!"* *"'
+
+" Use vim-devicons
+let g:fzf_preview_use_dev_icons = 1
+
+" Open project files
+nmap <C-p> :FzfPreviewProjectFiles<CR>
+
+" Open Git files
+nmap <C-g> :FzfPreviewGitStatus<CR>
+
+" Open project Grep
+nmap <C-f> :FzfPreviewProjectGrep<CR>
 
 " Closetag
 " ---------------------------------------------------------------------------
