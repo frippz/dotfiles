@@ -16,8 +16,8 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 echo " ✔ Set a really fast key repeat."
 defaults write NSGlobalDomain KeyRepeat -int 0
 
-echo " ✔ Disable the sound effects on boot"
-sudo nvram SystemAudioVolume=" "
+echo " ✔ Re-enable the classic Mac startup chime! 🎶"
+sudo nvram StartupMute=%00
 
 echo " ✔ Automatically quit printer app once the print jobs complete"
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
