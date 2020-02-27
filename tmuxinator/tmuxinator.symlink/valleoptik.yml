@@ -1,9 +1,0 @@
-name: valleoptik
-root: ~/Projects/valleoptik.se
-
-windows:
-  - valleoptik:
-      layout: even-horizontal
-      panes:
-        - c
-        - docker-compose up
