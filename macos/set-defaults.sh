@@ -22,9 +22,6 @@ sudo nvram StartupMute=%00
 echo " ✔ Automatically quit printer app once the print jobs complete"
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
-echo " ✔ Automatically quit printer app once the print jobs complete"
-defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
-
 echo " ✔ Change the location of where screenshots are saved to Downloads"
 defaults write com.apple.screencapture location $HOME/Downloads/
 
