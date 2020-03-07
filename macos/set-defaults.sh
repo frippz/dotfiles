@@ -3,7 +3,7 @@
 # Ask for the administrator password upfront
 sudo -v
 
-# Keep-alive: update existing `sudo` time stamp until `.osx` has finished
+# Keep-alive: update existing `sudo` time stamp until script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 ###############################################################################
@@ -12,9 +12,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 echo " ✔ Disable press-and-hold for keys in favor of key repeat."
 defaults write -g ApplePressAndHoldEnabled -bool false
-
-echo " ✔ Set a really fast key repeat."
-defaults write NSGlobalDomain KeyRepeat -int 0
 
 echo " ✔ Re-enable the classic Mac startup chime! 🎶"
 sudo nvram StartupMute=%00
@@ -60,10 +57,3 @@ defaults write com.google.Chrome.canary DisablePrintPreview -bool true
 echo " ✔ Expand the print dialog by default"
 defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
-
-###############################################################################
-# TextMate                                                                    #
-###############################################################################
-
-echo " ✔ Automatically switch theme based on macOS appearance"
-defaults write com.macromates.TextMate changeThemeBasedOnAppearance -bool YES
