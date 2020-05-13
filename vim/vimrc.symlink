@@ -108,12 +108,16 @@ let g:airline_powerline_fonts = 1
 " Ale
 " ---------------------------------------------------------------------------
 let g:ale_fixers = {
-\ 'javascript': ['prettier','eslint'],
-\ 'vue': ['prettier','eslint'],
-\ 'css': ['prettier','stylelint']
+\ 'javascript': ['standard'],
+\ 'vue': ['eslint'],
+\ 'css': ['stylelint']
 \}
 
-let g:ale_linters = {'javascript': ['eslint'],'css': ['stylelint']}
+let g:ale_linters = {
+\ 'javascript': ['standard'],
+\ 'vue': ['eslint'],
+\ 'css': ['stylelint']
+\}
 
 " Suppress eslintignore messages
 let g:ale_javascript_eslint_suppress_eslintignore = 1
