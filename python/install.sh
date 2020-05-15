@@ -10,8 +10,8 @@ echo ""
 echo "  ✔ Running pip install script"
 echo ""
 
-# Check for Python before attempting to install gems
-if command -v python >/dev/null 2>&1 ; then
+# Check for Python 3 before attempting to install packages
+if command -v python3 >/dev/null 2>&1 ; then
   echo ""
   echo "   ✔ Upgrading pip"
   echo ""
