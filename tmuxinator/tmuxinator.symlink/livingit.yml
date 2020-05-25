@@ -1,0 +1,9 @@
+name: livingit
+root: ~/Projects/livingit.se
+
+windows:
+  - livingit:
+      layout: even-horizontal
+      panes:
+        - c
+        - docker-compose up
