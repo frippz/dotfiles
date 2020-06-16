@@ -39,7 +39,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
 Plug 'wsdjeg/vim-fetch'
 Plug 'yuki-ycino/fzf-preview.vim'
@@ -100,11 +99,6 @@ endif
 
 " Plugins
 " ===========================================================================
-
-" Airline
-" ---------------------------------------------------------------------------
-
-let g:airline_powerline_fonts = 1
 
 " Ale
 " ---------------------------------------------------------------------------
@@ -225,6 +219,7 @@ inoremap <silent><expr> <Tab>
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " delimitMate
 " ---------------------------------------------------------------------------
