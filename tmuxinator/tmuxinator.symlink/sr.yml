@@ -6,4 +6,4 @@ windows:
       layout: even-horizontal
       panes:
         - c
-        - npm run watch
+        - cd hyperapp && npm start

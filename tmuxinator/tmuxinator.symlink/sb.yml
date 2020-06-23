@@ -6,5 +6,5 @@ windows:
       layout: even-horizontal
       panes:
         - c
-        - npm run dev
+        - npm start
 
