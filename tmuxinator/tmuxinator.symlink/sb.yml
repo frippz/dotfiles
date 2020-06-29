@@ -7,4 +7,3 @@ windows:
       panes:
         - c
         - npm start
-
