@@ -1,5 +1,6 @@
 name: sr
 root: ~/Projects/search-results/
+pre_window: export BASE_URL=http://127.0.0.1:8080
 
 windows:
   - search-results:
