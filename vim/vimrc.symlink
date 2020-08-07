@@ -196,7 +196,7 @@ let NERDTreeShowHidden=1
 " coc.nvim
 
 " Extensions
-" :CocInstall coc-vetur coc-html coc-css coc-svg coc-json coc-yaml coc-emmet coc-tsserver
+" :CocInstall coc-vetur coc-html coc-css coc-svg coc-json coc-yaml coc-emmet coc-tsserver coc-fzf-preview
 " ---------------------------------------------------------------------------
 set updatetime=300
 set shortmess+=c
