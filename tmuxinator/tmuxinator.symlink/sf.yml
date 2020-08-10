@@ -1,8 +1,8 @@
-name: sr
-root: ~/Projects/search-results/
+name: sf
+root: ~/Projects/search-frontend/
 
 windows:
-  - search-results:
+  - search-frontend:
       layout: even-horizontal
       panes:
         - c

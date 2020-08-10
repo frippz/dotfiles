@@ -1,9 +1,0 @@
-name: sb
-root: ~/Projects/search-box/
-
-windows:
-  - search-box:
-      layout: even-horizontal
-      panes:
-        - c
-        - npm start
