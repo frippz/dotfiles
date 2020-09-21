@@ -17,7 +17,7 @@ if command -v python3 >/dev/null 2>&1 ; then
   echo ""
   case "$OSTYPE" in
     *darwin*)
-      pip install --upgrade pip
+      pip3 install --upgrade pip
       ;;
     *linux*)
       sudo -H pip3 install --upgrade pip
@@ -35,7 +35,7 @@ if command -v python3 >/dev/null 2>&1 ; then
         PREFIX="sudo -H "
         ;;
     esac
-    $PREFIX pip install -U $PIP
+    $PREFIX pip3 install -U $PIP
   done
 else
   echo ""
