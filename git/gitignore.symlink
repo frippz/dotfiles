@@ -14,15 +14,14 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# TextMate config file
+# Editor stuff
 .tm_properties
+.vimsession
+.nova
 
 # Thumbnail cache files
 ._*
 Thumbs.db
-
-# Vim files
-.vimsession
 
 # The Silver Searcher
 .agignore
