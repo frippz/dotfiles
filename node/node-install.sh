@@ -3,10 +3,10 @@
 
 # Versions of Node to install
 NODE_VERSIONS=(
-  "12.16.3"
+  "12.19.0"
 )
 
-GLOBAL_NODE="12.16.3"
+GLOBAL_NODE="12.19.0"
 
 # Load nodenv if needed
 function load_nodenv() {
