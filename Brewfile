@@ -18,6 +18,7 @@ brew "grc"
 brew "imagemagick"
 brew "libtool"
 brew "neovim"
+brew "node@14", link: true
 brew "python3"
 brew "reattach-to-user-namespace"
 brew "ripgrep"
