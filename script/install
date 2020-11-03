@@ -10,4 +10,5 @@ cd "$(dirname $0)"/..
 find . -maxdepth 2 -name install.sh | sort -n | while read installer ; do sh -c "${installer}" ; done
 
 # Fix insecure directories
+source $HOME/.zshrc
 compaudit | xargs chmod g-w
