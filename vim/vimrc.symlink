@@ -256,6 +256,12 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 set grepprg=ag
 let g:grep_cmd_opts = '--line-numbers --noheading'
 
+" polyglot
+" ---------------------------------------------------------------------------
+
+" Don’t conceal stuff in Markdown
+let g:vim_markdown_conceal = 0
+
 " Search
 " ===========================================================================
 set hlsearch                " highlight all results
