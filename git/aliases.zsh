@@ -23,7 +23,6 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias gbr='git branch --remote'
 alias gbvv='git branch -vv'
-alias gbc='git fetch --prune && git branch -D !master'
 
 # Commit
 alias gc='git commit -v'
