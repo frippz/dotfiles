@@ -2,4 +2,3 @@ cache = ${HOME}/.npm/cache
 globalconfig = ${HOME}/.npm/npmrc
 globalignorefile = ${HOME}/.npm/npmignore
 prefix = ${HOME}/.npm
-@ingka:registry=https://npm.m2.blue.cdtapps.com
