@@ -22,7 +22,7 @@ case "$OSTYPE" in
         sudo chown -R "$LOGNAME:admin" "$HOMEBREW_PREFIX"
       fi
 
-      curl -fsS 'https://raw.githubusercontent.com/Homebrew/install/master/install' | ruby
+      bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
     fi
     ;;
