@@ -35,7 +35,7 @@ if command -v python3 >/dev/null 2>&1 ; then
         PREFIX="sudo -H "
         ;;
     esac
-    $PREFIX pip3 install -U $PIP
+    $PREFIX pip3 install --user $PIP
   done
 else
   echo ""
