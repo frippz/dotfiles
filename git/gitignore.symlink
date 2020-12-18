@@ -17,7 +17,6 @@ yarn-error.log*
 # Editor stuff
 .tm_properties
 .vimsession
-.nova
 
 # Thumbnail cache files
 ._*
