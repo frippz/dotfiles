@@ -76,5 +76,5 @@ alias gcom='git checkout master'
 alias grt='cd $(git rev-parse --show-toplevel || echo ".")'
 
 # Ignore changes to files (and the opposite)
-alias gignore='git update-index --assume-unchanged'
-alias gunignore='git update-index --no-assume-unchanged'
+alias gignore='git update-index --skip-worktree'
+alias gunignore='git update-index --no-skip-worktree'
