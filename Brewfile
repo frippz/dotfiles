@@ -16,6 +16,7 @@ brew "ffmpeg"
 brew "git"
 brew "grc"
 brew "imagemagick"
+brew "iperf3"
 brew "libtool"
 brew "neovim"
 brew "node@14", link: true
