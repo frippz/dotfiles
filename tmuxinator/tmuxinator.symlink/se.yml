@@ -9,4 +9,3 @@ windows:
         - npm run server
         - npm run dev
         - cloud_sql_proxy -instances='ingka-rrm-search-dev:europe-west1:gena=tcp:5432'
-
