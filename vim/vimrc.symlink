@@ -147,6 +147,8 @@ set rtp+=~/.fzf
 " Open with Ctrl-P
 nmap <C-p> :Files<CR>
 
+nmap <C-b> :Buffers<CR>
+
 lua require("fzf")
 
 autocmd! FileType fzf
