@@ -6,8 +6,17 @@ export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 
-if [ "$TERM_THEME" = "SolarizedLight" ]; then
+# Set BAT_THEME based on TERM_THEME
+case "$TERM_THEME" in
+  "SolarizedLight")
   export BAT_THEME="Solarized (light)"
-else
+  ;;
+
+  "OneHalfLight")
+  export BAT_THEME="OneHalfLight"
+  ;;
+
+  *)
   export BAT_THEME="gruvbox-dark"
-fi
+  ;;
+esac

@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
 " Color themes
 Plug 'morhetz/gruvbox'
 Plug 'icymind/NeoSolarized'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 " Regular plugins
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
@@ -82,6 +83,11 @@ function! Gruvbox()
   " Italic comments
   highlight Comment cterm=italic gui=italic
 endfunction
+
+" OneHalf Light
+" ---------------------------------------------------------------------------
+function! OneHalfLight()
+  colorscheme onehalflight
   " Set transparent background
   hi Normal guibg=NONE ctermbg=NONE
 endfunction
