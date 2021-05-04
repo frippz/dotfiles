@@ -77,7 +77,11 @@ endif
 " ---------------------------------------------------------------------------
 function! Gruvbox()
   colorscheme gruvbox
-  set background=dark
+  " Set transparent background
+  hi Normal guibg=NONE ctermbg=NONE
+  " Italic comments
+  highlight Comment cterm=italic gui=italic
+endfunction
   " Set transparent background
   hi Normal guibg=NONE ctermbg=NONE
 endfunction
