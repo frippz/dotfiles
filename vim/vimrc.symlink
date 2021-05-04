@@ -92,12 +92,16 @@ function! SolarizedLight()
   let g:neosolarized_bold = 1
   let g:neosolarized_underline = 0
   let g:neosolarized_italic = 1
+  " Italic comments
+  highlight Comment cterm=italic gui=italic
 endfunction
 
 " Set theme based on $TERM_THEME (or fall back to Gruvbox)
 " ---------------------------------------------------------------------------
 if $TERM_THEME == 'SolarizedLight'
   call SolarizedLight()
+elseif $TERM_THEME == 'OneHalfLight'
+  call OneHalfLight()
 else
   call Gruvbox()
 endif
