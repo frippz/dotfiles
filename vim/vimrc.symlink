@@ -263,6 +263,11 @@ let g:grep_cmd_opts = '--line-numbers --noheading'
 " Don’t conceal stuff in Markdown
 let g:vim_markdown_conceal = 0
 
+" indentLine
+" ---------------------------------------------------------------------------
+let g:indentLine_char = '▏'
+let g:indent_blankline_show_trailing_blankline_indent = v:false
+
 " Search
 " ===========================================================================
 set hlsearch                " highlight all results
