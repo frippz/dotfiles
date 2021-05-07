@@ -27,7 +27,6 @@ Plug 'mileszs/ack.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'psliwka/vim-smoothie'
 Plug 'raimondi/delimitMate'
-Plug 'rking/ag.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'sheerun/vim-polyglot'
