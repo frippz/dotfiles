@@ -72,8 +72,7 @@ endif
 " Themes
 " ===========================================================================
 
-" Gruvbox
-" ---------------------------------------------------------------------------
+" Gruvbox {{
 function! Gruvbox()
   syntax enable
   set background=dark
@@ -84,9 +83,9 @@ function! Gruvbox()
   " Italic comments
   highlight Comment cterm=italic gui=italic
 endfunction
+" }}
 
-" OneHalf Light
-" ---------------------------------------------------------------------------
+" OneHalf Light {{
 function! OneHalfLight()
   syntax enable
   set background=light
@@ -95,9 +94,9 @@ function! OneHalfLight()
   " Set transparent background
   hi Normal guibg=NONE ctermbg=NONE
 endfunction
+" }}
 
-" Solarized Light
-" ---------------------------------------------------------------------------
+" Solarized Light {{
 function! SolarizedLight()
   colorscheme NeoSolarized
   set background=light
@@ -109,9 +108,9 @@ function! SolarizedLight()
   " Italic comments
   highlight Comment cterm=italic gui=italic
 endfunction
+" }}
 
 " Set theme based on $TERM_THEME (or fall back to Gruvbox)
-" ---------------------------------------------------------------------------
 if $TERM_THEME == 'SolarizedLight'
   call SolarizedLight()
 elseif $TERM_THEME == 'OneHalfLight'
@@ -123,8 +122,7 @@ endif
 " Plugins
 " ===========================================================================
 
-" Ale
-" ---------------------------------------------------------------------------
+" Ale {{
 let g:ale_fixers = {
 \ 'javascript': ['standard'],
 \ 'vue': ['eslint'],
@@ -155,13 +153,13 @@ let g:ale_lint_on_insert_leave = 1
 " Make sure linters use local config files
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_javascript_stylelint_use_local_config = 1
+" }}
 
-" Convert Color
-" ---------------------------------------------------------------------------
+" Convert Color {{
 nnoremap <leader>c :ConvertColorTo hsl<CR>
+" }}
 
-" fzf
-" ---------------------------------------------------------------------------
+" fzf {{
 set rtp+=~/.fzf
 
 " Open with Ctrl-P
@@ -191,32 +189,32 @@ let g:fzf_layout = {
 
  " Open fzf Files
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(blue)%C(bold)%cr%C(white)"'
+" }}
 
-" Closetag
-" ---------------------------------------------------------------------------
+" Closetag {{
 let g:closetag_filenames = "*.html,*.tpl"
+" }}
 
-" GitGutter
-" ---------------------------------------------------------------------------
+" GitGutter {{
 
 " Make GitGutter work in NeoVim.
 let g:gitgutter_async = 1
 let g:gitgutter_sign_removed_first_line = "^_"
+" }}
 
-" NERDTree
-" ---------------------------------------------------------------------------
+" NERDTree {{
 
 " Toggle with Ctrl-n
 map <C-n> :NERDTreeToggle<CR>
 
 " Show invisible files in NERDTree
 let NERDTreeShowHidden=1
+" }}
 
-" coc.nvim
+" coc.nvim {{
 
 " Extensions
 " :CocInstall coc-html coc-css coc-git coc-svg coc-json coc-yaml coc-emmet coc-tsserver
-" ---------------------------------------------------------------------------
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
@@ -238,35 +236,35 @@ inoremap <silent><expr> <Tab>
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" }}
 
-" delimitMate
-" ---------------------------------------------------------------------------
+" delimitMate {{
 let delimitMate_expand_cr = 1
 let delimitMate_matchpairs = "(:),[:],{:}"
 
 " Disable delimitMate per file type
-" ---------------------------------------------------------------------------
 au FileType html.handlebars,html.mustache let b:delimitMate_autoclose = 0
+" }}
 
-" Editorconfig
-" ---------------------------------------------------------------------------
+" Editorconfig {{
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+" }}
 
-" Greplace
-" ---------------------------------------------------------------------------
+" Greplace {{
 set grepprg=ag
 let g:grep_cmd_opts = '--line-numbers --noheading'
+" }}
 
-" polyglot
-" ---------------------------------------------------------------------------
+" polyglot {{
 
 " Don’t conceal stuff in Markdown
 let g:vim_markdown_conceal = 0
+" }}
 
-" indentLine
-" ---------------------------------------------------------------------------
+" indentLine {{
 let g:indentLine_char = '▏'
 let g:indent_blankline_show_trailing_blankline_indent = v:false
+" }}
 
 " Search
 " ===========================================================================
