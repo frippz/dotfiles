@@ -257,8 +257,10 @@ let g:grep_cmd_opts = '--line-numbers --noheading'
 
 " polyglot {{
 
-" Don’t conceal stuff in Markdown
+" Don’t conceal stuff
+let g:vim_json_syntax_conceal = 0
 let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 " }}
 
 " indentLine {{
