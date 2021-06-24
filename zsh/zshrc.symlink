@@ -42,3 +42,11 @@ unset config_files
 if command -v direnv >/dev/null 2>&1 ; then
   eval "$(direnv hook zsh)"
 fi
+
+# Homebrew completion
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
