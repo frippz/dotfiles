@@ -10,7 +10,6 @@ Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 " Regular plugins
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
-Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'amadeus/vim-convert-color-to'
@@ -263,9 +262,8 @@ let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
 " }}
 
-" indentLine {{
-let g:indentLine_char = '▏'
-let g:indent_blankline_show_trailing_blankline_indent = v:false
+" indent-blankline.nvim {{
+let g:indent_blankline_space_char = ' '
 " }}
 
 " Search
