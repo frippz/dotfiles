@@ -5,7 +5,6 @@ call plug#begin('~/.vim/plugged')
 
 " Color themes
 Plug 'morhetz/gruvbox'
-Plug 'icymind/NeoSolarized'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 " Regular plugins
@@ -94,24 +93,8 @@ function! OneHalfLight()
 endfunction
 " }}
 
-" Solarized Light {{
-function! SolarizedLight()
-  colorscheme NeoSolarized
-  set background=light
-  set termguicolors
-  let g:neosolarized_contrast = "high"
-  let g:neosolarized_bold = 1
-  let g:neosolarized_underline = 0
-  let g:neosolarized_italic = 1
-  " Italic comments
-  highlight Comment cterm=italic gui=italic
-endfunction
-" }}
-
 " Set theme based on $TERM_THEME (or fall back to Gruvbox)
-if $TERM_THEME == 'SolarizedLight'
-  call SolarizedLight()
-elseif $TERM_THEME == 'OneHalfLight'
+if $TERM_THEME == 'OneHalfLight'
   call OneHalfLight()
 else
   call Gruvbox()
