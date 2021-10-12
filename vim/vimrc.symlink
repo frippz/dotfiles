@@ -4,7 +4,7 @@
 call plug#begin('~/.vim/plugged')
 
 " Color themes
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 " Regular plugins
