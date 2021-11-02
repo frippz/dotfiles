@@ -9,7 +9,6 @@ Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 " Regular plugins
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
-Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'amadeus/vim-convert-color-to'
 Plug 'editorconfig/editorconfig-vim'
@@ -18,11 +17,13 @@ Plug 'gregsexton/MatchTag'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'nvim-lua/plenary.nvim'
 Plug 'psliwka/vim-smoothie'
 Plug 'raimondi/delimitMate'
 Plug 'ryanoasis/vim-devicons'
