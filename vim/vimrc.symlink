@@ -23,6 +23,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'psliwka/vim-smoothie'
 Plug 'raimondi/delimitMate'
@@ -106,6 +107,11 @@ endif
 
 " Convert Color {{
 nnoremap <leader>c :ConvertColorTo hsl<CR>
+" }}
+
+" Colorizer {{
+set termguicolors
+lua require'colorizer'.setup()
 " }}
 
 " fzf {{
