@@ -8,7 +8,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 " Regular plugins
-Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'alvan/vim-closetag'
 Plug 'amadeus/vim-convert-color-to'
 Plug 'editorconfig/editorconfig-vim'
@@ -28,7 +28,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'psliwka/vim-smoothie'
 Plug 'raimondi/delimitMate'
 Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'sheerun/vim-polyglot'
 Plug 'skwp/greplace.vim'
 Plug 'tmhedberg/matchit'
@@ -161,6 +161,7 @@ let g:gitgutter_sign_removed_first_line = "^_"
 
 " Toggle with Ctrl-n
 map <C-n> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 " Show invisible files in NERDTree
 let NERDTreeShowHidden=1
