@@ -22,7 +22,7 @@ brew "imagemagick"
 brew "iperf3"
 brew "libtool"
 brew "neovim"
-brew "node@14", link: true
+brew "node@16", link: true
 brew "python3"
 brew "reattach-to-user-namespace"
 brew "ripgrep"
