@@ -12,6 +12,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'alvan/vim-closetag'
 Plug 'amadeus/vim-convert-color-to'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'github/copilot.vim'
 Plug 'godlygeek/tabular'
 Plug 'gregsexton/MatchTag'
 Plug 'jremmen/vim-ripgrep'
