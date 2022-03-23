@@ -8,11 +8,7 @@ export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Set BAT_THEME based on TERM_THEME
 case "$TERM_THEME" in
-  "SolarizedLight")
-  export BAT_THEME="Solarized (light)"
-  ;;
-
-  "OneHalfLight")
+  "light")
   export BAT_THEME="OneHalfLight"
   ;;
 

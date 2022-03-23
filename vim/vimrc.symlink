@@ -12,6 +12,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'alvan/vim-closetag'
 Plug 'amadeus/vim-convert-color-to'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'f-person/auto-dark-mode.nvim'
 Plug 'github/copilot.vim'
 Plug 'godlygeek/tabular'
 Plug 'gregsexton/MatchTag'
@@ -72,36 +73,9 @@ endif
 " Themes
 " ===========================================================================
 
-" Gruvbox {{
-function! Gruvbox()
-  syntax enable
-  set background=dark
-  colorscheme gruvbox
-  highlight! link SignColumn LineNr
-  " Set transparent background
-  hi Normal guibg=NONE ctermbg=NONE
-  " Italic comments
-  highlight Comment cterm=italic gui=italic
-endfunction
+" Auto Dark Mode {{
+lua require("autodarkmode")
 " }}
-
-" OneHalf Light {{
-function! OneHalfLight()
-  syntax enable
-  set background=light
-  colorscheme onehalflight
-  highlight! link SignColumn LineNr
-  " Set transparent background
-  hi Normal guibg=NONE ctermbg=NONE
-endfunction
-" }}
-
-" Set theme based on $TERM_THEME (or fall back to Gruvbox)
-if $TERM_THEME == 'OneHalfLight'
-  call OneHalfLight()
-else
-  call Gruvbox()
-endif
 
 " Plugins
 " ===========================================================================
