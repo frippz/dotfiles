@@ -1,0 +1,12 @@
+name: dm
+root: ~/Projects/delta-monitoring/
+
+windows:
+  - delta-monitoring:
+      layout: even-horizontal
+      panes:
+        - git:
+          - c
+        - node:
+          - cd ./delta-frontend
+          - npm run dev
