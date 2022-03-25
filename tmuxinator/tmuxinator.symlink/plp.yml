@@ -4,8 +4,13 @@ pre_window: source ./plp-env/dev.env
 
 windows:
   - plp:
-      layout: 2acd,190x56,0,0{95x56,0,0,2,94x56,96,0[94x28,96,0,4,94x27,96,29,5]}
+      layout: 33d8,190x56,0,0{137x56,0,0,12,52x56,138,0[52x28,138,0,13,52x27,138,29,14]}
       panes:
-        -
-        - cd packages/web-client && npm run watch
-        - cd packages/render && npm run start-http
+        - git:
+          - c
+        - web-client:
+          - cd ./packages/web-client
+          - npm run watch
+        - render:
+          - cd ./packages/render
+          - npm run start-http
