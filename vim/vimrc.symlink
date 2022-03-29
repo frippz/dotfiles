@@ -77,6 +77,43 @@ endif
 lua require("autodarkmode")
 " }}
 
+
+" Gruvbox {{
+function! Gruvbox()
+  syntax enable
+  set background=dark
+  colorscheme gruvbox
+  highlight! link SignColumn LineNr
+  " Set transparent background
+  hi Normal guibg=NONE ctermbg=NONE
+  " Italic comments
+  highlight Comment cterm=italic gui=italic
+endfunction
+" }}
+
+" OneHalf Light {{
+function! OneHalfLight()
+  syntax enable
+  set background=light
+  colorscheme onehalflight
+  highlight! link SignColumn LineNr
+  " Set transparent background
+  hi Normal guibg=NONE ctermbg=NONE
+endfunction
+
+" Theming for non-macOS {{
+if !has('macunix')
+
+  " Set theme based on $TERM_THEME (or fall back to Gruvbox)
+  if $TERM_THEME == 'light'
+    call OneHalfLight()
+  else
+    call Gruvbox()
+  endif
+
+endif
+"}}
+
 " Plugins
 " ===========================================================================
 
