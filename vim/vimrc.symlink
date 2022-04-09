@@ -331,7 +331,7 @@ au BufRead,BufNewFile *intrc*,*.json.* set filetype=json
 au BufRead,BufNewFile *.yml.*, set filetype=yaml
 
 " Nunjucks
-au BufRead,BufNewFile *.nunj set filetype=jinja.html
+au BufRead,BufNewFile *.nunj,*.njk set filetype=jinja.html
 
 " Dockerfile
 au BufRead,BufNewFile Dockerfile* set filetype=dockerfile
