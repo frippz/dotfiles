@@ -3,7 +3,7 @@ root: ~/Projects/justfredrik.com/
 
 windows:
   - justfredrik.com:
-      layout: layout a981,190x56,0,0{132x56,0,0,0,57x56,133,0,1}
+      layout: a981,190x56,0,0{132x56,0,0,0,57x56,133,0,1}
       panes:
         - c
         - npm start
