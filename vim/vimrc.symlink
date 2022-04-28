@@ -333,6 +333,9 @@ au BufRead,BufNewFile *.yml.*, set filetype=yaml
 " Nunjucks
 au BufRead,BufNewFile *.nunj,*.njk set filetype=jinja.html
 
+" Liquid
+au BufRead,BufNewFile *.liquid set filetype=liquid
+
 " Dockerfile
 au BufRead,BufNewFile Dockerfile* set filetype=dockerfile
 
