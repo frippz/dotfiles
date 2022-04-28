@@ -181,6 +181,9 @@ let NERDTreeShowHidden=1
 
 " coc.nvim {{
 
+" Remap <cr> for completion
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
 " Extensions
 " :CocInstall coc-html coc-css coc-git coc-svg coc-json coc-yaml coc-emmet coc-tsserver coc-prettier coc-stylelintplus
 set updatetime=300
