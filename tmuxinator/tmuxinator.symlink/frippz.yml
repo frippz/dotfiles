@@ -1,5 +1,7 @@
 name: frippz
 root: ~/Projects/frippz.se/
+pre_window:
+  - export COMPOSE_PROJECT_NAME=frippz
 
 windows:
   - frippz.se:
