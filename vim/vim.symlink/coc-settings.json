@@ -7,5 +7,6 @@
   "scss.validate": false,
   "wxss.validate": false,
   "stylelintplus.autoFixOnFormat": true,
-  "stylelintplus.autoFixOnSave": true
+  "stylelintplus.autoFixOnSave": true,
+  "suggest.noselect": true
 }
