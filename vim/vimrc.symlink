@@ -8,16 +8,20 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 " Regular plugins
-Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+" Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+" Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'alvan/vim-closetag'
 Plug 'amadeus/vim-convert-color-to'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'evanleck/vim-svelte'
 Plug 'f-person/auto-dark-mode.nvim'
 Plug 'godlygeek/tabular'
 Plug 'gregsexton/MatchTag'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'machakann/vim-highlightedyank'
@@ -29,7 +33,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'psliwka/vim-smoothie'
 Plug 'raimondi/delimitMate'
 Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'sheerun/vim-polyglot'
 Plug 'skwp/greplace.vim'
 Plug 'tmhedberg/matchit'
@@ -168,11 +171,19 @@ let g:gitgutter_async = 1
 let g:gitgutter_sign_removed_first_line = "^_"
 " }}
 
+" nvim tree {{
+lua require("nvim-tree").setup()
+
+" Toggle with Ctrl-N
+map <C-n> :NvimTreeToggle<CR>
+nnoremap <C-f> :NvimTreeFindFile<CR>
+" }}
+
 " NERDTree {{
 
 " Toggle with Ctrl-n
-map <C-n> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+" map <C-n> :NERDTreeToggle<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
 
 " Show invisible files in NERDTree
 let NERDTreeShowHidden=1
