@@ -55,7 +55,7 @@ paq({
 -- Helpers
 -- ============================================================================
 
--- convenience shortcut for keyboard mappings
+local o = vim.o
 local map = vim.api.nvim_set_keymap
 local mapOpts = { noremap = true, silent = true }
 
@@ -140,7 +140,7 @@ vim.cmd([[
 -- }}
 
 -- Theming for non-macOS {{
-vim.cmd([[ 
+vim.cmd([[
   if !has('macunix')
 
     " Set theme based on $TERM_THEME (or fall back to Gruvbox)
@@ -165,7 +165,7 @@ vim.cmd([[
 
 -- Colorizer
 -------------------------------------------------------------------------------
-vim.cmd("set termguicolors")
+o.termguicolors = true
 require("colorizer").setup()
 
 -- Closetag
@@ -199,7 +199,13 @@ map("n", "C-f", ":NvimTreeFindFile<CR>", mapOpts)
 
 -- telescope.vim
 -------------------------------------------------------------------------------
-require("telescope").setup()
+require("telescope").setup({
+  pickers = {
+    find_files = {
+      theme = "dropdown",
+    },
+  },
+})
 
 -- show telescope on Ctrl-P
 map("n", "<C-p>", ":Telescope find_files<CR>", mapOpts)

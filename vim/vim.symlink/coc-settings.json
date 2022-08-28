@@ -8,5 +8,8 @@
   "wxss.validate": false,
   "stylelintplus.autoFixOnFormat": true,
   "stylelintplus.autoFixOnSave": true,
-  "suggest.noselect": true
+  "suggest.noselect": true,
+  "Lua.telemetry.enable": false,
+  "sumneko-lua.enableNvimLuaDev": true,
+  "Lua.hint.enable": false
 }
