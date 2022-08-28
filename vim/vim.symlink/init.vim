@@ -8,7 +8,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 " Regular plugins
-Plug 'alvan/vim-closetag'
+" Plug 'alvan/vim-closetag'
 Plug 'amadeus/vim-convert-color-to'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'evanleck/vim-svelte'
@@ -23,28 +23,22 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'machakann/vim-highlightedyank'
-Plug 'mattn/emmet-vim'
-Plug 'mileszs/ack.vim'
+" Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'norcalli/nvim-colorizer.lua'
-Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-lua/plenary.nvim'
 Plug 'psliwka/vim-smoothie'
 Plug 'raimondi/delimitMate'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
-Plug 'skwp/greplace.vim'
 Plug 'tmhedberg/matchit'
-Plug 'tommcdo/vim-fubitive'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-liquid'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'wsdjeg/vim-fetch'
+" Plug 'wsdjeg/vim-fetch'
 
 call plug#end()
 
@@ -60,7 +54,7 @@ let mapleader = ","
 if has('nvim')
 
   " True color support
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
   " Remap exit terminal mode
   tnoremap <Esc> <C-\><C-n>

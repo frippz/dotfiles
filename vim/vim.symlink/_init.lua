@@ -13,7 +13,7 @@ paq({
   "CodeGradox/onehalf-lush",
 
   -- regular plugins
-  'alvan/vim-closetag',
+  -- 'alvan/vim-closetag',
   'amadeus/vim-convert-color-to',
   'editorconfig/editorconfig-vim',
   'evanleck/vim-svelte',
@@ -26,28 +26,23 @@ paq({
   'lewis6991/gitsigns.nvim',
   'lukas-reineke/indent-blankline.nvim',
   'machakann/vim-highlightedyank',
-  'mattn/emmet-vim',
-  'mileszs/ack.vim',
+  -- 'mattn/emmet-vim',
   { 'neoclide/coc.nvim', branch = "release" },
   'norcalli/nvim-colorizer.lua',
-  'nvim-lua/plenary.nvim',
+  -- 'nvim-lua/plenary.nvim',
   'psliwka/vim-smoothie',
   'raimondi/delimitMate',
   'ryanoasis/vim-devicons',
   'sheerun/vim-polyglot',
-  'skwp/greplace.vim',
   'tmhedberg/matchit',
   'tommcdo/vim-fubitive',
   'tomtom/tcomment_vim',
   'tpope/vim-endwise',
-  'tpope/vim-eunuch',
   'tpope/vim-fugitive',
   'tpope/vim-liquid',
   'tpope/vim-repeat',
-  'tpope/vim-rhubarb',
   'tpope/vim-surround',
-  'tpope/vim-unimpaired',
-  'wsdjeg/vim-fetch',
+  -- 'wsdjeg/vim-fetch',
   { "nvim-telescope/telescope.nvim", branch = "0.1.x" },
 
 })
@@ -56,32 +51,24 @@ paq({
 -- ============================================================================
 
 local o = vim.o
+local g = vim.g
 local map = vim.api.nvim_set_keymap
 local mapOpts = { noremap = true, silent = true }
 
 -- Misc
 -- ============================================================================
 
--- Truecolor support
-vim.cmd([[
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-]])
-
 -- " Live substitution
-vim.cmd([[
-  set inccommand=nosplit
-]])
+o.inccommand = "nosplit"
 
 -- Mappings
 -- ============================================================================
 
 -- Set leader
-vim.g.mapleader = ","
+g.mapleader = ","
 
 -- Remap exit terminal mode
-vim.cmd([[
-  tnoremap <Esc> <C-\><C-n>
-]])
+map("n", "<Esc>", "<C-\><C-n>", mapOpts)
 
 -- Themes
 -- ============================================================================
@@ -113,7 +100,8 @@ auto_dark_mode.setup({
 
 auto_dark_mode.init()
 
--- Gruvbox {{
+-- Gruvbox
+-- ----------------------------------------------------------------------------
 vim.cmd([[
   function! Gruvbox()
     syntax enable
@@ -124,9 +112,9 @@ vim.cmd([[
     highlight Comment cterm=italic gui=italic
   endfunction
 ]])
--- }}
 
--- OneHalf Light {{
+-- OneHalf Light
+-- ----------------------------------------------------------------------------
 vim.cmd([[
   function! OneHalfLight()
     syntax enable
@@ -137,52 +125,40 @@ vim.cmd([[
     highlight Comment cterm=italic gui=italic
   endfunction
 ]])
--- }}
 
--- Theming for non-macOS {{
+-- Theming for non-macOS
+-- Set theme based on $TERM_THEME (or fall back to Gruvbox)
+-- ----------------------------------------------------------------------------
 vim.cmd([[
   if !has('macunix')
-
-    " Set theme based on $TERM_THEME (or fall back to Gruvbox)
     if $TERM_THEME == 'light'
       call OneHalfLight()
     else
       call Gruvbox()
     endif
-
   endif
 ]])
--- }}
 
 -- Plugins
 -- ============================================================================
 
 -- Convert Color
--------------------------------------------------------------------------------
-vim.cmd([[
-  nnoremap <leader>c :ConvertColorTo hsl<CR>
-]])
+-- ----------------------------------------------------------------------------
+map('n', '<leader>c', ':ConvertColorTo hsl<CR>', mapOpts)
 
 -- Colorizer
 -------------------------------------------------------------------------------
 o.termguicolors = true
-require("colorizer").setup()
+require('colorizer').setup()
 
 -- Closetag
--------------------------------------------------------------------------------
-vim.cmd([[
-  let g:closetag_filenames = "*.html,*.tpl"
-]])
-
--- GitGutter
--------------------------------------------------------------------------------
-vim.cmd([[
-  let g:gitgutter_async = 1
-  let g:gitgutter_sign_removed_first_line = "^_"
-]])
+-- ----------------------------------------------------------------------------
+-- vim.cmd([[
+--   let g:closetag_filenames = "*.html,*.tpl"
+-- ]])
 
 -- nvim-tree
--------------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------
 vim.cmd("set splitright")
 
 require("nvim-tree").setup({
@@ -198,7 +174,7 @@ map("n", "C-n", ":NvimTreeToggle<CR>", mapOpts)
 map("n", "C-f", ":NvimTreeFindFile<CR>", mapOpts)
 
 -- telescope.vim
--------------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------
 require("telescope").setup({
   pickers = {
     find_files = {
@@ -212,3 +188,15 @@ map("n", "<C-p>", ":Telescope find_files<CR>", mapOpts)
 map("n", "<leader>fg", ":Telescope live_grep<CR>", mapOpts)
 map("n", "<leader>fb", ":Telescope buffers<CR>", mapOpts)
 map("n", "<leader>fh", ":Telescope help_tags<CR>", mapOpts)
+
+-- coc.nvim
+-- ----------------------------------------------------------------------------
+
+-- Extensions
+-- :CocInstall coc-html coc-css coc-git coc-svg coc-json coc-yaml coc-emmet coc-tsserver coc-prettier coc-stylelintplus
+
+o.updatetime = '300'
+o.shortmess+ = 'c'
+o.signcolumn = 'yes'
+
+g.echodoc_enable_at_startup = '1'
