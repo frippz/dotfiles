@@ -267,11 +267,6 @@ au FileType html.handlebars,html.mustache let b:delimitMate_autoclose = 0
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " }}
 
-" Greplace {{
-set grepprg=ag
-let g:grep_cmd_opts = '--line-numbers --noheading'
-" }}
-
 " polyglot {{
 
 " Don’t conceal stuff
@@ -432,7 +427,6 @@ let g:netrw_dirhistmax = 0
 
 " Remap some common actions
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>o :CtrlP<CR>
 
 " Escape insert mode with jj 😱
 imap jj <Esc>

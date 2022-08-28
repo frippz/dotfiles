@@ -32,6 +32,7 @@ paq({
   'ryanoasis/vim-devicons',
   'sheerun/vim-polyglot',
   'tmhedberg/matchit',
+  'nvim-lua/plenary.nvim',
   'tommcdo/vim-fubitive',
   'tomtom/tcomment_vim',
   'tpope/vim-endwise',
@@ -44,7 +45,6 @@ paq({
   -- Maybe keep?
   -- 'alvan/vim-closetag',
   -- 'mattn/emmet-vim',
-  -- 'nvim-lua/plenary.nvim',
   -- 'wsdjeg/vim-fetch',
 
 })
@@ -52,7 +52,7 @@ paq({
 -- Helpers
 -- ============================================================================
 
-local o = vim.o
+local o = vim.opt
 local g = vim.g
 local map = vim.api.nvim_set_keymap
 local mapOpts = { noremap = true, silent = true }
@@ -60,8 +60,97 @@ local mapOpts = { noremap = true, silent = true }
 -- Misc
 -- ============================================================================
 
--- " Live substitution
+--  Live substitution
 o.inccommand = "nosplit"
+
+-- Search
+-- ----------------------------------------------------------------------------
+o.hlsearch = true        -- highlight all results
+o.incsearch  = true      -- but do highlight as you type your search.
+o.ignorecase = true      -- make searches case-insensitive...
+o.smartcase = true       -- ... unless they contain at least one capital letter
+o.gdefault = true        -- have :s///g flag by default on"
+
+-- Remove search highlight with Ctrl-L
+map("n", "<C-L>", ":nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>", mapOpts)
+
+-- Visual Stuff
+-- ----------------------------------------------------------------------------
+o.number = true          -- show line numbers
+o.cursorline = true      -- highlight the current line
+o.history = 200          -- remember a lot of stuff
+o.ruler = true           -- Always show info along bottom.
+o.wrap = true            -- Wrap lines
+o.linebreak = true       -- Don't break words
+
+-- Specify listchars (invisibles) with literal unicode in a :set command
+vim.scriptencoding = "utf-8"
+-- o.list = {"lcs=tab:▸\\", "eol:¬", "trail:·", "space:·"}
+-- o.nolist = true
+
+-- Code folding
+-- ----------------------------------------------------------------------------
+
+-- Make sure folding does not occur automatically
+-- o.foldlevelstart = 99
+
+-- Fold by indent level
+-- o.foldmethod = "indent"
+
+-- Files
+-- ----------------------------------------------------------------------------
+
+-- auto-reload files changed on disk
+o.autoread = true
+
+-- check for changes after inactivity
+vim.cmd("au CursorHold * checktime")
+
+-- disable swap files
+o.updatecount = 0
+-- o.nobackup = true
+-- o.noswapfile = true
+
+-- Indentation
+-- ----------------------------------------------------------------------------
+
+o.autoindent = true      -- auto-indent
+o.tabstop = 2            -- tab spacing
+o.softtabstop = 2        -- unify
+o.shiftwidth = 2         -- indent/outdent by 2 columns
+-- o.noshiftround = true    -- don’t indent/outdent to the nearest tabstop
+o.expandtab = true       -- use spaces instead of tabs
+o.smarttab = true        -- use tabs at the start of a line, spaces elsewhere
+o.backspace= {"indent", "eol", "start"} -- Backspace through anything in insert mode
+
+
+-- Syntaxes
+-- ============================================================================
+
+-- git (symlinked)
+vim.cmd("au BufRead,BufNewFile gitconfig.symlink,gitignore.symlink setfiletype gitconfig")
+
+-- nginx
+vim.cmd("au BufRead,BufNewFile */nginx/*,nginx.conf set filetype=nginx")
+
+-- JSON
+vim.cmd("au BufRead,BufNewFile *intrc*,*.json.* set filetype=json")
+
+-- YAML
+vim.cmd("au BufRead,BufNewFile *.yml.*, set filetype=yaml")
+
+-- Nunjucks
+vim.cmd("au BufRead,BufNewFile *.nunj,*.njk set filetype=jinja.html")
+
+-- Liquid
+vim.cmd("au BufRead,BufNewFile *.liquid set filetype=liquid")
+
+-- Dockerfile
+vim.cmd("au BufRead,BufNewFile Dockerfile* set filetype=dockerfile")
+
+-- Vue
+vim.cmd("let g:vue_pre_processors = []")
+
 
 -- Mappings
 -- ============================================================================
@@ -69,8 +158,52 @@ o.inccommand = "nosplit"
 -- Set leader
 g.mapleader = ","
 
+-- Remap save
+map("n", "<Leader>w", ":w<CR>", mapOpts)
+
 -- Remap exit terminal mode
-map("n", "<Esc>", "<C-\><C-n>", mapOpts)
+map("n", "<Esc>", "<C-\\><C-n>", mapOpts)
+
+-- Escape insert mode with jj 😱
+map("i", "jj", "<Esc>", mapOpts)
+
+-- Miscellaneous
+-- ============================================================================
+
+-- Enable mouse
+o.mouse = "a"
+
+-- Disable delays for <Leader>
+o.timeoutlen = 1000
+o.ttimeout = true
+o.ttimeoutlen = 0
+
+-- Use relative line numbers
+o.relativenumber = true
+map("n", "<Leader>l", ":set relativenumber!<CR>", mapOpts)
+
+-- " Default netrw list style
+g.netrw_liststyle = 3
+
+-- Per default, netrw leaves unmodified buffers open. This autocommand
+-- deletes netrw's buffer once it's hidden (using ':q', for example)
+vim.cmd("autocmd FileType netrw setl bufhidden=delete")
+
+-- Map netrw to Ctrl-E
+map("n", "<C-E>", ":Ex<CR>", mapOpts)
+
+-- Disable netrwhist
+g.netrw_dirhistmax = 0
+
+-- Session options
+vim.cmd("set ssop-=options")  -- do not store global and local values in a session
+vim.cmd("set ssop-=folds")    -- do not store folds
+
+-- Make copy operations work with the clipboard
+o.clipboard = "unnamed"
+
+-- Trim trailing whitespace on save
+vim.cmd("autocmd BufWritePre * :%s/\\s\\+$//e")
 
 -- Themes
 -- ============================================================================
@@ -261,12 +394,28 @@ vim.cmd([[
 
 -- delimitMate
 -- ----------------------------------------------------------------------------
-o.delimitMate_expand_cr = '1'
-o.delimitMate_matchpairs = '(:),[:],{:}'
+vim.cmd([[
+  let delimitMate_expand_cr = 1
+  let delimitMate_matchpairs = "(:),[:],{:}"
+]])
 
 -- Disable delimitMate per file type
-vim.cmd("au FileType html.handlebars,html.mustache let b:delimitMate_autoclose = 0")
+vim.cmd([[
+  au FileType html.handlebars,html.mustache let b:delimitMate_autoclose = 0
+]])
 
 -- Editorconfig
 -- ----------------------------------------------------------------------------
 vim.cmd("let g:EditorConfig_exclude_patterns = ['fugitive://.*']")
+
+-- polyglot
+-- ----------------------------------------------------------------------------
+
+-- " Don’t conceal stuff
+g.vim_json_syntax_conceal = 0
+g.vim_markdown_conceal = 0
+g.vim_markdown_conceal_code_blocks = 0
+
+-- indent-blankline.nvim
+-- ----------------------------------------------------------------------------
+g.indent_blankline_space_char = ' '
