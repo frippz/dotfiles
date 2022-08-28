@@ -305,8 +305,8 @@ require("nvim-tree").setup({
   }
 })
 
-map("n", "C-n", ":NvimTreeToggle<CR>", mapOpts)
-map("n", "C-f", ":NvimTreeFindFile<CR>", mapOpts)
+map("n", "<C-n>", ":NvimTreeToggle<CR>", mapOpts)
+map("n", "<C-f>", ":NvimTreeFindFile<CR>", mapOpts)
 
 -- telescope.vim
 -- ----------------------------------------------------------------------------
