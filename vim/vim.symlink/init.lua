@@ -167,6 +167,27 @@ map("n", "<Esc>", "<C-\\><C-n>", mapOpts)
 -- Escape insert mode with jj 😱
 map("i", "jj", "<Esc>", mapOpts)
 
+-- Map netrw to Ctrl-E
+map("n", "<C-E>", ":Ex<CR>", mapOpts)
+
+-- Navigate visual lines (when wrapped)
+map("n", "j", "gj", mapOpts)
+map("n", "k", "gk", mapOpts)
+map("v", "j", "gj", mapOpts)
+map("v", "k", "gk", mapOpts)
+map("n", "<Down>", "gj", mapOpts)
+map("n", "<Up>", "gk", mapOpts)
+map("v", "<Down>", "gj", mapOpts)
+map("v", "<Up>", "gk", mapOpts)
+map("i", "<Down>", "<C-o>gj", mapOpts)
+map("i", "<Up>", "<C-o>gk", mapOpts)
+
+-- Vim tabs
+map("n", "<C-t>", ":tabnew<CR>", mapOpts)
+
+-- Manually reload file
+map("n", "<Leader>r", ":e!<CR>", mapOpts)
+
 -- Miscellaneous
 -- ============================================================================
 
@@ -188,9 +209,6 @@ g.netrw_liststyle = 3
 -- Per default, netrw leaves unmodified buffers open. This autocommand
 -- deletes netrw's buffer once it's hidden (using ':q', for example)
 vim.cmd("autocmd FileType netrw setl bufhidden=delete")
-
--- Map netrw to Ctrl-E
-map("n", "<C-E>", ":Ex<CR>", mapOpts)
 
 -- Disable netrwhist
 g.netrw_dirhistmax = 0
