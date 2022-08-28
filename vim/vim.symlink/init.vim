@@ -8,7 +8,6 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 " Regular plugins
-" Plug 'alvan/vim-closetag'
 Plug 'amadeus/vim-convert-color-to'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'evanleck/vim-svelte'
@@ -23,10 +22,8 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'machakann/vim-highlightedyank'
-" Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'norcalli/nvim-colorizer.lua'
-" Plug 'nvim-lua/plenary.nvim'
 Plug 'psliwka/vim-smoothie'
 Plug 'raimondi/delimitMate'
 Plug 'ryanoasis/vim-devicons'
@@ -38,6 +35,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-liquid'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+
+" Maybe keep?
+" Plug 'alvan/vim-closetag'
+" Plug 'mattn/emmet-vim'
+" Plug 'nvim-lua/plenary.nvim'
 " Plug 'wsdjeg/vim-fetch'
 
 call plug#end()
