@@ -329,11 +329,9 @@ map("n", "<C-f>", ":NvimTreeFindFile<CR>", mapOpts)
 -- telescope.vim
 -- ----------------------------------------------------------------------------
 require("telescope").setup({
-  pickers = {
-    find_files = {
-      theme = "dropdown",
-    },
-  },
+  defaults = {
+    prompt_prefix = '🔍 '
+  }
 })
 
 -- show telescope on Ctrl-P
