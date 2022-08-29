@@ -1,52 +1,49 @@
--- Package management & Plugins
+-- Plugins
 -- ============================================================================
 local paq = require("paq")
 
 paq({
-
   -- package manager
-	'savq/paq-nvim',
+	"savq/paq-nvim",
 
   -- color themes
-  'gruvbox-community/gruvbox',
-  'rktjmp/lush.nvim',
-  'CodeGradox/onehalf-lush',
+  "gruvbox-community/gruvbox",
+  "rktjmp/lush.nvim",
+  "CodeGradox/onehalf-lush",
 
   -- regular plugins
-  'amadeus/vim-convert-color-to',
-  'editorconfig/editorconfig-vim',
-  'evanleck/vim-svelte',
-  'f-person/auto-dark-mode.nvim',
-  'godlygeek/tabular',
-  'gregsexton/MatchTag',
-  'jremmen/vim-ripgrep',
-  'kyazdani42/nvim-tree.lua',
-  'kyazdani42/nvim-web-devicons',
-  'lewis6991/gitsigns.nvim',
-  'lukas-reineke/indent-blankline.nvim',
-  'machakann/vim-highlightedyank',
-  { 'neoclide/coc.nvim', branch = "release" },
-  'norcalli/nvim-colorizer.lua',
-  'psliwka/vim-smoothie',
-  'raimondi/delimitMate',
-  'ryanoasis/vim-devicons',
-  'sheerun/vim-polyglot',
-  'tmhedberg/matchit',
-  'nvim-lua/plenary.nvim',
-  'tommcdo/vim-fubitive',
-  'tomtom/tcomment_vim',
-  'tpope/vim-endwise',
-  'tpope/vim-fugitive',
-  'tpope/vim-liquid',
-  'tpope/vim-repeat',
-  'tpope/vim-surround',
-  { 'nvim-telescope/telescope.nvim', branch = '0.1.x' },
+  "amadeus/vim-convert-color-to",
+  "editorconfig/editorconfig-vim",
+  "evanleck/vim-svelte",
+  "f-person/auto-dark-mode.nvim",
+  "godlygeek/tabular",
+  "gregsexton/MatchTag",
+  "jremmen/vim-ripgrep",
+  "kyazdani42/nvim-tree.lua",
+  "kyazdani42/nvim-web-devicons",
+  "lewis6991/gitsigns.nvim",
+  "lukas-reineke/indent-blankline.nvim",
+  "machakann/vim-highlightedyank",
+  "norcalli/nvim-colorizer.lua",
+  "nvim-lua/plenary.nvim",
+  "psliwka/vim-smoothie",
+  "raimondi/delimitMate",
+  "ryanoasis/vim-devicons",
+  "sheerun/vim-polyglot",
+  "tmhedberg/matchit",
+  "tommcdo/vim-fubitive",
+  "tomtom/tcomment_vim",
+  "tpope/vim-endwise",
+  "tpope/vim-fugitive",
+  "tpope/vim-liquid",
+  "tpope/vim-repeat",
+  "tpope/vim-surround",
+  { "neoclide/coc.nvim", branch = "release" },
+  { "nvim-telescope/telescope.nvim", branch = "0.1.x" },
 
   -- Maybe keep?
-  -- 'alvan/vim-closetag',
-  -- 'mattn/emmet-vim',
-  -- 'wsdjeg/vim-fetch',
-
+  -- "mattn/emmet-vim",
+  -- "wsdjeg/vim-fetch",
 })
 
 -- Helpers
@@ -87,15 +84,6 @@ o.linebreak = true       -- Don't break words
 vim.scriptencoding = "utf-8"
 -- o.list = {"lcs=tab:▸\\", "eol:¬", "trail:·", "space:·"}
 -- o.nolist = true
-
--- Code folding
--- ----------------------------------------------------------------------------
-
--- Make sure folding does not occur automatically
--- o.foldlevelstart = 99
-
--- Fold by indent level
--- o.foldmethod = "indent"
 
 -- Files
 -- ----------------------------------------------------------------------------
@@ -162,7 +150,7 @@ g.mapleader = ","
 map("n", "<Leader>w", ":w<CR>", mapOpts)
 
 -- Remap exit terminal mode
-map("n", "<Esc>", "<C-\\><C-n>", mapOpts)
+map("t", "<Esc>", "<C-\\><C-n>", mapOpts)
 
 -- Escape insert mode with jj 😱
 map("i", "jj", "<Esc>", mapOpts)
@@ -228,26 +216,26 @@ vim.cmd("autocmd BufWritePre * :%s/\\s\\+$//e")
 
 -- Auto Dark Mode {{
 -- ----------------------------------------------------------------------------
-local auto_dark_mode = require('auto-dark-mode')
+local auto_dark_mode = require("auto-dark-mode")
 
 auto_dark_mode.setup({
   update_interval = 1000,
   set_dark_mode = function()
-    vim.api.nvim_set_option('background', 'dark')
-    vim.cmd('syntax enable')
-    vim.cmd('colorscheme gruvbox')
-    vim.cmd('highlight! link SignColumn LineNr')
+    vim.api.nvim_set_option("background", "dark")
+    vim.cmd("syntax enable")
+    vim.cmd("colorscheme gruvbox")
+    vim.cmd("highlight! link SignColumn LineNr")
     -- Set transparent background
-    vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
+    vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
     -- Italic comments
-    vim.cmd('highlight Comment cterm=italic gui=italic')
+    vim.cmd("highlight Comment cterm=italic gui=italic")
   end,
   set_light_mode = function()
-    vim.api.nvim_set_option('background', 'light')
-    vim.cmd('syntax enable')
-    vim.cmd('colorscheme onehalf-lush')
-    vim.cmd('highlight! link SignColumn LineNr')
-    vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
+    vim.api.nvim_set_option("background", "light")
+    vim.cmd("syntax enable")
+    vim.cmd("colorscheme onehalf-lush")
+    vim.cmd("highlight! link SignColumn LineNr")
+    vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
   end,
 })
 
@@ -297,18 +285,12 @@ vim.cmd([[
 
 -- Convert Color
 -- ----------------------------------------------------------------------------
-map('n', '<leader>c', ':ConvertColorTo hsl<CR>', mapOpts)
+map("n", "<leader>c", ":ConvertColorTo hsl<CR>", mapOpts)
 
 -- Colorizer
 -------------------------------------------------------------------------------
 o.termguicolors = true
-require('colorizer').setup()
-
--- Closetag
--- ----------------------------------------------------------------------------
--- vim.cmd([[
---   let g:closetag_filenames = "*.html,*.tpl"
--- ]])
+require("colorizer").setup()
 
 -- nvim-tree
 -- ----------------------------------------------------------------------------
@@ -316,10 +298,11 @@ vim.cmd("set splitright")
 
 require("nvim-tree").setup({
   view = {
-    side = 'left'
+    side = "left"
   },
   filters = {
     dotfiles = false,
+    exclude = { ".gitignore$", ".env" }
   }
 })
 
@@ -330,7 +313,7 @@ map("n", "<C-f>", ":NvimTreeFindFile<CR>", mapOpts)
 -- ----------------------------------------------------------------------------
 require("telescope").setup({
   defaults = {
-    prompt_prefix = '🔍 '
+    prompt_prefix = "🔍 "
   }
 })
 
@@ -434,4 +417,4 @@ g.vim_markdown_conceal_code_blocks = 0
 
 -- indent-blankline.nvim
 -- ----------------------------------------------------------------------------
-g.indent_blankline_space_char = ' '
+g.indent_blankline_space_char = " "
