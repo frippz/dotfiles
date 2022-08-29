@@ -214,14 +214,14 @@ vim.cmd("autocmd BufWritePre * :%s/\\s\\+$//e")
 -- Themes
 -- ============================================================================
 
--- Auto Dark Mode {{
+-- Auto Dark Mode
 -- ----------------------------------------------------------------------------
 local auto_dark_mode = require("auto-dark-mode")
 
 auto_dark_mode.setup({
   update_interval = 1000,
   set_dark_mode = function()
-    vim.api.nvim_set_option("background", "dark")
+    o.background = "dark"
     vim.cmd("syntax enable")
     vim.cmd("colorscheme gruvbox")
     vim.cmd("highlight! link SignColumn LineNr")
@@ -231,7 +231,7 @@ auto_dark_mode.setup({
     vim.cmd("highlight Comment cterm=italic gui=italic")
   end,
   set_light_mode = function()
-    vim.api.nvim_set_option("background", "light")
+    o.background = "light"
     vim.cmd("syntax enable")
     vim.cmd("colorscheme onehalf-lush")
     vim.cmd("highlight! link SignColumn LineNr")
