@@ -54,100 +54,6 @@ local g = vim.g
 local map = vim.api.nvim_set_keymap
 local mapOpts = { noremap = true, silent = true }
 
--- Misc
--- ============================================================================
-
---  Live substitution
-o.inccommand = "nosplit"
-
--- Search
--- ----------------------------------------------------------------------------
-o.hlsearch = true        -- highlight all results
-o.incsearch  = true      -- but do highlight as you type your search.
-o.ignorecase = true      -- make searches case-insensitive...
-o.smartcase = true       -- ... unless they contain at least one capital letter
-o.gdefault = true        -- have :s///g flag by default on"
-
--- Remove search highlight with Ctrl-L
-map("n", "<C-L>", ":nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>", mapOpts)
-
--- Visual Stuff
--- ----------------------------------------------------------------------------
-o.number = true          -- show line numbers
-o.cursorline = true      -- highlight the current line
-o.history = 200          -- remember a lot of stuff
-o.ruler = true           -- Always show info along bottom.
-o.wrap = true            -- Wrap lines
-o.linebreak = true       -- Don't break words
-
--- Specify listchars (invisibles) with literal unicode in a :set command
-vim.scriptencoding = "utf-8"
-o.list = false
-o.listchars = {
-  tab = "▸ ",
-  eol = "¬",
-  trail = "·",
-  space = "·"
-}
-
--- Toggle invisibles
-map("n", "<Leader>i", ":set list!<CR>", mapOpts)
-
--- Files
--- ----------------------------------------------------------------------------
-
--- auto-reload files changed on disk
-o.autoread = true
-
--- check for changes after inactivity
-vim.cmd("au CursorHold * checktime")
-
--- disable swap files
-o.updatecount = 0
--- o.nobackup = true
--- o.noswapfile = true
-
--- Indentation
--- ----------------------------------------------------------------------------
-
-o.autoindent = true      -- auto-indent
-o.tabstop = 2            -- tab spacing
-o.softtabstop = 2        -- unify
-o.shiftwidth = 2         -- indent/outdent by 2 columns
--- o.noshiftround = true    -- don’t indent/outdent to the nearest tabstop
-o.expandtab = true       -- use spaces instead of tabs
-o.smarttab = true        -- use tabs at the start of a line, spaces elsewhere
-o.backspace= {"indent", "eol", "start"} -- Backspace through anything in insert mode
-
-
--- Syntaxes
--- ============================================================================
-
--- git (symlinked)
-vim.cmd("au BufRead,BufNewFile gitconfig.symlink,gitignore.symlink setfiletype gitconfig")
-
--- nginx
-vim.cmd("au BufRead,BufNewFile */nginx/*,nginx.conf set filetype=nginx")
-
--- JSON
-vim.cmd("au BufRead,BufNewFile *intrc*,*.json.* set filetype=json")
-
--- YAML
-vim.cmd("au BufRead,BufNewFile *.yml.*, set filetype=yaml")
-
--- Nunjucks
-vim.cmd("au BufRead,BufNewFile *.nunj,*.njk set filetype=jinja.html")
-
--- Liquid
-vim.cmd("au BufRead,BufNewFile *.liquid set filetype=liquid")
-
--- Dockerfile
-vim.cmd("au BufRead,BufNewFile Dockerfile* set filetype=dockerfile")
-
--- Vue
-vim.cmd("let g:vue_pre_processors = []")
-
-
 -- Mappings
 -- ============================================================================
 
@@ -184,6 +90,102 @@ map("n", "<C-t>", ":tabnew<CR>", mapOpts)
 -- Manually reload file
 map("n", "<Leader>r", ":e!<CR>", mapOpts)
 
+-- Remove search highlight with Ctrl-L
+map("n", "<C-L>", ":nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>", mapOpts)
+
+-- Toggle invisibles
+map("n", "<Leader>i", ":set list!<CR>", mapOpts)
+
+-- Show relative line numbers
+map("n", "<Leader>l", ":set relativenumber!<CR>", mapOpts)
+
+-- Misc
+-- ============================================================================
+
+--  Live substitution
+o.inccommand = "nosplit"
+
+-- Search
+-- ----------------------------------------------------------------------------
+o.hlsearch = true        -- highlight all results
+o.incsearch  = true      -- but do highlight as you type your search.
+o.ignorecase = true      -- make searches case-insensitive...
+o.smartcase = true       -- ... unless they contain at least one capital letter
+o.gdefault = true        -- have :s///g flag by default on"
+
+-- Visual Stuff
+-- ----------------------------------------------------------------------------
+o.number = true          -- show line numbers
+o.cursorline = true      -- highlight the current line
+o.history = 200          -- remember a lot of stuff
+o.ruler = true           -- Always show info along bottom.
+o.wrap = true            -- Wrap lines
+o.linebreak = true       -- Don't break words
+
+-- Specify listchars (invisibles) with literal unicode in a :set command
+vim.scriptencoding = "utf-8"
+o.list = false
+o.listchars = {
+  tab = "▸ ",
+  eol = "¬",
+  trail = "·",
+  space = "·"
+}
+
+-- Files
+-- ----------------------------------------------------------------------------
+
+-- auto-reload files changed on disk
+o.autoread = true
+
+-- check for changes after inactivity
+vim.cmd("au CursorHold * checktime")
+
+-- disable swap files
+o.updatecount = 0
+-- o.nobackup = true
+-- o.noswapfile = true
+
+-- Indentation
+-- ----------------------------------------------------------------------------
+
+o.autoindent = true      -- auto-indent
+o.tabstop = 2            -- tab spacing
+o.softtabstop = 2        -- unify
+o.shiftwidth = 2         -- indent/outdent by 2 columns
+-- o.noshiftround = true    -- don’t indent/outdent to the nearest tabstop
+o.expandtab = true       -- use spaces instead of tabs
+o.smarttab = true        -- use tabs at the start of a line, spaces elsewhere
+o.backspace = {"indent", "eol", "start"} -- Backspace through anything in insert mode
+
+
+-- Syntaxes
+-- ============================================================================
+
+-- git (symlinked)
+vim.cmd("au BufRead,BufNewFile gitconfig.symlink,gitignore.symlink setfiletype gitconfig")
+
+-- nginx
+vim.cmd("au BufRead,BufNewFile */nginx/*,nginx.conf set filetype=nginx")
+
+-- JSON
+vim.cmd("au BufRead,BufNewFile *intrc*,*.json.* set filetype=json")
+
+-- YAML
+vim.cmd("au BufRead,BufNewFile *.yml.*, set filetype=yaml")
+
+-- Nunjucks
+vim.cmd("au BufRead,BufNewFile *.nunj,*.njk set filetype=jinja.html")
+
+-- Liquid
+vim.cmd("au BufRead,BufNewFile *.liquid set filetype=liquid")
+
+-- Dockerfile
+vim.cmd("au BufRead,BufNewFile Dockerfile* set filetype=dockerfile")
+
+-- Vue
+vim.cmd("let g:vue_pre_processors = []")
+
 -- Miscellaneous
 -- ============================================================================
 
@@ -197,7 +199,6 @@ o.ttimeoutlen = 0
 
 -- Use relative line numbers
 o.relativenumber = true
-map("n", "<Leader>l", ":set relativenumber!<CR>", mapOpts)
 
 -- " Default netrw list style
 g.netrw_liststyle = 3
