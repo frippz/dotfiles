@@ -4,7 +4,7 @@ local paq = require("paq")
 
 paq({
   -- package manager
-	"savq/paq-nvim",
+  "savq/paq-nvim",
 
   -- color themes
   "gruvbox-community/gruvbox",
@@ -82,8 +82,16 @@ o.linebreak = true       -- Don't break words
 
 -- Specify listchars (invisibles) with literal unicode in a :set command
 vim.scriptencoding = "utf-8"
--- o.list = {"lcs=tab:▸\\", "eol:¬", "trail:·", "space:·"}
--- o.nolist = true
+o.list = false
+o.listchars = {
+  tab = "▸ ",
+  eol = "¬",
+  trail = "·",
+  space = "·"
+}
+
+-- Toggle invisibles
+map("n", "<Leader>i", ":set list!<CR>", mapOpts)
 
 -- Files
 -- ----------------------------------------------------------------------------
