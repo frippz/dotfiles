@@ -3,7 +3,6 @@ tap "homebrew/bundle"
 tap "neovim/neovim"
 
 # Packages
-brew "ack"
 brew "autoconf"
 brew "automake"
 brew "awscli"
