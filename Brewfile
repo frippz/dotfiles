@@ -23,7 +23,6 @@ brew "node@16", link: true
 brew "python3"
 brew "reattach-to-user-namespace"
 brew "ripgrep"
-brew "tidy-html5"
 brew "tmux"
 brew "tmuxinator"
 brew "tree"
