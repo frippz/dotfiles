@@ -1,5 +1,1 @@
-# Ignore plugins and other vim stuff
-vim/vim.symlink/plugged
-vim/vim.symlink/undo
 npm-debug.log
-vim/vim.symlink/.init.vim-rplugin~
