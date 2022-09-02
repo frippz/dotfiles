@@ -1,0 +1,31 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- create:
+    - ~/.config/nvim
+
+- link:
+    ~/.zshrc: zsh/zshrc
+    ~/.scripts: scripts
+    ~/.config/nvim/init.lua: vim/init.lua
+    ~/.config/nvim/coc-settings.json: vim/coc-settings.json
+    ~/.tm_properties: textmate/tm_properties
+    ~/.tmuxinator: tmuxinator/projects
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux: tmux/tmux
+    ~/.tmux-macos.conf: tmux/tmux-macos.conf
+    ~/.npmrc: node/npmrc
+    ~/.dircolors.ansi-dark: zsh/dircolors.ansi-dark
+    ~/.dircolors.ansi-light: zsh/dircolors.ansi-light
+    ~/.ripgreprc: ripgrep/ripgreprc
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore: git/gitignore
+
+
+- shell:
+    -
+      command: 'find . -name "install.sh" -exec /bin/zsh -c {} \;'
+      description: Running install scripts
