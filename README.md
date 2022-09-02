@@ -4,22 +4,16 @@ I LOVE MY DOTFILES!!!
 
 ## Usage
 
-Make sure you're running `zsh` first (which means that it also needs to be installed, yes), since most of my dotfiles assumes this.
+Make sure you're running `zsh` first
 
 ```zsh
 $ chsh -s $(which zsh)
 ```
 
-We're ready to bootstrap!
+Run the dotbot install script
 
 ```zsh
-$ script/bootstrap
-```
-
-Run the install script afterwards.
-
-```zsh
-$ script/install
+$ ./install
 ```
 
 All done! Unless something went wrong, then go ahead and curse… 😖
