@@ -7,7 +7,7 @@ case "$OSTYPE" in
     if ! command -v brew >/dev/null 2>&1 ; then
 
       echo ""
-      echo "  ✔ Installing Homebrew"
+      echo "  ✅ Installing Homebrew"
       echo ""
 
       HOMEBREW_PREFIX="/usr/local"
@@ -25,6 +25,12 @@ case "$OSTYPE" in
       sudo -v
       bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
+    else
+
+      echo ""
+      echo " ⏭  Homebrew is already installed! 👍"
+      echo ""
+
     fi
     ;;
 esac
@@ -34,7 +40,7 @@ if command -v brew >/dev/null 2>&1 ; then
   # Tap Brewfile
   if ! brew tap | grep -q "homebrew/bundle" ; then
     echo ""
-    echo "  ✔ Running Homebrew bundle script"
+    echo "  ✅ Running Homebrew bundle script"
     echo ""
     brew tap homebrew/bundle
   fi

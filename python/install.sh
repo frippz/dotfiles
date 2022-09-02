@@ -7,13 +7,13 @@ PIPS=(
 )
 
 echo ""
-echo "  ✔ Running pip install script"
+echo "  ✅ Running pip install script"
 echo ""
 
 # Check for Python 3 before attempting to install packages
 if command -v python3 >/dev/null 2>&1 ; then
   echo ""
-  echo "   ✔ Upgrading pip"
+  echo "   ✅ Upgrading pip"
   echo ""
   case "$OSTYPE" in
     *darwin*)
@@ -24,7 +24,7 @@ if command -v python3 >/dev/null 2>&1 ; then
       ;;
   esac
   echo ""
-  echo "   ✔ Installing Python packages"
+  echo "   ✅ Installing Python packages"
   echo ""
   for PIP in ${PIPS[@]} ; do
     case "$OSTYPE" in
