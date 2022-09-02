@@ -26,6 +26,9 @@
 
 
 - shell:
-    -
-      command: 'find . -name "install.sh" -exec /bin/zsh -c {} \;'
-      description: Running install scripts
+    - command: ./homebrew/install.sh
+      description: Install Homebrew
+    - command: ./vim/install.sh
+      description: Install paq-nvim
+    - command: ./python/install.sh
+      description: Run Python install script
