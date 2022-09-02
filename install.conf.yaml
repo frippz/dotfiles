@@ -10,8 +10,8 @@
 - link:
     ~/.zshrc: zsh/zshrc
     ~/.scripts: scripts
-    ~/.config/nvim/init.lua: vim/init.lua
-    ~/.config/nvim/coc-settings.json: vim/coc-settings.json
+    ~/.config/nvim/init.lua: nvim/init.lua
+    ~/.config/nvim/coc-settings.json: nvim/coc-settings.json
     ~/.tm_properties: textmate/tm_properties
     ~/.tmuxinator: tmuxinator/projects
     ~/.tmux.conf: tmux/tmux.conf
@@ -28,7 +28,7 @@
 - shell:
     - command: ./homebrew/install.sh
       description: Install Homebrew
-    - command: ./vim/install.sh
+    - command: ./nvim/install.sh
       description: Install paq-nvim
     - command: ./python/install.sh
       description: Run Python install script
