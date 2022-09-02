@@ -10,7 +10,7 @@ Make sure you're running `zsh` first
 $ chsh -s $(which zsh)
 ```
 
-Run the dotbot install script
+Run the [dotbot](https://github.com/anishathalye/dotbot) install script
 
 ```zsh
 $ ./install
