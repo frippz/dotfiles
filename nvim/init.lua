@@ -143,8 +143,8 @@ vim.cmd("au CursorHold * checktime")
 
 -- disable swap files
 o.updatecount = 0
--- o.nobackup = true
--- o.noswapfile = true
+o.backup = false
+o.swapfile = false
 
 -- Indentation
 -- ----------------------------------------------------------------------------
