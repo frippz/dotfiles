@@ -37,6 +37,7 @@ paq({
   "tpope/vim-fugitive",
   "tpope/vim-liquid",
   "tpope/vim-repeat",
+  "tpope/vim-rhubarb",
   "tpope/vim-surround",
   { "neoclide/coc.nvim", branch = "release" },
   { "nvim-telescope/telescope.nvim", branch = "0.1.x" },
