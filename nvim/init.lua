@@ -41,10 +41,6 @@ paq({
   "tpope/vim-surround",
   { "neoclide/coc.nvim", branch = "release" },
   { "nvim-telescope/telescope.nvim", branch = "0.1.x" },
-
-  -- Maybe keep?
-  -- "mattn/emmet-vim",
-  -- "wsdjeg/vim-fetch",
 })
 
 -- Helpers
