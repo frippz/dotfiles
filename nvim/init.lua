@@ -337,7 +337,7 @@ map("n", "<leader>fh", ":Telescope help_tags<CR>", mapOpts)
 -- ----------------------------------------------------------------------------
 
 -- Extensions
--- :CocInstall coc-html coc-css coc-git coc-svg coc-json coc-yaml coc-emmet coc-tsserver coc-prettier coc-stylelintplus
+-- :CocInstall coc-html coc-css coc-git coc-svg coc-json coc-yaml coc-emmet coc-tsserver coc-prettier coc-stylelintplus coc-svelte
 
 vim.cmd([[
   set updatetime=300
