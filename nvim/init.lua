@@ -66,7 +66,7 @@ map("n", "<Leader>w", ":w<CR>", mapOpts)
 -- Remap exit terminal mode
 map("t", "<Esc>", "<C-\\><C-n>", mapOpts)
 
--- Escape insert mode with jj 😱
+-- Escape insert mode with jj
 map("i", "jj", "<Esc>", mapOpts)
 
 -- Map netrw to Ctrl-E
