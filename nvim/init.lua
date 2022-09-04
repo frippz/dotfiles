@@ -150,7 +150,6 @@ o.autoindent = true      -- auto-indent
 o.tabstop = 2            -- tab spacing
 o.softtabstop = 2        -- unify
 o.shiftwidth = 2         -- indent/outdent by 2 columns
--- o.noshiftround = true    -- don’t indent/outdent to the nearest tabstop
 o.expandtab = true       -- use spaces instead of tabs
 o.smarttab = true        -- use tabs at the start of a line, spaces elsewhere
 o.backspace = {"indent", "eol", "start"} -- Backspace through anything in insert mode
