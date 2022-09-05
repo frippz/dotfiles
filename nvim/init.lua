@@ -339,29 +339,32 @@ map("n", "<leader>fh", ":Telescope help_tags<CR>", mapOpts)
 -- Extensions
 -- :CocInstall coc-html coc-css coc-git coc-svg coc-json coc-yaml coc-emmet coc-tsserver coc-prettier coc-stylelintplus coc-svelte
 
+o.updatetime = 300
+o.signcolumn = "yes"
+o.shortmess = "c"
+
+vim.cmd("let g:echodoc_enable_at_startup = 1")
+
+-- coc-prettier
+vim.cmd("command! -nargs=0 Prettier :CocCommand prettier.formatFile")
+map("v", "<Leader>f", "<Plug>(coc-format-selected)", mapOpts)
+map("n", "<Leader>f", "<Plug>(coc-format-selected)", mapOpts)
+
+
+-- Use tab for trigger completion with characters ahead and navigate.
+-- NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+-- other plugin before putting this into your config.
 vim.cmd([[
-  set updatetime=300
-  set shortmess+=c
-  set signcolumn=yes
-
-  let g:echodoc_enable_at_startup = 1
-
-  " coc-prettier
-  command! -nargs=0 Prettier :CocCommand prettier.formatFile
-  vmap <Leader>f  <Plug>(coc-format-selected)
-  nmap <Leader>f  <Plug>(coc-format-selected)
-
-  " Use tab for trigger completion with characters ahead and navigate.
-  " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-  " other plugin before putting this into your config.
   inoremap <silent><expr> <TAB>
         \ coc#pum#visible() ? coc#pum#next(1):
         \ CheckBackspace() ? "\<Tab>" :
         \ coc#refresh()
   inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+]])
 
-  " Make <CR> to accept selected completion item or notify coc.nvim to format
-  " <C-g>u breaks current undo, please make your own choice.
+-- Make <CR> to accept selected completion item or notify coc.nvim to format
+-- <C-g>u breaks current undo, please make your own choice.
+vim.cmd([[
   inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                                 \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
@@ -369,9 +372,9 @@ vim.cmd([[
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
   endfunction
+]])
 
-  " Use <c-space> to trigger completion.
-  inoremap <silent><expr> <c-space> coc#refresh()
+vim.cmd([[
 
   function! ShowDocumentation()
     if CocAction('hasProvider', 'hover')
@@ -380,13 +383,14 @@ vim.cmd([[
       call feedkeys('K', 'in')
     endif
   endfunction
-
-  " Highlight the symbol and its references when holding the cursor.
-  autocmd CursorHold * silent call CocActionAsync('highlight')
 ]])
+
+-- Highlight the symbol and its references when holding the cursor.
+vim.cmd("autocmd CursorHold * silent call CocActionAsync('highlight')")
 
 -- Use <c-space> to trigger completion.
 -- map("i", "<c-space>", "coc#refresh", mapOpts)
+vim.cmd("inoremap <silent><expr> <c-space> coc#refresh()")
 
 -- Symbol renaming
 map("n", "<Leader>rn", "<Plug>(coc-rename)", mapOpts)
