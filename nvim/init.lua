@@ -295,7 +295,12 @@ map("n", "<leader>c", ":ConvertColorTo hsl<CR>", mapOpts)
 -- Colorizer
 -------------------------------------------------------------------------------
 o.termguicolors = true
-require("colorizer").setup()
+require("colorizer").setup({
+    css = {
+      rgb_fn = true;
+      hsl_fn = true;
+    }
+  })
 
 -- nvim-tree
 -- ----------------------------------------------------------------------------
