@@ -336,7 +336,7 @@ map("n", "<leader>fh", ":Telescope help_tags<CR>", mapOpts)
 -- coc.nvim
 -- ----------------------------------------------------------------------------
 
--- Extensions
+-- CoC extensions
 -- :CocInstall coc-html coc-css coc-git coc-svg coc-json coc-yaml coc-emmet coc-tsserver coc-prettier coc-stylelintplus coc-svelte
 
 o.updatetime = 300
