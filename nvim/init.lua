@@ -371,20 +371,7 @@ vim.cmd([[
   endfunction
 
   " Use <c-space> to trigger completion.
-  if has('nvim')
-    inoremap <silent><expr> <c-space> coc#refresh()
-  else
-    inoremap <silent><expr> <c-@> coc#refresh()
-  endif
-
-  " GoTo code navigation.
-  nmap <silent> gd <Plug>(coc-definition)
-  nmap <silent> gy <Plug>(coc-type-definition)
-  nmap <silent> gi <Plug>(coc-implementation)
-  nmap <silent> gr <Plug>(coc-references)
-
-  " Use K to show documentation in preview window.
-  nnoremap <silent> K :call ShowDocumentation()<CR>
+  inoremap <silent><expr> <c-space> coc#refresh()
 
   function! ShowDocumentation()
     if CocAction('hasProvider', 'hover')
@@ -396,10 +383,22 @@ vim.cmd([[
 
   " Highlight the symbol and its references when holding the cursor.
   autocmd CursorHold * silent call CocActionAsync('highlight')
-
-  " Symbol renaming.
-  nmap <leader>rn <Plug>(coc-rename)
 ]])
+
+-- Use <c-space> to trigger completion.
+-- map("i", "<c-space>", "coc#refresh", mapOpts)
+
+-- Symbol renaming
+map("n", "<Leader>rn", "<Plug>(coc-rename)", mapOpts)
+
+-- Goto code navigation.
+map("n", "gd", "<Plug>(coc-definition)", mapOpts)
+map("n", "gy", "<Plug>(coc-type-definition)", mapOpts)
+map("n", "gi", "<Plug>(coc-implementation)", mapOpts)
+map("n", "gr", "<Plug>(coc-references)", mapOpts)
+
+-- " Use K to show documentation in preview window.
+map("n", "K", ":call ShowDocumentation()<CR>", mapOpts)
 
 -- delimitMate
 -- ----------------------------------------------------------------------------
