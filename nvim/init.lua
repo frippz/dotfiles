@@ -332,10 +332,19 @@ map("n", "<C-f>", ":NvimTreeFindFile<CR>", mapOpts)
 -- telescope.vim
 -- ----------------------------------------------------------------------------
 
+local pickersOpts = {
+  respect_gitignore = true,
+  search_dirs = { "./", ".github/" }
+}
+
 require("telescope").setup({
   defaults = {
-    prompt_prefix = "🔍 "
-  }
+    prompt_prefix = "🔍 ",
+  },
+  pickers = {
+    live_grep = pickersOpts,
+    find_files = pickersOpts,
+  },
 })
 
 -- show telescope on Ctrl-P
