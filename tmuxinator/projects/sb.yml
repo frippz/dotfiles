@@ -1,0 +1,11 @@
+name: search-box
+root: ~/Projects/search-box/
+pre_window:
+  - export PHRASE_ACCESS_TOKEN=f6c877289e711fdf104fa9cf6f6f1d1d8e63ef11e40f98373af6fb83c9d7a820
+
+windows:
+  - search-frontend:
+      layout: even-horizontal
+      panes:
+        - c
+        - npm start
