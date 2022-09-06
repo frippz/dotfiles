@@ -1,5 +1,6 @@
 -- Plugins
 -- ============================================================================
+
 local paq = require("paq")
 
 paq({
@@ -104,6 +105,7 @@ o.inccommand = "nosplit"
 
 -- Search
 -- ----------------------------------------------------------------------------
+
 o.hlsearch = true        -- highlight all results
 o.incsearch  = true      -- but do highlight as you type your search.
 o.ignorecase = true      -- make searches case-insensitive...
@@ -112,6 +114,7 @@ o.gdefault = true        -- have :s///g flag by default on"
 
 -- Visual Stuff
 -- ----------------------------------------------------------------------------
+
 o.number = true          -- show line numbers
 o.cursorline = true      -- highlight the current line
 o.history = 200          -- remember a lot of stuff
@@ -221,6 +224,7 @@ vim.cmd("autocmd BufWritePre * :%s/\\s\\+$//e")
 
 -- Auto Dark Mode
 -- ----------------------------------------------------------------------------
+
 local auto_dark_mode = require("auto-dark-mode")
 
 auto_dark_mode.setup({
@@ -248,6 +252,7 @@ auto_dark_mode.init()
 
 -- Gruvbox
 -- ----------------------------------------------------------------------------
+
 vim.cmd([[
   function! Gruvbox()
     syntax enable
@@ -261,6 +266,7 @@ vim.cmd([[
 
 -- OneHalf Light
 -- ----------------------------------------------------------------------------
+
 vim.cmd([[
   function! OneHalfLight()
     syntax enable
@@ -275,6 +281,7 @@ vim.cmd([[
 -- Theming for non-macOS
 -- Set theme based on $TERM_THEME (or fall back to Gruvbox)
 -- ----------------------------------------------------------------------------
+
 vim.cmd([[
   if !has('macunix')
     if $TERM_THEME == 'light'
@@ -290,10 +297,12 @@ vim.cmd([[
 
 -- Convert Color
 -- ----------------------------------------------------------------------------
+
 map("n", "<leader>c", ":ConvertColorTo hsl<CR>", mapOpts)
 
 -- Colorizer
 -------------------------------------------------------------------------------
+
 o.termguicolors = true
 require("colorizer").setup({
     css = {
@@ -304,6 +313,7 @@ require("colorizer").setup({
 
 -- nvim-tree
 -- ----------------------------------------------------------------------------
+
 vim.cmd("set splitright")
 
 require("nvim-tree").setup({
@@ -321,6 +331,7 @@ map("n", "<C-f>", ":NvimTreeFindFile<CR>", mapOpts)
 
 -- telescope.vim
 -- ----------------------------------------------------------------------------
+
 require("telescope").setup({
   defaults = {
     prompt_prefix = "🔍 "
@@ -375,7 +386,6 @@ vim.cmd([[
 ]])
 
 vim.cmd([[
-
   function! ShowDocumentation()
     if CocAction('hasProvider', 'hover')
       call CocActionAsync('doHover')
@@ -406,6 +416,7 @@ map("n", "K", ":call ShowDocumentation()<CR>", mapOpts)
 
 -- delimitMate
 -- ----------------------------------------------------------------------------
+
 vim.cmd([[
   let delimitMate_expand_cr = 1
   let delimitMate_matchpairs = "(:),[:],{:}"
@@ -418,16 +429,18 @@ vim.cmd([[
 
 -- Editorconfig
 -- ----------------------------------------------------------------------------
+
 vim.cmd("let g:EditorConfig_exclude_patterns = ['fugitive://.*']")
 
 -- polyglot
 -- ----------------------------------------------------------------------------
 
--- " Don’t conceal stuff
+-- Don’t conceal stuff
 g.vim_json_syntax_conceal = 0
 g.vim_markdown_conceal = 0
 g.vim_markdown_conceal_code_blocks = 0
 
 -- indent-blankline.nvim
 -- ----------------------------------------------------------------------------
+
 g.indent_blankline_space_char = " "
