@@ -14,7 +14,7 @@
     ~/.config/nvim/init.lua: nvim/init.lua
     ~/.config/nvim/coc-settings.json: nvim/coc-settings.json
     ~/.tm_properties: textmate/tm_properties
-    ~/.tmuxinator: tmuxinator/projects
+    ~/.config/tmuxinator: tmuxinator/tmuxinator
     ~/.config/tmux/tmux.conf: tmux/tmux.conf
     ~/.config/tmux/plugins: tmux/plugins
     ~/.config/tmux/tmux-macos.conf: tmux/tmux-macos.conf
