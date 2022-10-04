@@ -13,6 +13,7 @@ paq({
   "CodeGradox/onehalf-lush",
 
   -- regular plugins
+  "Azeirah/nvim-redux",
   "amadeus/vim-convert-color-to",
   "editorconfig/editorconfig-vim",
   "evanleck/vim-svelte",
