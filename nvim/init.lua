@@ -28,6 +28,7 @@ paq({
   "machakann/vim-highlightedyank",
   "norcalli/nvim-colorizer.lua",
   "nvim-lua/plenary.nvim",
+  "nvim-lualine/lualine.nvim",
   "psliwka/vim-smoothie",
   "raimondi/delimitMate",
   "ryanoasis/vim-devicons",
@@ -329,6 +330,10 @@ require("nvim-tree").setup({
 
 map("n", "<C-n>", ":NvimTreeToggle<CR>", mapOpts)
 map("n", "<C-f>", ":NvimTreeFindFile<CR>", mapOpts)
+
+-- lualine.nvim
+-- ----------------------------------------------------------------------------
+require('lualine').setup()
 
 -- telescope.vim
 -- ----------------------------------------------------------------------------
