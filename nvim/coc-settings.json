@@ -1,6 +1,10 @@
 {
   "coc.preferences.extensionUpdateCheck": "weekly",
-  "coc.preferences.formatOnSaveFiletypes": ["javascript"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact"
+  ],
   "javascript.suggestionActions.enabled": false,
   "css.validate": false,
   "less.validate": false,
