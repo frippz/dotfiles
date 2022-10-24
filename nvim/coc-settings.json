@@ -3,6 +3,8 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "javascriptreact",
+    "json",
+    "graphql",
     "typescript",
     "typescriptreact"
   ],
