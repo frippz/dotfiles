@@ -42,6 +42,7 @@ paq({
   "tpope/vim-repeat",
   "tpope/vim-rhubarb",
   "tpope/vim-surround",
+  "xiyaowong/nvim-transparent",
   { "neoclide/coc.nvim", branch = "release" },
   { "nvim-telescope/telescope.nvim", branch = "0.1.x" },
 })
@@ -223,6 +224,10 @@ vim.cmd("autocmd BufWritePre * :%s/\\s\\+$//e")
 
 -- Themes
 -- ============================================================================
+
+require("transparent").setup({
+  enable = true, -- boolean: enable transparent
+})
 
 -- Auto Dark Mode
 -- ----------------------------------------------------------------------------
