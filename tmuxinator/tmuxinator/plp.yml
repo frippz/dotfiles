@@ -4,7 +4,7 @@ pre_window: source ./plp-env/dev.env
 
 windows:
   - plp:
-      layout: 33d8,190x56,0,0{137x56,0,0,12,52x56,138,0[52x28,138,0,13,52x27,138,29,14]}
+      layout: c8ce,190x53,0,0{137x53,0,0,0,52x53,138,0[52x46,138,0,1,52x6,138,47,2]}
       panes:
         - git:
           - c
