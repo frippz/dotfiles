@@ -325,7 +325,12 @@ vim.cmd("set splitright")
 
 require("nvim-tree").setup({
   view = {
-    side = "left"
+    side = "left",
+    mappings = {
+      list = {
+        { key = { "<C-o>" }, action = "cd" }
+      },
+    },
   },
   filters = {
     dotfiles = false,
