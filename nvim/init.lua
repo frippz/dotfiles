@@ -55,6 +55,13 @@ local g = vim.g
 local map = vim.api.nvim_set_keymap
 local mapOpts = { noremap = true, silent = true }
 
+-- Important stuff to set early
+-- ============================================================================
+
+-- Disable netrw
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
+
 -- Mappings
 -- ============================================================================
 
