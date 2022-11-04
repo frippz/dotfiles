@@ -229,34 +229,6 @@ require("transparent").setup({
   enable = true, -- boolean: enable transparent
 })
 
--- Auto Dark Mode
--- ----------------------------------------------------------------------------
-
-local auto_dark_mode = require("auto-dark-mode")
-
-auto_dark_mode.setup({
-  update_interval = 1000,
-  set_dark_mode = function()
-    o.background = "dark"
-    vim.cmd("syntax enable")
-    vim.cmd("colorscheme gruvbox")
-    vim.cmd("highlight! link SignColumn LineNr")
-    -- Set transparent background
-    vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
-    -- Italic comments
-    vim.cmd("highlight Comment cterm=italic gui=italic")
-  end,
-  set_light_mode = function()
-    o.background = "light"
-    vim.cmd("syntax enable")
-    vim.cmd("colorscheme onehalf-lush")
-    vim.cmd("highlight! link SignColumn LineNr")
-    vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
-  end,
-})
-
-auto_dark_mode.init()
-
 -- Gruvbox
 -- ----------------------------------------------------------------------------
 
@@ -284,6 +256,23 @@ vim.cmd([[
     highlight Comment cterm=italic gui=italic
   endfunction
 ]])
+
+-- Auto Dark Mode
+-- ----------------------------------------------------------------------------
+
+local auto_dark_mode = require("auto-dark-mode")
+
+auto_dark_mode.setup({
+  update_interval = 1000,
+  set_dark_mode = function()
+    vim.fn.Gruvbox()
+  end,
+  set_light_mode = function()
+    vim.fn.OneHalfLight()
+  end,
+})
+
+auto_dark_mode.init()
 
 -- Theming for non-macOS
 -- Set theme based on $TERM_THEME (or fall back to Gruvbox)
