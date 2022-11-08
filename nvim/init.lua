@@ -389,8 +389,21 @@ map("n", "<leader>fh", ":Telescope help_tags<CR>", mapOpts)
 -- coc.nvim
 -- ----------------------------------------------------------------------------
 
--- CoC extensions
--- :CocInstall coc-html coc-css coc-git coc-svg coc-json coc-yaml coc-emmet coc-tsserver coc-prettier coc-stylelintplus coc-svelte
+-- Extensions
+g.coc_global_extensions = {
+  "coc-html",
+  "coc-css",
+  "coc-git",
+  "coc-svg",
+  "coc-json",
+  "coc-yaml",
+  "coc-emmet",
+  "coc-tsserver",
+  "coc-prettier",
+  "coc-stylelintplus",
+  "coc-svelte",
+  "coc-snippets"
+}
 
 o.updatetime = 300
 o.signcolumn = "yes"
