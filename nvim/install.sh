@@ -8,3 +8,8 @@ else
   echo " ⏭  paq-nvim is already present. Skipping..."
   echo ""
 fi
+
+# Install paq-nvim packages
+if [ -d ${XDG_DATA_HOME:-$HOME/.local/share/nvim/site/pack} ]; then
+  nvim --headless -c "PaqInstall" -c "quit"
+fi
