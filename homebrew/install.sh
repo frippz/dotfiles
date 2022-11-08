@@ -46,6 +46,7 @@ if command -v brew >/dev/null 2>&1 ; then
   fi
 
   # Install from Brewfile
+  cd "$(dirname "$0")"
   brew bundle
 
 fi
