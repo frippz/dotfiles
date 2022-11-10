@@ -3,7 +3,11 @@ root: ~/Projects/beautyincode.se
 
 windows:
   - beautyincode:
-      layout: even-horizontal
+      layout: 3096,283x75,0,0{195x75,0,0,3,87x75,196,0[87x37,196,0,4,87x37,196,38,8]}
       panes:
-        - c
-        - docker compose up
+        - git:
+          - c
+        - docker:
+          - docker compose up
+        - node:
+          - npm start
