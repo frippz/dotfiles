@@ -1,13 +1,7 @@
 {
+  "prettier.requireConfig": true,
+  "coc.preferences.formatOnSave": true,
   "coc.preferences.extensionUpdateCheck": "weekly",
-  "coc.preferences.formatOnSaveFiletypes": [
-    "javascript",
-    "javascriptreact",
-    "json",
-    "graphql",
-    "typescript",
-    "typescriptreact"
-  ],
   "javascript.suggestionActions.enabled": false,
   "css.validate": false,
   "less.validate": false,
