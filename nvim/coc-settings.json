@@ -1,6 +1,5 @@
 {
   "prettier.requireConfig": true,
-  "coc.preferences.formatOnSave": true,
   "coc.preferences.extensionUpdateCheck": "weekly",
   "javascript.suggestionActions.enabled": false,
   "css.validate": false,
