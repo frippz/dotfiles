@@ -294,16 +294,6 @@ vim.cmd([[
 -- Plugins
 -- ============================================================================
 
--- Colorizer
--------------------------------------------------------------------------------
-
--- require("colorizer").setup({
---     css = {
---       rgb_fn = true;
---       hsl_fn = true;
---     }
---   })
-
 -- nvim-tree
 -- ----------------------------------------------------------------------------
 
@@ -332,25 +322,7 @@ map("n", "<C-f>", ":NvimTreeFindFile<CR>", mapOpts)
 
 -- lualine.nvim
 -- ----------------------------------------------------------------------------
-require('lualine').setup({
-  -- sections = {
-  --   lualine_a = {'mode'},
-  --   lualine_b = {},
-  --   lualine_c = {'filename'},
-  --   --
-  --   lualine_x = {'encoding', 'filetype'},
-  --   lualine_y = {'progress'},
-  --   lualine_z = {'location'}
-  -- },
-  -- inactive_sections = {
-  --   lualine_a = {},
-  --   lualine_b = {},
-  --   lualine_c = {'filename'},
-  --   lualine_x = {},
-  --   lualine_y = {},
-  --   lualine_z = {'location'}
-  -- },
-})
+require('lualine').setup()
 
 -- telescope.vim
 -- ----------------------------------------------------------------------------
