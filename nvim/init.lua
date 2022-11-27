@@ -14,11 +14,9 @@ paq({
 
   -- regular plugins
   "Azeirah/nvim-redux",
-  "amadeus/vim-convert-color-to",
   "editorconfig/editorconfig-vim",
   "evanleck/vim-svelte",
   "f-person/auto-dark-mode.nvim",
-  "godlygeek/tabular",
   "gregsexton/MatchTag",
   "jremmen/vim-ripgrep",
   "kyazdani42/nvim-tree.lua",
@@ -26,7 +24,6 @@ paq({
   "lewis6991/gitsigns.nvim",
   "lukas-reineke/indent-blankline.nvim",
   "machakann/vim-highlightedyank",
-  "norcalli/nvim-colorizer.lua",
   "nvim-lua/plenary.nvim",
   "nvim-lualine/lualine.nvim",
   "psliwka/vim-smoothie",
@@ -34,11 +31,9 @@ paq({
   "ryanoasis/vim-devicons",
   "sheerun/vim-polyglot",
   "tmhedberg/matchit",
-  "tommcdo/vim-fubitive",
   "tomtom/tcomment_vim",
   "tpope/vim-endwise",
   "tpope/vim-fugitive",
-  "tpope/vim-liquid",
   "tpope/vim-repeat",
   "tpope/vim-rhubarb",
   "tpope/vim-surround",
@@ -131,6 +126,7 @@ o.history = 200          -- remember a lot of stuff
 o.ruler = true           -- Always show info along bottom.
 o.wrap = true            -- Wrap lines
 o.linebreak = true       -- Don't break words
+o.termguicolors = true   -- Enable 24-bit colors
 
 -- Specify listchars (invisibles) with literal unicode in a :set command
 vim.scriptencoding = "utf-8"
@@ -298,21 +294,15 @@ vim.cmd([[
 -- Plugins
 -- ============================================================================
 
--- Convert Color
--- ----------------------------------------------------------------------------
-
-map("n", "<leader>c", ":ConvertColorTo hsl<CR>", mapOpts)
-
 -- Colorizer
 -------------------------------------------------------------------------------
 
-o.termguicolors = true
-require("colorizer").setup({
-    css = {
-      rgb_fn = true;
-      hsl_fn = true;
-    }
-  })
+-- require("colorizer").setup({
+--     css = {
+--       rgb_fn = true;
+--       hsl_fn = true;
+--     }
+--   })
 
 -- nvim-tree
 -- ----------------------------------------------------------------------------
