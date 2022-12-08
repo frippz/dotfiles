@@ -348,20 +348,21 @@ map("n", "<leader>fh", ":Telescope help_tags<CR>", mapOpts)
 
 -- Extensions
 g.coc_global_extensions = {
-  "coc-html",
-  "coc-htmlhint",
-  "coc-html-css-support",
   "coc-css",
-  "coc-git",
-  "coc-svg",
-  "coc-json",
-  "coc-yaml",
   "coc-emmet",
-  "coc-tsserver",
+  "coc-git",
+  "coc-html",
+  "coc-html-css-support",
+  "coc-htmlhint",
+  "coc-json",
   "coc-prettier",
+  "coc-pyright",
+  "coc-snippets",
   "coc-stylelintplus",
   "coc-svelte",
-  "coc-snippets"
+  "coc-svg",
+  "coc-tsserver",
+  "coc-yaml",
 }
 
 o.updatetime = 300
