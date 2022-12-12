@@ -420,6 +420,9 @@ vim.cmd("inoremap <silent><expr> <c-space> coc#refresh()")
 -- Symbol renaming
 map("n", "<Leader>rn", "<Plug>(coc-rename)", mapOpts)
 
+-- CocCommand
+map("n", "<Leader>cc", ":CocCommand<CR>", mapOpts)
+
 -- Goto code navigation.
 map("n", "gd", "<Plug>(coc-definition)", mapOpts)
 map("n", "gy", "<Plug>(coc-type-definition)", mapOpts)
