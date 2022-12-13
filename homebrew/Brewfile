@@ -21,7 +21,7 @@ brew "iperf3"
 brew "libtool"
 brew "neovim"
 brew "node@16", link: true
-brew "python3"
+brew "python@3.11"
 brew "reattach-to-user-namespace"
 brew "ripgrep"
 brew "tmux"
