@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Install pip packages
+# Install Python via pyenv and pip packages
 
 VERSION="3.11.1"
 
@@ -10,17 +10,18 @@ PIPS=(
   "yamllint"
 )
 
-echo ""
-echo " ✅ Install Python using pyenv and set ${VERSION} as global"
-echo ""
+# Check for pyenv before attempting to install packages
+if command -v pyenv >/dev/null 2>&1 ; then
 
-pyenv install ${VERSION} --skip-existing
-pyenv global ${VERSION}
-pyenv rehash
+  echo ""
+  echo " ✅ Install Python using pyenv and set ${VERSION} as global"
+  echo ""
 
-echo ""
-echo " ✅ Running pip install script"
-echo ""
+  pyenv install ${VERSION} --skip-existing
+  pyenv global ${VERSION}
+  pyenv rehash
+
+fi
 
 # Check for Python before attempting to install packages
 if command -v python >/dev/null 2>&1 ; then
