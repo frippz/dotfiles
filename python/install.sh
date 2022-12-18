@@ -14,7 +14,7 @@ echo ""
 echo " ✅ Install Python using pyenv and set ${VERSION} as global"
 echo ""
 
-CFLAGS='-I$(xcrun --show-sdk-path)/usr/include' pyenv install ${VERSION} --skip-existing
+pyenv install ${VERSION} --skip-existing
 pyenv global ${VERSION}
 pyenv rehash
 
