@@ -39,6 +39,7 @@ paq({
   "tpope/vim-surround",
   { "neoclide/coc.nvim", branch = "release" },
   { "nvim-telescope/telescope.nvim", branch = "0.1.x" },
+  { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
 })
 
 -- Helpers
@@ -314,6 +315,29 @@ require("nvim-tree").setup({
 
 map("n", "<C-n>", ":NvimTreeToggle<CR>", mapOpts)
 map("n", "<C-f>", ":NvimTreeFindFile<CR>", mapOpts)
+
+-- nvim-treesitter
+-- ----------------------------------------------------------------------------
+require("nvim-treesitter.configs").setup({
+	-- list of languages
+	ensure_installed = {
+		"css",
+		"html",
+		"javascript",
+		"json",
+		"lua",
+		"python",
+		"scss",
+		"typescript",
+		"yaml",
+	},
+
+	-- automatically install missing parsers when entering buffer
+	auto_install = true,
+
+	-- install languages synchronously (only applied to `ensure_installed`)
+	sync_install = false,
+})
 
 -- lualine.nvim
 -- ----------------------------------------------------------------------------
