@@ -23,8 +23,8 @@ if command -v pyenv >/dev/null 2>&1 ; then
 
 fi
 
-# Check for Python before attempting to install packages
-if command -v python >/dev/null 2>&1 ; then
+# Check for pip before attempting to install packages
+if command -v pip >/dev/null 2>&1 ; then
 
   echo ""
   echo " ✅ Upgrading pip"
@@ -43,7 +43,7 @@ if command -v python >/dev/null 2>&1 ; then
 else
 
   echo ""
-  echo "  ✘ python not found. You may need to install it first."
+  echo "  ⛔️ python not found. You may need to install it first."
   echo ""
 
 fi
