@@ -1,0 +1,72 @@
+prSections:
+  - title: My PRs
+    filters: is:open author:@me
+    layout:
+      author:
+        hidden: true
+
+  - title: Needs My Review
+    filters: is:open review-requested:@me
+
+  - title: Involved
+    filters: is:open involves:@me -author:@me
+
+  - title: Ikea
+    filters: is:open -author:@me repo:ingka-group-digital/rrm-plp-pipeline repo:ingka-group-digital/search-box
+
+issuesSections:
+  - title: My Issues
+    filters: is:open author:@me
+
+  - title: Assigned
+    filters: is:open assignee:@me
+
+  - title: Involved
+    filters: is:open involves:@me -author:@me
+
+defaults:
+
+  preview:
+    open: true
+    width: 50
+
+  prsLimit: 20
+
+  issuesLimit: 20
+
+  view: prs
+
+  # Layout configuration
+  layout:
+
+    # Pull requests
+    prs:
+      updatedAt:
+        width: 7
+      repo:
+        width: 20
+      author:
+        width: 20
+      lines:
+        width: 16
+
+    # Issues
+    issues:
+      updatedAt:
+        width: 7
+      repo:
+        width: 20
+      creator:
+        width: 20
+      assignees:
+        width: 20
+
+  refetchIntervalMinutes: 30
+
+keybindings:
+  prs: []
+
+repoPaths: {}
+
+pager:
+  diff: ""

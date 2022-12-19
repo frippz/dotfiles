@@ -24,6 +24,7 @@
     ~/.ripgreprc: ripgrep/ripgreprc
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
+    ~/.config/gh-dash/config.yml: gh-dash/config.yml
 
 
 - shell:
