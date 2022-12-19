@@ -33,3 +33,5 @@
       description: Install paq-nvim
     - command: ./python/install.sh
       description: Run Python install script
+    - command: ./ruby/install.sh
+      description: Run Ruby install script
