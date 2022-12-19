@@ -1,3 +1,3 @@
-if (( $+commands[rbenv] )); then
+if [ -d $HOME/.rbenv ]; then
   eval "$(rbenv init -)"
 fi
