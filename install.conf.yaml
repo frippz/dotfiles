@@ -1,6 +1,6 @@
 - defaults:
     link:
-      relink: true
+      force: true
 
 - clean: ['~']
 
@@ -31,15 +31,20 @@
 - shell:
     - description: Install Homebrew & predefined packages
       command: ./homebrew/install.sh
+      stdout: true
 
     - description: Install paq-nvim
       command: ./nvim/install.sh
+      stdout: true
 
     - description: Install Python
       command: ./python/install.sh
+      stdout: true
 
     - description: Install Ruby
       command: ./ruby/install.sh
+      stdout: true
 
     - description: Install gh extensions
       command: ./gh/install.sh
+      stdout: true
