@@ -11,6 +11,9 @@ prSections:
   - title: Involved
     filters: is:open involves:@me -author:@me
 
+  - title: frippz.se
+    filters: is:open -author:@me repo:frippz/frippz.se
+
   - title: Ikea
     filters: is:open -author:@me repo:ingka-group-digital/rrm-plp-pipeline repo:ingka-group-digital/search-box
 
