@@ -29,13 +29,17 @@
 
 
 - shell:
-    - command: ./homebrew/install.sh
-      description: Install Homebrew
-    - command: ./nvim/install.sh
-      description: Install paq-nvim
-    - command: ./python/install.sh
-      description: Run Python install script
-    - command: ./ruby/install.sh
-      description: Run Ruby install script
-    - command: ./gh/install.sh
-      description: Run gh extension install script
+    - description: Install Homebrew & predefined packages
+      command: ./homebrew/install.sh
+
+    - description: Install paq-nvim
+      command: ./nvim/install.sh
+
+    - description: Install Python
+      command: ./python/install.sh
+
+    - description: Install Ruby
+      command: ./ruby/install.sh
+
+    - description: Install gh extensions
+      command: ./gh/install.sh
