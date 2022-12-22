@@ -7,8 +7,9 @@ EXTENSIONS=(
 )
 
 if command -v gh >/dev/null 2>&1; then
-
   for EXTENSION in ${EXTENSIONS[@]}; do
-    gh extension install $EXTENSION
+    if ! gh extension list | grep -q  "$EXTENSION"; then
+      gh extension install $EXTENSION
+    fi
   done
 fi
