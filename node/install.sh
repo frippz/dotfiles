@@ -5,7 +5,11 @@ GLOBAL_VERSION="18.12.1"
 VERSIONS=(
   "16.19.0"
   "18.12.1"
-  )
+)
+
+PLUGINS=(
+  "git@github.com:nodenv/nodenv-npm-migrate.git"
+)
 
 # Packages to install globally with npm
 PACKAGES=(
@@ -21,11 +25,33 @@ PACKAGES=(
 set -e
 
 if command -v nodenv > /dev/null 2>&1; then
+
+  echo ""
+  echo " ✅ Install Node versions using nodenv and set ${GLOBAL_VERSION} as global"
+  echo ""
+
   for VERSION in ${VERSIONS[@]} ; do
     nodenv install $VERSION --skip-existing
   done
+
   nodenv global $GLOBAL_VERSION
   nodenv rehash
+
+fi
+
+# Install pyenv plugins
+if [ -d $HOME/.nodenv ]; then
+  echo ""
+  echo " ✅ Installing nodenv plugins"
+  echo ""
+  for PLUGIN in ${PLUGINS[@]}; do
+    PLUGIN_NAME=$(echo $PLUGIN | sed -E 's/.*\/([^/]+)\.git$/\1/')
+    if [ ! -d "$(nodenv root)/plugins/$PLUGIN_NAME" ]; then
+      git clone $PLUGIN $(nodenv root)/plugins/$PLUGIN_NAME
+    else
+      echo "   ℹ️  $PLUGIN_NAME is already installed"
+    fi
+  done
 fi
 
 # Check for npm if we’re on OS X
