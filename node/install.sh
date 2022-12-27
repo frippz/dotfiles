@@ -2,6 +2,7 @@
 
 # Packages to install globally with npm
 PACKAGES=(
+  "pnpm"
   "pyright"
   "stylelint-lsp"
   "typescript"
