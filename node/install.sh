@@ -49,7 +49,7 @@ if [ -d $HOME/.nodenv ]; then
     if [ ! -d "$(nodenv root)/plugins/$PLUGIN_NAME" ]; then
       git clone $PLUGIN $(nodenv root)/plugins/$PLUGIN_NAME
     else
-      echo "   ℹ️  $PLUGIN_NAME is already installed"
+      echo "    ℹ️  $PLUGIN_NAME is already installed"
     fi
   done
 fi
@@ -63,7 +63,7 @@ if command -v node >/dev/null 2>&1 ; then
   # Install packages globally
   for PACKAGE in ${PACKAGES[@]} ; do
     if npm list -g --depth=0 | grep -q "$PACKAGE@"; then
-      echo "   ℹ️  $PACKAGE is already installed. Skipping..."
+      echo "    ℹ️  $PACKAGE is already installed. Skipping..."
       echo ""
     else
       echo "  ✅ Installing $PACKAGE"
