@@ -38,6 +38,7 @@ if [ -d $HOME/.pyenv ]; then
       git clone $PLUGIN $(pyenv root)/plugins/$PLUGIN_NAME
     else
       echo "    ℹ️  $PLUGIN_NAME is already installed"
+      echo ""
     fi
   done
 fi
@@ -56,7 +57,12 @@ if command -v pip >/dev/null 2>&1 ; then
   echo ""
 
   for PIP in ${PIPS[@]} ; do
-    pip install --user $PIP
+    if ! pip list --format json | grep -q "$PIP"; then
+      pip install --user $PIP
+    else
+      echo "    ℹ️  $PIP already installed."
+      echo ""
+    fi
   done
 
 else
