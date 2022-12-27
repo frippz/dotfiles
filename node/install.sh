@@ -2,11 +2,11 @@
 
 # Packages to install globally with npm
 PACKAGES=(
+  "pyright"
   "stylelint-lsp"
   "typescript"
   "typescript-language-server"
   "vscode-langservers-extracted"
-  "pyright"
   "yaml-language-server"
 )
 
