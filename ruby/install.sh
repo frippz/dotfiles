@@ -2,7 +2,7 @@
 #
 # Install Ruby via rbenv and gems
 
-VERSION="3.1.3"
+VERSION="3.1.2"
 
 GEMS=(
   "bundler"
