@@ -15,7 +15,7 @@ paq({
   -- regular plugins
   "Azeirah/nvim-redux",
   "editorconfig/editorconfig-vim",
-  "evanleck/vim-svelte",
+  "leafOfTree/vim-svelte-plugin",
   "f-person/auto-dark-mode.nvim",
   "gregsexton/MatchTag",
   "jremmen/vim-ripgrep",
@@ -486,3 +486,8 @@ g.vim_markdown_conceal_code_blocks = 0
 -- ----------------------------------------------------------------------------
 
 g.indent_blankline_space_char = " "
+
+-- vim-svelte-plugin
+-- ----------------------------------------------------------------------------
+
+g.vim_svelte_plugin_use_typescript = 1
