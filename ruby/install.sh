@@ -12,6 +12,7 @@ GEMS=(
   "bundler"
   "neovim"
   "tmuxinator"
+  "solargraph"
 )
 
 if command -v rbenv >/dev/null 2>&1 ; then

@@ -9,7 +9,6 @@ paq({
 
   -- color themes
   "gruvbox-community/gruvbox",
-  "rktjmp/lush.nvim",
   "CodeGradox/onehalf-lush",
 
   -- regular plugins
@@ -327,6 +326,7 @@ require("nvim-treesitter.configs").setup({
 		"json",
 		"lua",
 		"python",
+    "ruby",
 		"scss",
 		"typescript",
 		"yaml",
@@ -382,7 +382,9 @@ g.coc_global_extensions = {
   "coc-prettier",
   "coc-pyright",
   "coc-snippets",
+  "coc-solargraph",
   "coc-stylelintplus",
+  "coc-stylua",
   "coc-svelte",
   "coc-svg",
   "coc-tsserver",
