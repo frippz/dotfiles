@@ -10,6 +10,7 @@ PLUGINS=(
 
 PIPS=(
   "awscli"
+  "black"
   "grc"
   "pipenv"
   "pynvim"

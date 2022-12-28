@@ -15,7 +15,9 @@
   "inlayHint.enable": false,
   "svelte.enable-ts-plugin": true,
   "snippets.ultisnips.pythonPrompt": false,
-  "[css][scss][yaml][javascript][javascriptreact][typescript][typescriptreact][json][svelte][lua]": {
+  "python.linting.enabled": true,
+  "python.formatting.provider": "black",
+  "[css][scss][yaml][javascript][javascriptreact][typescript][typescriptreact][json][svelte][lua][python][ruby]": {
     "coc.preferences.formatOnSave": true
   }
 }
