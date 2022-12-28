@@ -9,9 +9,12 @@ PLUGINS=(
 )
 
 PIPS=(
+  "awscli"
+  "grc"
   "pipenv"
   "pynvim"
   "yamllint"
+  "yt-dlp"
 )
 
 # Check for pyenv before attempting to install packages
