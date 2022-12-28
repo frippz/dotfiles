@@ -4,41 +4,41 @@
 local paq = require("paq")
 
 paq({
-  -- package manager
-  "savq/paq-nvim",
+	-- package manager
+	"savq/paq-nvim",
 
-  -- color themes
-  "gruvbox-community/gruvbox",
-  "CodeGradox/onehalf-lush",
+	-- color themes
+	"gruvbox-community/gruvbox",
+	"CodeGradox/onehalf-lush",
 
-  -- regular plugins
-  "Azeirah/nvim-redux",
-  "editorconfig/editorconfig-vim",
-  "leafOfTree/vim-svelte-plugin",
-  "f-person/auto-dark-mode.nvim",
-  "gregsexton/MatchTag",
-  "jremmen/vim-ripgrep",
-  "kyazdani42/nvim-tree.lua",
-  "kyazdani42/nvim-web-devicons",
-  "lewis6991/gitsigns.nvim",
-  "lukas-reineke/indent-blankline.nvim",
-  "machakann/vim-highlightedyank",
-  "nvim-lua/plenary.nvim",
-  "nvim-lualine/lualine.nvim",
-  "psliwka/vim-smoothie",
-  "raimondi/delimitMate",
-  "ryanoasis/vim-devicons",
-  "sheerun/vim-polyglot",
-  "tmhedberg/matchit",
-  "tomtom/tcomment_vim",
-  "tpope/vim-endwise",
-  "tpope/vim-fugitive",
-  "tpope/vim-repeat",
-  "tpope/vim-rhubarb",
-  "tpope/vim-surround",
-  { "neoclide/coc.nvim", branch = "release" },
-  { "nvim-telescope/telescope.nvim", branch = "0.1.x" },
-  { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
+	-- regular plugins
+	"Azeirah/nvim-redux",
+	"editorconfig/editorconfig-vim",
+	"leafOfTree/vim-svelte-plugin",
+	"f-person/auto-dark-mode.nvim",
+	"gregsexton/MatchTag",
+	"jremmen/vim-ripgrep",
+	"kyazdani42/nvim-tree.lua",
+	"kyazdani42/nvim-web-devicons",
+	"lewis6991/gitsigns.nvim",
+	"lukas-reineke/indent-blankline.nvim",
+	"machakann/vim-highlightedyank",
+	"nvim-lua/plenary.nvim",
+	"nvim-lualine/lualine.nvim",
+	"psliwka/vim-smoothie",
+	"raimondi/delimitMate",
+	"ryanoasis/vim-devicons",
+	"sheerun/vim-polyglot",
+	"tmhedberg/matchit",
+	"tomtom/tcomment_vim",
+	"tpope/vim-endwise",
+	"tpope/vim-fugitive",
+	"tpope/vim-repeat",
+	"tpope/vim-rhubarb",
+	"tpope/vim-surround",
+	{ "neoclide/coc.nvim", branch = "release" },
+	{ "nvim-telescope/telescope.nvim", branch = "0.1.x" },
+	{ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
 })
 
 -- Helpers
@@ -110,31 +110,31 @@ o.inccommand = "nosplit"
 -- Search
 -- ----------------------------------------------------------------------------
 
-o.hlsearch = true        -- highlight all results
-o.incsearch  = true      -- but do highlight as you type your search.
-o.ignorecase = true      -- make searches case-insensitive...
-o.smartcase = true       -- ... unless they contain at least one capital letter
-o.gdefault = true        -- have :s///g flag by default on"
+o.hlsearch = true -- highlight all results
+o.incsearch = true -- but do highlight as you type your search.
+o.ignorecase = true -- make searches case-insensitive...
+o.smartcase = true -- ... unless they contain at least one capital letter
+o.gdefault = true -- have :s///g flag by default on"
 
 -- Visual Stuff
 -- ----------------------------------------------------------------------------
 
-o.number = true          -- show line numbers
-o.cursorline = true      -- highlight the current line
-o.history = 200          -- remember a lot of stuff
-o.ruler = true           -- Always show info along bottom.
-o.wrap = true            -- Wrap lines
-o.linebreak = true       -- Don't break words
-o.termguicolors = true   -- Enable 24-bit colors
+o.number = true -- show line numbers
+o.cursorline = true -- highlight the current line
+o.history = 200 -- remember a lot of stuff
+o.ruler = true -- Always show info along bottom.
+o.wrap = true -- Wrap lines
+o.linebreak = true -- Don't break words
+o.termguicolors = true -- Enable 24-bit colors
 
 -- Specify listchars (invisibles) with literal unicode in a :set command
 vim.scriptencoding = "utf-8"
 o.list = false
 o.listchars = {
-  tab = "▸ ",
-  eol = "¬",
-  trail = "·",
-  space = "·"
+	tab = "▸ ",
+	eol = "¬",
+	trail = "·",
+	space = "·",
 }
 
 -- Files
@@ -154,14 +154,13 @@ o.swapfile = false
 -- Indentation
 -- ----------------------------------------------------------------------------
 
-o.autoindent = true      -- auto-indent
-o.tabstop = 2            -- tab spacing
-o.softtabstop = 2        -- unify
-o.shiftwidth = 2         -- indent/outdent by 2 columns
-o.expandtab = true       -- use spaces instead of tabs
-o.smarttab = true        -- use tabs at the start of a line, spaces elsewhere
-o.backspace = {"indent", "eol", "start"} -- Backspace through anything in insert mode
-
+o.autoindent = true -- auto-indent
+o.tabstop = 2 -- tab spacing
+o.softtabstop = 2 -- unify
+o.shiftwidth = 2 -- indent/outdent by 2 columns
+o.expandtab = true -- use spaces instead of tabs
+o.smarttab = true -- use tabs at the start of a line, spaces elsewhere
+o.backspace = { "indent", "eol", "start" } -- Backspace through anything in insert mode
 
 -- Syntaxes
 -- ============================================================================
@@ -215,8 +214,8 @@ vim.cmd("autocmd FileType netrw setl bufhidden=delete")
 g.netrw_dirhistmax = 0
 
 -- Session options
-vim.cmd("set ssop-=options")  -- do not store global and local values in a session
-vim.cmd("set ssop-=folds")    -- do not store folds
+vim.cmd("set ssop-=options") -- do not store global and local values in a session
+vim.cmd("set ssop-=folds") -- do not store folds
 
 -- Make copy operations work with the clipboard
 o.clipboard = "unnamed"
@@ -261,13 +260,13 @@ vim.cmd([[
 local auto_dark_mode = require("auto-dark-mode")
 
 auto_dark_mode.setup({
-  update_interval = 1000,
-  set_dark_mode = function()
-    vim.fn.Gruvbox()
-  end,
-  set_light_mode = function()
-    vim.fn.OneHalfLight()
-  end,
+	update_interval = 1000,
+	set_dark_mode = function()
+		vim.fn.Gruvbox()
+	end,
+	set_light_mode = function()
+		vim.fn.OneHalfLight()
+	end,
 })
 
 auto_dark_mode.init()
@@ -295,21 +294,21 @@ vim.cmd([[
 vim.cmd("set splitright")
 
 require("nvim-tree").setup({
-  open_on_setup = false,
-  open_on_setup_file = false,
-  open_on_tab = false,
-  view = {
-    side = "left",
-    mappings = {
-      list = {
-        { key = { "<C-o>" }, action = "cd" }
-      },
-    },
-  },
-  filters = {
-    dotfiles = false,
-    exclude = { ".gitignore$", ".env" }
-  }
+	open_on_setup = false,
+	open_on_setup_file = false,
+	open_on_tab = false,
+	view = {
+		side = "left",
+		mappings = {
+			list = {
+				{ key = { "<C-o>" }, action = "cd" },
+			},
+		},
+	},
+	filters = {
+		dotfiles = false,
+		exclude = { ".gitignore$", ".env" },
+	},
 })
 
 map("n", "<C-n>", ":NvimTreeToggle<CR>", mapOpts)
@@ -326,7 +325,7 @@ require("nvim-treesitter.configs").setup({
 		"json",
 		"lua",
 		"python",
-    "ruby",
+		"ruby",
 		"scss",
 		"typescript",
 		"yaml",
@@ -341,24 +340,24 @@ require("nvim-treesitter.configs").setup({
 
 -- lualine.nvim
 -- ----------------------------------------------------------------------------
-require('lualine').setup()
+require("lualine").setup()
 
 -- telescope.vim
 -- ----------------------------------------------------------------------------
 
 local pickersOpts = {
-  respect_gitignore = true,
-  search_dirs = { "./", ".github/" }
+	respect_gitignore = true,
+	search_dirs = { "./", ".github/" },
 }
 
 require("telescope").setup({
-  defaults = {
-    prompt_prefix = "🔍 ",
-  },
-  pickers = {
-    live_grep = pickersOpts,
-    find_files = pickersOpts,
-  },
+	defaults = {
+		prompt_prefix = "🔍 ",
+	},
+	pickers = {
+		live_grep = pickersOpts,
+		find_files = pickersOpts,
+	},
 })
 
 -- show telescope on Ctrl-P
@@ -372,23 +371,23 @@ map("n", "<leader>fh", ":Telescope help_tags<CR>", mapOpts)
 
 -- Extensions
 g.coc_global_extensions = {
-  "coc-css",
-  "coc-emmet",
-  "coc-git",
-  "coc-html",
-  "coc-html-css-support",
-  "coc-htmlhint",
-  "coc-json",
-  "coc-prettier",
-  "coc-pyright",
-  "coc-snippets",
-  "coc-solargraph",
-  "coc-stylelintplus",
-  "coc-stylua",
-  "coc-svelte",
-  "coc-svg",
-  "coc-tsserver",
-  "coc-yaml",
+	"coc-css",
+	"coc-emmet",
+	"coc-git",
+	"coc-html",
+	"coc-html-css-support",
+	"coc-htmlhint",
+	"coc-json",
+	"coc-prettier",
+	"coc-pyright",
+	"coc-snippets",
+	"coc-solargraph",
+	"coc-stylelintplus",
+	"coc-stylua",
+	"coc-svelte",
+	"coc-svg",
+	"coc-tsserver",
+	"coc-yaml",
 }
 
 o.updatetime = 300
@@ -401,7 +400,6 @@ vim.cmd("let g:echodoc_enable_at_startup = 1")
 vim.cmd("command! -nargs=0 Prettier :CocCommand prettier.formatFile")
 map("v", "<Leader>f", "<Plug>(coc-format-selected)", mapOpts)
 map("n", "<Leader>f", "<Plug>(coc-format-selected)", mapOpts)
-
 
 -- Use tab for trigger completion with characters ahead and navigate.
 -- NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
