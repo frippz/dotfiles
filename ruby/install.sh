@@ -15,7 +15,7 @@ GEMS=(
   "solargraph"
 )
 
-if command -v rbenv >/dev/null 2>&1 ; then
+# if command -v rbenv >/dev/null 2>&1 ; then
 
   echo ""
   echo " ✅ Install Ruby using rbenv and set ${VERSION} as global"
@@ -25,7 +25,7 @@ if command -v rbenv >/dev/null 2>&1 ; then
   rbenv global ${VERSION}
   rbenv rehash
 
-fi
+# fi
 
 # Install rbenv plugins
 if [ -d $HOME/.rbenv ]; then
@@ -44,7 +44,7 @@ if [ -d $HOME/.rbenv ]; then
 fi
 
 # Check for gem before attempting to install packages
-if command -v gem >/dev/null 2>&1 ; then
+# if command -v gem >/dev/null 2>&1 ; then
 
   echo ""
   echo " ✅ Installing gems"
@@ -59,10 +59,10 @@ if command -v gem >/dev/null 2>&1 ; then
     fi
   done
 
-else
+# else
 
-  echo ""
-  echo " ⛔️ gem command not found."
-  echo ""
+  # echo ""
+  # echo " ⛔️ gem command not found."
+  # echo ""
 
-fi
+# fi
