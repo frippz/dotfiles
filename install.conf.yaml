@@ -29,28 +29,26 @@
 
 
 - shell:
-    - command: ./zsh/zshrc
-
     - description: Install Homebrew & predefined packages
-      command: ./homebrew/install.sh
+      command: zsh -c "./homebrew/install.sh"
       stdout: true
 
     - description: Install paq-nvim
-      command: ./nvim/install.sh
+      command: zsh -c "./nvim/install.sh"
       stdout: true
 
     - description: Install Python
-      command: ./python/install.sh
+      command: zsh -c "./python/install.sh"
       stdout: true
 
     - description: Install Ruby
-      command: ./ruby/install.sh
+      command: zsh -c "./ruby/install.sh"
       stdout: true
 
     - description: Install Node
-      command: ./node/install.sh
+      command: zsh -c "./node/install.sh"
       stdout: true
 
     - description: Install gh extensions
-      command: ./gh/install.sh
+      command: zsh -c "./gh/install.sh"
       stdout: true
