@@ -33,6 +33,9 @@
       command: ./homebrew/install.sh
       stdout: true
 
+    - description: Reload ZSH environment
+      command: . ~/.zshrc
+
     - description: Install paq-nvim
       command: ./nvim/install.sh
       stdout: true
