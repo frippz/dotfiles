@@ -22,8 +22,6 @@ PACKAGES=(
   "yaml-language-server"
 )
 
-source $HOME/.zshrc
-
 set -e
 
 if command -v nodenv > /dev/null 2>&1; then

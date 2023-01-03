@@ -2,8 +2,6 @@
 #
 # Setup required taps and install Homebrew packages using Brewfile
 
-source $HOME/.zshrc
-
 case "$OSTYPE" in
   *darwin*)
     if ! command -v brew >/dev/null 2>&1 ; then
