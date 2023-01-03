@@ -30,25 +30,25 @@
 
 - shell:
     - description: Install Homebrew & predefined packages
-      command: zsh -c "./homebrew/install.sh"
+      command: ./homebrew/install.sh
       stdout: true
 
     - description: Install paq-nvim
-      command: zsh -c "./nvim/install.sh"
+      command: ./nvim/install.sh
       stdout: true
 
     - description: Install Python
-      command: zsh -c "./python/install.sh"
+      command: ./python/install.sh
       stdout: true
 
     - description: Install Ruby
-      command: zsh -c "./ruby/install.sh"
+      command: ./ruby/install.sh
       stdout: true
 
     - description: Install Node
-      command: zsh -c "./node/install.sh"
+      command: ./node/install.sh
       stdout: true
 
     - description: Install gh extensions
-      command: zsh -c "./gh/install.sh"
+      command: ./gh/install.sh
       stdout: true
