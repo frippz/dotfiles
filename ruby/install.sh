@@ -15,18 +15,20 @@ GEMS=(
   "solargraph"
 )
 
-# if command -v rbenv >/dev/null 2>&1 ; then
+# Initialize rbenv
+eval "$(rbenv init -)"
+
+if command -v rbenv >/dev/null 2>&1 ; then
 
   echo ""
   echo " ✅ Install Ruby using rbenv and set ${VERSION} as global"
   echo ""
 
-  eval "$(rbenv init -)"
   rbenv install ${VERSION} --skip-existing
   rbenv global ${VERSION}
   rbenv rehash
 
-# fi
+fi
 
 # Install rbenv plugins
 if [ -d $HOME/.rbenv ]; then
