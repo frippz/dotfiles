@@ -34,7 +34,7 @@
       stdout: true
 
     - description: Reload ZSH environment
-      command: . ~/.zshrc
+      command: source ~/.zshrc
 
     - description: Install paq-nvim
       command: ./nvim/install.sh
