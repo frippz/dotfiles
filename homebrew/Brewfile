@@ -1,6 +1,11 @@
 # Taps
 tap "homebrew/bundle"
+tap "homebrew/cask"
 tap "neovim/neovim"
+tap "epk/epk"
+
+# Casks
+cask "font-sf-mono-nerd-font"
 
 # Packages
 brew "autoconf"
