@@ -29,12 +29,11 @@
 
 
 - shell:
+    - command: ./zsh/zshrc
+
     - description: Install Homebrew & predefined packages
       command: ./homebrew/install.sh
       stdout: true
-
-    - description: Reload ZSH environment
-      command: source ~/.zshrc
 
     - description: Install paq-nvim
       command: ./nvim/install.sh
