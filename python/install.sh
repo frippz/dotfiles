@@ -2,6 +2,8 @@
 #
 # Install Python via pyenv and pip packages
 
+source $HOME/.zshrc
+
 VERSION="3.11.1"
 
 PLUGINS=(
