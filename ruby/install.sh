@@ -21,6 +21,7 @@ GEMS=(
   echo " ✅ Install Ruby using rbenv and set ${VERSION} as global"
   echo ""
 
+  eval "$(rbenv init -)"
   rbenv install ${VERSION} --skip-existing
   rbenv global ${VERSION}
   rbenv rehash
