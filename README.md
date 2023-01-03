@@ -20,7 +20,13 @@ $ git submodule update
 Run the [dotbot](https://github.com/anishathalye/dotbot) install script
 
 ```zsh
-$ ./install
+$ ./install --except shell
+```
+
+Open an new tab and run the install script again with only the shell directive
+
+```zsh
+$ ./install --only shell
 ```
 
 All done! Unless something went wrong, then go ahead and curse… 😖
