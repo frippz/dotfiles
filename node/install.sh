@@ -13,7 +13,7 @@ PLUGINS=(
 
 # Packages to install globally with npm
 PACKAGES=(
-  "ncu"
+  "npm-check-updates"
   "pnpm"
   "pyright"
   "stylelint-lsp"
