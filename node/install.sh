@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-GLOBAL_VERSION="18.12.1"
+GLOBAL_VERSION="16.19.0"
 
 VERSIONS=(
   "16.19.0"
@@ -13,6 +13,7 @@ PLUGINS=(
 
 # Packages to install globally with npm
 PACKAGES=(
+  "ncu"
   "pnpm"
   "pyright"
   "stylelint-lsp"
