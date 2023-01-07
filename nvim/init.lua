@@ -360,7 +360,6 @@ require("telescope").setup({
 	},
 })
 
--- show telescope on Ctrl-P
 map("n", "<C-p>", ":Telescope find_files<CR>", mapOpts)
 map("n", "<leader>fg", ":Telescope live_grep<CR>", mapOpts)
 map("n", "<C-b>", ":Telescope buffers<CR>", mapOpts)
