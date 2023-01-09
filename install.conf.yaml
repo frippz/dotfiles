@@ -19,7 +19,6 @@
     ~/.config/tmux/tmux.conf: tmux/tmux.conf
     ~/.config/tmux/plugins: tmux/plugins
     ~/.config/tmux/tmux-macos.conf: tmux/tmux-macos.conf
-    ~/.npmrc: node/npmrc
     ~/.dircolors.ansi-dark: zsh/dircolors.ansi-dark
     ~/.dircolors.ansi-light: zsh/dircolors.ansi-light
     ~/.ripgreprc: ripgrep/ripgreprc
