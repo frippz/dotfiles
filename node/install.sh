@@ -20,6 +20,7 @@ PACKAGES=(
   "typescript"
   "typescript-language-server"
   "vscode-langservers-extracted"
+  "wrangler"
   "yaml-language-server"
 )
 
