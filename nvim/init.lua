@@ -382,7 +382,7 @@ g.coc_global_extensions = {
 	"coc-pyright",
 	"coc-snippets",
 	"coc-solargraph",
-	"coc-stylelintplus",
+	"coc-stylelint",
 	"coc-stylua",
 	"coc-svelte",
 	"coc-svg",

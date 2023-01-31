@@ -17,7 +17,7 @@
   "sumneko-lua.enableNvimLuaDev": true,
   "svelte.enable-ts-plugin": true,
   "wxss.validate": false,
-  "[css][scss][yaml][javascript][javascriptreact][typescript][typescriptreact][json][svelte][lua][python][ruby]": {
+  "[css][scss][sass][yaml][javascript][javascriptreact][typescript][typescriptreact][json][svelte][lua][python][ruby]": {
     "coc.preferences.formatOnSave": true
   }
 }
