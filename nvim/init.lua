@@ -372,11 +372,9 @@ map("n", "<leader>fh", ":Telescope help_tags<CR>", mapOpts)
 -- Extensions
 g.coc_global_extensions = {
 	"coc-css",
-	"coc-emmet",
 	"coc-git",
 	"coc-html",
 	"coc-html-css-support",
-	"coc-htmlhint",
 	"coc-json",
 	"coc-prettier",
 	"coc-pyright",
