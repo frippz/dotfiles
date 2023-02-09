@@ -2,14 +2,14 @@
 
 # Install paq-nvim
 if [ ! -d ${XDG_DATA_HOME:-$HOME/.local/share/nvim/site/pack} ]; then
-  git clone --depth=1 https://github.com/savq/paq-nvim.git "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/pack/paqs/start/paq-nvim
+  git clone --depth 1 https://github.com/wbthomason/packer.nvim $HOME/.local/share/nvim/site/pack/packer/start/packer.nvim
 else
   echo ""
-  echo " ⏭  paq-nvim is already present. Skipping..."
+  echo " ⏭  packer is already present. Skipping..."
   echo ""
 fi
 
 # Install paq-nvim packages
 if [ -d ${XDG_DATA_HOME:-$HOME/.local/share/nvim/site/pack} ]; then
-  nvim --headless -c "PaqInstall" -c "quit"
+  nvim --headless -c "PackerInstall" -c "quit"
 fi

@@ -1,45 +1,63 @@
 -- Plugins
 -- ============================================================================
 
-local paq = require("paq")
-
-paq({
+require("packer").startup(function(use)
 	-- package manager
-	"savq/paq-nvim",
+	use("wbthomason/packer.nvim")
 
 	-- color themes
-	"gruvbox-community/gruvbox",
-	"CodeGradox/onehalf-lush",
+	use("gruvbox-community/gruvbox")
+	use("CodeGradox/onehalf-lush")
 
 	-- regular plugins
-	"Azeirah/nvim-redux",
-	"editorconfig/editorconfig-vim",
-	"leafOfTree/vim-svelte-plugin",
-	"f-person/auto-dark-mode.nvim",
-	"gregsexton/MatchTag",
-	"jremmen/vim-ripgrep",
-	"kyazdani42/nvim-tree.lua",
-	"kyazdani42/nvim-web-devicons",
-	"lewis6991/gitsigns.nvim",
-	"lukas-reineke/indent-blankline.nvim",
-	"machakann/vim-highlightedyank",
-	"nvim-lua/plenary.nvim",
-	"nvim-lualine/lualine.nvim",
-	"psliwka/vim-smoothie",
-	"raimondi/delimitMate",
-	"ryanoasis/vim-devicons",
-	"sheerun/vim-polyglot",
-	"tmhedberg/matchit",
-	"tomtom/tcomment_vim",
-	"tpope/vim-endwise",
-	"tpope/vim-fugitive",
-	"tpope/vim-repeat",
-	"tpope/vim-rhubarb",
-	"tpope/vim-surround",
-	{ "neoclide/coc.nvim", branch = "release" },
-	{ "nvim-telescope/telescope.nvim", branch = "0.1.x" },
-	{ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
-})
+	use("Azeirah/nvim-redux")
+	use("editorconfig/editorconfig-vim")
+	use("f-person/auto-dark-mode.nvim")
+	use("gregsexton/MatchTag")
+	use("hrsh7th/cmp-nvim-lsp")
+	use("hrsh7th/nvim-cmp")
+	use("hrsh7th/cmp-buffer")
+	use("hrsh7th/cmp-cmdline")
+	use("hrsh7th/cmp-vsnip")
+	use("hrsh7th/vim-vsnip")
+	use("jremmen/vim-ripgrep")
+	use("jose-elias-alvarez/null-ls.nvim")
+	use("kyazdani42/nvim-tree.lua")
+	use("kyazdani42/nvim-web-devicons")
+	use("leafOfTree/vim-svelte-plugin")
+	use("lewis6991/gitsigns.nvim")
+	use("lukas-reineke/indent-blankline.nvim")
+	use("machakann/vim-highlightedyank")
+	use("neovim/nvim-lspconfig")
+	use("nvim-lua/plenary.nvim")
+	use("nvim-lualine/lualine.nvim")
+	use("RishabhRD/nvim-lsputils")
+	use("RishabhRD/popfix")
+	use("psliwka/vim-smoothie")
+	use("raimondi/delimitMate")
+	use("ryanoasis/vim-devicons")
+	use("sheerun/vim-polyglot")
+	use("tmhedberg/matchit")
+	use("tomtom/tcomment_vim")
+	use("tpope/vim-endwise")
+	use("tpope/vim-fugitive")
+	use("tpope/vim-repeat")
+	use("tpope/vim-rhubarb")
+	use("tpope/vim-surround")
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
+	use({
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.x",
+	})
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = function()
+			local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+			ts_update()
+		end,
+	})
+end)
 
 -- Helpers
 -- ============================================================================
@@ -126,6 +144,8 @@ o.ruler = true -- Always show info along bottom.
 o.wrap = true -- Wrap lines
 o.linebreak = true -- Don't break words
 o.termguicolors = true -- Enable 24-bit colors
+o.signcolumn = "yes"
+o.shortmess = "c"
 
 -- Specify listchars (invisibles) with literal unicode in a :set command
 vim.scriptencoding = "utf-8"
@@ -288,6 +308,224 @@ vim.cmd([[
 -- Plugins
 -- ============================================================================
 
+-- mason.nvim
+-- ----------------------------------------------------------------------------
+require("mason").setup()
+require("mason-lspconfig").setup()
+
+-- nvim-lspconfig
+-- ----------------------------------------------------------------------------
+
+-- nvim-cmp capabilities
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+local on_attach = function(client, bufnr)
+	-- Enable completion triggered by <c-x><c-o>
+	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+
+	-- Mappings.
+	-- See `:help vim.lsp.*` for documentation on any of the below functions
+	local bufopts = { noremap = true, silent = true, buffer = bufnr }
+	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
+	vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
+	vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
+	vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
+	vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
+	vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
+	vim.keymap.set("n", "<space>wl", function()
+		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+	end, bufopts)
+	vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
+	vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts)
+	vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
+	vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
+	vim.keymap.set("n", "<space>f", function()
+		vim.lsp.buf.format({ async = true })
+	end, bufopts)
+end
+
+-- typescript
+require("lspconfig").tsserver.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+-- eslint
+require("lspconfig").eslint.setup({
+	capabilities = capabilities,
+})
+
+-- cssls
+require("lspconfig").cssls.setup({
+	capabilities = capabilities,
+})
+
+-- stylelint
+require("lspconfig").stylelint_lsp.setup({
+	capabilities = capabilities,
+})
+
+-- svelte
+require("lspconfig").svelte.setup({
+	capabilities = capabilities,
+})
+
+-- python
+require("lspconfig").pyright.setup({
+	capabilities = capabilities,
+})
+
+-- ruby
+require("lspconfig").solargraph.setup({
+	capabilities = capabilities,
+})
+
+-- html
+require("lspconfig").html.setup({
+	capabilities = capabilities,
+})
+
+-- yaml
+require("lspconfig").yamlls.setup({
+	capabilities = capabilities,
+})
+
+-- lua
+local runtime_path = vim.split(package.path, ";")
+table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/?/init.lua")
+
+require("lspconfig").sumneko_lua.setup({
+	capabilities = capabilities,
+	settings = {
+		Lua = {
+			runtime = {
+				-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+				version = "LuaJIT",
+				-- Setup your lua path
+				path = runtime_path,
+			},
+			diagnostics = {
+				-- Get the language server to recognize the `vim` global
+				globals = { "vim" },
+			},
+			workspace = {
+				-- Make the server aware of Neovim runtime files
+				library = vim.api.nvim_get_runtime_file("", true),
+			},
+			-- Do not send telemetry data containing a randomized but unique identifier
+			telemetry = {
+				enable = false,
+			},
+		},
+	},
+})
+
+-- null-ls.nvim
+-- ----------------------------------------------------------------------------
+local null_ls = require("null-ls")
+
+local sources = {
+	null_ls.builtins.diagnostics.eslint,
+	null_ls.builtins.diagnostics.rubocop,
+	null_ls.builtins.diagnostics.shellcheck,
+	null_ls.builtins.diagnostics.yamllint,
+	null_ls.builtins.formatting.beautysh, -- sh, zsh, ...
+	null_ls.builtins.formatting.prettier,
+	null_ls.builtins.formatting.rubocop,
+	null_ls.builtins.formatting.shfmt,
+	null_ls.builtins.formatting.stylelint,
+	null_ls.builtins.formatting.stylua,
+}
+
+null_ls.setup({
+	sources = sources,
+	on_attach = function(client)
+		if client.server_capabilities.documentFormattingProvider then
+			vim.cmd([[
+      augroup LspFormatting
+      autocmd! * <buffer>
+      autocmd BufWritePre <buffer> lua vim.lsp.buf.format()
+      augroup END
+      ]])
+		end
+	end,
+})
+
+-- nvim-cmp
+-- ----------------------------------------------------------------------------
+vim.opt.completeopt:append("menu")
+vim.opt.completeopt:append("menuone")
+vim.opt.completeopt:append("noselect")
+
+local cmp = require("cmp")
+
+cmp.setup({
+	snippet = {
+		expand = function(args)
+			-- For `vsnip` users.
+			vim.fn["vsnip#anonymous"](args.body)
+		end,
+	},
+	sources = cmp.config.sources({
+		{ name = "nvim_lsp" },
+		{ name = "vsnip" },
+		{ name = "buffer" },
+	}),
+	mapping = {
+		["<C-p>"] = cmp.mapping.select_prev_item(),
+		["<C-n>"] = cmp.mapping.select_next_item(),
+		["<C-d>"] = cmp.mapping.scroll_docs(-4),
+		["<C-f>"] = cmp.mapping.scroll_docs(4),
+		["<C-Space>"] = cmp.mapping(
+			cmp.mapping.complete({
+				reason = cmp.ContextReason.Auto,
+			}),
+			{ "i", "c" }
+		),
+		["<C-e>"] = cmp.mapping.close(),
+		["<CR>"] = cmp.mapping.confirm({
+			behavior = cmp.ConfirmBehavior.Replace,
+			select = true,
+		}),
+		["<Tab>"] = function(fallback)
+			if cmp.visible() then
+				cmp.select_next_item()
+				-- elseif luasnip.expand_or_jumpable() then
+				-- luasnip.expand_or_jump()
+			else
+				fallback()
+			end
+		end,
+		["<S-Tab>"] = function(fallback)
+			if cmp.visible() then
+				cmp.select_prev_item()
+				-- elseif luasnip.jumpable(-1) then
+				-- luasnip.jump(-1)
+			else
+				fallback()
+			end
+		end,
+	},
+})
+
+cmp.setup.cmdline("/", {
+	sources = {
+		{ name = "buffer" },
+	},
+})
+
+cmp.setup.cmdline(":", {
+	sources = cmp.config.sources({
+		{ name = "path" },
+		{ name = "cmdline" },
+	}),
+})
+
 -- nvim-tree
 -- ----------------------------------------------------------------------------
 
@@ -314,6 +552,17 @@ require("nvim-tree").setup({
 map("n", "<C-n>", ":NvimTreeToggle<CR>", mapOpts)
 map("n", "<C-f>", ":NvimTreeFindFile<CR>", mapOpts)
 
+-- nvim-lsputils.nvim
+-- ----------------------------------------------------------------------------
+vim.lsp.handlers["textDocument/codeAction"] = require("lsputil.codeAction").code_action_handler
+vim.lsp.handlers["textDocument/references"] = require("lsputil.locations").references_handler
+vim.lsp.handlers["textDocument/definition"] = require("lsputil.locations").definition_handler
+vim.lsp.handlers["textDocument/declaration"] = require("lsputil.locations").declaration_handler
+vim.lsp.handlers["textDocument/typeDefinition"] = require("lsputil.locations").typeDefinition_handler
+vim.lsp.handlers["textDocument/implementation"] = require("lsputil.locations").implementation_handler
+vim.lsp.handlers["textDocument/documentSymbol"] = require("lsputil.symbols").document_handler
+vim.lsp.handlers["workspace/symbol"] = require("lsputil.symbols").workspace_handler
+
 -- nvim-treesitter
 -- ----------------------------------------------------------------------------
 require("nvim-treesitter.configs").setup({
@@ -330,10 +579,8 @@ require("nvim-treesitter.configs").setup({
 		"typescript",
 		"yaml",
 	},
-
 	-- automatically install missing parsers when entering buffer
 	auto_install = true,
-
 	-- install languages synchronously (only applied to `ensure_installed`)
 	sync_install = false,
 })
@@ -370,88 +617,88 @@ map("n", "<leader>fh", ":Telescope help_tags<CR>", mapOpts)
 -- ----------------------------------------------------------------------------
 
 -- Extensions
-g.coc_global_extensions = {
-	"coc-css",
-	"coc-git",
-	"coc-html",
-	"coc-html-css-support",
-	"coc-json",
-	"coc-prettier",
-	"coc-pyright",
-	"coc-snippets",
-	"coc-solargraph",
-	"coc-stylua",
-	"coc-svelte",
-	"coc-svg",
-	"coc-tsserver",
-	"coc-yaml",
-}
+-- g.coc_global_extensions = {
+-- 	"coc-css",
+-- 	"coc-git",
+-- 	"coc-html",
+-- 	"coc-html-css-support",
+-- 	"coc-json",
+-- 	"coc-prettier",
+-- 	"coc-pyright",
+-- 	"coc-snippets",
+-- 	"coc-solargraph",
+-- 	"coc-stylua",
+-- 	"coc-svelte",
+-- 	"coc-svg",
+-- 	"coc-tsserver",
+-- 	"coc-yaml",
+-- }
 
-o.updatetime = 300
-o.signcolumn = "yes"
-o.shortmess = "c"
+-- o.updatetime = 300
+-- o.signcolumn = "yes"
+-- o.shortmess = "c"
 
-vim.cmd("let g:echodoc_enable_at_startup = 1")
+-- vim.cmd("let g:echodoc_enable_at_startup = 1")
 
 -- coc-prettier
-vim.cmd("command! -nargs=0 Prettier :CocCommand prettier.formatFile")
-map("v", "<Leader>f", "<Plug>(coc-format-selected)", mapOpts)
-map("n", "<Leader>f", "<Plug>(coc-format-selected)", mapOpts)
+-- vim.cmd("command! -nargs=0 Prettier :CocCommand prettier.formatFile")
+-- map("v", "<Leader>f", "<Plug>(coc-format-selected)", mapOpts)
+-- map("n", "<Leader>f", "<Plug>(coc-format-selected)", mapOpts)
 
 -- Use tab for trigger completion with characters ahead and navigate.
 -- NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 -- other plugin before putting this into your config.
-vim.cmd([[
-  inoremap <silent><expr> <TAB>
-        \ coc#pum#visible() ? coc#pum#next(1):
-        \ CheckBackspace() ? "\<Tab>" :
-        \ coc#refresh()
-  inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-]])
+-- vim.cmd([[
+--   inoremap <silent><expr> <TAB>
+--         \ coc#pum#visible() ? coc#pum#next(1):
+--         \ CheckBackspace() ? "\<Tab>" :
+--         \ coc#refresh()
+--   inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+-- ]])
 
 -- Make <CR> to accept selected completion item or notify coc.nvim to format
 -- <C-g>u breaks current undo, please make your own choice.
-vim.cmd([[
-  inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                                \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+-- vim.cmd([[
+--   inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+--                                 \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-  function! CheckBackspace() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-  endfunction
-]])
+--   function! CheckBackspace() abort
+--     let col = col('.') - 1
+--     return !col || getline('.')[col - 1]  =~# '\s'
+--   endfunction
+-- ]])
 
-vim.cmd([[
-  function! ShowDocumentation()
-    if CocAction('hasProvider', 'hover')
-      call CocActionAsync('doHover')
-    else
-      call feedkeys('K', 'in')
-    endif
-  endfunction
-]])
+-- vim.cmd([[
+--   function! ShowDocumentation()
+--     if CocAction('hasProvider', 'hover')
+--       call CocActionAsync('doHover')
+--     else
+--       call feedkeys('K', 'in')
+--     endif
+--   endfunction
+-- ]])
 
 -- Highlight the symbol and its references when holding the cursor.
-vim.cmd("autocmd CursorHold * silent call CocActionAsync('highlight')")
+-- vim.cmd("autocmd CursorHold * silent call CocActionAsync('highlight')")
 
 -- Use <c-space> to trigger completion.
 -- map("i", "<c-space>", "coc#refresh", mapOpts)
-vim.cmd("inoremap <silent><expr> <c-space> coc#refresh()")
+-- vim.cmd("inoremap <silent><expr> <c-space> coc#refresh()")
 
 -- Symbol renaming
-map("n", "<Leader>rn", "<Plug>(coc-rename)", mapOpts)
+-- map("n", "<Leader>rn", "<Plug>(coc-rename)", mapOpts)
 
 -- CocCommand
-map("n", "<Leader>cc", ":CocCommand<CR>", mapOpts)
+-- map("n", "<Leader>cc", ":CocCommand<CR>", mapOpts)
 
 -- Goto code navigation.
-map("n", "gd", "<Plug>(coc-definition)", mapOpts)
-map("n", "gy", "<Plug>(coc-type-definition)", mapOpts)
-map("n", "gi", "<Plug>(coc-implementation)", mapOpts)
-map("n", "gr", "<Plug>(coc-references)", mapOpts)
+-- map("n", "gd", "<Plug>(coc-definition)", mapOpts)
+-- map("n", "gy", "<Plug>(coc-type-definition)", mapOpts)
+-- map("n", "gi", "<Plug>(coc-implementation)", mapOpts)
+-- map("n", "gr", "<Plug>(coc-references)", mapOpts)
 
 -- " Use K to show documentation in preview window.
-map("n", "K", ":call ShowDocumentation()<CR>", mapOpts)
+-- map("n", "K", ":call ShowDocumentation()<CR>", mapOpts)
 
 -- delimitMate
 -- ----------------------------------------------------------------------------
