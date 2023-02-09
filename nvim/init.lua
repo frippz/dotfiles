@@ -46,6 +46,7 @@ require("packer").startup(function(use)
 	use("tpope/vim-surround")
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
+	use("MunifTanjim/prettier.nvim")
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.x",
@@ -186,28 +187,19 @@ o.backspace = { "indent", "eol", "start" } -- Backspace through anything in inse
 -- ============================================================================
 
 -- git (symlinked)
-vim.cmd("au BufRead,BufNewFile gitconfig.symlink,gitignore.symlink setfiletype gitconfig")
-
--- nginx
-vim.cmd("au BufRead,BufNewFile */nginx/*,nginx.conf set filetype=nginx")
+-- vim.cmd("au BufRead,BufNewFile gitconfig.symlink,gitignore.symlink setfiletype gitconfig")
 
 -- JSON
-vim.cmd("au BufRead,BufNewFile *intrc*,*.json.* set filetype=json")
+-- vim.cmd("au BufRead,BufNewFile *intrc*,*.json.* set filetype=json")
 
 -- YAML
-vim.cmd("au BufRead,BufNewFile *.yml.*, set filetype=yaml")
+-- vim.cmd("au BufRead,BufNewFile *.yml.*, set filetype=yaml")
 
 -- Nunjucks
-vim.cmd("au BufRead,BufNewFile *.nunj,*.njk set filetype=jinja.html")
+-- vim.cmd("au BufRead,BufNewFile *.nunj,*.njk set filetype=jinja.html")
 
 -- Liquid
-vim.cmd("au BufRead,BufNewFile *.liquid set filetype=liquid")
-
--- Dockerfile
-vim.cmd("au BufRead,BufNewFile Dockerfile* set filetype=dockerfile")
-
--- Vue
-vim.cmd("let g:vue_pre_processors = []")
+-- vim.cmd("au BufRead,BufNewFile *.liquid set filetype=liquid")
 
 -- Miscellaneous
 -- ============================================================================
@@ -317,80 +309,65 @@ require("mason-lspconfig").setup()
 -- ----------------------------------------------------------------------------
 
 -- nvim-cmp capabilities
+local lspconfig = require("lspconfig")
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
-	-- Enable completion triggered by <c-x><c-o>
-	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-
-	-- Mappings.
-	-- See `:help vim.lsp.*` for documentation on any of the below functions
-	local bufopts = { noremap = true, silent = true, buffer = bufnr }
-	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
-	vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
-	vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
-	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
-	vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
-	vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
-	vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
-	vim.keymap.set("n", "<space>wl", function()
-		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-	end, bufopts)
-	vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
-	vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts)
-	vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
-	vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
-	vim.keymap.set("n", "<space>f", function()
-		vim.lsp.buf.format({ async = true })
-	end, bufopts)
-end
-
 -- typescript
-require("lspconfig").tsserver.setup({
+lspconfig.tsserver.setup({
 	capabilities = capabilities,
-	on_attach = on_attach,
+	filetypes = {
+		"typescript",
+		"typescriptreact",
+	},
 })
 
 -- eslint
-require("lspconfig").eslint.setup({
+lspconfig.eslint.setup({
 	capabilities = capabilities,
+	filetypes = {
+		"javascript",
+		"javascriptreact",
+		"javascript.jsx",
+	},
 })
 
 -- cssls
-require("lspconfig").cssls.setup({
+lspconfig.cssls.setup({
 	capabilities = capabilities,
 })
 
 -- stylelint
-require("lspconfig").stylelint_lsp.setup({
+lspconfig.stylelint_lsp.setup({
 	capabilities = capabilities,
+	filetypes = {
+		"css",
+		"scss",
+	},
 })
 
 -- svelte
-require("lspconfig").svelte.setup({
+lspconfig.svelte.setup({
 	capabilities = capabilities,
 })
 
 -- python
-require("lspconfig").pyright.setup({
+lspconfig.pyright.setup({
 	capabilities = capabilities,
 })
 
 -- ruby
-require("lspconfig").solargraph.setup({
+lspconfig.solargraph.setup({
 	capabilities = capabilities,
 })
 
 -- html
-require("lspconfig").html.setup({
+lspconfig.html.setup({
 	capabilities = capabilities,
 })
 
 -- yaml
-require("lspconfig").yamlls.setup({
+lspconfig.yamlls.setup({
 	capabilities = capabilities,
 })
 
@@ -399,7 +376,7 @@ local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-require("lspconfig").sumneko_lua.setup({
+lspconfig.sumneko_lua.setup({
 	capabilities = capabilities,
 	settings = {
 		Lua = {
@@ -416,6 +393,7 @@ require("lspconfig").sumneko_lua.setup({
 			workspace = {
 				-- Make the server aware of Neovim runtime files
 				library = vim.api.nvim_get_runtime_file("", true),
+				checkThirdParty = false,
 			},
 			-- Do not send telemetry data containing a randomized but unique identifier
 			telemetry = {
@@ -429,31 +407,64 @@ require("lspconfig").sumneko_lua.setup({
 -- ----------------------------------------------------------------------------
 local null_ls = require("null-ls")
 
-local sources = {
-	null_ls.builtins.diagnostics.eslint,
-	null_ls.builtins.diagnostics.rubocop,
-	null_ls.builtins.diagnostics.shellcheck,
-	null_ls.builtins.diagnostics.yamllint,
-	null_ls.builtins.formatting.beautysh, -- sh, zsh, ...
-	null_ls.builtins.formatting.prettier,
-	null_ls.builtins.formatting.rubocop,
-	null_ls.builtins.formatting.shfmt,
-	null_ls.builtins.formatting.stylelint,
-	null_ls.builtins.formatting.stylua,
-}
+local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
+local event = "BufWritePre" -- or "BufWritePost"
+local async = event == "BufWritePost"
 
 null_ls.setup({
-	sources = sources,
-	on_attach = function(client)
-		if client.server_capabilities.documentFormattingProvider then
-			vim.cmd([[
-      augroup LspFormatting
-      autocmd! * <buffer>
-      autocmd BufWritePre <buffer> lua vim.lsp.buf.format()
-      augroup END
-      ]])
+	sources = {
+		null_ls.builtins.diagnostics.yamllint,
+		null_ls.builtins.formatting.prettier,
+		null_ls.builtins.formatting.stylelint,
+		null_ls.builtins.formatting.stylua,
+		null_ls.builtins.formatting.beautysh,
+	},
+	on_attach = function(client, bufnr)
+		if client.supports_method("textDocument/formatting") then
+			vim.keymap.set("n", "<Leader>f", function()
+				vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+			end, { buffer = bufnr, desc = "[lsp] format" })
+
+			-- format on save
+			vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
+			vim.api.nvim_create_autocmd(event, {
+				buffer = bufnr,
+				group = group,
+				callback = function()
+					vim.lsp.buf.format({ bufnr = bufnr, async = async })
+				end,
+				desc = "[lsp] format on save",
+			})
+		end
+
+		if client.supports_method("textDocument/rangeFormatting") then
+			vim.keymap.set("x", "<Leader>f", function()
+				vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+			end, { buffer = bufnr, desc = "[lsp] format" })
 		end
 	end,
+})
+
+-- prettier
+-- ----------------------------------------------------------------------------
+local prettier = require("prettier")
+
+prettier.setup({
+	bin = "prettier", -- or `'prettierd'` (v0.22+)
+	filetypes = {
+		"css",
+		"graphql",
+		"html",
+		"javascript",
+		"javascriptreact",
+		"json",
+		"less",
+		"markdown",
+		"scss",
+		"typescript",
+		"typescriptreact",
+		"yaml",
+	},
 })
 
 -- nvim-cmp
@@ -612,93 +623,6 @@ map("n", "<leader>fg", ":Telescope live_grep<CR>", mapOpts)
 map("n", "<C-b>", ":Telescope buffers<CR>", mapOpts)
 map("n", "<leader>fb", ":Telescope buffers<CR>", mapOpts)
 map("n", "<leader>fh", ":Telescope help_tags<CR>", mapOpts)
-
--- coc.nvim
--- ----------------------------------------------------------------------------
-
--- Extensions
--- g.coc_global_extensions = {
--- 	"coc-css",
--- 	"coc-git",
--- 	"coc-html",
--- 	"coc-html-css-support",
--- 	"coc-json",
--- 	"coc-prettier",
--- 	"coc-pyright",
--- 	"coc-snippets",
--- 	"coc-solargraph",
--- 	"coc-stylua",
--- 	"coc-svelte",
--- 	"coc-svg",
--- 	"coc-tsserver",
--- 	"coc-yaml",
--- }
-
--- o.updatetime = 300
--- o.signcolumn = "yes"
--- o.shortmess = "c"
-
--- vim.cmd("let g:echodoc_enable_at_startup = 1")
-
--- coc-prettier
--- vim.cmd("command! -nargs=0 Prettier :CocCommand prettier.formatFile")
--- map("v", "<Leader>f", "<Plug>(coc-format-selected)", mapOpts)
--- map("n", "<Leader>f", "<Plug>(coc-format-selected)", mapOpts)
-
--- Use tab for trigger completion with characters ahead and navigate.
--- NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
--- other plugin before putting this into your config.
--- vim.cmd([[
---   inoremap <silent><expr> <TAB>
---         \ coc#pum#visible() ? coc#pum#next(1):
---         \ CheckBackspace() ? "\<Tab>" :
---         \ coc#refresh()
---   inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
--- ]])
-
--- Make <CR> to accept selected completion item or notify coc.nvim to format
--- <C-g>u breaks current undo, please make your own choice.
--- vim.cmd([[
---   inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
---                                 \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
---   function! CheckBackspace() abort
---     let col = col('.') - 1
---     return !col || getline('.')[col - 1]  =~# '\s'
---   endfunction
--- ]])
-
--- vim.cmd([[
---   function! ShowDocumentation()
---     if CocAction('hasProvider', 'hover')
---       call CocActionAsync('doHover')
---     else
---       call feedkeys('K', 'in')
---     endif
---   endfunction
--- ]])
-
--- Highlight the symbol and its references when holding the cursor.
--- vim.cmd("autocmd CursorHold * silent call CocActionAsync('highlight')")
-
--- Use <c-space> to trigger completion.
--- map("i", "<c-space>", "coc#refresh", mapOpts)
--- vim.cmd("inoremap <silent><expr> <c-space> coc#refresh()")
-
--- Symbol renaming
--- map("n", "<Leader>rn", "<Plug>(coc-rename)", mapOpts)
-
--- CocCommand
--- map("n", "<Leader>cc", ":CocCommand<CR>", mapOpts)
-
--- Goto code navigation.
--- map("n", "gd", "<Plug>(coc-definition)", mapOpts)
--- map("n", "gy", "<Plug>(coc-type-definition)", mapOpts)
--- map("n", "gi", "<Plug>(coc-implementation)", mapOpts)
--- map("n", "gr", "<Plug>(coc-references)", mapOpts)
-
--- " Use K to show documentation in preview window.
--- map("n", "K", ":call ShowDocumentation()<CR>", mapOpts)
 
 -- delimitMate
 -- ----------------------------------------------------------------------------

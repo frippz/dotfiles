@@ -22,6 +22,7 @@ PACKAGES=(
   "vscode-langservers-extracted"
   "wrangler"
   "yaml-language-server"
+  "@johnnymorganz/stylua-bin"
 )
 
 set -e
