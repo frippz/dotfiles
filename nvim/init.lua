@@ -42,9 +42,13 @@ require("packer").startup(function(use)
 	use("tpope/vim-repeat")
 	use("tpope/vim-rhubarb")
 	use("tpope/vim-surround")
-	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
 	use("MunifTanjim/prettier.nvim")
+	use({
+		"williamboman/mason.nvim",
+		requires = {
+			"williamboman/mason-lspconfig.nvim",
+		},
+	})
 	use({
 		"nvim-tree/nvim-tree.lua",
 		requires = {
