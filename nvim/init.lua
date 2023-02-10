@@ -627,6 +627,19 @@ map("n", "<C-b>", ":Telescope buffers<CR>", mapOpts)
 map("n", "<leader>fb", ":Telescope buffers<CR>", mapOpts)
 map("n", "<leader>fh", ":Telescope help_tags<CR>", mapOpts)
 
+-- gitsigns.nvim
+-- ----------------------------------------------------------------------------
+require("gitsigns").setup({
+	signs = {
+		add = { text = "+" },
+		change = { text = "±" },
+		delete = { text = "-" },
+		topdelete = { text = "‾" },
+		changedelete = { text = "~" },
+		untracked = { text = "┆" },
+	},
+})
+
 -- delimitMate
 -- ----------------------------------------------------------------------------
 
