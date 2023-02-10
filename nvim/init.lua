@@ -22,8 +22,6 @@ require("packer").startup(function(use)
 	use("hrsh7th/vim-vsnip")
 	use("jremmen/vim-ripgrep")
 	use("jose-elias-alvarez/null-ls.nvim")
-	use("kyazdani42/nvim-tree.lua")
-	use("kyazdani42/nvim-web-devicons")
 	use("leafOfTree/vim-svelte-plugin")
 	use("lewis6991/gitsigns.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
@@ -47,6 +45,12 @@ require("packer").startup(function(use)
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 	use("MunifTanjim/prettier.nvim")
+	use({
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons",
+		},
+	})
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.x",
