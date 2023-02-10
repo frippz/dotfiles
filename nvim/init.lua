@@ -31,7 +31,7 @@ require("packer").startup(function(use)
 	use("nvim-lua/plenary.nvim")
 	use("nvim-lualine/lualine.nvim")
 	use("psliwka/vim-smoothie")
-	use("raimondi/delimitmate")
+	-- use("raimondi/delimitmate")
 	use("rishabhrd/nvim-lsputils")
 	use("rishabhrd/popfix")
 	use("ryanoasis/vim-devicons")
@@ -631,15 +631,15 @@ map("n", "<leader>fh", ":Telescope help_tags<CR>", mapOpts)
 -- delimitMate
 -- ----------------------------------------------------------------------------
 
-vim.cmd([[
-  let delimitMate_expand_cr = 1
-  let delimitMate_matchpairs = "(:),[:],{:}"
-]])
+-- vim.cmd([[
+--   let delimitMate_expand_cr = 1
+--   let delimitMate_matchpairs = "(:),[:],{:}"
+-- ]])
 
 -- Disable delimitMate per file type
-vim.cmd([[
-  au FileType html.handlebars,html.mustache let b:delimitMate_autoclose = 0
-]])
+-- vim.cmd([[
+--   au FileType html.handlebars,html.mustache let b:delimitMate_autoclose = 0
+-- ]])
 
 -- Editorconfig
 -- ----------------------------------------------------------------------------
