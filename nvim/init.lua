@@ -1,6 +1,5 @@
 -- Plugins
 -- ============================================================================
-
 require("packer").startup(function(use)
 	-- package manager
 	use("wbthomason/packer.nvim")
@@ -69,7 +68,6 @@ end)
 
 -- Helpers
 -- ============================================================================
-
 local o = vim.opt
 local g = vim.g
 local map = vim.api.nvim_set_keymap
@@ -135,7 +133,6 @@ o.inccommand = "nosplit"
 
 -- Search
 -- ----------------------------------------------------------------------------
-
 o.hlsearch = true -- highlight all results
 o.incsearch = true -- but do highlight as you type your search.
 o.ignorecase = true -- make searches case-insensitive...
@@ -144,7 +141,6 @@ o.gdefault = true -- have :s///g flag by default on"
 
 -- Visual Stuff
 -- ----------------------------------------------------------------------------
-
 o.number = true -- show line numbers
 o.cursorline = true -- highlight the current line
 o.history = 200 -- remember a lot of stuff
@@ -181,7 +177,6 @@ o.swapfile = false
 
 -- Indentation
 -- ----------------------------------------------------------------------------
-
 o.autoindent = true -- auto-indent
 o.tabstop = 2 -- tab spacing
 o.softtabstop = 2 -- unify
@@ -247,7 +242,6 @@ vim.cmd("autocmd BufWritePre * :%s/\\s\\+$//e")
 
 -- Gruvbox
 -- ----------------------------------------------------------------------------
-
 vim.cmd([[
   function! Gruvbox()
     syntax enable
@@ -261,7 +255,6 @@ vim.cmd([[
 
 -- OneHalf Light
 -- ----------------------------------------------------------------------------
-
 vim.cmd([[
   function! OneHalfLight()
     syntax enable
@@ -275,7 +268,6 @@ vim.cmd([[
 
 -- Auto Dark Mode
 -- ----------------------------------------------------------------------------
-
 local auto_dark_mode = require("auto-dark-mode")
 
 auto_dark_mode.setup({
@@ -293,7 +285,6 @@ auto_dark_mode.init()
 -- Theming for non-macOS
 -- Set theme based on $TERM_THEME (or fall back to Gruvbox)
 -- ----------------------------------------------------------------------------
-
 vim.cmd([[
   if !has('macunix')
     if $TERM_THEME == 'light'
@@ -542,7 +533,6 @@ cmp.setup.cmdline(":", {
 
 -- nvim-tree
 -- ----------------------------------------------------------------------------
-
 vim.cmd("set splitright")
 
 require("nvim-tree").setup({
@@ -605,7 +595,6 @@ require("lualine").setup()
 
 -- telescope.vim
 -- ----------------------------------------------------------------------------
-
 local pickersOpts = {
 	respect_gitignore = true,
 	search_dirs = { "./", ".github/" },
@@ -642,7 +631,6 @@ require("gitsigns").setup({
 
 -- delimitMate
 -- ----------------------------------------------------------------------------
-
 vim.cmd([[
   let delimitMate_expand_cr = 1
   let delimitMate_matchpairs = "(:),[:],{:}"
@@ -655,7 +643,6 @@ vim.cmd([[
 
 -- Editorconfig
 -- ----------------------------------------------------------------------------
-
 vim.cmd("let g:EditorConfig_exclude_patterns = ['fugitive://.*']")
 
 -- polyglot
@@ -668,10 +655,8 @@ g.vim_markdown_conceal_code_blocks = 0
 
 -- indent-blankline.nvim
 -- ----------------------------------------------------------------------------
-
 g.indent_blankline_space_char = " "
 
 -- vim-svelte-plugin
 -- ----------------------------------------------------------------------------
-
 g.vim_svelte_plugin_use_typescript = 1
