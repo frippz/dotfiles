@@ -591,7 +591,7 @@ require("nvim-treesitter.configs").setup({
 
 -- lualine.nvim
 -- ----------------------------------------------------------------------------
-require("lualine").setup()
+require("lualine").setup({})
 
 -- telescope.vim
 -- ----------------------------------------------------------------------------
