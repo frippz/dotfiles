@@ -8,6 +8,7 @@ VERSIONS=(
 )
 
 PLUGINS=(
+  "git@github.com:nodenv/nodenv-update.git"
   "git@github.com:nodenv/nodenv-npm-migrate.git"
 )
 
@@ -42,7 +43,7 @@ if command -v nodenv > /dev/null 2>&1; then
 
 fi
 
-# Install pyenv plugins
+# Install nodenv plugins
 if [ -d $HOME/.nodenv ]; then
   echo ""
   echo " ✅ Installing nodenv plugins"
