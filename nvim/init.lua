@@ -185,24 +185,6 @@ o.expandtab = true -- use spaces instead of tabs
 o.smarttab = true -- use tabs at the start of a line, spaces elsewhere
 o.backspace = { "indent", "eol", "start" } -- Backspace through anything in insert mode
 
--- Syntaxes
--- ============================================================================
-
--- git (symlinked)
--- vim.cmd("au BufRead,BufNewFile gitconfig.symlink,gitignore.symlink setfiletype gitconfig")
-
--- JSON
--- vim.cmd("au BufRead,BufNewFile *intrc*,*.json.* set filetype=json")
-
--- YAML
--- vim.cmd("au BufRead,BufNewFile *.yml.*, set filetype=yaml")
-
--- Nunjucks
--- vim.cmd("au BufRead,BufNewFile *.nunj,*.njk set filetype=jinja.html")
-
--- Liquid
--- vim.cmd("au BufRead,BufNewFile *.liquid set filetype=liquid")
-
 -- Miscellaneous
 -- ============================================================================
 
