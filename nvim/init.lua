@@ -66,6 +66,7 @@ end)
 local o = vim.opt
 local g = vim.g
 local map = vim.api.nvim_set_keymap
+local nvimCmd = vim.api.nvim_command
 local mapOpts = { noremap = true, silent = true }
 
 -- Important stuff to set early
@@ -160,7 +161,7 @@ o.listchars = {
 o.autoread = true
 
 -- check for changes after inactivity
-vim.cmd("au CursorHold * checktime")
+nvimCmd("au CursorHold * checktime")
 
 -- disable swap files
 o.updatecount = 0
@@ -202,8 +203,8 @@ vim.cmd("autocmd FileType netrw setl bufhidden=delete")
 g.netrw_dirhistmax = 0
 
 -- Session options
-vim.cmd("set ssop-=options") -- do not store global and local values in a session
-vim.cmd("set ssop-=folds") -- do not store folds
+nvimCmd("set ssop-=options") -- do not store global and local values in a session
+nvimCmd("set ssop-=folds") -- do not store folds
 
 -- Make copy operations work with the clipboard
 o.clipboard = "unnamed"
@@ -216,7 +217,7 @@ vim.cmd("autocmd BufWritePre * :%s/\\s\\+$//e")
 
 -- Gruvbox
 -- ----------------------------------------------------------------------------
-vim.cmd([[
+nvimCmd([[
   function! Gruvbox()
     syntax enable
     set background=dark
@@ -229,7 +230,7 @@ vim.cmd([[
 
 -- OneHalf Light
 -- ----------------------------------------------------------------------------
-vim.cmd([[
+nvimCmd([[
   function! OneHalfLight()
     syntax enable
     set background=light
@@ -259,7 +260,7 @@ auto_dark_mode.init()
 -- Theming for non-macOS
 -- Set theme based on $TERM_THEME (or fall back to Gruvbox)
 -- ----------------------------------------------------------------------------
-vim.cmd([[
+nvimCmd([[
   if !has('macunix')
     if $TERM_THEME == 'light'
       call OneHalfLight()
@@ -470,7 +471,7 @@ cmp.setup.cmdline(":", {
 
 -- nvim-tree
 -- ----------------------------------------------------------------------------
-vim.cmd("set splitright")
+nvimCmd("set splitright")
 
 require("nvim-tree").setup({
 	open_on_setup = false,
@@ -568,19 +569,19 @@ require("gitsigns").setup({
 
 -- delimitMate
 -- ----------------------------------------------------------------------------
-vim.cmd([[
+nvimCmd([[
   let delimitMate_expand_cr = 1
   let delimitMate_matchpairs = "(:),[:],{:}"
 ]])
 
 -- Disable delimitMate per file type
-vim.cmd([[
+nvimCmd([[
   au FileType html.handlebars,html.mustache let b:delimitMate_autoclose = 0
 ]])
 
 -- Editorconfig
 -- ----------------------------------------------------------------------------
-vim.cmd("let g:EditorConfig_exclude_patterns = ['fugitive://.*']")
+nvimCmd("let g:EditorConfig_exclude_patterns = ['fugitive://.*']")
 
 -- indent-blankline.nvim
 -- ----------------------------------------------------------------------------
