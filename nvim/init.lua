@@ -20,7 +20,6 @@ require("packer").startup(function(use)
 	use("hrsh7th/vim-vsnip")
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("jremmen/vim-ripgrep")
-	use("leafoftree/vim-svelte-plugin")
 	use("lewis6991/gitsigns.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("machakann/vim-highlightedyank")
@@ -591,7 +590,3 @@ vim.cmd("let g:EditorConfig_exclude_patterns = ['fugitive://.*']")
 -- indent-blankline.nvim
 -- ----------------------------------------------------------------------------
 g.indent_blankline_space_char = " "
-
--- vim-svelte-plugin
--- ----------------------------------------------------------------------------
-g.vim_svelte_plugin_use_typescript = 1
