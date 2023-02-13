@@ -90,9 +90,6 @@ map("t", "<Esc>", "<C-\\><C-n>", mapOpts)
 -- Escape insert mode with jj
 map("i", "jj", "<Esc>", mapOpts)
 
--- Map netrw to Ctrl-E
-map("n", "<C-E>", ":Ex<CR>", mapOpts)
-
 -- Navigate visual lines (when wrapped)
 map("n", "j", "gj", mapOpts)
 map("n", "k", "gk", mapOpts)
