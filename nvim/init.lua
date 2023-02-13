@@ -42,6 +42,7 @@ require("packer").startup(function(use)
 		"williamboman/mason.nvim",
 		requires = {
 			"williamboman/mason-lspconfig.nvim",
+			"jay-babu/mason-null-ls.nvim",
 		},
 	})
 	use({
@@ -281,6 +282,23 @@ vim.cmd([[
 -- ----------------------------------------------------------------------------
 require("mason").setup()
 require("mason-lspconfig").setup()
+require("mason-null-ls").setup({
+	ensure_installed = {
+		"beautysh",
+		"css-lsp",
+		"cssmodules-language-server",
+		"html-lsp",
+		"lua-language-server",
+		"markdownlint",
+		"prettierd",
+		"rubocop",
+		"stylelint-lsp",
+		"stylua",
+		"svelte-language-server",
+		"typescript-language-server",
+		"yamllint",
+	},
+})
 
 -- nvim-lspconfig
 -- ----------------------------------------------------------------------------
