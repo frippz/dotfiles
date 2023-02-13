@@ -206,7 +206,10 @@ nvimCmd("set ssop-=folds") -- do not store folds
 o.clipboard = "unnamed"
 
 -- Trim trailing whitespace on save
-vim.cmd("autocmd BufWritePre * :%s/\\s\\+$//e")
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+	pattern = { "*" },
+	command = [[%s/\s\+$//e]],
+})
 
 -- Themes
 -- ============================================================================
