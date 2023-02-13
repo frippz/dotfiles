@@ -32,7 +32,6 @@ require("packer").startup(function(use)
 	use("raimondi/delimitmate")
 	use("rishabhrd/nvim-lsputils")
 	use("rishabhrd/popfix")
-	use("sheerun/vim-polyglot")
 	use("tmhedberg/matchit")
 	use("tomtom/tcomment_vim")
 	use("tpope/vim-endwise")
@@ -603,14 +602,6 @@ vim.cmd([[
 -- Editorconfig
 -- ----------------------------------------------------------------------------
 vim.cmd("let g:EditorConfig_exclude_patterns = ['fugitive://.*']")
-
--- polyglot
--- ----------------------------------------------------------------------------
-
--- Don’t conceal stuff
-g.vim_json_syntax_conceal = 0
-g.vim_markdown_conceal = 0
-g.vim_markdown_conceal_code_blocks = 0
 
 -- indent-blankline.nvim
 -- ----------------------------------------------------------------------------
