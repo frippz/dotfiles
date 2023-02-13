@@ -25,7 +25,6 @@ require("packer").startup(function(use)
 	use("lewis6991/gitsigns.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("machakann/vim-highlightedyank")
-	use("muniftanjim/prettier.nvim")
 	use("neovim/nvim-lspconfig")
 	use("nvim-lua/plenary.nvim")
 	use("nvim-lualine/lualine.nvim")
@@ -423,28 +422,6 @@ null_ls.setup({
 			end, { buffer = bufnr, desc = "[lsp] format" })
 		end
 	end,
-})
-
--- prettier
--- ----------------------------------------------------------------------------
-local prettier = require("prettier")
-
-prettier.setup({
-	bin = "prettier", -- or `'prettierd'` (v0.22+)
-	filetypes = {
-		"css",
-		"graphql",
-		"html",
-		"javascript",
-		"javascriptreact",
-		"json",
-		"less",
-		"markdown",
-		"scss",
-		"typescript",
-		"typescriptreact",
-		"yaml",
-	},
 })
 
 -- nvim-cmp
