@@ -505,6 +505,7 @@ require("nvim-treesitter.configs").setup({
 		"python",
 		"ruby",
 		"scss",
+		"svelte",
 		"typescript",
 		"yaml",
 	},
