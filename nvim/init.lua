@@ -195,10 +195,6 @@ o.relativenumber = true
 -- " Default netrw list style
 g.netrw_liststyle = 3
 
--- Per default, netrw leaves unmodified buffers open. This autocommand
--- deletes netrw's buffer once it's hidden (using ':q', for example)
-vim.cmd("autocmd FileType netrw setl bufhidden=delete")
-
 -- Disable netrwhist
 g.netrw_dirhistmax = 0
 
