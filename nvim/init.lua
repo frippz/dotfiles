@@ -11,7 +11,6 @@ require("packer").startup(function(use)
 	use("editorconfig/editorconfig-vim")
 	use("f-person/auto-dark-mode.nvim")
 	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-cmdline")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-vsnip")
 	use("hrsh7th/nvim-cmp")
@@ -453,19 +452,6 @@ cmp.setup({
 			end
 		end,
 	},
-})
-
-cmp.setup.cmdline("/", {
-	sources = {
-		{ name = "buffer" },
-	},
-})
-
-cmp.setup.cmdline(":", {
-	sources = cmp.config.sources({
-		{ name = "path" },
-		{ name = "cmdline" },
-	}),
 })
 
 -- nvim-tree
