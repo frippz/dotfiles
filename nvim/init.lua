@@ -7,7 +7,6 @@ require("packer").startup(function(use)
 	use("CodeGradox/onehalf-lush")
 
 	-- regular plugins
-	use("azeirah/nvim-redux")
 	use("f-person/auto-dark-mode.nvim")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-nvim-lsp")
