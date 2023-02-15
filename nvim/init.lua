@@ -8,7 +8,6 @@ require("packer").startup(function(use)
 
 	-- regular plugins
 	use("azeirah/nvim-redux")
-	use("editorconfig/editorconfig-vim")
 	use("f-person/auto-dark-mode.nvim")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-nvim-lsp")
@@ -563,10 +562,6 @@ nvimCmd([[
 nvimCmd([[
   au FileType html.handlebars,html.mustache let b:delimitMate_autoclose = 0
 ]])
-
--- Editorconfig
--- ----------------------------------------------------------------------------
-nvimCmd("let g:EditorConfig_exclude_patterns = ['fugitive://.*']")
 
 -- indent-blankline.nvim
 -- ----------------------------------------------------------------------------
