@@ -56,6 +56,10 @@ require("packer").startup(function(use)
 			ts_update()
 		end,
 	})
+	use({
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		after = "nvim-treesitter",
+	})
 end)
 
 -- Helpers
@@ -289,72 +293,7 @@ require("mason-null-ls").setup({
 		"typescript-language-server",
 		"yamllint",
 	},
-})
-
--- nvim-lspconfig
--- ----------------------------------------------------------------------------
-
--- nvim-cmp capabilities
-local lspconfig = require("lspconfig")
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-
--- typescript
-lspconfig.tsserver.setup({
-	capabilities = capabilities,
-	filetypes = {
-		"typescript",
-		"typescriptreact",
-	},
-})
-
--- eslint
-lspconfig.eslint.setup({
-	capabilities = capabilities,
-	filetypes = {
-		"javascript",
-		"javascriptreact",
-		"javascript.jsx",
-	},
-})
-
--- cssls
-lspconfig.cssls.setup({
-	capabilities = capabilities,
-})
-
--- stylelint
-lspconfig.stylelint_lsp.setup({
-	capabilities = capabilities,
-	filetypes = {
-		"css",
-		"scss",
-	},
-})
-
--- svelte
-lspconfig.svelte.setup({
-	capabilities = capabilities,
-})
-
--- python
-lspconfig.pyright.setup({
-	capabilities = capabilities,
-})
-
--- ruby
-lspconfig.solargraph.setup({
-	capabilities = capabilities,
-})
-
--- html
-lspconfig.html.setup({
-	capabilities = capabilities,
-})
-
--- yaml
-lspconfig.yamlls.setup({
-	capabilities = capabilities,
+	automatic_setup = true,
 })
 
 -- null-ls.nvim
@@ -397,6 +336,61 @@ null_ls.setup({
 			end, { buffer = bufnr, desc = "[lsp] format" })
 		end
 	end,
+})
+
+-- nvim-lspconfig
+-- ----------------------------------------------------------------------------
+
+-- nvim-cmp capabilities
+local lspconfig = require("lspconfig")
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+
+-- typescript
+lspconfig.tsserver.setup({
+	capabilities = capabilities,
+})
+
+lspconfig.jedi_language_server.setup({})
+
+-- eslint
+lspconfig.eslint.setup({
+	capabilities = capabilities,
+})
+
+-- cssls
+lspconfig.cssls.setup({
+	capabilities = capabilities,
+})
+
+-- stylelint
+lspconfig.stylelint_lsp.setup({
+	capabilities = capabilities,
+})
+
+-- svelte
+lspconfig.svelte.setup({
+	capabilities = capabilities,
+})
+
+-- python
+lspconfig.pyright.setup({
+	capabilities = capabilities,
+})
+
+-- ruby
+lspconfig.solargraph.setup({
+	capabilities = capabilities,
+})
+
+-- html
+lspconfig.html.setup({
+	capabilities = capabilities,
+})
+
+-- yaml
+lspconfig.yamlls.setup({
+	capabilities = capabilities,
 })
 
 -- nvim-cmp
@@ -504,6 +498,9 @@ require("nvim-treesitter.configs").setup({
 		"svelte",
 		"typescript",
 		"yaml",
+	},
+	highlight = {
+		enabled = true,
 	},
 	-- automatically install missing parsers when entering buffer
 	auto_install = true,
