@@ -399,6 +399,14 @@ lspconfig.yamlls.setup({
 -- ----------------------------------------------------------------------------
 require("trouble").setup({})
 
+-- mappings
+map("n", "<leader>xx", "<cmd>TroubleToggle<cr>", mapOpts)
+map("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", mapOpts)
+map("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", mapOpts)
+map("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", mapOpts)
+map("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", mapOpts)
+map("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", mapOpts)
+
 -- nvim-cmp
 -- ----------------------------------------------------------------------------
 vim.opt.completeopt:append("menu")
