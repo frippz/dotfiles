@@ -8,6 +8,7 @@ require("packer").startup(function(use)
 
 	-- regular plugins
 	use("f-person/auto-dark-mode.nvim")
+	use("folke/trouble.nvim")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-vsnip")
@@ -276,7 +277,7 @@ nvimCmd([[
 -- mason.nvim
 -- ----------------------------------------------------------------------------
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({})
 require("mason-null-ls").setup({
 	ensure_installed = {
 		"beautysh",
@@ -366,6 +367,7 @@ lspconfig.cssls.setup({
 -- stylelint
 lspconfig.stylelint_lsp.setup({
 	capabilities = capabilities,
+	filetypes = { "css", "scss" },
 })
 
 -- svelte
@@ -392,6 +394,10 @@ lspconfig.html.setup({
 lspconfig.yamlls.setup({
 	capabilities = capabilities,
 })
+
+-- trouble.nvim
+-- ----------------------------------------------------------------------------
+require("trouble").setup({})
 
 -- nvim-cmp
 -- ----------------------------------------------------------------------------
