@@ -57,10 +57,6 @@ require("packer").startup(function(use)
 			ts_update()
 		end,
 	})
-	use({
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		after = "nvim-treesitter",
-	})
 end)
 
 -- Helpers
