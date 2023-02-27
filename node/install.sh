@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-GLOBAL_VERSION="16.19.0"
+GLOBAL_VERSION="16.19.1"
 
 VERSIONS=(
     "16.19.0"
+    "16.19.1"
     "18.12.1"
 )
 
