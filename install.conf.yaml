@@ -2,7 +2,7 @@
     link:
       force: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - create:
     - ~/.config/nvim
@@ -13,6 +13,7 @@
     ~/.zshrc: zsh/zshrc
     ~/.scripts: scripts
     ~/.config/nvim/init.lua: nvim/init.lua
+    ~/.config/nvim/lua: nvim/lua
     ~/.tm_properties: textmate/tm_properties
     ~/.config/tmuxinator: tmuxinator/tmuxinator
     ~/.config/tmux/tmux.conf: tmux/tmux.conf
@@ -24,7 +25,6 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.config/gh-dash/config.yml: gh-dash/config.yml
-
 
 - shell:
     - description: Install Homebrew & predefined packages

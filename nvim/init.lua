@@ -1,63 +1,4 @@
-require("packer").startup(function(use)
-	-- package manager
-	use("wbthomason/packer.nvim")
-
-	-- color themes
-	use("gruvbox-community/gruvbox")
-	use("CodeGradox/onehalf-lush")
-
-	-- regular plugins
-	use("f-person/auto-dark-mode.nvim")
-	use("folke/trouble.nvim")
-	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-nvim-lsp")
-	use("hrsh7th/cmp-vsnip")
-	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/vim-vsnip")
-	use("jose-elias-alvarez/null-ls.nvim")
-	use("jremmen/vim-ripgrep")
-	use("lewis6991/gitsigns.nvim")
-	use("lukas-reineke/indent-blankline.nvim")
-	use("machakann/vim-highlightedyank")
-	use("neovim/nvim-lspconfig")
-	use("nvim-lua/plenary.nvim")
-	use("nvim-lualine/lualine.nvim")
-	use("psliwka/vim-smoothie")
-	use("raimondi/delimitmate")
-	use("rishabhrd/nvim-lsputils")
-	use("rishabhrd/popfix")
-	use("tmhedberg/matchit")
-	use("tomtom/tcomment_vim")
-	use("tpope/vim-endwise")
-	use("tpope/vim-fugitive")
-	use("tpope/vim-repeat")
-	use("tpope/vim-rhubarb")
-	use("tpope/vim-surround")
-	use({
-		"williamboman/mason.nvim",
-		requires = {
-			"williamboman/mason-lspconfig.nvim",
-			"jay-babu/mason-null-ls.nvim",
-		},
-	})
-	use({
-		"nvim-tree/nvim-tree.lua",
-		requires = {
-			"nvim-tree/nvim-web-devicons",
-		},
-	})
-	use({
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.x",
-	})
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = function()
-			local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-			ts_update()
-		end,
-	})
-end)
+require("plugins")
 
 -- Helpers
 -- ============================================================================
@@ -516,6 +457,23 @@ require("nvim-treesitter.configs").setup({
 	auto_install = true,
 	-- install languages synchronously (only applied to `ensure_installed`)
 	sync_install = false,
+	refactor = {
+		highlight_definitions = {
+			enable = true,
+			clear_on_cursor_move = true,
+		},
+		highlight_current_scope = { enable = true },
+		navigation = {
+			enable = true,
+			keymaps = {
+				goto_definition = "gnd",
+				list_definitions = "gnD",
+				list_definitions_toc = "gO",
+				goto_next_usage = "<a-*>",
+				goto_previous_usage = "<a-#>",
+			},
+		},
+	},
 })
 
 -- lualine.nvim
