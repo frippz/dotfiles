@@ -458,16 +458,11 @@ require("nvim-treesitter.configs").setup({
 	-- install languages synchronously (only applied to `ensure_installed`)
 	sync_install = false,
 	refactor = {
-		highlight_definitions = {
-			enable = true,
-			clear_on_cursor_move = true,
-		},
-		highlight_current_scope = { enable = true },
 		navigation = {
 			enable = true,
 			keymaps = {
-				goto_definition = "gd",
-				list_definitions = "gD",
+				goto_definition = "gnd",
+				list_definitions = "gnD",
 				list_definitions_toc = "gO",
 				-- goto_next_usage = "<a-*>",
 				-- goto_previous_usage = "<a-#>",
