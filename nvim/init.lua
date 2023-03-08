@@ -447,6 +447,44 @@ vim.lsp.handlers["textDocument/implementation"] = require("lsputil.locations").i
 vim.lsp.handlers["textDocument/documentSymbol"] = require("lsputil.symbols").document_handler
 vim.lsp.handlers["workspace/symbol"] = require("lsputil.symbols").workspace_handler
 
+-- nvim-treesitter
+-- ----------------------------------------------------------------------------
+require("nvim-treesitter.configs").setup({
+	-- list of languages
+	ensure_installed = {
+		"css",
+		"html",
+		"javascript",
+		"json",
+		"lua",
+		"python",
+		"ruby",
+		"scss",
+		"svelte",
+		"typescript",
+		"yaml",
+	},
+	highlight = {
+		enabled = true,
+	},
+	-- automatically install missing parsers when entering buffer
+	auto_install = true,
+	-- install languages synchronously (only applied to `ensure_installed`)
+	sync_install = false,
+	refactor = {
+		navigation = {
+			enable = true,
+			keymaps = {
+				goto_definition = "gnd",
+				list_definitions = "gnD",
+				list_definitions_toc = "gO",
+				-- goto_next_usage = "<a-*>",
+				-- goto_previous_usage = "<a-#>",
+			},
+		},
+	},
+})
+
 -- lualine.nvim
 -- ----------------------------------------------------------------------------
 require("lualine").setup({})
