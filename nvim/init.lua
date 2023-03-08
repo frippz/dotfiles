@@ -159,7 +159,7 @@ nvimCmd([[
   function! Gruvbox()
     syntax enable
     set background=dark
-    colorscheme gruvbox
+    colorscheme gruvbox-material
     highlight! link SignColumn LineNr
     hi Normal guibg=NONE ctermbg=NONE
     highlight Comment cterm=italic gui=italic

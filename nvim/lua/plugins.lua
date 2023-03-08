@@ -10,7 +10,8 @@ require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 
 	-- color themes
-	use("gruvbox-community/gruvbox")
+	-- use("gruvbox-community/gruvbox")
+	use("sainnhe/gruvbox-material")
 	use("CodeGradox/onehalf-lush")
 
 	-- regular plugins
