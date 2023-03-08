@@ -300,18 +300,19 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 -- typescript
 lspconfig.tsserver.setup({
 	capabilities = capabilities,
+	filetypes = { "typescript", "typescriptreact" },
 })
-
-lspconfig.jedi_language_server.setup({})
 
 -- eslint
 lspconfig.eslint.setup({
 	capabilities = capabilities,
+	filetypes = { "javascript", "javascriptreact" },
 })
 
 -- cssls
 lspconfig.cssls.setup({
 	capabilities = capabilities,
+	filetypes = { "css", "scss" },
 })
 
 -- stylelint
