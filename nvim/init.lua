@@ -211,29 +211,6 @@ nvimCmd([[
 -- Plugins
 -- ============================================================================
 
--- mason.nvim
--- ----------------------------------------------------------------------------
-require("mason").setup()
-require("mason-lspconfig").setup({})
-require("mason-null-ls").setup({
-	ensure_installed = {
-		"beautysh",
-		"css-lsp",
-		"cssmodules-language-server",
-		"html-lsp",
-		"lua-language-server",
-		"markdownlint",
-		"prettierd",
-		"rubocop",
-		"stylelint-lsp",
-		"stylua",
-		"svelte-language-server",
-		"typescript-language-server",
-		"yamllint",
-	},
-	automatic_setup = true,
-})
-
 -- null-ls.nvim
 -- ----------------------------------------------------------------------------
 local null_ls = require("null-ls")
@@ -275,6 +252,42 @@ null_ls.setup({
 		end
 	end,
 })
+
+-- mason.nvim
+-- ----------------------------------------------------------------------------
+local mason_null_ls = require("mason-null-ls")
+
+require("mason").setup()
+
+require("mason-lspconfig").setup({
+	ensure_installed = {
+		"cssls",
+		"tsserver",
+		"eslint",
+		"html",
+	},
+	automatic_installation = true,
+})
+
+mason_null_ls.setup({
+	ensure_installed = {
+		"beautysh",
+		"css-lsp",
+		"cssmodules-language-server",
+		"html-lsp",
+		"lua-language-server",
+		"markdownlint",
+		"prettierd",
+		"rubocop",
+		"stylelint-lsp",
+		"stylua",
+		"svelte-language-server",
+		"typescript-language-server",
+		"yamllint",
+	},
+	automatic_setup = true,
+})
+mason_null_ls.setup_handlers()
 
 -- nvim-lspconfig
 -- ----------------------------------------------------------------------------
