@@ -12,7 +12,7 @@ require("packer").startup(function(use)
 	-- color themes
 	-- use("gruvbox-community/gruvbox")
 	use("sainnhe/gruvbox-material")
-	use("CodeGradox/onehalf-lush")
+	use("Th3Whit3Wolf/one-nvim")
 
 	-- regular plugins
 	use("sheerun/vim-polyglot")

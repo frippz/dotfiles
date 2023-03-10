@@ -152,32 +152,28 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 
 -- Themes
 -- ============================================================================
+nvimCmd("syntax enable")
+nvimCmd("highlight! link SignColumn LineNr")
+nvimCmd("hi Normal guibg=NONE ctermbg=NONE")
+nvimCmd("highlight Comment cterm=italic gui=italic")
 
--- Gruvbox
+-- Dark
 -- ----------------------------------------------------------------------------
-nvimCmd([[
-  function! Gruvbox()
-    syntax enable
-    set background=dark
-    colorscheme gruvbox-material
-    highlight! link SignColumn LineNr
-    hi Normal guibg=NONE ctermbg=NONE
-    highlight Comment cterm=italic gui=italic
-  endfunction
-]])
+function ThemeDark()
+	o.background = "dark"
+	g.gruvbox_material_better_performance = 1
+	g.gruvbox_material_enable_bold = 1
+	g.gruvbox_material_dim_inactive_windows = 0
+	g.gruvbox_material_transparent_background = "1"
+	nvimCmd("colorscheme gruvbox-material")
+end
 
--- OneHalf Light
+-- Light
 -- ----------------------------------------------------------------------------
-nvimCmd([[
-  function! OneHalfLight()
-    syntax enable
-    set background=light
-    colorscheme onehalf-lush
-    highlight! link SignColumn LineNr
-    hi Normal guibg=NONE ctermbg=NONE
-    highlight Comment cterm=italic gui=italic
-  endfunction
-]])
+function ThemeLight()
+	o.background = "light"
+	nvimCmd("colorscheme one-nvim")
+end
 
 -- Auto Dark Mode
 -- ----------------------------------------------------------------------------
@@ -186,10 +182,10 @@ local auto_dark_mode = require("auto-dark-mode")
 auto_dark_mode.setup({
 	update_interval = 1000,
 	set_dark_mode = function()
-		vim.fn.Gruvbox()
+		ThemeDark()
 	end,
 	set_light_mode = function()
-		vim.fn.OneHalfLight()
+		ThemeLight()
 	end,
 })
 
@@ -201,9 +197,9 @@ auto_dark_mode.init()
 nvimCmd([[
   if !has('macunix')
     if $TERM_THEME == 'light'
-      call OneHalfLight()
+      call ThemeLight()
     else
-      call Gruvbox()
+      call ThemeDark()
     endif
   endif
 ]])
@@ -300,7 +296,6 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 -- typescript
 lspconfig.tsserver.setup({
 	capabilities = capabilities,
-	filetypes = { "typescript", "typescriptreact" },
 })
 
 -- eslint
