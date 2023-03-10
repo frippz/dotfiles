@@ -15,6 +15,7 @@ require("packer").startup(function(use)
 	use("CodeGradox/onehalf-lush")
 
 	-- regular plugins
+	use("sheerun/vim-polyglot")
 	use("f-person/auto-dark-mode.nvim")
 	use("folke/trouble.nvim")
 	use("hrsh7th/vim-vsnip")
@@ -55,17 +56,5 @@ require("packer").startup(function(use)
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.x",
-	})
-	use({
-		{
-			"nvim-treesitter/nvim-treesitter",
-			run = function()
-				local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-				ts_update()
-			end,
-		},
-		{ "nvim-treesitter/nvim-treesitter-textobjects", requires = "nvim-treesitter" },
-		{ "nvim-treesitter/nvim-treesitter-refactor", requires = "nvim-treesitter" },
-		{ "JoosepAlviste/nvim-ts-context-commentstring", requires = "nvim-treesitter" },
 	})
 end)
