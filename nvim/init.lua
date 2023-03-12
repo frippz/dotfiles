@@ -496,3 +496,13 @@ nvimCmd([[
 -- indent-blankline.nvim
 -- ----------------------------------------------------------------------------
 g.indent_blankline_space_char = " "
+
+-- nvim-treesitter
+-- ----------------------------------------------------------------------------
+require("nvim-treesitter.configs").setup({
+	ensure_installed = { "svelte", "typescript", "javascript", "css" },
+	auto_install = true,
+	highlight = {
+		enable = true,
+	},
+})
