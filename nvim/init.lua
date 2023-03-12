@@ -218,7 +218,6 @@ local async = event == "BufWritePost"
 null_ls.setup({
 	sources = {
 		null_ls.builtins.formatting.prettierd,
-		null_ls.builtins.formatting.stylelint,
 		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.formatting.beautysh,
 	},
@@ -305,13 +304,17 @@ lspconfig.eslint.setup({
 -- cssls
 lspconfig.cssls.setup({
 	capabilities = capabilities,
-	filetypes = { "css", "scss" },
 })
 
 -- stylelint
 lspconfig.stylelint_lsp.setup({
+	settings = {
+		stylelintplus = {
+			autoFixOnSave = true,
+			autoFixOnFormat = true,
+		},
+	},
 	capabilities = capabilities,
-	filetypes = { "css", "scss" },
 })
 
 -- svelte
