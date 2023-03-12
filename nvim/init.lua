@@ -298,7 +298,12 @@ lspconfig.tsserver.setup({
 -- eslint
 lspconfig.eslint.setup({
 	capabilities = capabilities,
-	filetypes = { "javascript", "javascriptreact" },
+	on_attach = function(client, bufnr)
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			buffer = bufnr,
+			command = "EslintFixAll",
+		})
+	end,
 })
 
 -- cssls
