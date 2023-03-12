@@ -10,7 +10,6 @@ require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 
 	-- color themes
-	-- use("gruvbox-community/gruvbox")
 	use("sainnhe/gruvbox-material")
 	use("Th3Whit3Wolf/one-nvim")
 
@@ -30,7 +29,6 @@ require("packer").startup(function(use)
 	use("raimondi/delimitmate")
 	use("rishabhrd/nvim-lsputils")
 	use("rishabhrd/popfix")
-	use("sheerun/vim-polyglot")
 	use("tmhedberg/matchit")
 	use("tomtom/tcomment_vim")
 	use("tpope/vim-endwise")
