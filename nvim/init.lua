@@ -217,7 +217,6 @@ local async = event == "BufWritePost"
 
 null_ls.setup({
 	sources = {
-		null_ls.builtins.diagnostics.yamllint,
 		null_ls.builtins.formatting.prettierd,
 		null_ls.builtins.formatting.stylelint,
 		null_ls.builtins.formatting.stylua,
@@ -279,7 +278,6 @@ mason_null_ls.setup({
 		"stylua",
 		"svelte-language-server",
 		"typescript-language-server",
-		"yamllint",
 	},
 	automatic_setup = true,
 })
