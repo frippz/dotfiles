@@ -508,6 +508,8 @@ g.indent_blankline_space_char = " "
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {
 		"css",
+		"diff",
+		"git_rebase",
 		"gitcommit",
 		"gitignore",
 		"javascript",
