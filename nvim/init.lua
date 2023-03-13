@@ -506,7 +506,14 @@ g.indent_blankline_space_char = " "
 -- nvim-treesitter
 -- ----------------------------------------------------------------------------
 require("nvim-treesitter.configs").setup({
-	ensure_installed = { "svelte", "typescript", "javascript", "css" },
+	ensure_installed = {
+		"css",
+		"gitcommit",
+		"gitignore",
+		"javascript",
+		"svelte",
+		"typescript",
+	},
 	auto_install = true,
 	highlight = {
 		enable = true,
