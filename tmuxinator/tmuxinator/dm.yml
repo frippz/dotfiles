@@ -1,3 +1,4 @@
+---
 name: dm
 root: ~/Projects/delta-monitoring/
 
@@ -6,7 +7,7 @@ windows:
       layout: even-horizontal
       panes:
         - git:
-          - c
+            - c
         - node:
-          - cd ./delta-frontend
-          - npm run dev
+            - cd ./delta-frontend
+            - npm run dev

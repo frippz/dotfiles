@@ -1,3 +1,4 @@
+---
 name: plp
 root: ~/Projects/plp-pipeline/
 pre_window: source ./plp-env/dev.env
@@ -7,10 +8,10 @@ windows:
       layout: c8ce,190x53,0,0{137x53,0,0,0,52x53,138,0[52x46,138,0,1,52x6,138,47,2]}
       panes:
         - git:
-          - cd ./packages/web-client && c
+            - cd ./packages/web-client && c
         - web-client:
-          - cd ./packages/web-client
-          - npm run watch
+            - cd ./packages/web-client
+            - npm run watch
         - render:
-          - cd ./packages/render
-          - npm run start-http
+            - cd ./packages/render
+            - npm run start-http

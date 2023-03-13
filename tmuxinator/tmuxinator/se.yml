@@ -1,3 +1,4 @@
+---
 name: se
 root: ~/Projects/search-edit/
 
@@ -6,10 +7,10 @@ windows:
       layout: d1ec,212x55,0,0{146x55,0,0,6,65x55,147,0[65x13,147,0,7,65x21,147,14,9,65x19,147,36,8]}
       panes:
         - git:
-          - c
+            - c
         - server:
-          - npm run server
+            - npm run server
         - dev:
-          - npm run dev
+            - npm run dev
         - cloud-proxy:
-          - cloud_sql_proxy -instances='ingka-rrm-search-dev:europe-west1:gena=tcp:5432'
+            - cloud_sql_proxy -instances='ingka-rrm-search-dev:europe-west1:gena=tcp:5432'
