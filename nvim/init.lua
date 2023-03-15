@@ -87,10 +87,10 @@ o.shortmess = "c"
 vim.scriptencoding = "utf-8"
 o.list = false
 o.listchars = {
-	tab = "▸ ",
-	eol = "¬",
-	trail = "·",
-	space = "·",
+  tab = "▸ ",
+  eol = "¬",
+  trail = "·",
+  space = "·",
 }
 
 -- Files
@@ -146,8 +146,8 @@ o.clipboard = "unnamed"
 
 -- Trim trailing whitespace on save
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-	pattern = { "*" },
-	command = [[%s/\s\+$//e]],
+  pattern = { "*" },
+  command = [[%s/\s\+$//e]],
 })
 
 -- Themes
@@ -160,19 +160,19 @@ nvimCmd("highlight Comment cterm=italic gui=italic")
 -- Dark
 -- ----------------------------------------------------------------------------
 function ThemeDark()
-	o.background = "dark"
-	g.gruvbox_material_better_performance = 1
-	g.gruvbox_material_enable_bold = 1
-	g.gruvbox_material_dim_inactive_windows = 0
-	g.gruvbox_material_transparent_background = "1"
-	nvimCmd("colorscheme gruvbox-material")
+  o.background = "dark"
+  g.gruvbox_material_better_performance = 1
+  g.gruvbox_material_enable_bold = 1
+  g.gruvbox_material_dim_inactive_windows = 0
+  g.gruvbox_material_transparent_background = "1"
+  nvimCmd("colorscheme gruvbox-material")
 end
 
 -- Light
 -- ----------------------------------------------------------------------------
 function ThemeLight()
-	o.background = "light"
-	nvimCmd("colorscheme one-nvim")
+  o.background = "light"
+  nvimCmd("colorscheme one-nvim")
 end
 
 -- Auto Dark Mode
@@ -180,13 +180,13 @@ end
 local auto_dark_mode = require("auto-dark-mode")
 
 auto_dark_mode.setup({
-	update_interval = 1000,
-	set_dark_mode = function()
-		ThemeDark()
-	end,
-	set_light_mode = function()
-		ThemeLight()
-	end,
+  update_interval = 1000,
+  set_dark_mode = function()
+    ThemeDark()
+  end,
+  set_light_mode = function()
+    ThemeLight()
+  end,
 })
 
 auto_dark_mode.init()
@@ -216,35 +216,34 @@ local event = "BufWritePre" -- or "BufWritePost"
 local async = event == "BufWritePost"
 
 null_ls.setup({
-	sources = {
-		null_ls.builtins.formatting.prettierd,
-		null_ls.builtins.formatting.stylua,
-		null_ls.builtins.formatting.beautysh,
-	},
-	on_attach = function(client, bufnr)
-		if client.supports_method("textDocument/formatting") then
-			vim.keymap.set("n", "<Leader>f", function()
-				vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
-			end, { buffer = bufnr, desc = "[lsp] format" })
+  sources = {
+    null_ls.builtins.formatting.prettierd,
+    null_ls.builtins.formatting.beautysh,
+  },
+  on_attach = function(client, bufnr)
+    if client.supports_method("textDocument/formatting") then
+      vim.keymap.set("n", "<Leader>f", function()
+        vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+      end, { buffer = bufnr, desc = "[lsp] format" })
 
-			-- format on save
-			vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
-			vim.api.nvim_create_autocmd(event, {
-				buffer = bufnr,
-				group = group,
-				callback = function()
-					vim.lsp.buf.format({ bufnr = bufnr, async = async })
-				end,
-				desc = "[lsp] format on save",
-			})
-		end
+      -- format on save
+      vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
+      vim.api.nvim_create_autocmd(event, {
+        buffer = bufnr,
+        group = group,
+        callback = function()
+          vim.lsp.buf.format({ bufnr = bufnr, async = async })
+        end,
+        desc = "[lsp] format on save",
+      })
+    end
 
-		if client.supports_method("textDocument/rangeFormatting") then
-			vim.keymap.set("x", "<Leader>f", function()
-				vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
-			end, { buffer = bufnr, desc = "[lsp] format" })
-		end
-	end,
+    if client.supports_method("textDocument/rangeFormatting") then
+      vim.keymap.set("x", "<Leader>f", function()
+        vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+      end, { buffer = bufnr, desc = "[lsp] format" })
+    end
+  end,
 })
 
 -- mason.nvim
@@ -254,31 +253,30 @@ local mason_null_ls = require("mason-null-ls")
 require("mason").setup()
 
 require("mason-lspconfig").setup({
-	ensure_installed = {
-		"cssls",
-		"tsserver",
-		"eslint",
-		"html",
-	},
-	automatic_installation = true,
+  ensure_installed = {
+    "cssls",
+    "tsserver",
+    "eslint",
+    "html",
+  },
+  automatic_installation = true,
 })
 
 mason_null_ls.setup({
-	ensure_installed = {
-		"beautysh",
-		"css-lsp",
-		"cssmodules-language-server",
-		"html-lsp",
-		"lua-language-server",
-		"markdownlint",
-		"prettierd",
-		"rubocop",
-		"stylelint-lsp",
-		"stylua",
-		"svelte-language-server",
-		"typescript-language-server",
-	},
-	automatic_setup = true,
+  ensure_installed = {
+    "beautysh",
+    "css-lsp",
+    "cssmodules-language-server",
+    "html-lsp",
+    "lua-language-server",
+    "markdownlint",
+    "prettierd",
+    "rubocop",
+    "stylelint-lsp",
+    "svelte-language-server",
+    "typescript-language-server",
+  },
+  automatic_setup = true,
 })
 mason_null_ls.setup_handlers()
 
@@ -292,59 +290,59 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 -- typescript
 lspconfig.tsserver.setup({
-	capabilities = capabilities,
+  capabilities = capabilities,
 })
 
 -- eslint
 lspconfig.eslint.setup({
-	capabilities = capabilities,
-	on_attach = function(client, bufnr)
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			buffer = bufnr,
-			command = "EslintFixAll",
-		})
-	end,
+  capabilities = capabilities,
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end,
 })
 
 -- cssls
 lspconfig.cssls.setup({
-	capabilities = capabilities,
+  capabilities = capabilities,
 })
 
 -- stylelint
 lspconfig.stylelint_lsp.setup({
-	settings = {
-		stylelintplus = {
-			autoFixOnSave = true,
-			autoFixOnFormat = true,
-		},
-	},
-	capabilities = capabilities,
+  settings = {
+    stylelintplus = {
+      autoFixOnSave = true,
+      autoFixOnFormat = true,
+    },
+  },
+  capabilities = capabilities,
 })
 
 -- svelte
 lspconfig.svelte.setup({
-	capabilities = capabilities,
+  capabilities = capabilities,
 })
 
 -- python
 lspconfig.pyright.setup({
-	capabilities = capabilities,
+  capabilities = capabilities,
 })
 
 -- ruby
 lspconfig.solargraph.setup({
-	capabilities = capabilities,
+  capabilities = capabilities,
 })
 
 -- html
 lspconfig.html.setup({
-	capabilities = capabilities,
+  capabilities = capabilities,
 })
 
 -- yaml
 lspconfig.yamlls.setup({
-	capabilities = capabilities,
+  capabilities = capabilities,
 })
 
 -- trouble.nvim
@@ -368,48 +366,48 @@ vim.opt.completeopt:append("noselect")
 local cmp = require("cmp")
 
 cmp.setup({
-	snippet = {
-		expand = function(args)
-			-- For `vsnip` users.
-			vim.fn["vsnip#anonymous"](args.body)
-		end,
-	},
-	sources = cmp.config.sources({
-		{ name = "nvim_lsp" },
-		{ name = "vsnip" },
-		{ name = "buffer" },
-	}),
-	mapping = {
-		["<C-p>"] = cmp.mapping.select_prev_item(),
-		["<C-n>"] = cmp.mapping.select_next_item(),
-		["<C-d>"] = cmp.mapping.scroll_docs(-4),
-		["<C-f>"] = cmp.mapping.scroll_docs(4),
-		["<C-Space>"] = cmp.mapping(
-			cmp.mapping.complete({
-				reason = cmp.ContextReason.Auto,
-			}),
-			{ "i", "c" }
-		),
-		["<C-e>"] = cmp.mapping.close(),
-		["<CR>"] = cmp.mapping.confirm({
-			behavior = cmp.ConfirmBehavior.Replace,
-			select = true,
-		}),
-		["<Tab>"] = function(fallback)
-			if cmp.visible() then
-				cmp.select_next_item()
-			else
-				fallback()
-			end
-		end,
-		["<S-Tab>"] = function(fallback)
-			if cmp.visible() then
-				cmp.select_prev_item()
-			else
-				fallback()
-			end
-		end,
-	},
+  snippet = {
+    expand = function(args)
+      -- For `vsnip` users.
+      vim.fn["vsnip#anonymous"](args.body)
+    end,
+  },
+  sources = cmp.config.sources({
+    { name = "nvim_lsp" },
+    { name = "vsnip" },
+    { name = "buffer" },
+  }),
+  mapping = {
+    ["<C-p>"] = cmp.mapping.select_prev_item(),
+    ["<C-n>"] = cmp.mapping.select_next_item(),
+    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-Space>"] = cmp.mapping(
+    cmp.mapping.complete({
+      reason = cmp.ContextReason.Auto,
+    }),
+    { "i", "c" }
+    ),
+    ["<C-e>"] = cmp.mapping.close(),
+    ["<CR>"] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    }),
+    ["<Tab>"] = function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      else
+        fallback()
+      end
+    end,
+    ["<S-Tab>"] = function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      else
+        fallback()
+      end
+    end,
+  },
 })
 
 -- nvim-tree
@@ -417,21 +415,21 @@ cmp.setup({
 nvimCmd("set splitright")
 
 require("nvim-tree").setup({
-	open_on_setup = false,
-	open_on_setup_file = false,
-	open_on_tab = false,
-	view = {
-		side = "left",
-		mappings = {
-			list = {
-				{ key = { "<C-o>" }, action = "cd" },
-			},
-		},
-	},
-	filters = {
-		dotfiles = false,
-		exclude = { ".gitignore$", ".env" },
-	},
+  open_on_setup = false,
+  open_on_setup_file = false,
+  open_on_tab = false,
+  view = {
+    side = "left",
+    mappings = {
+      list = {
+        { key = { "<C-o>" }, action = "cd" },
+      },
+    },
+  },
+  filters = {
+    dotfiles = false,
+    exclude = { ".gitignore$", ".env" },
+  },
 })
 
 map("n", "<C-n>", ":NvimTreeToggle<CR>", mapOpts)
@@ -455,18 +453,18 @@ require("lualine").setup({})
 -- telescope.vim
 -- ----------------------------------------------------------------------------
 local pickersOpts = {
-	respect_gitignore = true,
-	search_dirs = { "./", ".github/" },
+  respect_gitignore = true,
+  search_dirs = { "./", ".github/" },
 }
 
 require("telescope").setup({
-	defaults = {
-		prompt_prefix = "🔍 ",
-	},
-	pickers = {
-		live_grep = pickersOpts,
-		find_files = pickersOpts,
-	},
+  defaults = {
+    prompt_prefix = "🔍 ",
+  },
+  pickers = {
+    live_grep = pickersOpts,
+    find_files = pickersOpts,
+  },
 })
 
 map("n", "<C-p>", ":Telescope find_files hidden=true<CR>", mapOpts)
@@ -477,14 +475,14 @@ map("n", "<leader>fh", ":Telescope help_tags<CR>", mapOpts)
 -- gitsigns.nvim
 -- ----------------------------------------------------------------------------
 require("gitsigns").setup({
-	signs = {
-		add = { text = "+" },
-		change = { text = "±" },
-		delete = { text = "-" },
-		topdelete = { text = "‾" },
-		changedelete = { text = "~" },
-		untracked = { text = "┆" },
-	},
+  signs = {
+    add = { text = "+" },
+    change = { text = "±" },
+    delete = { text = "-" },
+    topdelete = { text = "‾" },
+    changedelete = { text = "~" },
+    untracked = { text = "┆" },
+  },
 })
 
 -- delimitMate
@@ -506,18 +504,18 @@ g.indent_blankline_space_char = " "
 -- nvim-treesitter
 -- ----------------------------------------------------------------------------
 require("nvim-treesitter.configs").setup({
-	ensure_installed = {
-		"css",
-		"diff",
-		"git_rebase",
-		"gitcommit",
-		"gitignore",
-		"javascript",
-		"svelte",
-		"typescript",
-	},
-	auto_install = true,
-	highlight = {
-		enable = true,
-	},
+  ensure_installed = {
+    "css",
+    "diff",
+    "git_rebase",
+    "gitcommit",
+    "gitignore",
+    "javascript",
+    "svelte",
+    "typescript",
+  },
+  auto_install = true,
+  highlight = {
+    enable = true,
+  },
 })
