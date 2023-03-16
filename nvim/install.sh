@@ -10,6 +10,6 @@ else
 fi
 
 # Install paq-nvim packages
-if [ -d ${XDG_DATA_HOME:-$HOME/.local/share/nvim/site/pack} ]; then
-  nvim --headless -c "PackerInstall" -c "quit"
-fi
+# if [ -d ${XDG_DATA_HOME:-$HOME/.local/share/nvim/site/pack} ]; then
+#   nvim --headless -c "PackerInstall" -c "quit"
+# fi
