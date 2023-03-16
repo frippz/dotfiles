@@ -6,6 +6,7 @@ local o = vim.opt
 local g = vim.g
 local map = vim.api.nvim_set_keymap
 local nvimCmd = vim.api.nvim_command
+local nvimAutoCmd = vim.api.nvim_create_autocmd
 local mapOpts = { noremap = true, silent = true }
 
 -- Important stuff to set early
@@ -203,37 +204,30 @@ nvimCmd([[
 
 -- mason.nvim
 -- ----------------------------------------------------------------------------
-local mason_null_ls = require("mason-null-ls")
-
 require("mason").setup()
 
-require("mason-lspconfig").setup({
-  ensure_installed = {
-    "cssls",
-    "tsserver",
-    "eslint",
-    "html",
-  },
-  automatic_installation = true,
-})
-
-mason_null_ls.setup({
+-- mason-tool-installer
+-- ----------------------------------------------------------------------------
+require("mason-tool-installer").setup({
   ensure_installed = {
     "beautysh",
     "css-lsp",
-    "cssmodules-language-server",
+    "eslint-lsp",
     "html-lsp",
     "lua-language-server",
     "markdownlint",
     "prettier",
     "rubocop",
+    "ruby-lsp",
     "stylelint-lsp",
     "svelte-language-server",
     "typescript-language-server",
   },
-  automatic_setup = true,
+
+  start_delay = 3000, -- 3 second delay
+  run_on_start = true, -- automatically install / update on startup
+  debounce_hours = 8, -- at least 8 hours between attempts to install/update
 })
-mason_null_ls.setup_handlers()
 
 -- nvim-lspconfig
 -- ----------------------------------------------------------------------------
@@ -271,6 +265,7 @@ lspconfig.cssls.setup({
 
 -- stylelint
 lspconfig.stylelint_lsp.setup({
+  file_types = { "css", "scss" },
   settings = {
     stylelintplus = {
       autoFixOnSave = true,
@@ -291,7 +286,7 @@ lspconfig.pyright.setup({
 })
 
 -- ruby
-lspconfig.solargraph.setup({
+lspconfig.ruby_ls.setup({
   capabilities = capabilities,
 })
 
@@ -343,10 +338,10 @@ cmp.setup({
     ["<C-d>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping(
-    cmp.mapping.complete({
-      reason = cmp.ContextReason.Auto,
-    }),
-    { "i", "c" }
+      cmp.mapping.complete({
+        reason = cmp.ContextReason.Auto,
+      }),
+      { "i", "c" }
     ),
     ["<C-e>"] = cmp.mapping.close(),
     ["<CR>"] = cmp.mapping.confirm({

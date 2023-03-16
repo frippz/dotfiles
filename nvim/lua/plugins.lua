@@ -39,15 +39,14 @@ require("packer").startup(function(use)
   use("tpope/vim-rhubarb")
   use("tpope/vim-surround")
   use({
+    "williamboman/mason.nvim",
+    { "whoissethdaniel/mason-tool-installer.nvim", requires = "mason.nvim" },
+  })
+  use({
     "hrsh7th/nvim-cmp",
     { "hrsh7th/cmp-buffer", requires = "nvim-cmp" },
     { "hrsh7th/cmp-nvim-lsp", requires = "nvim-cmp" },
     { "hrsh7th/cmp-vsnip", requires = "nvim-cmp" },
-  })
-  use({
-    "williamboman/mason.nvim",
-    { "williamboman/mason-lspconfig.nvim", requires = "mason.nvim" },
-    { "jay-babu/mason-null-ls.nvim", requires = "mason.nvim" },
   })
   use({
     "nvim-tree/nvim-tree.lua",
