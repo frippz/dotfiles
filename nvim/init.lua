@@ -144,12 +144,6 @@ nvimCmd("set ssop-=folds") -- do not store folds
 -- Make copy operations work with the clipboard
 o.clipboard = "unnamed"
 
--- Trim trailing whitespace on save
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  pattern = { "*" },
-  command = [[%s/\s\+$//e]],
-})
-
 -- Themes
 -- ============================================================================
 nvimCmd("syntax enable")
@@ -485,3 +479,59 @@ require("nvim-treesitter.configs").setup({
     enable = true,
   },
 })
+
+-- formatter
+-- ----------------------------------------------------------------------------
+local function prettier()
+  return {
+    exe = "prettier",
+    args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0) },
+    stdin = true,
+  }
+end
+
+require("formatter").setup({
+
+  filetype = {
+
+    -- prettier
+    javascript = { prettier },
+    typescript = { prettier },
+    css = { prettier },
+    json = { prettier },
+    html = { prettier },
+    yaml = { prettier },
+    markdown = { prettier },
+
+    -- lua
+    lua = {
+      function()
+        return {
+          exe = "stylua",
+          args = { "--indent-type", "spaces", "--indent-width", "2", "-" },
+          stdin = true,
+        }
+      end,
+    },
+
+    -- any filetypes
+    ["*"] = {
+      -- remove trailing whitespace
+      require("formatter.filetypes.any").remove_trailing_whitespace,
+    },
+  },
+})
+
+-- format on save
+vim.api.nvim_create_augroup("FormatAutogroup", {})
+vim.api.nvim_create_autocmd({
+  "BufWritePost",
+}, {
+  pattern = { "*" },
+  command = "FormatWrite",
+  group = "FormatAutogroup",
+})
+
+-- mappings
+map("n", "<Leader>f", ":Format<CR>", mapOpts)
+map("n", "<Leader>F", ":FormatWrite<CR>", mapOpts)
