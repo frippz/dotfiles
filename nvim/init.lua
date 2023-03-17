@@ -486,6 +486,7 @@ require("formatter").setup({
     -- prettier
     javascript = { prettier },
     typescript = { prettier },
+    svelte = { prettier },
     css = { prettier },
     json = { prettier },
     html = { prettier },
