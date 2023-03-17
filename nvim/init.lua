@@ -265,7 +265,7 @@ lspconfig.cssls.setup({
 
 -- stylelint
 lspconfig.stylelint_lsp.setup({
-  file_types = { "css", "scss" },
+  filetypes = { "css", "scss" },
   settings = {
     stylelintplus = {
       autoFixOnSave = true,
