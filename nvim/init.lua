@@ -518,7 +518,7 @@ require("formatter").setup({
 })
 
 -- format on save
-vim.api.nvim_create_augroup("FormatAutogroup", {})
+vim.api.nvim_create_augroup("FormatAutogroup", { clear = true })
 vim.api.nvim_create_autocmd({
   "BufWritePost",
 }, {
