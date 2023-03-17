@@ -473,6 +473,9 @@ require("nvim-treesitter.configs").setup({
   highlight = {
     enable = true,
   },
+  context_commentstring = {
+    enable = true,
+  },
 })
 
 -- formatter
@@ -530,3 +533,7 @@ vim.api.nvim_create_autocmd({
 -- mappings
 map("n", "<Leader>f", ":Format<CR>", mapOpts)
 map("n", "<Leader>F", ":FormatWrite<CR>", mapOpts)
+
+-- comment.nvim
+-- ----------------------------------------------------------------------------
+require("Comment").setup()
