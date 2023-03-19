@@ -94,6 +94,9 @@ o.listchars = {
   space = "·",
 }
 
+-- Highlight yank
+nvimCmd([[au TextYankPost * silent! lua vim.highlight.on_yank({timeout=500})]])
+
 -- Files
 -- ----------------------------------------------------------------------------
 
