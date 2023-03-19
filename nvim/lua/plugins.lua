@@ -10,6 +10,7 @@ require("packer").startup(function(use)
   use("wbthomason/packer.nvim")
 
   -- color themes
+  use("sainnhe/everforest")
   use("sainnhe/gruvbox-material")
   use("Th3Whit3Wolf/one-nvim")
 

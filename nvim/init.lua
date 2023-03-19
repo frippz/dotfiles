@@ -160,14 +160,14 @@ function ThemeDark()
   g.gruvbox_material_enable_bold = 1
   g.gruvbox_material_dim_inactive_windows = 0
   g.gruvbox_material_transparent_background = "1"
-  nvimCmd("colorscheme gruvbox-material")
+  nvimCmd("colorscheme everforest")
 end
 
 -- Light
 -- ----------------------------------------------------------------------------
 function ThemeLight()
   o.background = "light"
-  nvimCmd("colorscheme one-nvim")
+  nvimCmd("colorscheme everforest")
 end
 
 -- Auto Dark Mode
@@ -404,7 +404,11 @@ vim.lsp.handlers["workspace/symbol"] = require("lsputil.symbols").workspace_hand
 
 -- lualine.nvim
 -- ----------------------------------------------------------------------------
-require("lualine").setup({})
+require("lualine").setup({
+  options = {
+    theme = "everforest",
+  },
+})
 
 -- telescope.vim
 -- ----------------------------------------------------------------------------
