@@ -11,8 +11,6 @@ require("packer").startup(function(use)
 
   -- color themes
   use("sainnhe/everforest")
-  use("sainnhe/gruvbox-material")
-  use("Th3Whit3Wolf/one-nvim")
 
   -- regular plugins
   use("f-person/auto-dark-mode.nvim")
