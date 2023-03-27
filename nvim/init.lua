@@ -229,6 +229,7 @@ require("mason-tool-installer").setup({
   },
 
   start_delay = 3000, -- 3 second delay
+  auto_update = true, -- check each tool for updates
   run_on_start = true, -- automatically install / update on startup
   debounce_hours = 8, -- at least 8 hours between attempts to install/update
 })
