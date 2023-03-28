@@ -16,15 +16,7 @@ PLUGINS=(
 # Packages to install globally with npm
 PACKAGES=(
     "npm-check-updates"
-    "pnpm"
-    "pyright"
-    "stylelint-lsp"
-    "typescript"
-    "typescript-language-server"
-    "vscode-langservers-extracted"
     "wrangler"
-    "yaml-language-server"
-    "@johnnymorganz/stylua-bin"
 )
 
 set -e
