@@ -424,7 +424,7 @@ local pickersOpts = {
 
 telescope.setup({
   defaults = {
-    prompt_prefix = "🔭 ",
+    prompt_prefix = "🔎 ",
   },
   pickers = {
     live_grep = pickersOpts,
@@ -432,8 +432,10 @@ telescope.setup({
   },
 })
 
+-- telescope extensions
 telescope.load_extension("conventional_commits")
 
+-- telescope mappings
 map("n", "<C-p>", ":Telescope find_files hidden=true<CR>", mapOpts)
 map("n", "<C-b>", ":Telescope buffers<CR>", mapOpts)
 map("n", "<leader>fg", ":Telescope live_grep<CR>", mapOpts)
