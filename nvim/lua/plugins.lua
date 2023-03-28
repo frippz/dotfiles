@@ -55,6 +55,7 @@ require("packer").startup(function(use)
   use({
     "nvim-telescope/telescope.nvim",
     tag = "0.1.x",
+    { "olacin/telescope-cc.nvim", requires = "telescope.nvim" },
   })
   use({
     "nvim-treesitter/nvim-treesitter",

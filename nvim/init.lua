@@ -416,14 +416,15 @@ require("lualine").setup({
 
 -- telescope.vim
 -- ----------------------------------------------------------------------------
+local telescope = require("telescope")
 local pickersOpts = {
   respect_gitignore = true,
   search_dirs = { "./", ".github/" },
 }
 
-require("telescope").setup({
+telescope.setup({
   defaults = {
-    prompt_prefix = "🔍 ",
+    prompt_prefix = "🔭 ",
   },
   pickers = {
     live_grep = pickersOpts,
@@ -431,10 +432,13 @@ require("telescope").setup({
   },
 })
 
+telescope.load_extension("conventional_commits")
+
 map("n", "<C-p>", ":Telescope find_files hidden=true<CR>", mapOpts)
 map("n", "<C-b>", ":Telescope buffers<CR>", mapOpts)
 map("n", "<leader>fg", ":Telescope live_grep<CR>", mapOpts)
 map("n", "<leader>fh", ":Telescope help_tags<CR>", mapOpts)
+map("n", "<leader>cc", ":Telescope conventional_commits<CR>", mapOpts)
 
 -- gitsigns.nvim
 -- ----------------------------------------------------------------------------
