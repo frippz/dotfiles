@@ -432,15 +432,11 @@ telescope.setup({
   },
 })
 
--- telescope extensions
-telescope.load_extension("conventional_commits")
-
 -- telescope mappings
 map("n", "<C-p>", ":Telescope find_files hidden=true<CR>", mapOpts)
 map("n", "<C-b>", ":Telescope buffers<CR>", mapOpts)
 map("n", "<leader>fg", ":Telescope live_grep<CR>", mapOpts)
 map("n", "<leader>fh", ":Telescope help_tags<CR>", mapOpts)
-map("n", "<leader>cc", ":Telescope conventional_commits<CR>", mapOpts)
 
 -- gitsigns.nvim
 -- ----------------------------------------------------------------------------
