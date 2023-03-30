@@ -433,6 +433,7 @@ telescope.setup({
 })
 
 -- telescope mappings
+map("n", "<leader>ft", ":Telescope<CR>", mapOpts)
 map("n", "<C-p>", ":Telescope find_files hidden=true<CR>", mapOpts)
 map("n", "<C-b>", ":Telescope buffers<CR>", mapOpts)
 map("n", "<leader>fg", ":Telescope live_grep<CR>", mapOpts)
