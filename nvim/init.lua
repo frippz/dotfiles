@@ -415,7 +415,7 @@ require("lualine").setup({
   },
 })
 
--- telescope.vim
+-- telescope.nvim
 -- ----------------------------------------------------------------------------
 local telescope = require("telescope")
 local pickersOpts = {
@@ -542,3 +542,7 @@ map("n", "<Leader>F", ":FormatWrite<CR>", mapOpts)
 -- comment.nvim
 -- ----------------------------------------------------------------------------
 require("Comment").setup()
+
+-- vim-fugitive
+-- ----------------------------------------------------------------------------
+map("n", "<Leader>G", ":G<CR>", mapOpts)
