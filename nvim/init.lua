@@ -105,6 +105,7 @@ o.autoread = true
 
 -- check for changes after inactivity
 nvimCmd("au CursorHold * checktime")
+nvimCmd("au FocusGained * checktime")
 
 -- disable swap files
 o.updatecount = 0
