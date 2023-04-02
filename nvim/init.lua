@@ -1,13 +1,5 @@
 require("plugins")
-
--- Helpers
--- ============================================================================
-local o = vim.opt
-local g = vim.g
-local map = vim.api.nvim_set_keymap
-local nvimCmd = vim.api.nvim_command
-local nvimAutoCmd = vim.api.nvim_create_autocmd
-local mapOpts = { noremap = true, silent = true }
+require("helpers")
 
 -- Important stuff to set early
 -- ============================================================================
