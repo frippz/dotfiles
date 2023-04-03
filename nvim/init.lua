@@ -539,6 +539,9 @@ require("Comment").setup()
 -- ----------------------------------------------------------------------------
 map("n", "<Leader>fgb", ":G blame<CR>", mapOpts)
 
--- lazygit.nvim
+-- fterm.nvim
 -- ----------------------------------------------------------------------------
-map("n", "<Leader>gg", ":LazyGit<CR>", mapOpts)
+require("FTerm").setup({})
+
+-- mappings
+map("n", "<Leader>t", ":lua require('FTerm').toggle()<CR>", mapOpts)
