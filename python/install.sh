@@ -9,6 +9,7 @@ PLUGINS=(
 )
 
 PIPS=(
+  "pip-autoremove"
   "awscli"
   "black"
   "grc"
