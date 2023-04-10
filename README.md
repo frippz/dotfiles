@@ -1,20 +1,17 @@
-# dotfiles – frippz style
-
-I LOVE MY DOTFILES!!!
+# My very own dotfiles
 
 ## Usage
 
-Make sure you're running `zsh` first
+These dotfiles are made for [Zsh](https://www.zsh.org), so first switch over.
 
 ```zsh
 $ chsh -s $(which zsh)
 ```
 
-Initialize submodules
+Initialize submodules (for dotbot)
 
 ```zsh
-$ git submodule init
-$ git submodule update
+$ git submodule update --init --recursive
 ```
 
 Run the [dotbot](https://github.com/anishathalye/dotbot) install script
@@ -23,10 +20,10 @@ Run the [dotbot](https://github.com/anishathalye/dotbot) install script
 $ ./install --except shell
 ```
 
-Open an new tab and run the install script again with only the shell directive
+Refresh your environment or just open an new tab and run the install script again with only the shell directive
 
 ```zsh
 $ ./install --only shell
 ```
 
-All done! Unless something went wrong, then go ahead and curse… 😖
+Done! 👍
