@@ -1,7 +1,5 @@
 # My very own dotfiles
 
-## Usage
-
 These dotfiles are made for [Zsh](https://www.zsh.org), so first switch over.
 
 ```zsh
