@@ -210,7 +210,7 @@ require("mason-tool-installer").setup({
     "html-lsp",
     "lua-language-server",
     "markdownlint",
-    "prettier",
+    "prettierd",
     "rubocop",
     "ruby-lsp",
     "stylelint-lsp",
@@ -472,7 +472,7 @@ require("nvim-treesitter.configs").setup({
 -- ----------------------------------------------------------------------------
 local function prettier()
   return {
-    exe = "prettier",
+    exe = "prettierd",
     args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0) },
     stdin = true,
   }
