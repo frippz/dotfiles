@@ -364,14 +364,21 @@ cmp.setup({
 -- ----------------------------------------------------------------------------
 nvimCmd("set splitright")
 
+local function on_attach(bufnr)
+  local api = require("nvim-tree.api")
+
+  local function opts(desc)
+    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  -- cd into dir of selected node
+  vim.keymap.set("n", "<C-o>", api.tree.change_root_to_node, opts("CD"))
+end
+
 require("nvim-tree").setup({
+  on_attach = on_attach,
   view = {
     side = "left",
-    mappings = {
-      list = {
-        { key = { "<C-o>" }, action = "cd" },
-      },
-    },
   },
   filters = {
     dotfiles = false,
