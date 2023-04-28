@@ -39,7 +39,6 @@ require("packer").startup(function(use)
   use("tpope/vim-repeat")
   use("tpope/vim-rhubarb")
   use("tpope/vim-surround")
-  use("github/copilot.vim")
   use({
     "williamboman/mason.nvim",
     { "whoissethdaniel/mason-tool-installer.nvim", requires = "mason.nvim" },
