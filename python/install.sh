@@ -65,7 +65,9 @@ if command -v pip >/dev/null 2>&1 ; then
     if ! pip list --format json | grep -q "$PIP"; then
       pip install --user $PIP
     else
-      echo "    ℹ️  $PIP already installed."
+      echo "    ℹ️  $PIP already installed. Checking for upgrades instead."
+      echo ""
+      pip install --upgrade --user $PIP
       echo ""
     fi
   done
