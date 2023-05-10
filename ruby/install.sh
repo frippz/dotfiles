@@ -15,6 +15,10 @@ GEMS=(
   "solargraph"
 )
 
+if [[ "$OSTYPE" == "linux*"* && ! -d "$HOME/.rbenv" ]]; then
+  git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+fi
+
 if command -v rbenv >/dev/null 2>&1 ; then
 
   echo ""
