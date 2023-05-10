@@ -44,7 +44,7 @@ if [ -d $HOME/.rbenv ]; then
 fi
 
 # Check for gem before attempting to install packages
-# if command -v gem >/dev/null 2>&1 ; then
+if command -v gem >/dev/null 2>&1 ; then
 
   echo ""
   echo " ✅ Installing gems"
@@ -59,10 +59,10 @@ fi
     fi
   done
 
-# else
+else
 
-  # echo ""
-  # echo " ⛔️ gem command not found."
-  # echo ""
+  echo ""
+  echo " ⛔️ gem command not found."
+  echo ""
 
-# fi
+fi
