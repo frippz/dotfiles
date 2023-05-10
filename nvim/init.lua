@@ -153,14 +153,14 @@ g.everforest_transparent_background = 1
 -- ----------------------------------------------------------------------------
 function ThemeDark()
   o.background = "dark"
-  nvimCmd("colorscheme everforest")
+  vim.cmd.colorscheme("everforest")
 end
 
 -- Light
 -- ----------------------------------------------------------------------------
 function ThemeLight()
   o.background = "light"
-  nvimCmd("colorscheme everforest")
+  vim.cmd.colorscheme("everforest")
 end
 
 -- Auto Dark Mode
@@ -179,18 +179,16 @@ auto_dark_mode.setup({
 
 auto_dark_mode.init()
 
--- Theming for non-macOS
--- Set theme based on $TERM_THEME (or fall back to Gruvbox)
+-- Theming for Linux
+-- Set theme based on $TERM_THEME
 -- ----------------------------------------------------------------------------
-nvimCmd([[
-  if !has('macunix')
-    if $TERM_THEME == 'light'
-      call ThemeLight()
-    else
-      call ThemeDark()
-    endif
-  endif
-]])
+if vim.fn.has('Linux') then
+  if vim.env.TERM_THEME == 'light' then
+    ThemeLight()
+  else
+    ThemeDark()
+  end
+end
 
 -- Plugins
 -- ============================================================================
