@@ -46,7 +46,3 @@
     - description: Install Node
       command: ./node/install.sh
       stdout: true
-
-    - description: Install gh extensions
-      command: ./gh/install.sh
-      stdout: true
