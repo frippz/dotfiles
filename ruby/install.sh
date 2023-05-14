@@ -54,8 +54,9 @@ if command -v gem >/dev/null 2>&1 ; then
     if ! gem list | grep -q "$GEM"; then
       gem install $GEM
     else
-      echo "    ℹ️  $GEM already installed."
+      echo "    ℹ️  $GEM already installed. Checking for update instead"
       echo ""
+      gem update $GEM
     fi
   done
 
