@@ -17,6 +17,8 @@ PLUGINS=(
 PACKAGES=(
     "npm-check-updates"
     "wrangler"
+    "yarn"
+    "pnpm"
 )
 
 set -e
