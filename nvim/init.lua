@@ -182,8 +182,8 @@ auto_dark_mode.init()
 -- Theming for Linux
 -- Set theme based on $TERM_THEME
 -- ----------------------------------------------------------------------------
-if vim.fn.has('Linux') then
-  if vim.env.TERM_THEME == 'light' then
+if vim.fn.has("Linux") then
+  if vim.env.TERM_THEME == "light" then
     ThemeLight()
   else
     ThemeDark()
@@ -280,6 +280,11 @@ lspconfig.pyright.setup({
 
 -- ruby
 lspconfig.ruby_ls.setup({
+  capabilities = capabilities,
+})
+
+-- rust
+lspconfig.rust_analyzer.setup({
   capabilities = capabilities,
 })
 
@@ -504,6 +509,16 @@ require("formatter").setup({
         return {
           exe = "stylua",
           args = { "--indent-type", "spaces", "--indent-width", "2", "-" },
+          stdin = true,
+        }
+      end,
+    },
+
+    -- rust
+    rust = {
+      function()
+        return {
+          exe = "rustfmt",
           stdin = true,
         }
       end,
