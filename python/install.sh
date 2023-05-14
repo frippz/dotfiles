@@ -11,6 +11,7 @@ PLUGINS=(
 PIPS=(
   "pip-autoremove"
   "awscli"
+  "beautysh"
   "black"
   "grc"
   "pipenv"
