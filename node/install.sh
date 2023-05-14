@@ -3,7 +3,6 @@
 GLOBAL_VERSION="16.19.1"
 
 VERSIONS=(
-    "16.19.0"
     "16.19.1"
     "18.12.1"
 )
@@ -18,6 +17,7 @@ PACKAGES=(
     "npm-check-updates"
     "wrangler"
     "pnpm"
+    "yarn"
 )
 
 set -e
@@ -53,8 +53,8 @@ if [ -d $HOME/.nodenv ]; then
     done
 fi
 
-# Check for npm if we’re on OS X
-if command -v node >/dev/null 2>&1 ; then
+# Check for npm
+if command -v npm >/dev/null 2>&1 ; then
     echo ""
     echo " ✅ Installing Node packages"
     echo ""
