@@ -27,9 +27,8 @@ alias gbvv='git branch -vv'
 
 # Commit
 alias gc='git commit -v'
-alias gca='git commit -v -a'
-alias gcaa='git commit -v -a --amend'
-alias gcaa!='git commit -v -a --amend --no-edit'
+alias gca='git commit -v --amend'
+alias gca!='git commit -v --amend --no-edit'
 alias gcm='git commit -m'
 
 # Pull
