@@ -301,11 +301,6 @@ lspconfig.ruby_ls.setup({
   capabilities = capabilities,
 })
 
--- rust
-lspconfig.rust_analyzer.setup({
-  capabilities = capabilities,
-})
-
 -- html
 lspconfig.html.setup({
   capabilities = capabilities,
@@ -527,16 +522,6 @@ require("formatter").setup({
         return {
           exe = "stylua",
           args = { "--indent-type", "spaces", "--indent-width", "2", "-" },
-          stdin = true,
-        }
-      end,
-    },
-
-    -- rust
-    rust = {
-      function()
-        return {
-          exe = "rustfmt",
           stdin = true,
         }
       end,
