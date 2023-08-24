@@ -480,6 +480,7 @@ require("nvim-treesitter.configs").setup({
     "gitcommit",
     "gitignore",
     "javascript",
+    "jsdoc",
     "svelte",
     "typescript",
   },
