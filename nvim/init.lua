@@ -224,6 +224,7 @@ require("mason-tool-installer").setup({
     "prettierd",
     "rubocop",
     "ruby-lsp",
+    "shfmt",
     "stylelint-lsp",
     "svelte-language-server",
     "typescript-language-server",
