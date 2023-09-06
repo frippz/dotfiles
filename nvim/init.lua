@@ -494,62 +494,48 @@ require("nvim-treesitter.configs").setup({
   },
 })
 
--- formatter
+-- format-on-save
 -- ----------------------------------------------------------------------------
-local function prettier()
-  return {
-    exe = "prettierd",
-    args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0) },
-    stdin = true,
-  }
-end
+local format_on_save = require("format-on-save")
+local formatters = require("format-on-save.formatters")
 
-require("formatter").setup({
-
-  filetype = {
-
-    -- prettier
-    javascript = { prettier },
-    typescript = { prettier },
-    svelte = { prettier },
-    css = { prettier },
-    json = { prettier },
-    html = { prettier },
-    yaml = { prettier },
-    markdown = { prettier },
-
-    -- lua
-    lua = {
-      function()
-        return {
-          exe = "stylua",
-          args = { "--indent-type", "spaces", "--indent-width", "2", "-" },
-          stdin = true,
-        }
-      end,
-    },
-
-    -- any filetypes
-    ["*"] = {
-      -- remove trailing whitespace
-      require("formatter.filetypes.any").remove_trailing_whitespace,
-    },
+format_on_save.setup({
+  exclude_path_patterns = {
+    "/node_modules/",
+    ".local/share/nvim/lazy",
   },
-})
+  formatter_by_ft = {
+    css = formatters.prettierd,
+    html = formatters.lsp,
+    javascript = formatters.prettierd,
+    javascriptreact = formatters.prettierd,
+    json = formatters.prettierd,
+    -- lua = formatters.lsp,
+    markdown = formatters.prettierd,
+    -- python = formatters.black,
+    scss = formatters.prettierd,
+    sh = formatters.shfmt,
+    typescript = formatters.prettierd,
+    typescriptreact = formatters.prettierd,
+    yaml = formatters.prettierd,
 
--- format on save
-vim.api.nvim_create_augroup("FormatAutogroup", { clear = true })
-vim.api.nvim_create_autocmd({
-  "BufWritePost",
-}, {
-  pattern = { "*" },
-  command = "FormatWrite",
-  group = "FormatAutogroup",
-})
+    -- Concatenate formatters
+    python = {
+      formatters.remove_trailing_whitespace,
+      formatters.shell({ cmd = "tidy-imports" }),
+      formatters.black,
+      formatters.ruff,
+    },
 
--- mappings
-map("n", "<Leader>f", ":Format<CR>", mapOpts)
-map("n", "<Leader>F", ":FormatWrite<CR>", mapOpts)
+  },
+
+  -- fallback formatter to use when no formatters match the current filetype
+  fallback_formatter = {
+    formatters.remove_trailing_whitespace,
+    formatters.remove_trailing_newlines,
+    formatters.prettierd,
+  }
+})
 
 -- comment.nvim
 -- ----------------------------------------------------------------------------
