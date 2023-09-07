@@ -216,6 +216,7 @@ require("mason-tool-installer").setup({
   ensure_installed = {
     "bash-language-server",
     "beautysh",
+    "black",
     "css-lsp",
     "eslint-lsp",
     "html-lsp",
@@ -510,30 +511,21 @@ format_on_save.setup({
     javascript = formatters.prettierd,
     javascriptreact = formatters.prettierd,
     json = formatters.prettierd,
-    -- lua = formatters.lsp,
+    lua = formatters.stylua,
     markdown = formatters.prettierd,
-    -- python = formatters.black,
+    python = formatters.black,
     scss = formatters.prettierd,
     sh = formatters.shfmt,
     typescript = formatters.prettierd,
     typescriptreact = formatters.prettierd,
     yaml = formatters.prettierd,
-
-    -- Concatenate formatters
-    python = {
-      formatters.remove_trailing_whitespace,
-      formatters.shell({ cmd = "tidy-imports" }),
-      formatters.black,
-      formatters.ruff,
-    },
-
   },
 
   -- fallback formatter to use when no formatters match the current filetype
   fallback_formatter = {
     formatters.remove_trailing_whitespace,
     formatters.remove_trailing_newlines,
-  }
+  },
 })
 
 -- comment.nvim
