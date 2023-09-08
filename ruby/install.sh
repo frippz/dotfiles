@@ -2,7 +2,7 @@
 #
 # Install Ruby via rbenv and gems
 
-VERSION="3.1.2"
+VERSION="3.2.2"
 
 PLUGINS=(
   "git@github.com:nabeo/rbenv-gem-migrate.git"
@@ -15,7 +15,7 @@ GEMS=(
   "solargraph"
 )
 
-if command -v rbenv >/dev/null 2>&1 ; then
+if command -v rbenv > /dev/null 2>&1; then
 
   echo ""
   echo " ✅ Install Ruby using rbenv and set ${VERSION} as global"
@@ -44,13 +44,13 @@ if [ -d $HOME/.rbenv ]; then
 fi
 
 # Check for gem before attempting to install packages
-if command -v gem >/dev/null 2>&1 ; then
+if command -v gem > /dev/null 2>&1; then
 
   echo ""
   echo " ✅ Installing gems"
   echo ""
 
-  for GEM in ${GEMS[@]} ; do
+  for GEM in ${GEMS[@]}; do
     if ! gem list | grep -q "$GEM"; then
       gem install $GEM
     else
