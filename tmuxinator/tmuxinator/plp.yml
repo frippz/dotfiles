@@ -14,4 +14,4 @@ windows:
             - npm run watch
         - render:
             - cd ./packages/render
-            - npm run start-http
+            - npm run build && npm run start-http
