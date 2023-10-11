@@ -9,4 +9,4 @@ windows:
       layout: even-horizontal
       panes:
         - c
-        - npm start
+        - npm run dev
