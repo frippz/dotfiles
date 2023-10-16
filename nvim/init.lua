@@ -227,8 +227,10 @@ require("mason-tool-installer").setup({
     "ruby-lsp",
     "shfmt",
     "stylelint-lsp",
+    "stylua",
     "svelte-language-server",
     "typescript-language-server",
+    "yaml-language-server",
   },
 
   start_delay = 3000, -- 3 second delay
