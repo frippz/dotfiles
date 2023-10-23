@@ -38,6 +38,7 @@ require("packer").startup(function(use)
   use("tpope/vim-repeat")
   use("tpope/vim-rhubarb")
   use("tpope/vim-surround")
+  use("vlelo/arduino-helper.nvim")
   use({
     "williamboman/mason.nvim",
     { "whoissethdaniel/mason-tool-installer.nvim", requires = "mason.nvim" },
