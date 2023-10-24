@@ -544,7 +544,3 @@ require("FTerm").setup({})
 
 -- mappings
 map("n", "<Leader>t", ":lua require('FTerm').toggle()<CR>", mapOpts)
-
--- arduino-helper
--- ----------------------------------------------------------------------------
-require("arduino-helper").setup()
