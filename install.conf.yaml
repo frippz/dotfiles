@@ -15,7 +15,6 @@
     ~/.scripts: scripts
     ~/.config/nvim/init.lua: nvim/init.lua
     ~/.config/nvim/lua: nvim/lua
-    ~/.tm_properties: textmate/tm_properties
     ~/.config/tmuxinator: tmuxinator/tmuxinator
     ~/.config/tmux/tmux.conf: tmux/tmux.conf
     ~/.config/tmux/plugins: tmux/plugins
