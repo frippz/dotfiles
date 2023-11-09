@@ -7,7 +7,6 @@ tap "epk/epk"
 # cask "google-cloud-sdk"
 
 # Packages
-brew "1password-cli"
 brew "autoconf"
 brew "automake"
 brew "ccat"
