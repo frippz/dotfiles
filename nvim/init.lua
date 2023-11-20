@@ -492,10 +492,11 @@ require("nvim-treesitter.configs").setup({
   highlight = {
     enable = true,
   },
-  context_commentstring = {
-    enable = true,
-  },
 })
+
+-- nvim-ts-context-commentstring
+-- ----------------------------------------------------------------------------
+require("ts_context_commentstring").setup()
 
 -- format-on-save
 -- ----------------------------------------------------------------------------
