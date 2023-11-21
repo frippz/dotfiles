@@ -519,6 +519,7 @@ format_on_save.setup({
     python = formatters.black,
     scss = formatters.prettierd,
     sh = formatters.shfmt,
+    svelte = formatters.prettierd,
     typescript = formatters.prettierd,
     typescriptreact = formatters.prettierd,
     yaml = formatters.prettierd,
