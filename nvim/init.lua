@@ -440,6 +440,10 @@ local pickersOpts = {
 telescope.setup({
   defaults = {
     prompt_prefix = "🔎 ",
+    file_ignore_patterns = {
+      ".git",
+      "node_modules",
+    },
   },
   pickers = {
     live_grep = pickersOpts,
