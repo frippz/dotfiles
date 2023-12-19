@@ -5,7 +5,7 @@ pre_window: source ./plp-env/dev.env
 
 windows:
   - plp:
-      layout: d52b,226x59,0,0{137x59,0,0,0,88x59,138,0[88x49,138,0,1,88x9,138,50,2]}
+      layout: 55c4,150x47,0,0{75x47,0,0,3,74x47,76,0[74x23,76,0,4,74x23,76,24,5]}
       panes:
         - git:
             - cd ./packages/web-client && c
