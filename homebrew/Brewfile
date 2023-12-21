@@ -9,6 +9,7 @@ tap "epk/epk"
 # Packages
 brew "autoconf"
 brew "automake"
+brew "bat"
 brew "ccat"
 brew "coreutils"
 brew "dos2unix"
