@@ -14,5 +14,8 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Run environment checks
-        run: zsh --version
+      - name: Change shell
+        run: chsh -s $(which zsh)
+
+      - name: Run dotbot install
+        run: ./install --except shell
