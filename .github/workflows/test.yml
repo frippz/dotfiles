@@ -1,0 +1,18 @@
+name: Test
+
+on: push
+
+jobs:
+  test:
+    name: Run install scripts
+
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout files
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Run environment checks
+        run: echo $SHELL
