@@ -15,4 +15,4 @@ jobs:
           submodules: recursive
 
       - name: Run environment checks
-        run: echo $SHELL
+        run: zsh --version
