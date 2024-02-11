@@ -223,8 +223,6 @@ require("mason-tool-installer").setup({
     "lua-language-server",
     "markdownlint",
     "prettierd",
-    "rubocop",
-    "ruby-lsp",
     "shfmt",
     "stylelint-lsp",
     "stylua",
@@ -297,11 +295,6 @@ lspconfig.sourcekit.setup({
 
 -- python
 lspconfig.pyright.setup({
-  capabilities = capabilities,
-})
-
--- ruby
-lspconfig.ruby_ls.setup({
   capabilities = capabilities,
 })
 
