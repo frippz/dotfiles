@@ -15,6 +15,7 @@ PLUGINS=(
 
 # Packages to install globally with npm
 PACKAGES=(
+  "neovim"
   "npm-check-updates"
   "wrangler"
   "pnpm"
