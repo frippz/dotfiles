@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-GLOBAL_VERSION="18.18.0"
+GLOBAL_VERSION="20.11.0"
 
 VERSIONS=(
-  "16.19.1"
   "18.18.0"
+  "20.11.0"
 )
 
 PLUGINS=(
