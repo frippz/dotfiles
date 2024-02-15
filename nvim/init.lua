@@ -516,7 +516,13 @@ format_on_save.setup({
     python = formatters.black,
     scss = formatters.prettierd,
     sh = formatters.shfmt,
-    svelte = formatters.prettierd,
+    -- svelte = formatters.prettierd,
+    svelte = {
+      formatters.shell({
+        cmd = { "prettier", "--plugin", "prettier-plugin-svelte", "--stdin-filepath", "%", "--parser", "svelte" },
+        stdin = true,
+      }),
+    },
     typescript = formatters.prettierd,
     typescriptreact = formatters.prettierd,
     yaml = formatters.prettierd,
