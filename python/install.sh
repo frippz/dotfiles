@@ -2,7 +2,12 @@
 #
 # Install Python via pyenv and pip packages
 
-VERSION="3.11.1"
+VERSIONS=(
+  "3.9.18"
+  "3.11.1"
+)
+
+GLOBAL_VERSION="3.11.1"
 
 PLUGINS=(
   "https://github.com/pyenv/pyenv-pip-migrate.git"
@@ -21,14 +26,19 @@ PIPS=(
 )
 
 # Check for pyenv before attempting to install packages
-if command -v pyenv >/dev/null 2>&1 ; then
+if command -v pyenv > /dev/null 2>&1; then
 
   echo ""
-  echo " ✅ Install Python using pyenv and set ${VERSION} as global"
+  echo " ✅ Install Python versions using pyenv and set ${GLOBAL_VERSION} as global"
   echo ""
 
-  pyenv install ${VERSION} --skip-existing
-  pyenv global ${VERSION}
+  for VERSION in ${VERSIONS[@]}; do
+    echo "    ℹ️  Installing $VERSION"
+    echo ""
+    pyenv install $VERSION --skip-existing
+  done
+
+  pyenv global $VERSION
   pyenv rehash
 
 fi
@@ -50,7 +60,7 @@ if [ -d $HOME/.pyenv ]; then
 fi
 
 # Check for pip before attempting to install packages
-if command -v pip >/dev/null 2>&1 ; then
+if command -v pip > /dev/null 2>&1; then
 
   echo ""
   echo " ✅ Upgrading pip"
@@ -62,7 +72,7 @@ if command -v pip >/dev/null 2>&1 ; then
   echo " ✅ Installing Python packages"
   echo ""
 
-  for PIP in ${PIPS[@]} ; do
+  for PIP in ${PIPS[@]}; do
     if ! pip list --format json | grep -q "$PIP"; then
       pip install --user $PIP
     else
