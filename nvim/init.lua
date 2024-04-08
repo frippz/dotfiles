@@ -1,6 +1,7 @@
 require("plugins")
 require("helpers")
 require("themes")
+require("python")
 
 -- Important stuff to set early
 -- ============================================================================
