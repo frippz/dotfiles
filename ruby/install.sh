@@ -5,7 +5,7 @@
 VERSION="3.2.2"
 
 PLUGINS=(
-  "git@github.com:nabeo/rbenv-gem-migrate.git"
+  "https://github.com/nabeo/rbenv-gem-migrate.git"
 )
 
 GEMS=(
