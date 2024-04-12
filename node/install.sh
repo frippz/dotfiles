@@ -9,9 +9,9 @@ VERSIONS=(
 )
 
 PLUGINS=(
-  "git@github.com:nodenv/nodenv-update.git"
-  "git@github.com:nodenv/nodenv-npm-migrate.git"
-  "git@github.com:ouchxp/nodenv-nvmrc.git"
+  "https://github.com/nodenv/nodenv-update.git"
+  "https://github.com/nodenv/nodenv-npm-migrate.git"
+  "https://github.com/ouchxp/nodenv-nvmrc.git"
 )
 
 # Packages to install globally with npm
