@@ -19,6 +19,9 @@ g.mapleader = ","
 -- Remap save
 map("n", "<Leader>w", ":w<CR>", mapOpts)
 
+-- Save with no autocmd
+map("n", "<Leader>n", ":noa w<CR>", mapOpts)
+
 -- Quickly reload init.lua
 map("n", "<Leader>sv", ":luafile ~/.config/nvim/init.lua<CR>", mapOpts)
 
