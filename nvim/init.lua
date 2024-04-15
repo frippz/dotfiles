@@ -40,6 +40,10 @@ map("v", "<Up>", "gk", mapOpts)
 map("i", "<Down>", "<C-o>gj", mapOpts)
 map("i", "<Up>", "<C-o>gk", mapOpts)
 
+-- Folding
+map("n", "<Leader>fo", ":foldopen<CR>", mapOpts)
+map("n", "<Leader>fc", ":foldclose<CR>", mapOpts)
+
 -- Vim tabs
 map("n", "<C-t>", ":tabnew<CR>", mapOpts)
 
