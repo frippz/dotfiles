@@ -25,6 +25,16 @@ PIPS=(
   "yt-dlp"
 )
 
+# Install pyenv
+if command -v git > /dev/null 2>&1; then
+  git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv
+fi
+
+# Compile dynamic extensions
+if command -v make > /dev/null 2>&1; then
+  cd $HOME/.pyenv && src/configure && make -C src
+fi
+
 # Check for pyenv before attempting to install packages
 if command -v pyenv > /dev/null 2>&1; then
 
