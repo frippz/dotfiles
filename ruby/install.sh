@@ -15,6 +15,28 @@ GEMS=(
   "solargraph"
 )
 
+RBENV_HOME="$HOME/.rbenv"
+
+# Install rbenv
+if command -v git > /dev/null 2>&1; then
+  if [ ! -d "$RBENV_HOME" ]; then
+    echo ""
+    echo " ✅ Installing rbenv using git"
+    echo ""
+
+    git clone https://github.com/rbenv/rbenv.git $RBENV_HOME
+    PATH=$HOME/.rbenv/bin:$PATH
+    eval "$(rbenv init -)"
+
+  else
+    echo ""
+    echo " ⚠️  $RBENV_HOME is already present. Skipping install..."
+    echo ""
+  fi
+else
+  echo "  ⛔️ git not found. Aborting..."
+fi
+
 if command -v rbenv > /dev/null 2>&1; then
 
   echo ""
