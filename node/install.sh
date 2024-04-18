@@ -6,6 +6,8 @@ VERSIONS=(
   "18.18.0"
   "20.11.1"
   "20.12.0"
+  "20.12.1"
+  "20.12.2"
 )
 
 PLUGINS=(
@@ -23,7 +25,43 @@ PACKAGES=(
   "yarn"
 )
 
+NODENV_HOME="$HOME/.nodenv"
+DIR="$(cd "$(dirname "$0")" && pwd)"
+
 set -e
+
+# Install nodenv
+if command -v git > /dev/null 2>&1; then
+  if [ ! -d "$NODENV_HOME" ]; then
+    echo ""
+    echo " ✅ Installing nodenv using git"
+    echo ""
+
+    git clone https://github.com/nodenv/nodenv.git $NODENV_HOME
+
+    # Compile dynamic extensions
+    if command -v make > /dev/null 2>&1; then
+      echo "    ℹ️  Compiling dynamic extensions for nodenv"
+      echo ""
+      cd $NODENV_HOME && src/configure && make -C src
+    else
+      echo "  ⛔️ make not found. Aborting..."
+    fi
+
+    source $DIR/nodenv.zsh
+
+    echo "    ℹ️  Installing node-build"
+    echo ""
+    mkdir -p "$(nodenv root)"/plugins
+    git clone https://github.com/nodenv/node-build.git "$(nodenv root)"/plugins/node-build
+  else
+    echo ""
+    echo " ⚠️  $NODENV_HOME is already present. Skipping install..."
+    echo ""
+  fi
+else
+  echo "  ⛔️ git not found. Aborting..."
+fi
 
 if command -v nodenv > /dev/null 2>&1; then
 
