@@ -25,14 +25,30 @@ PIPS=(
   "yt-dlp"
 )
 
+PYENV_HOME="$HOME/.pyenv"
+
 # Install pyenv
 if command -v git > /dev/null 2>&1; then
-  git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv
+  if [ ! -d "$PYENV_HOME" ]; then
+    echo ""
+    echo " ✅ Installing pyenv using git"
+    echo ""
+
+    git clone https://github.com/pyenv/pyenv.git $PYENV_HOME
+  else
+    echo ""
+    echo " ⚠️  $PYENV_HOME is already present. Skipping install..."
+    echo ""
+  fi
+else
+  echo "  ⛔️ git not found. Aborting..."
 fi
 
 # Compile dynamic extensions
 if command -v make > /dev/null 2>&1; then
-  cd $HOME/.pyenv && src/configure && make -C src
+  echo "    ℹ️  Compiling dynamic extensions for pyenv"
+  echo ""
+  cd $PYENV_HOME && src/configure && make -C src
 fi
 
 # Check for pyenv before attempting to install packages
@@ -54,7 +70,7 @@ if command -v pyenv > /dev/null 2>&1; then
 fi
 
 # Install pyenv plugins
-if [ -d $HOME/.pyenv ]; then
+if [ -d $PYENV_HOME ]; then
   echo ""
   echo " ✅ Installing pyenv plugins"
   echo ""
