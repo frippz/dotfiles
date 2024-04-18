@@ -27,6 +27,7 @@ if command -v git > /dev/null 2>&1; then
     git clone https://github.com/rbenv/rbenv.git $RBENV_HOME
     PATH=$HOME/.rbenv/bin:$PATH
     eval "$(rbenv init -)"
+    git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
   else
     echo ""
@@ -50,7 +51,7 @@ if command -v rbenv > /dev/null 2>&1; then
 fi
 
 # Install rbenv plugins
-if [ -d $HOME/.rbenv ]; then
+if [ -d $RBENV_HOME ]; then
   echo ""
   echo " ✅ Installing rbenv plugins"
   echo ""
