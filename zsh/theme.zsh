@@ -12,12 +12,12 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   fi
 fi
 
-# case "$OSTYPE" in
-#   *linux*)
-#     if [ "$TERM_THEME" = "SolarizedLight" ]; then
-#       eval `dircolors $HOME/.dircolors.ansi-light`
-#     elif [ "$TERM_THEME" = "SolarizedDark" ]; then
-#       eval `dircolors $HOME/.dircolors.ansi-dark`
-#     fi
-#     ;;
-# esac
+case "$OSTYPE" in
+  *linux*)
+    if [ "$TERM_THEME" = "light" ]; then
+      eval `dircolors $HOME/.dircolors.ansi-light`
+    elif [ "$TERM_THEME" = "dark" ]; then
+      eval `dircolors $HOME/.dircolors.ansi-dark`
+    fi
+    ;;
+esac
