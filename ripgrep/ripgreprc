@@ -6,6 +6,9 @@
 --type-add
 web:*.{html,css,js}*
 
+# Search hidden files / directories (e.g. dotfiles) by default
+--hidden
+
 # Exlude/include
 --glob
 !git/*
