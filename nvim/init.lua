@@ -48,7 +48,18 @@ o.listchars = {
 }
 
 -- Highlight yank
-nvimCmd([[au TextYankPost * silent! lua vim.highlight.on_yank({timeout=500})]])
+local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    -- Only highlight when the yank is done via visual mode or a normal mode command
+    if vim.v.event.operator == "y" and vim.v.event.regtype ~= "" then
+      -- Temporarily highlight the yanked region
+      vim.highlight.on_yank({ higroup = "IncSearch", timeout = 500 })
+    end
+  end,
+  group = highlight_group,
+})
 
 -- Files
 -- ----------------------------------------------------------------------------
