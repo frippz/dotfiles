@@ -436,6 +436,7 @@ format_on_save.setup({
     typescript = formatters.prettierd,
     typescriptreact = formatters.prettierd,
     yaml = formatters.prettierd,
+    zsh = formatters.beautysh,
   },
 
   -- fallback formatter to use when no formatters match the current filetype
