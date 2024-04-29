@@ -1,12 +1,10 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
+
+source $HOME/.dotfiles/zsh/msg.zsh
 
 GLOBAL_VERSION="20.12.2"
 
 VERSIONS=(
-  "18.18.0"
-  "20.11.1"
-  "20.12.0"
-  "20.12.1"
   "20.12.2"
 )
 
@@ -14,6 +12,7 @@ PLUGINS=(
   "https://github.com/nodenv/nodenv-update.git"
   "https://github.com/nodenv/nodenv-npm-migrate.git"
   "https://github.com/ouchxp/nodenv-nvmrc.git"
+  "https://github.com/nodenv/nodenv-default-packages.git"
 )
 
 # Packages to install globally with npm
@@ -32,42 +31,36 @@ set -e
 
 # Install nodenv
 if command -v git > /dev/null 2>&1; then
-  if [ ! -d "$NODENV_HOME" ]; then
-    echo ""
-    echo " ✅ Installing nodenv using git"
-    echo ""
+  if ! command -v nodenv > /dev/null 2>&1; then
+    msg_done "Installing nodenv using git"
 
     git clone https://github.com/nodenv/nodenv.git $NODENV_HOME
 
     # Compile dynamic extensions
     if command -v make > /dev/null 2>&1; then
-      echo "    ℹ️  Compiling dynamic extensions for nodenv"
-      echo ""
+      msg_info "Compiling dynamic extensions for nodenv"
       cd $NODENV_HOME && src/configure && make -C src
     else
-      echo "  ⛔️ make not found. Aborting..."
+      msg_fail "make not found. Aborting..."
+      exit 1
     fi
 
     source $DIR/nodenv.zsh
 
-    echo "    ℹ️  Installing node-build"
-    echo ""
+    msg_info "Installing node-build"
     mkdir -p "$(nodenv root)"/plugins
     git clone https://github.com/nodenv/node-build.git "$(nodenv root)"/plugins/node-build
   else
-    echo ""
-    echo " ⚠️  $NODENV_HOME is already present. Skipping install..."
-    echo ""
+    msg_warn "nodenv is already installed. Skipping…"
   fi
 else
-  echo "  ⛔️ git not found. Aborting..."
+  msg_fail "git not found. Aborting..."
+  exit 1
 fi
 
 if command -v nodenv > /dev/null 2>&1; then
 
-  echo ""
-  echo " ✅ Install Node versions using nodenv and set ${GLOBAL_VERSION} as global"
-  echo ""
+  msg_done "Install Node versions using nodenv and set ${GLOBAL_VERSION} as global"
 
   for VERSION in ${VERSIONS[@]}; do
     nodenv install $VERSION --skip-existing
@@ -80,38 +73,31 @@ fi
 
 # Install nodenv plugins
 if [ -d $HOME/.nodenv ]; then
-  echo ""
-  echo " ✅ Installing nodenv plugins"
-  echo ""
+  msg_done "Installing nodenv plugins"
   for PLUGIN in ${PLUGINS[@]}; do
     PLUGIN_NAME=$(echo $PLUGIN | sed -E 's/.*\/([^/]+)\.git$/\1/')
     if [ ! -d "$(nodenv root)/plugins/$PLUGIN_NAME" ]; then
       git clone $PLUGIN $(nodenv root)/plugins/$PLUGIN_NAME
     else
-      echo "    ℹ️  $PLUGIN_NAME is already installed"
-      echo ""
+      msg_info "$PLUGIN_NAME is already installed"
     fi
   done
 fi
 
 # Check for npm
 if command -v npm > /dev/null 2>&1; then
-  echo ""
-  echo " ✅ Installing Node packages"
-  echo ""
+  msg_done "Installing Node packages"
 
   # Install packages globally
   for PACKAGE in ${PACKAGES[@]}; do
     if npm list -g --depth=0 | grep -q "$PACKAGE@"; then
-      echo "    ℹ️  $PACKAGE is already installed. Skipping..."
-      echo ""
+      msg_info "$PACKAGE is already installed. Skipping..."
     else
-      echo "  ✅ Installing $PACKAGE"
-      echo ""
+      msg_info "Installing $PACKAGE"
       npm i -g $PACKAGE
     fi
   done
 else
-  echo " 🚫 Node is not installed. Skipping..."
-  echo ""
+  msg_fail "Node is not installed. Skipping..."
+  exit 1
 fi
