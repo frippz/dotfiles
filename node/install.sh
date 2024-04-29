@@ -5,7 +5,9 @@ source $HOME/.dotfiles/zsh/msg.zsh
 GLOBAL_VERSION="20.12.2"
 
 VERSIONS=(
+  "18.20.2"
   "20.12.2"
+  "22.0.0"
 )
 
 PLUGINS=(
@@ -32,7 +34,7 @@ set -e
 # Install nodenv
 if command -v git > /dev/null 2>&1; then
   if ! command -v nodenv > /dev/null 2>&1; then
-    msg_done "Installing nodenv using git"
+    msg_info "Installing nodenv using git"
 
     git clone https://github.com/nodenv/nodenv.git $NODENV_HOME
 
@@ -51,7 +53,15 @@ if command -v git > /dev/null 2>&1; then
     mkdir -p "$(nodenv root)"/plugins
     git clone https://github.com/nodenv/node-build.git "$(nodenv root)"/plugins/node-build
   else
-    msg_warn "nodenv is already installed. Skipping…"
+    msg_done "nodenv is already installed. Skipping…"
+  fi
+
+  # Symlink default-packages
+  if [ ! -f $(nodenv root)/default-packages ]; then
+    msg_info "Symlinking $(nodenv root)/default-packages"
+    ln -s $HOME/.dotfiles/node/default-packages $(nodenv root)/default-packages
+  else
+    msg_done "$(nodenv root)/default-packages already present. Moving on..."
   fi
 else
   msg_fail "git not found. Aborting..."
@@ -60,9 +70,10 @@ fi
 
 if command -v nodenv > /dev/null 2>&1; then
 
-  msg_done "Install Node versions using nodenv and set ${GLOBAL_VERSION} as global"
+  msg_info "Installing Node versions using nodenv and setting ${GLOBAL_VERSION} as global"
 
   for VERSION in ${VERSIONS[@]}; do
+    msg_info "Installing version $VERSION"
     nodenv install $VERSION --skip-existing
   done
 
@@ -73,31 +84,31 @@ fi
 
 # Install nodenv plugins
 if [ -d $HOME/.nodenv ]; then
-  msg_done "Installing nodenv plugins"
+  msg_info "Installing nodenv plugins"
   for PLUGIN in ${PLUGINS[@]}; do
     PLUGIN_NAME=$(echo $PLUGIN | sed -E 's/.*\/([^/]+)\.git$/\1/')
     if [ ! -d "$(nodenv root)/plugins/$PLUGIN_NAME" ]; then
       git clone $PLUGIN $(nodenv root)/plugins/$PLUGIN_NAME
     else
-      msg_info "$PLUGIN_NAME is already installed"
+      msg_done "$PLUGIN_NAME is already installed. Skipping..."
     fi
   done
 fi
 
 # Check for npm
-if command -v npm > /dev/null 2>&1; then
-  msg_done "Installing Node packages"
-
-  # Install packages globally
-  for PACKAGE in ${PACKAGES[@]}; do
-    if npm list -g --depth=0 | grep -q "$PACKAGE@"; then
-      msg_info "$PACKAGE is already installed. Skipping..."
-    else
-      msg_info "Installing $PACKAGE"
-      npm i -g $PACKAGE
-    fi
-  done
-else
-  msg_fail "Node is not installed. Skipping..."
-  exit 1
-fi
+# if command -v npm > /dev/null 2>&1; then
+#   msg_info "Installing Node packages"
+#
+#   # Install packages globally
+#   for PACKAGE in ${PACKAGES[@]}; do
+#     if npm list -g --depth=0 | grep -q "$PACKAGE@"; then
+#       msg_done "$PACKAGE is already installed. Skipping..."
+#     else
+#       msg_info "Installing $PACKAGE"
+#       npm i -g $PACKAGE
+#     fi
+#   done
+# else
+#   msg_fail "Node is not installed. Skipping..."
+#   exit 1
+# fi
