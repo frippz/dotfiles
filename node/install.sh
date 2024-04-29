@@ -73,8 +73,12 @@ if command -v nodenv > /dev/null 2>&1; then
   msg_info "Installing Node versions using nodenv and setting ${GLOBAL_VERSION} as global"
 
   for VERSION in ${VERSIONS[@]}; do
-    msg_info "Installing version $VERSION"
-    nodenv install $VERSION --skip-existing
+    if nodenv versions --bare | grep -q "^${VERSION}$"; then
+      msg_done "$VERSION is already installed. Skipping..."
+    else
+      msg_info "Installing version $VERSION"
+      nodenv install $VERSION --skip-existing
+    fi
   done
 
   nodenv global $GLOBAL_VERSION
