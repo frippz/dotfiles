@@ -70,6 +70,9 @@ fi
 
 if command -v nodenv > /dev/null 2>&1; then
 
+  msg_info "Running nodenv update"
+  nodenv update
+
   msg_info "Installing Node versions using nodenv and setting ${GLOBAL_VERSION} as global"
 
   for VERSION in ${VERSIONS[@]}; do
