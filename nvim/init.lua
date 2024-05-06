@@ -468,6 +468,8 @@ map("n", "<Leader>t", ":lua require('FTerm').toggle()<CR>", mapOpts)
 -- ----------------------------------------------------------------------------
 require("notify").setup({
   background_colour = "#000000",
+  timeout = 3000,
+  top_down = false,
 })
 
 -- noice.nvim
