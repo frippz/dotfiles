@@ -492,3 +492,38 @@ require("noice").setup({
     lsp_doc_border = false, -- add a border to hover docs and signature help
   },
 })
+
+-- transparent.nvim
+-- ----------------------------------------------------------------------------
+require("transparent").setup({
+  groups = {
+    "Normal",
+    "NormalNC",
+    "Comment",
+    "Constant",
+    "Special",
+    "Identifier",
+    "Statement",
+    "PreProc",
+    "Type",
+    "Underlined",
+    "Todo",
+    "String",
+    "Function",
+    "Conditional",
+    "Repeat",
+    "Operator",
+    "Structure",
+    "LineNr",
+    "NonText",
+    "SignColumn",
+    "CursorLineNr",
+    "StatusLine",
+    "StatusLineNC",
+    "EndOfBuffer",
+  },
+  extra_groups = {},
+  exclude_groups = { "CursorLine" },
+})
+
+vim.g.transparent_enabled = true
