@@ -29,8 +29,8 @@ esac
 #
 
 # Some nice aliases
-alias ll="ls -lh"
-alias la="ls -lha"
+# alias ll="ls -lh"
+# alias la="ls -lha"
 alias lscount="ls -1 | wc -l"
 alias c="clear"
 alias x="exit"
