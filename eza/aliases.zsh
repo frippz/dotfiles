@@ -2,6 +2,11 @@ if command -v eza >/dev/null 2>&1 ; then
   alias eza="eza --icons=always"
 
   # Hijack ls
-  alias ll="eza --long --level=4 --no-permissions"
-  alias lt="eza --tree --long --level=4 --no-permissions"
+  alias ls="eza"
+  alias l="eza -1"
+  alias ll="eza --long --header --time-style=relative --no-permissions"
+  alias llp="eza --long --header --time-style=relative"
+  alias la="ll -a"
+  alias lap="eza --long -a"
+  alias lt="ll --tree --level=4"
 fi

@@ -4,8 +4,8 @@
 case "$OSTYPE" in
   *darwin*)
     # System utils
-    alias ls="ls -GF"
-    alias l="ls -GF"
+    # alias ls="ls -GF"
+    # alias l="ls -GF"
     if command -v gdf >/dev/null 2>&1 ; then
       alias df="gdf -PH"
     else
