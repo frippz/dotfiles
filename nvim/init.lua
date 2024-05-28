@@ -527,3 +527,7 @@ require("transparent").setup({
 })
 
 vim.g.transparent_enabled = true
+
+-- bool-switcher
+-- ----------------------------------------------------------------------------
+require("bool-switcher").setup("<Leader>bt")
