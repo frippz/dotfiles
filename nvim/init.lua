@@ -356,6 +356,7 @@ telescope.setup({
 
 -- extensions
 telescope.load_extension("noice")
+telescope.load_extension("notify")
 
 -- telescope mappings
 map("n", "<leader>ft", ":Telescope<CR>", mapOpts)
