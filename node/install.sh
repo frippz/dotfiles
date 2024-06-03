@@ -68,6 +68,20 @@ else
   exit 1
 fi
 
+# Install nodenv plugins
+if [ -d $HOME/.nodenv ]; then
+  msg_info "Installing nodenv plugins"
+  for PLUGIN in ${PLUGINS[@]}; do
+    PLUGIN_NAME=$(echo $PLUGIN | sed -E 's/.*\/([^/]+)\.git$/\1/')
+    if [ ! -d "$(nodenv root)/plugins/$PLUGIN_NAME" ]; then
+      git clone $PLUGIN $(nodenv root)/plugins/$PLUGIN_NAME
+    else
+      msg_done "$PLUGIN_NAME is already installed. Skipping..."
+    fi
+  done
+fi
+
+# nodenv update
 if command -v nodenv > /dev/null 2>&1; then
 
   msg_info "Running nodenv update"
@@ -88,34 +102,3 @@ if command -v nodenv > /dev/null 2>&1; then
   nodenv rehash
 
 fi
-
-# Install nodenv plugins
-if [ -d $HOME/.nodenv ]; then
-  msg_info "Installing nodenv plugins"
-  for PLUGIN in ${PLUGINS[@]}; do
-    PLUGIN_NAME=$(echo $PLUGIN | sed -E 's/.*\/([^/]+)\.git$/\1/')
-    if [ ! -d "$(nodenv root)/plugins/$PLUGIN_NAME" ]; then
-      git clone $PLUGIN $(nodenv root)/plugins/$PLUGIN_NAME
-    else
-      msg_done "$PLUGIN_NAME is already installed. Skipping..."
-    fi
-  done
-fi
-
-# Check for npm
-# if command -v npm > /dev/null 2>&1; then
-#   msg_info "Installing Node packages"
-#
-#   # Install packages globally
-#   for PACKAGE in ${PACKAGES[@]}; do
-#     if npm list -g --depth=0 | grep -q "$PACKAGE@"; then
-#       msg_done "$PACKAGE is already installed. Skipping..."
-#     else
-#       msg_info "Installing $PACKAGE"
-#       npm i -g $PACKAGE
-#     fi
-#   done
-# else
-#   msg_fail "Node is not installed. Skipping..."
-#   exit 1
-# fi
