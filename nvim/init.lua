@@ -335,18 +335,6 @@ require("lualine").setup({
 -- ----------------------------------------------------------------------------
 require("gitsigns").setup()
 
--- delimitMate
--- ----------------------------------------------------------------------------
-nvimCmd([[
-  let delimitMate_expand_cr = 1
-  let delimitMate_matchpairs = "(:),[:],{:}"
-]])
-
--- Disable delimitMate per file type
-nvimCmd([[
-  au FileType html.handlebars,html.mustache let b:delimitMate_autoclose = 0
-]])
-
 -- nvim-treesitter
 -- ----------------------------------------------------------------------------
 require("nvim-treesitter.configs").setup({
