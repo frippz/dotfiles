@@ -154,6 +154,7 @@ require("mason-tool-installer").setup({
 local lspconfig = require("lspconfig")
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+-- local coq = require("coq")
 
 -- typescript
 lspconfig.tsserver.setup({
@@ -197,6 +198,7 @@ lspconfig.stylelint_lsp.setup({
 lspconfig.svelte.setup({
   capabilities = capabilities,
 })
+-- lspconfig.svelte.setup(coq.lsp_ensure_capabilities({}))
 
 -- swift
 lspconfig.sourcekit.setup({
@@ -229,6 +231,15 @@ map("n", "<leader>xd", "<cmd>Trouble diagnostics toggle<cr>", mapOpts)
 map("n", "<leader>xl", "<cmd>Trouble loclist<cr>", mapOpts)
 map("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", mapOpts)
 map("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", mapOpts)
+
+-- coq_nvim
+-- ----------------------------------------------------------------------------
+g.coq_settings = {
+  auto_start = true,
+  keymap = {
+    jump_to_mark = "<tab>",
+  },
+}
 
 -- nvim-cmp
 -- ----------------------------------------------------------------------------
