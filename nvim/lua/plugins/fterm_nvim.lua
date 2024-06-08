@@ -1,0 +1,3 @@
+return {
+  "numtostr/fterm.nvim",
+}

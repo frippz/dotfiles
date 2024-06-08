@@ -1,8 +1,8 @@
-require("plugins")
 require("helpers")
+require("mappings")
+require("plugin")
 require("themes")
 require("python")
-require("mappings")
 
 -- Important stuff to set early
 -- ============================================================================
@@ -220,18 +220,6 @@ lspconfig.yamlls.setup({
   capabilities = capabilities,
 })
 
--- trouble.nvim
--- ----------------------------------------------------------------------------
-require("trouble").setup({})
-
--- mappings
-map("n", "<leader>xx", "<cmd>Trouble<cr>", mapOpts)
-map("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>", mapOpts)
-map("n", "<leader>xd", "<cmd>Trouble diagnostics toggle<cr>", mapOpts)
-map("n", "<leader>xl", "<cmd>Trouble loclist<cr>", mapOpts)
-map("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", mapOpts)
-map("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", mapOpts)
-
 -- coq_nvim
 -- ----------------------------------------------------------------------------
 g.coq_settings = {
@@ -343,39 +331,6 @@ require("lualine").setup({
   },
 })
 
--- telescope.nvim
--- ----------------------------------------------------------------------------
-local telescope = require("telescope")
-local pickersOpts = {
-  respect_gitignore = true,
-  search_dirs = { "./", ".github/" },
-}
-
-telescope.setup({
-  defaults = {
-    prompt_prefix = "🔎 ",
-    file_ignore_patterns = {
-      ".git",
-      "node_modules",
-    },
-  },
-  pickers = {
-    live_grep = pickersOpts,
-    find_files = pickersOpts,
-  },
-})
-
--- extensions
-telescope.load_extension("noice")
-telescope.load_extension("notify")
-
--- telescope mappings
-map("n", "<leader>ft", ":Telescope<CR>", mapOpts)
-map("n", "<C-p>", ":Telescope find_files hidden=true<CR>", mapOpts)
-map("n", "<C-b>", ":Telescope buffers<CR>", mapOpts)
-map("n", "<leader>fg", ":Telescope live_grep<CR>", mapOpts)
-map("n", "<leader>fh", ":Telescope help_tags<CR>", mapOpts)
-
 -- gitsigns.nvim
 -- ----------------------------------------------------------------------------
 require("gitsigns").setup()
@@ -391,10 +346,6 @@ nvimCmd([[
 nvimCmd([[
   au FileType html.handlebars,html.mustache let b:delimitMate_autoclose = 0
 ]])
-
--- indent-blankline.nvim
--- ----------------------------------------------------------------------------
-g.indent_blankline_space_char = " "
 
 -- nvim-treesitter
 -- ----------------------------------------------------------------------------
@@ -419,47 +370,6 @@ require("nvim-treesitter.configs").setup({
 -- nvim-ts-context-commentstring
 -- ----------------------------------------------------------------------------
 require("ts_context_commentstring").setup()
-
--- format-on-save
--- ----------------------------------------------------------------------------
-local format_on_save = require("format-on-save")
-local formatters = require("format-on-save.formatters")
-
-format_on_save.setup({
-  exclude_path_patterns = {
-    "/node_modules/",
-    ".local/share/nvim/lazy",
-  },
-  formatter_by_ft = {
-    css = formatters.prettierd,
-    html = formatters.lsp,
-    javascript = formatters.prettierd,
-    javascriptreact = formatters.prettierd,
-    json = formatters.prettierd,
-    lua = formatters.stylua,
-    markdown = formatters.prettierd,
-    python = formatters.black,
-    scss = formatters.prettierd,
-    sh = formatters.shfmt,
-    -- svelte = formatters.prettierd,
-    svelte = {
-      formatters.shell({
-        cmd = { "prettier", "--plugin", "prettier-plugin-svelte", "--stdin-filepath", "%", "--parser", "svelte" },
-        stdin = true,
-      }),
-    },
-    typescript = formatters.prettierd,
-    typescriptreact = formatters.prettierd,
-    yaml = formatters.prettierd,
-    zsh = formatters.beautysh,
-  },
-
-  -- fallback formatter to use when no formatters match the current filetype
-  fallback_formatter = {
-    formatters.remove_trailing_whitespace,
-    formatters.remove_trailing_newlines,
-  },
-})
 
 -- comment.nvim
 -- ----------------------------------------------------------------------------
