@@ -1,70 +1,88 @@
--- Automatically run :PackerSync whenever plugins.lua is updated with an autocommand:
-vim.api.nvim_create_autocmd("BufWritePost", {
-  group = vim.api.nvim_create_augroup("PACKER", { clear = true }),
-  pattern = "plugins.lua",
-  command = "source <afile> | PackerSync",
-})
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable",
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-require("packer").startup(function(use)
-  -- package manager
-  use("wbthomason/packer.nvim")
-
+require("lazy").setup({
   -- color themes
-  use("sainnhe/everforest")
+  "sainnhe/everforest",
 
   -- regular plugins
-  use("elentok/format-on-save.nvim")
-  use("f-person/auto-dark-mode.nvim")
-  use("folke/trouble.nvim")
-  use("folke/noice.nvim")
-  use("hrsh7th/vim-vsnip")
-  use("joosepalviste/nvim-ts-context-commentstring")
-  use("jremmen/vim-ripgrep")
-  use("lewis6991/gitsigns.nvim")
-  use("lukas-reineke/indent-blankline.nvim")
-  -- use("ms-jpq/coq_nvim")
-  use("MunifTanjim/nui.nvim")
-  use({ "neovim/nvim-lspconfig", tag = "v0.1.7" })
-  use("numtostr/comment.nvim")
-  use("numtostr/fterm.nvim")
-  use("nvim-lua/plenary.nvim")
-  use("nvim-lualine/lualine.nvim")
-  use("psliwka/vim-smoothie")
-  use("raimondi/delimitmate")
-  use("rcarriga/nvim-notify")
-  use("rishabhrd/nvim-lsputils")
-  use("rishabhrd/popfix")
-  use("tmhedberg/matchit")
-  use("tpope/vim-endwise")
-  use("tpope/vim-fugitive")
-  use("tpope/vim-liquid")
-  use("tpope/vim-repeat")
-  use("tpope/vim-rhubarb")
-  use("tpope/vim-surround")
-  use("xiyaowong/transparent.nvim")
-  use({
+  "elentok/format-on-save.nvim",
+  "f-person/auto-dark-mode.nvim",
+  "folke/trouble.nvim",
+  "folke/noice.nvim",
+  "hrsh7th/vim-vsnip",
+  "joosepalviste/nvim-ts-context-commentstring",
+  "jremmen/vim-ripgrep",
+  "lewis6991/gitsigns.nvim",
+  "lukas-reineke/indent-blankline.nvim",
+  -- "ms-jpq/coq_nvim",
+  "MunifTanjim/nui.nvim",
+  "numtostr/comment.nvim",
+  "numtostr/fterm.nvim",
+  "nvim-lua/plenary.nvim",
+  "nvim-lualine/lualine.nvim",
+  "psliwka/vim-smoothie",
+  "raimondi/delimitmate",
+  "rcarriga/nvim-notify",
+  "rishabhrd/nvim-lsputils",
+  "rishabhrd/popfix",
+  "tmhedberg/matchit",
+  "tpope/vim-endwise",
+  "tpope/vim-fugitive",
+  "tpope/vim-liquid",
+  "tpope/vim-repeat",
+  "tpope/vim-rhubarb",
+  "tpope/vim-surround",
+  "xiyaowong/transparent.nvim",
+  {
+    "neovim/nvim-lspconfig",
+    version = "v0.1.7",
+  },
+  {
     "williamboman/mason.nvim",
-    { "whoissethdaniel/mason-tool-installer.nvim", requires = "mason.nvim" },
-  })
-  use({
+    {
+      "whoissethdaniel/mason-tool-installer.nvim",
+      dependencies = "mason.nvim",
+    },
+  },
+  {
     "hrsh7th/nvim-cmp",
-    { "hrsh7th/cmp-buffer", requires = "nvim-cmp" },
-    { "hrsh7th/cmp-nvim-lsp", requires = "nvim-cmp" },
-    { "hrsh7th/cmp-vsnip", requires = "nvim-cmp" },
-  })
-  use({
+    {
+      "hrsh7th/cmp-buffer",
+      dependencies = "nvim-cmp",
+    },
+    {
+      "hrsh7th/cmp-nvim-lsp",
+      dependencies = "nvim-cmp",
+    },
+    {
+      "hrsh7th/cmp-vsnip",
+      dependencies = "nvim-cmp",
+    },
+  },
+  {
     "nvim-tree/nvim-tree.lua",
-    { "nvim-tree/nvim-web-devicons", requires = "nvim-tree.lua" },
-  })
-  use({
+    {
+      "nvim-tree/nvim-web-devicons",
+      dependencies = "nvim-tree.lua",
+    },
+  },
+  {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.x",
-  })
-  use({
+    branch = "0.1.x",
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
-    run = function()
-      local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-      ts_update()
-    end,
-  })
-end)
+    build = ":TSUpdate",
+  },
+})
