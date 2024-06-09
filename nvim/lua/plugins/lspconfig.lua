@@ -1,5 +1,9 @@
 return {
   "neovim/nvim-lspconfig",
+  dependencies = {
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+  },
   version = "v0.1.7",
   config = function()
     -- nvim-cmp capabilities

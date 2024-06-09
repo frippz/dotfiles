@@ -2,13 +2,13 @@ return {
   "williamboman/mason.nvim",
   lazy = false,
   version = "v1.10.0",
-  config = function()
-    require("mason").setup()
-  end,
   {
     "whoissethdaniel/mason-tool-installer.nvim",
-    dependencies = "mason.nvim",
+    dependencies = {
+      "mason.nvim",
+    },
     config = function()
+      require("mason").setup()
       require("mason-tool-installer").setup({
         ensure_installed = {
           "bash-language-server",
