@@ -1,15 +1,9 @@
 require("helpers")
+require("netrw")
 require("mappings")
 require("plugin")
 require("themes")
 require("python")
-
--- Important stuff to set early
--- ============================================================================
-
--- Disable netrw
-g.loaded_netrw = 1
-g.loaded_netrwPlugin = 1
 
 -- Misc
 -- ============================================================================
@@ -282,47 +276,6 @@ cmp.setup({
   },
 })
 
--- nvim-tree
--- ----------------------------------------------------------------------------
-nvimCmd("set splitright")
-
-local function on_attach(bufnr)
-  local api = require("nvim-tree.api")
-
-  local function opts(desc)
-    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-  end
-
-  api.config.mappings.default_on_attach(bufnr)
-
-  vim.keymap.set("n", "<C-o>", api.tree.change_root_to_node, opts("CD"))
-end
-
-require("nvim-tree").setup({
-  view = {
-    side = "left",
-  },
-  filters = {
-    dotfiles = false,
-    exclude = { ".gitignore$", ".env" },
-  },
-  on_attach = on_attach,
-})
-
-map("n", "<C-n>", ":NvimTreeToggle<CR>", mapOpts)
-map("n", "<C-f>", ":NvimTreeFindFile<CR>", mapOpts)
-
--- nvim-lsputils.nvim
--- ----------------------------------------------------------------------------
-vim.lsp.handlers["textDocument/codeAction"] = require("lsputil.codeAction").code_action_handler
-vim.lsp.handlers["textDocument/references"] = require("lsputil.locations").references_handler
-vim.lsp.handlers["textDocument/definition"] = require("lsputil.locations").definition_handler
-vim.lsp.handlers["textDocument/declaration"] = require("lsputil.locations").declaration_handler
-vim.lsp.handlers["textDocument/typeDefinition"] = require("lsputil.locations").typeDefinition_handler
-vim.lsp.handlers["textDocument/implementation"] = require("lsputil.locations").implementation_handler
-vim.lsp.handlers["textDocument/documentSymbol"] = require("lsputil.symbols").document_handler
-vim.lsp.handlers["workspace/symbol"] = require("lsputil.symbols").workspace_handler
-
 -- lualine.nvim
 -- ----------------------------------------------------------------------------
 require("lualine").setup({
@@ -335,108 +288,9 @@ require("lualine").setup({
 -- ----------------------------------------------------------------------------
 require("gitsigns").setup()
 
--- nvim-treesitter
--- ----------------------------------------------------------------------------
-require("nvim-treesitter.configs").setup({
-  ensure_installed = {
-    "css",
-    "diff",
-    "git_rebase",
-    "gitcommit",
-    "gitignore",
-    "javascript",
-    "jsdoc",
-    "svelte",
-    "typescript",
-  },
-  auto_install = true,
-  highlight = {
-    enable = true,
-  },
-})
-
 -- nvim-ts-context-commentstring
 -- ----------------------------------------------------------------------------
 require("ts_context_commentstring").setup()
-
--- comment.nvim
--- ----------------------------------------------------------------------------
-require("Comment").setup()
-
--- vim-fugitive
--- ----------------------------------------------------------------------------
-map("n", "<Leader>fgb", ":G blame<CR>", mapOpts)
-
--- fterm.nvim
--- ----------------------------------------------------------------------------
-require("FTerm").setup({})
-
--- mappings
-map("n", "<Leader>t", ":lua require('FTerm').toggle()<CR>", mapOpts)
-
--- notify.nvim
--- ----------------------------------------------------------------------------
-require("notify").setup({
-  background_colour = "#000000",
-  timeout = 3000,
-  top_down = false,
-})
-
--- noice.nvim
--- ----------------------------------------------------------------------------
-require("noice").setup({
-  lsp = {
-    -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-    override = {
-      ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-      ["vim.lsp.util.stylize_markdown"] = true,
-      ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
-    },
-  },
-  -- you can enable a preset for easier configuration
-  presets = {
-    bottom_search = true, -- use a classic bottom cmdline for search
-    command_palette = true, -- position the cmdline and popupmenu together
-    long_message_to_split = true, -- long messages will be sent to a split
-    inc_rename = false, -- enables an input dialog for inc-rename.nvim
-    lsp_doc_border = false, -- add a border to hover docs and signature help
-  },
-})
-
--- transparent.nvim
--- ----------------------------------------------------------------------------
-require("transparent").setup({
-  groups = {
-    "Normal",
-    "NormalNC",
-    "Comment",
-    "Constant",
-    "Special",
-    "Identifier",
-    "Statement",
-    "PreProc",
-    "Type",
-    "Underlined",
-    "Todo",
-    "String",
-    "Function",
-    "Conditional",
-    "Repeat",
-    "Operator",
-    "Structure",
-    "LineNr",
-    "NonText",
-    "SignColumn",
-    "CursorLineNr",
-    "StatusLine",
-    "StatusLineNC",
-    "EndOfBuffer",
-  },
-  extra_groups = {},
-  exclude_groups = { "CursorLine" },
-})
-
-vim.g.transparent_enabled = true
 
 -- bool-switcher
 -- ----------------------------------------------------------------------------
