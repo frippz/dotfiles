@@ -5,6 +5,3 @@ require("plugin")
 require("themes")
 require("python")
 require("misc")
-
--- bool-switcher
-require("bool-switcher").setup("<Leader>bt")
