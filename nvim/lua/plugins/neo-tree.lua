@@ -24,6 +24,7 @@ return {
           hide_dotfiles = false,
           always_show = {
             ".gitignore",
+            ".env",
           },
           -- remains hidden even if visible is toggled to true, this overrides always_show
           never_show = {
