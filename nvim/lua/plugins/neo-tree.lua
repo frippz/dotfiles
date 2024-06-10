@@ -4,7 +4,7 @@ return {
   keys = {
     {
       "<C-n>",
-      ":Neotree<CR>",
+      ":Neotree toggle<CR>",
     },
     {
       "<C-f>",
@@ -16,4 +16,30 @@ return {
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
   },
+  config = function()
+    require("neo-tree").setup({
+      options = {
+        theme = "everforest",
+        disabled_filetypes = {
+          statusline = {
+            "neo-tree*",
+            "NvimTree",
+          },
+        },
+      },
+      filesystem = {
+        filtered_items = {
+          hide_dotfiles = false,
+          always_show = {
+            ".gitignore",
+          },
+          -- remains hidden even if visible is toggled to true, this overrides always_show
+          never_show = {
+            ".DS_Store",
+            "thumbs.db",
+          },
+        },
+      },
+    })
+  end,
 }
