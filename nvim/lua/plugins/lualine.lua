@@ -4,6 +4,11 @@ return {
     require("lualine").setup({
       options = {
         theme = "everforest",
+        disabled_filetypes = {
+          statusline = {
+            "neo-tree",
+          },
+        },
       },
     })
   end,
