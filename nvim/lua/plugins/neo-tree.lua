@@ -18,15 +18,6 @@ return {
   },
   config = function()
     require("neo-tree").setup({
-      options = {
-        theme = "everforest",
-        disabled_filetypes = {
-          statusline = {
-            "neo-tree*",
-            "NvimTree",
-          },
-        },
-      },
       filesystem = {
         filtered_items = {
           hide_dotfiles = false,
