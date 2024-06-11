@@ -30,10 +30,6 @@
       command: ./homebrew/install.sh
       stdout: true
 
-    - description: Install paq-nvim
-      command: ./nvim/install.sh
-      stdout: true
-
     - description: Install Python
       command: ./python/install.sh
       stdout: true
