@@ -18,19 +18,10 @@ return {
         json = formatters.prettierd,
         lua = formatters.stylua,
         markdown = formatters.prettierd,
-        python = {
-          formatters.isort,
-          formatters.black,
-        },
+        python = formatters.black,
         scss = formatters.prettierd,
         sh = formatters.shfmt,
-        -- svelte = formatters.prettierd,
-        svelte = {
-          formatters.shell({
-            cmd = { "prettier", "--plugin", "prettier-plugin-svelte", "--stdin-filepath", "%", "--parser", "svelte" },
-            stdin = true,
-          }),
-        },
+        svelte = formatters.prettierd,
         typescript = formatters.prettierd,
         typescriptreact = formatters.prettierd,
         yaml = formatters.prettierd,
