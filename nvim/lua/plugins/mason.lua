@@ -1,38 +1,46 @@
 return {
   "williamboman/mason.nvim",
-  lazy = false,
-  version = "v1.10.0",
-  {
-    "whoissethdaniel/mason-tool-installer.nvim",
-    dependencies = {
-      "mason.nvim",
-    },
-    config = function()
-      require("mason").setup()
-      require("mason-tool-installer").setup({
-        ensure_installed = {
-          "bash-language-server",
-          "beautysh",
-          "black",
-          "css-lsp",
-          "eslint-lsp",
-          "html-lsp",
-          "lua-language-server",
-          "markdownlint",
-          "prettierd",
-          "shfmt",
-          "stylelint-lsp",
-          "stylua",
-          "svelte-language-server",
-          "typescript-language-server",
-          "yaml-language-server",
-        },
-
-        start_delay = 3000, -- 3 second delay
-        auto_update = true, -- check each tool for updates
-        run_on_start = true, -- automatically install / update on startup
-        debounce_hours = 8, -- at least 8 hours between attempts to install/update
-      })
-    end,
+  dependencies = {
+    "williamboman/mason-lspconfig.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
+  config = function()
+    local mason = require("mason")
+    local mason_lspconfig = require("mason-lspconfig")
+    local mason_tool_installer = require("mason-tool-installer")
+
+    mason.setup({
+      ui = {
+        icons = {
+          package_installed = "✔",
+          package_pending = "→",
+          package_uninstalled = "✗",
+        },
+      },
+    })
+
+    mason_lspconfig.setup({
+      ensure_installed = {
+        "tsserver",
+        "html",
+        "cssls",
+        "svelte",
+        "lua_ls",
+        "graphql",
+        "emmet_ls",
+        "pyright",
+      },
+    })
+
+    mason_tool_installer.setup({
+      ensure_installed = {
+        "prettierd",
+        "stylua",
+        "black",
+        "pylint",
+        "eslint_d",
+        "isort",
+      },
+    })
+  end,
 }

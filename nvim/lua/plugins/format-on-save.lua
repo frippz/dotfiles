@@ -18,7 +18,10 @@ return {
         json = formatters.prettierd,
         lua = formatters.stylua,
         markdown = formatters.prettierd,
-        python = formatters.black,
+        python = {
+          formatters.isort,
+          formatters.black,
+        },
         scss = formatters.prettierd,
         sh = formatters.shfmt,
         -- svelte = formatters.prettierd,
