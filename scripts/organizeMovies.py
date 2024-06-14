@@ -1,15 +1,10 @@
 #!/usr/bin/env python3
 
-import os
-import sys
 import argparse
 from pathlib import Path
 
 
-def create_subfolders(path: str, dry_run: bool):
-    # Convert string path to Path object
-    path = Path(path)
-
+def create_subfolders(path: Path, dry_run: bool):
     if dry_run:
         print(f"Dry run")
 
@@ -44,7 +39,7 @@ def create_subfolders(path: str, dry_run: bool):
 def main():
     parser = argparse.ArgumentParser(description="Organize files into subfolders.")
     parser.add_argument(
-        "path", type=str, help="The path to the directory with files to organize."
+        "path", type=Path, help="The path to the directory with files to organize."
     )
     parser.add_argument(
         "--dry-run",
