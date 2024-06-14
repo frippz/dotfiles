@@ -40,6 +40,7 @@ return {
         "pylint",
         "eslint_d",
         "isort",
+        "swiftlint",
       },
     })
   end,
