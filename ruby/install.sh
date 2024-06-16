@@ -7,6 +7,7 @@ source $HOME/.dotfiles/zsh/msg.zsh
 VERSION="3.2.2"
 
 PLUGINS=(
+  "https://github.com/rkh/rbenv-update.git"
   "https://github.com/nabeo/rbenv-gem-migrate.git"
 )
 
