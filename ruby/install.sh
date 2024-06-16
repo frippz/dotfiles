@@ -42,6 +42,7 @@ if command -v rbenv > /dev/null 2>&1; then
 
   msg_info "Installing Ruby using rbenv and set ${VERSION} as global"
 
+  rbenv update
   rbenv install ${VERSION} --skip-existing
   rbenv global ${VERSION}
   rbenv rehash
