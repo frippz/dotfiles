@@ -38,17 +38,6 @@ else
   exit 1
 fi
 
-if command -v rbenv > /dev/null 2>&1; then
-
-  msg_info "Installing Ruby using rbenv and set ${VERSION} as global"
-
-  rbenv update
-  rbenv install ${VERSION} --skip-existing
-  rbenv global ${VERSION}
-  rbenv rehash
-
-fi
-
 # Install rbenv plugins
 if [ -d $RBENV_HOME ]; then
   msg_info "Installing rbenv plugins"
@@ -61,6 +50,18 @@ if [ -d $RBENV_HOME ]; then
       msg_done "$PLUGIN_NAME is already installed."
     fi
   done
+fi
+
+# Install Ruby versions
+if command -v rbenv > /dev/null 2>&1; then
+
+  msg_info "Installing Ruby using rbenv and set ${VERSION} as global"
+
+  rbenv update
+  rbenv install ${VERSION} --skip-existing
+  rbenv global ${VERSION}
+  rbenv rehash
+
 fi
 
 # Check for gem before attempting to install packages
