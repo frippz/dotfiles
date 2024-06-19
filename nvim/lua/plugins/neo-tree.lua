@@ -18,8 +18,8 @@ return {
   },
   config = function()
     require("neo-tree").setup({
-      use_libuv_file_watcher = true,
       filesystem = {
+        use_libuv_file_watcher = true,
         filtered_items = {
           hide_dotfiles = false,
           always_show = {
