@@ -7,6 +7,7 @@ return {
     "L3MON4D3/LuaSnip", -- snippet engine
     "saadparwaiz1/cmp_luasnip", -- for autocompletion
     "rafamadriz/friendly-snippets", -- useful snippets
+    "brenoprata10/nvim-highlight-colors",
   },
   config = function()
     local cmp = require("cmp")
@@ -38,6 +39,9 @@ return {
         { name = "buffer" }, -- text in the current buffer
         { name = "path" }, -- file system paths
       }),
+      formatting = {
+        format = require("nvim-highlight-colors").format,
+      },
     })
   end,
 }
