@@ -5,7 +5,7 @@ if command -v eza >/dev/null 2>&1 ; then
   alias ls="eza"
   alias l="eza -1"
   alias ll="eza --long --header --time-style=relative --no-quotes --no-permissions"
-  alias llp="eza --long --header --time-style=relative --no-quotes"
+  alias llp="eza --long --header --time-style=relative --no-quotes -g"
   alias la="ll -a"
   alias lap="eza --long -a"
   alias lt="ll --tree --level=4"
