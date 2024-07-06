@@ -7,6 +7,7 @@ return {
         disabled_filetypes = {
           statusline = {
             "neo-tree",
+            "Outline",
           },
         },
       },
