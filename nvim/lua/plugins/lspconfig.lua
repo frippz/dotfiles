@@ -134,6 +134,7 @@ return {
         Lua = {
           -- make the lsp recognize "vim" global
           diagnostics = {
+            disable = { "lowercase-global" },
             globals = { "vim" },
           },
           workspace = {
