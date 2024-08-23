@@ -1,5 +1,5 @@
 -- Set leader
-g.mapleader = ","
+g.mapleader = " "
 
 -- Remap save
 map("n", "<Leader>w", ":w<CR>", mapOpts)
@@ -56,3 +56,4 @@ map("n", "K", ":lua vim.lsp.buf.hover()<CR>", mapOpts)
 map("n", "gs", ":lua vim.lsp.buf.signature_help()<CR>", mapOpts)
 map("n", "<Leader>rn", ":lua vim.lsp.buf.rename()<CR>", mapOpts)
 map("n", "<Leader>d", ":lua vim.diagnostic.open_float()<CR>", mapOpts)
+map("n", "<Leader>ca", ":lua vim.lsp.buf.code_action()<CR>", mapOpts)
