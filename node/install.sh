@@ -2,12 +2,11 @@
 
 source $HOME/.dotfiles/zsh/msg.zsh
 
-GLOBAL_VERSION="20.12.2"
+GLOBAL_VERSION="20.16.0"
 
 VERSIONS=(
   "18.20.2"
-  "20.12.2"
-  "20.13.1"
+  "20.16.0"
 )
 
 PLUGINS=(
