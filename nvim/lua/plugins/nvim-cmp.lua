@@ -16,6 +16,7 @@ return {
     require("luasnip.loaders.from_vscode").lazy_load()
 
     cmp.setup({
+      preselect = cmp.PreselectMode.None, -- prevent selection in the middle of the dropdown
       completion = {
         completeopt = "menu,menuone,preview,noselect",
       },
