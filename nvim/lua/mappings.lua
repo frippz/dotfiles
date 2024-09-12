@@ -1,4 +1,4 @@
--- Set leader
+-- Map leader to spacebar
 g.mapleader = " "
 
 -- Remap save
