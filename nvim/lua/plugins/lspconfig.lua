@@ -96,6 +96,11 @@ return {
       capabilities = capabilities,
     })
 
+    -- css variables completion
+    lspconfig.css_variables.setup({
+      capabilities = capabilities,
+    })
+
     -- stylelint
     lspconfig.stylelint_lsp.setup({
       filetypes = { "css", "scss" },

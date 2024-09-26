@@ -21,25 +21,26 @@ return {
 
     mason_lspconfig.setup({
       ensure_installed = {
-        "ts_ls",
-        "html",
         "cssls",
-        "svelte",
-        "lua_ls",
-        "graphql",
         "emmet_ls",
+        "graphql",
+        "html",
+        "lua_ls",
         "pyright",
+        "svelte",
+        "ts_ls",
       },
     })
 
     mason_tool_installer.setup({
       ensure_installed = {
-        "prettierd",
-        "stylua",
         "black",
-        "pylint",
+        "css-variables-language-server",
         "eslint_d",
         "isort",
+        "prettierd",
+        "pylint",
+        "stylua",
         "swiftlint",
       },
     })
