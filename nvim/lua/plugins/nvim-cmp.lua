@@ -8,6 +8,13 @@ return {
     "saadparwaiz1/cmp_luasnip", -- for autocompletion
     "rafamadriz/friendly-snippets", -- useful snippets
     "brenoprata10/nvim-highlight-colors",
+    {
+      "jdrupal-dev/css-vars.nvim",
+      opts = {
+        cmp_filetypes = { "css", "svelte" },
+        search_extensions = { "css" },
+      },
+    },
   },
   config = function()
     local cmp = require("cmp")
@@ -39,6 +46,7 @@ return {
         { name = "luasnip" }, -- snippets
         { name = "buffer" }, -- text in the current buffer
         { name = "path" }, -- file system paths
+        { name = "css_vars" },
       }),
       formatting = {
         format = require("nvim-highlight-colors").format,

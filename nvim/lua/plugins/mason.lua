@@ -35,7 +35,6 @@ return {
     mason_tool_installer.setup({
       ensure_installed = {
         "black",
-        "css-variables-language-server",
         "eslint_d",
         "isort",
         "prettierd",
