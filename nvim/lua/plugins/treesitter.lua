@@ -11,6 +11,7 @@ return {
         "gitignore",
         "javascript",
         "jsdoc",
+        "lua",
         "svelte",
         "typescript",
       },
