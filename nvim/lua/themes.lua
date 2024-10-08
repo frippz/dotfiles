@@ -16,9 +16,7 @@ function ThemeLight()
   vim.cmd.colorscheme("everforest")
 end
 
--- Theming for Linux
--- Set theme based on $TERM_THEME
--- ----------------------------------------------------------------------------
+-- Fallback: set theme based on $TERM_THEME
 if vim.fn.has("Linux") then
   if vim.env.TERM_THEME == "light" then
     ThemeLight()
