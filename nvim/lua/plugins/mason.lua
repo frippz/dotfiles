@@ -22,6 +22,7 @@ return {
     mason_lspconfig.setup({
       ensure_installed = {
         "cssls",
+        "css_variables",
         "emmet_ls",
         "graphql",
         "html",
