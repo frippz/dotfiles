@@ -41,15 +41,6 @@ defaults write com.apple.SafariTechnologyPreview IncludeDevelopMenu -bool true
 defaults write com.apple.SafariTechnologyPreview WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.SafariTechnologyPreview "com.apple.SafariTechnologyPreview.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
 
-# Google Chrome & Google Chrome Canary
-echo " ✅ Use the system-native print preview dialog"
-defaults write com.google.Chrome DisablePrintPreview -bool true
-defaults write com.google.Chrome.canary DisablePrintPreview -bool true
-
-echo " ✅ Expand the print dialog by default"
-defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
-defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
-
 # NetNewsWire
 echo " ✅ Use traditional window title bar in NetNewsWire"
 defaults write com.ranchero.NetNewsWire-Evergreen KafasisTitleMode -bool YES
