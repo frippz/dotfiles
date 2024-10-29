@@ -84,7 +84,7 @@ return {
 
     -- eslint
     lspconfig.eslint.setup({
-      filetypes = { "js", "ts" },
+      filetypes = { "js", "ts", "svelte" },
       capabilities = capabilities,
       on_attach = function(client, bufnr)
         vim.api.nvim_create_autocmd("BufWritePre", {

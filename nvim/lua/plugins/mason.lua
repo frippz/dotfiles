@@ -23,6 +23,7 @@ return {
       ensure_installed = {
         "cssls",
         "css_variables",
+        "eslint",
         "emmet_ls",
         "graphql",
         "html",
@@ -36,7 +37,7 @@ return {
     mason_tool_installer.setup({
       ensure_installed = {
         "black",
-        "eslint_d",
+        "eslint",
         "isort",
         "prettierd",
         "pylint",
