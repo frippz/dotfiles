@@ -2,7 +2,7 @@
 
 source $HOME/.dotfiles/zsh/msg.zsh
 
-GLOBAL_VERSION="20.16.0"
+GLOBAL_VERSION="22.11.0"
 
 VERSIONS=(
   "20.16.0"
