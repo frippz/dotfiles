@@ -21,7 +21,7 @@ return {
         python = formatters.black,
         scss = formatters.prettierd,
         sh = formatters.shfmt,
-        svelte = formatters.prettierd,
+        svelte = formatters.lsp,
         typescript = formatters.prettierd,
         typescriptreact = formatters.prettierd,
         yaml = formatters.prettierd,
