@@ -7,22 +7,27 @@ return {
       {
         "<leader>ft",
         ":Telescope<CR>",
+        desc = "Run Telescope",
       },
       {
         "<C-p>",
         ":Telescope find_files hidden=true<CR>",
+        desc = "Telescope find files",
       },
       {
         "<C-b>",
         ":Telescope buffers<CR>",
+        desc = "Telescope show open buffers",
       },
       {
         "<leader>fg",
         ":Telescope live_grep<CR>",
+        desc = "Telescope project search",
       },
       {
         "<leader>fh",
         ":Telescope help_tags<CR>",
+        desc = "Telescope show help",
       },
     },
     config = function()
