@@ -8,6 +8,7 @@ return {
     },
   },
   opts = {
-    direction = "float",
+    direction = "vertical",
+    size = 60,
   },
 }
