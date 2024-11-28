@@ -46,14 +46,3 @@ map("n", "<Leader>i", ":set list!<CR>", mapOpts)
 
 -- Show relative line numbers
 map("n", "<Leader>l", ":set relativenumber!<CR>", mapOpts)
-
--- LSP mappings
-map("n", "gd", ":lua vim.lsp.buf.definition()<CR>", mapOpts)
-map("n", "gD", ":lua vim.lsp.buf.declaration()<CR>", mapOpts)
-map("n", "gI", ":lua vim.lsp.buf.implementation()<CR>", mapOpts)
-map("n", "gr", ":lua vim.lsp.buf.references()<CR>", mapOpts)
-map("n", "K", ":lua vim.lsp.buf.hover()<CR>", mapOpts)
-map("n", "gs", ":lua vim.lsp.buf.signature_help()<CR>", mapOpts)
-map("n", "<Leader>rn", ":lua vim.lsp.buf.rename()<CR>", mapOpts)
-map("n", "<Leader>d", ":lua vim.diagnostic.open_float()<CR>", mapOpts)
-map("n", "<Leader>ca", ":lua vim.lsp.buf.code_action()<CR>", mapOpts)

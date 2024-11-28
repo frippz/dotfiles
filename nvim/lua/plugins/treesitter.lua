@@ -12,6 +12,7 @@ return {
         "javascript",
         "jsdoc",
         "lua",
+        "regex",
         "svelte",
         "typescript",
       },

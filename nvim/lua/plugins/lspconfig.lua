@@ -19,43 +19,45 @@ return {
 
         -- set keybinds
         opts.desc = "Show LSP references"
-        map("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+        map("n", "gR", "<cmd>Telescope lsp_references<CR>", opts)
+        map("n", "gr", ":lua vim.lsp.buf.references()<CR>", mapOpts)
 
         opts.desc = "Go to declaration"
-        map("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
+        map("n", "gD", vim.lsp.buf.declaration, opts)
 
         opts.desc = "Show LSP definitions"
-        map("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
+        map("n", "gd", ":lua vim.lsp.buf.definition()<CR>", mapOpts)
 
         opts.desc = "Show LSP implementations"
-        map("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
+        map("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
+        map("n", "gI", ":lua vim.lsp.buf.implementation()<CR>", mapOpts)
 
         opts.desc = "Show LSP type definitions"
-        map("n", "<leader>gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
+        map("n", "<leader>gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
 
         opts.desc = "See available code actions"
-        map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
+        map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
         opts.desc = "Smart rename"
-        map("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
+        map("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
         opts.desc = "Show buffer diagnostics"
-        map("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
+        map("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
 
         opts.desc = "Show line diagnostics"
-        map("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
+        map("n", "<leader>d", vim.diagnostic.open_float, opts)
 
         opts.desc = "Go to previous diagnostic"
-        map("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
+        map("n", "[d", vim.diagnostic.goto_prev, opts)
 
         opts.desc = "Go to next diagnostic"
-        map("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
+        map("n", "]d", vim.diagnostic.goto_next, opts)
 
         opts.desc = "Show documentation for what is under cursor"
-        map("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+        map("n", "K", vim.lsp.buf.hover, opts)
 
         opts.desc = "Restart LSP"
-        map("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+        map("n", "<leader>rs", ":LspRestart<CR>", opts)
       end,
     })
 
