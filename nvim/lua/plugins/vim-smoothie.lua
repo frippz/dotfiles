@@ -1,3 +1,5 @@
+-- vim-smoothie: Smooth scrolling for Vim done right🥤
+
 return {
   "psliwka/vim-smoothie",
   init = function()
