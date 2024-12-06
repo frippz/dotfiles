@@ -46,3 +46,5 @@ map("n", "<Leader>i", ":set list!<CR>", mapOpts)
 
 -- Show relative line numbers
 map("n", "<Leader>l", ":set relativenumber!<CR>", mapOpts)
+
+map("n", "<Leader>bk", ":%bd <bar> e# <cr>", mapOpts)
