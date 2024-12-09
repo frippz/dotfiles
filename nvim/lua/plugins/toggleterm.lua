@@ -7,8 +7,5 @@ return {
       ":ToggleTerm<CR>",
     },
   },
-  opts = {
-    direction = "vertical",
-    size = 60,
-  },
+  opts = {},
 }
