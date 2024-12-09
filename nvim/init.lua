@@ -1,6 +1,7 @@
 require("helpers")
 require("netrw")
 require("mappings")
+require("lsp")
 require("plugin")
 require("themes")
 require("python")
