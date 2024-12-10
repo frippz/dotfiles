@@ -15,7 +15,6 @@
     ~/.scripts: scripts
     ~/.config/nvim/init.lua: nvim/init.lua
     ~/.config/nvim/lua: nvim/lua
-    ~/.config/tmuxinator: tmuxinator/tmuxinator
     ~/.config/tmux/tmux.conf: tmux/tmux.conf
     ~/.config/tmux/plugins: tmux/plugins
     ~/.config/tmux/tmux-macos.conf: tmux/tmux-macos.conf
@@ -32,10 +31,6 @@
 
     - description: Install Python
       command: ./python/install.sh
-      stdout: true
-
-    - description: Install Ruby
-      command: ./ruby/install.sh
       stdout: true
 
     - description: Install Node
