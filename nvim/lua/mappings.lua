@@ -47,8 +47,5 @@ map("n", "<Leader>i", ":set list!<CR>", mapOpts)
 -- Show relative line numbers
 map("n", "<Leader>l", ":set relativenumber!<CR>", mapOpts)
 
--- Close open buffer
-map("n", "<Leader>bc", ":bw<cr>", mapOpts)
-
 -- Close all buffers but the active one
 map("n", "<Leader>bk", ":%bd <bar> e# <cr>", mapOpts)
