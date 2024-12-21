@@ -8,60 +8,27 @@ return {
     { "antosha417/nvim-lsp-file-operations", config = true },
   },
 
+  keys = {
+    { "gR", "<cmd>Telescope lsp_references<CR>", desc = "Show LSP references" },
+    { "gr", vim.lsp.buf.references, desc = "Show references (vim.lsp.buf)" },
+    { "gD", vim.lsp.buf.declaration, desc = "Go to declaration" },
+    { "gd", vim.lsp.buf.definition, desc = "Show LSP definitions" },
+    { "gi", "<cmd>Telescope lsp_implementations<CR>", desc = "Show LSP implementations" },
+    { "gI", vim.lsp.buf.implementation, desc = "Go to implementation" },
+    { "<leader>gt", "<cmd>Telescope lsp_type_definitions<CR>", desc = "Show LSP type definitions" },
+    { "<leader>ca", vim.lsp.buf.code_action, { "n", "v" }, desc = "See available code actions" },
+    { "<leader>rn", vim.lsp.buf.rename, desc = "Smart rename" },
+    { "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", desc = "Show buffer diagnostics" },
+    { "<leader>d", vim.diagnostic.open_float, desc = "Show line diagnostics" },
+    { "[d", vim.diagnostic.goto_prev, desc = "Go to previous diagnostic" },
+    { "]d", vim.diagnostic.goto_next, desc = "Go to next diagnostic" },
+    { "K", vim.lsp.buf.hover, desc = "Show documentation for what is under cursor" },
+    { "<leader>rs", ":LspRestart<CR>", desc = "Restart LSP" },
+  },
+
   config = function()
     local lspconfig = require("lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
-    vim.api.nvim_create_autocmd("LspAttach", {
-      group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-      callback = function(ev)
-        -- Buffer local mappings.
-        -- See `:help vim.lsp.*` for documentation on any of the below functions
-        local opts = { buffer = ev.buf, silent = true }
-
-        -- set keybinds
-        opts.desc = "Show LSP references"
-        map("n", "gR", "<cmd>Telescope lsp_references<CR>", opts)
-        map("n", "gr", ":lua vim.lsp.buf.references()<CR>", mapOpts)
-
-        opts.desc = "Go to declaration"
-        map("n", "gD", vim.lsp.buf.declaration, opts)
-
-        opts.desc = "Show LSP definitions"
-        map("n", "gd", ":lua vim.lsp.buf.definition()<CR>", mapOpts)
-
-        opts.desc = "Show LSP implementations"
-        map("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
-        map("n", "gI", ":lua vim.lsp.buf.implementation()<CR>", mapOpts)
-
-        opts.desc = "Show LSP type definitions"
-        map("n", "<leader>gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
-
-        opts.desc = "See available code actions"
-        map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
-
-        opts.desc = "Smart rename"
-        map("n", "<leader>rn", vim.lsp.buf.rename, opts)
-
-        opts.desc = "Show buffer diagnostics"
-        map("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
-
-        opts.desc = "Show line diagnostics"
-        map("n", "<leader>d", vim.diagnostic.open_float, opts)
-
-        opts.desc = "Go to previous diagnostic"
-        map("n", "[d", vim.diagnostic.goto_prev, opts)
-
-        opts.desc = "Go to next diagnostic"
-        map("n", "]d", vim.diagnostic.goto_next, opts)
-
-        opts.desc = "Show documentation for what is under cursor"
-        map("n", "K", vim.lsp.buf.hover, opts)
-
-        opts.desc = "Restart LSP"
-        map("n", "<leader>rs", ":LspRestart<CR>", opts)
-      end,
-    })
 
     -- used to enable autocompletion (assign to every lsp server config)
     local capabilities = cmp_nvim_lsp.default_capabilities()
