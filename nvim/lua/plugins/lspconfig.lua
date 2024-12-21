@@ -129,11 +129,6 @@ return {
       capabilities = capabilities,
     })
 
-    -- swift
-    lspconfig.sourcekit.setup({
-      capabilities = capabilities,
-    })
-
     -- python
     lspconfig.pyright.setup({
       capabilities = capabilities,

@@ -42,7 +42,6 @@ return {
         "prettierd",
         "pylint",
         "stylua",
-        "swiftlint",
       },
     })
   end,
