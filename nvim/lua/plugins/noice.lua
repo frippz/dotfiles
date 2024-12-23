@@ -1,9 +1,14 @@
+-- A plugin that completely replaces the UI for messages, cmdline and the popupmenu.
+
 return {
   "folke/noice.nvim",
+
   dependencies = {
     "MunifTanjim/nui.nvim",
     "rcarriga/nvim-notify",
+    "hrsh7th/nvim-cmp",
   },
+
   event = "VeryLazy",
 
   config = function()
@@ -16,6 +21,7 @@ return {
           ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
         },
       },
+
       presets = {
         bottom_search = false, -- use a classic bottom cmdline for search
         command_palette = false, -- position the cmdline and popupmenu together

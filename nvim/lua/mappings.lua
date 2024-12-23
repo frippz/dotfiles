@@ -2,13 +2,13 @@
 g.mapleader = " "
 
 -- Remap save
-map("n", "<Leader>w", ":w<CR>")
+map("n", "<Leader>w", ":w<CR>", { desc = "Save file" })
 
 -- Save with no autocmd
-map("n", "<Leader>n", ":noa w<CR>")
+map("n", "<Leader>n", ":noa w<CR>", { desc = "Save file (no autocmd)" })
 
 -- Quickly reload init.lua
-map("n", "<Leader>sv", ":luafile ~/.config/nvim/init.lua<CR>")
+map("n", "<Leader>sv", ":luafile ~/.config/nvim/init.lua<CR>", { desc = "Reload init.lua" })
 
 -- Remap exit terminal mode
 map("t", "<Esc>", "<C-\\><C-n>")
@@ -29,23 +29,25 @@ map("i", "<Down>", "<C-o>gj")
 map("i", "<Up>", "<C-o>gk")
 
 -- Folding
-map("n", "<Leader>fo", ":foldopen<CR>")
-map("n", "<Leader>fc", ":foldclose<CR>")
+map("n", "<Leader>fo", ":foldopen<CR>", { desc = "Open fold" })
+map("n", "<Leader>fc", ":foldclose<CR>", { desc = "Close fold" })
 
--- Vim tabs
-map("n", "<C-t>", ":tabnew<CR>")
-
--- Manually reload file
-map("n", "<Leader>r", ":e!<CR>")
+-- Reload file in buffer
+map("n", "<Leader>r", ":e!<CR>", { desc = "Reload file in buffer" })
 
 -- Remove search highlight with Ctrl-L
-map("n", "<C-L>", ":nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>")
+map(
+  "n",
+  "<C-L>",
+  ":nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>",
+  { desc = "Remove search highlight" }
+)
 
 -- Toggle invisibles
-map("n", "<Leader>i", ":set list!<CR>")
+map("n", "<Leader>i", ":set list!<CR>", { desc = "Toggle invisibles" })
 
--- Show relative line numbers
-map("n", "<Leader>l", ":set relativenumber!<CR>")
+-- Toggle relative line numbers
+map("n", "<Leader>l", ":set relativenumber!<CR>", { desc = "Toggle relative line numbers" })
 
 -- Close all buffers but the active one
 map("n", "<Leader>bk", ":%bd <bar> e# <cr>", { desc = "Close other buffers" })

@@ -1,6 +1,10 @@
+-- blame.nvim is a fugitive.vim style git blame visualizer for Neovim.
+
 return {
   "FabijanZulj/blame.nvim",
+
   lazy = false,
+
   keys = {
     {
       "<Leader>gb",
@@ -13,6 +17,7 @@ return {
       desc = "Git blame view (inline)",
     },
   },
+
   config = function()
     require("blame").setup({
       date_format = "%Y-%m-%d %H:%M",

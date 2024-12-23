@@ -1,3 +1,5 @@
+-- Tabs, as understood by any other editor.
+
 return {
   "romgrk/barbar.nvim",
 

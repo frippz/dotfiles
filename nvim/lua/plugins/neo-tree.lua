@@ -1,21 +1,29 @@
+-- Manage the file system and other tree like structures
+
 return {
   "nvim-neo-tree/neo-tree.nvim",
+
   branch = "v3.x",
+
   keys = {
     {
       "<C-n>",
       ":Neotree toggle<CR>",
+      desc = "Toggle Neotree",
     },
     {
       "<C-f>",
       ":Neotree reveal<CR>",
+      desc = "Reveal file in Neotree",
     },
   },
+
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
   },
+
   config = function()
     require("neo-tree").setup({
       filesystem = {
@@ -26,7 +34,7 @@ return {
             ".gitignore",
             ".env",
           },
-          -- remains hidden even if visible is toggled to true, this overrides always_show
+          -- remain hidden even if visible is toggled to true, this overrides always_show
           never_show = {
             ".DS_Store",
             "thumbs.db",

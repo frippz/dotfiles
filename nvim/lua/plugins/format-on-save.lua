@@ -1,3 +1,5 @@
+-- Automatically formats files when saving using either LSP or shell utilities
+
 return {
   "elentok/format-on-save.nvim",
 

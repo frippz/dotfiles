@@ -1,5 +1,8 @@
+-- A task runner and job management plugin for Neovim
+
 return {
   "stevearc/overseer.nvim",
+
   keys = {
     {
       "<leader>rr",
@@ -12,5 +15,6 @@ return {
       desc = "OverseerToggle",
     },
   },
+
   opts = {},
 }

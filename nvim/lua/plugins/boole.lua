@@ -1,3 +1,5 @@
+-- Toogle boolean values
+
 return {
   "nat-418/boole.nvim",
 

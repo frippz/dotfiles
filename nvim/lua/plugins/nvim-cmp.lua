@@ -1,6 +1,10 @@
+-- A completion plugin for Neovim
+
 return {
   "hrsh7th/nvim-cmp",
+
   event = "InsertEnter",
+
   dependencies = {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
@@ -16,6 +20,7 @@ return {
       },
     },
   },
+
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
@@ -24,14 +29,17 @@ return {
 
     cmp.setup({
       preselect = cmp.PreselectMode.None, -- prevent selection in the middle of the dropdown
+
       completion = {
         completeopt = "menu,menuone,preview,noselect",
       },
+
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
         end,
       },
+
       mapping = {
         ["<Tab>"] = cmp.mapping.select_next_item(),
         ["<S-Tab>"] = cmp.mapping.select_prev_item(),
@@ -41,6 +49,7 @@ return {
         ["<C-e>"] = cmp.mapping.close(),
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
       },
+
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "luasnip" }, -- snippets
@@ -48,6 +57,7 @@ return {
         { name = "path" }, -- file system paths
         { name = "css_vars" },
       }),
+
       formatting = {
         format = require("nvim-highlight-colors").format,
       },

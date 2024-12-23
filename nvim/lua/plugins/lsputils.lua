@@ -1,3 +1,5 @@
+-- Better defaults for nvim-lsp actions
+
 return {
   "rishabhrd/nvim-lsputils",
 

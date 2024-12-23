@@ -1,9 +1,14 @@
+-- Portable package manager for Neovim that runs everywhere Neovim runs.
+-- Easily install and manage LSP servers, DAP servers, linters, and formatters.
+
 return {
   "williamboman/mason.nvim",
+
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
+
   config = function()
     local mason = require("mason")
     local mason_lspconfig = require("mason-lspconfig")
