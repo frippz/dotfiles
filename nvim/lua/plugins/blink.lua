@@ -15,7 +15,7 @@ return {
   version = "*",
 
   ---@module 'blink.cmp'
-  ---@type blink.cmp.Config
+  -- ---@type blink.cmp.Config
   opts = {
 
     appearance = {
