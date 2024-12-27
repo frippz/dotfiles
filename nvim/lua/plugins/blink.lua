@@ -4,20 +4,11 @@ return {
   dependencies = {
     "rafamadriz/friendly-snippets",
     "onsails/lspkind.nvim",
-    {
-      "jdrupal-dev/css-vars.nvim",
-      opts = {
-        cmp_filetypes = { "css", "svelte" },
-        search_extensions = { "css" },
-      },
-    },
   },
+
   version = "*",
 
-  ---@module 'blink.cmp'
-  -- ---@type blink.cmp.Config
   opts = {
-
     appearance = {
       use_nvim_cmp_as_default = false,
       nerd_font_variant = "mono",
