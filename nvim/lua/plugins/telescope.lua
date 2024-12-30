@@ -56,7 +56,7 @@ return {
     })
 
     -- extensions
-    telescope.load_extension("noice")
+    -- telescope.load_extension("noice")
     telescope.load_extension("notify")
     telescope.load_extension("todo-comments")
   end,
