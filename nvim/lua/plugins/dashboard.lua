@@ -31,7 +31,7 @@ return {
             keymap = "R",
             key_hl = "Number",
             key_format = " %s", -- remove default surrounding `[]`
-            action = "lua require('persistence').load({ last = true })",
+            action = "lua require('persistence').load()",
           },
         },
         -- footer = { "footer" },
