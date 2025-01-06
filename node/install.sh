@@ -21,8 +21,6 @@ PACKAGES=(
   "neovim"
   "npm-check-updates"
   "wrangler"
-  "pnpm"
-  "yarn"
 )
 
 NODENV_HOME="$HOME/.nodenv"

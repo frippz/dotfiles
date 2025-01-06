@@ -36,6 +36,7 @@ return {
         "pyright",
         "svelte",
         "ts_ls",
+        "yamlls",
       },
     })
 
