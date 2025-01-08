@@ -76,7 +76,7 @@ return {
       },
     },
 
-    -- My super-TAB configuration
+    -- super-TAB configuration
     keymap = {
       ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
       ["<C-e>"] = { "hide", "fallback" },
@@ -116,8 +116,8 @@ return {
       cmdline = {}, -- Disable sources for command-line mode
       providers = {
         lsp = {
-          min_keyword_length = 2, -- Number of characters to trigger provider
-          score_offset = 0, -- Boost/penalize the score of the items
+          min_keyword_length = 1, -- Number of characters to trigger provider
+          score_offset = 1, -- Boost/penalize the score of the items
         },
         path = {
           min_keyword_length = 0,
