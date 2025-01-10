@@ -9,11 +9,6 @@ return {
   version = "*",
 
   opts = {
-    appearance = {
-      use_nvim_cmp_as_default = false,
-      nerd_font_variant = "mono",
-    },
-
     completion = {
       accept = { auto_brackets = { enabled = true } },
 
@@ -29,9 +24,6 @@ return {
           preselect = true,
           auto_insert = true,
         },
-        -- selection = function(ctx)
-        --   return ctx.mode == "cmdline" and "auto_insert" or "preselect"
-        -- end,
       },
 
       menu = {
@@ -113,7 +105,9 @@ return {
 
     sources = {
       default = { "lsp", "path", "snippets", "buffer" },
+
       cmdline = {}, -- Disable sources for command-line mode
+
       providers = {
         lsp = {
           min_keyword_length = 1, -- Number of characters to trigger provider
