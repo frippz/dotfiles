@@ -111,17 +111,20 @@ return {
       providers = {
         lsp = {
           min_keyword_length = 1, -- Number of characters to trigger provider
-          score_offset = 1, -- Boost/penalize the score of the items
+          score_offset = 3, -- Boost/penalize the score of the items
         },
         path = {
           min_keyword_length = 0,
+          score_offset = 1, -- Boost/penalize the score of the items
         },
         snippets = {
           min_keyword_length = 2,
+          score_offset = 0, -- Boost/penalize the score of the items
         },
         buffer = {
           min_keyword_length = 5,
           max_items = 5,
+          score_offset = 2, -- Boost/penalize the score of the items
         },
       },
     },
