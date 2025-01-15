@@ -7,12 +7,12 @@ return {
     {
       "<leader>rr",
       "<cmd>OverseerRun<cr>",
-      desc = "OverseerRun",
+      desc = "Overseer Run",
     },
     {
       "<leader>rt",
       "<cmd>OverseerToggle<cr>",
-      desc = "OverseerToggle",
+      desc = "Overseer Toggle",
     },
   },
 
