@@ -58,7 +58,6 @@ return {
             action = "Telescope",
           },
         },
-        -- footer = { "footer" },
       },
     })
   end,
