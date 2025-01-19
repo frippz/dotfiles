@@ -57,6 +57,13 @@ return {
             desc_hl = "String",
             action = "Telescope",
           },
+          {
+            icon = "💣 ",
+            icon_hl = "Title",
+            desc = "Quit",
+            desc_hl = "String",
+            action = "q",
+          },
         },
       },
     })
