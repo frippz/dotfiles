@@ -34,7 +34,7 @@ return {
             icon_hl = "Title",
             desc = "Overseer",
             desc_hl = "String",
-            action = "OverseerRun",
+            action = "require('overseer').run_template()",
           },
           {
             icon = "💤 ",
