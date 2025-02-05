@@ -47,6 +47,7 @@ return {
         "isort",
         "prettierd",
         "pylint",
+        "shfmt",
         "stylua",
       },
     })
