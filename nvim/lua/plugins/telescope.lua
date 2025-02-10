@@ -48,6 +48,16 @@ return {
           ".git",
           "node_modules",
         },
+        vimgrep_arguments = {
+          "rg",
+          "--color=never",
+          "--no-heading",
+          "--with-filename",
+          "--line-number",
+          "--column",
+          "--smart-case",
+          "--no-ignore",
+        },
       },
       pickers = {
         live_grep = pickersOpts,
@@ -56,7 +66,7 @@ return {
     })
 
     -- extensions
-    -- telescope.load_extension("noice")
+    telescope.load_extension("noice")
     telescope.load_extension("notify")
     telescope.load_extension("todo-comments")
   end,
