@@ -103,10 +103,12 @@ return {
       window = { border = "rounded" },
     },
 
+    cmdline = {
+      enabled = false,
+    },
+
     sources = {
       default = { "lsp", "path", "snippets", "buffer" },
-
-      cmdline = {}, -- Disable sources for command-line mode
 
       providers = {
         lsp = {
