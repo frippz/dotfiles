@@ -49,5 +49,8 @@ map("n", "<Leader>i", ":set list!<CR>", { desc = "Toggle invisibles" })
 -- Toggle relative line numbers
 map("n", "<Leader>l", ":set relativenumber!<CR>", { desc = "Toggle relative line numbers" })
 
+-- Close current buffer
+map("n", "<Leader>bc", ":<C-U>bprevious <bar> bdelete #<CR>", { desc = "Close current buffer" })
+
 -- Close all buffers but the active one
 map("n", "<Leader>bk", ":%bd <bar> e# <cr>", { desc = "Close other buffers" })
