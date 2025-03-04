@@ -10,20 +10,11 @@ return {
 
   opts = {
     completion = {
-      accept = { auto_brackets = { enabled = true } },
 
       documentation = {
         auto_show = true,
         auto_show_delay_ms = 250,
-        treesitter_highlighting = true,
         window = { border = "rounded" },
-      },
-
-      list = {
-        selection = {
-          preselect = true,
-          auto_insert = true,
-        },
       },
 
       menu = {
@@ -43,6 +34,7 @@ return {
             { "kind_icon", "label", gap = 1 },
             { "kind" },
           },
+
           components = {
             kind_icon = {
               text = function(item)
@@ -51,12 +43,14 @@ return {
               end,
               highlight = "CmpItemKind",
             },
+
             label = {
               text = function(item)
                 return item.label
               end,
               highlight = "CmpItemAbbr",
             },
+
             kind = {
               text = function(item)
                 return item.kind
@@ -103,32 +97,38 @@ return {
       window = { border = "rounded" },
     },
 
+    -- Disable completions in command line
     cmdline = {
       enabled = false,
     },
 
-    sources = {
-      default = { "lsp", "path", "snippets", "buffer" },
+    -- Disable completions in terminal
+    term = {
+      enabled = false,
+    },
 
+    --[[
+    sources = {
       providers = {
         lsp = {
           min_keyword_length = 1, -- Number of characters to trigger provider
           score_offset = 3, -- Boost/penalize the score of the items
         },
         path = {
-          min_keyword_length = 0,
+          min_keyword_length = 2,
           score_offset = 1, -- Boost/penalize the score of the items
         },
         snippets = {
-          min_keyword_length = 2,
+          min_keyword_length = 3,
           score_offset = 0, -- Boost/penalize the score of the items
         },
         buffer = {
-          min_keyword_length = 5,
+          min_keyword_length = 2,
           max_items = 5,
           score_offset = 2, -- Boost/penalize the score of the items
         },
       },
     },
+    ]]
   },
 }
