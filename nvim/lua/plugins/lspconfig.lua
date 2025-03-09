@@ -48,6 +48,11 @@ return {
       single_file_support = false,
     })
 
+    -- astro
+    lspconfig.astro.setup({
+      capabilities = capabilities,
+    })
+
     -- deno
     lspconfig.denols.setup({
       capabilities = capabilities,

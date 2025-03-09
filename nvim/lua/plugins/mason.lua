@@ -26,6 +26,7 @@ return {
 
     mason_lspconfig.setup({
       ensure_installed = {
+        "astro",
         "cssls",
         "css_variables",
         "eslint",
