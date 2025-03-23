@@ -31,6 +31,7 @@ return {
         filtered_items = {
           hide_dotfiles = false,
           always_show = {
+            ".cursorrules",
             ".gitignore",
             ".env",
           },
