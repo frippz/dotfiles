@@ -6,5 +6,7 @@ return {
     "javascript",
     "svelte",
   },
-  opts = {},
+  opts = {
+    code_lens = "all",
+  },
 }
