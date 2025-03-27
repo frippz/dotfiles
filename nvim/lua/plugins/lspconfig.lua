@@ -103,7 +103,7 @@ return {
     })
 
     -- python
-    lspconfig.pyright.setup({
+    lspconfig.ruff.setup({
       capabilities = capabilities,
     })
 

@@ -20,7 +20,10 @@ return {
         json = formatters.prettierd,
         lua = formatters.stylua,
         markdown = formatters.prettierd,
-        python = formatters.black,
+        python = {
+          formatters.remove_trailing_whitespace,
+          formatters.ruff,
+        },
         scss = formatters.prettierd,
         sh = formatters.shfmt,
         svelte = formatters.lsp,

@@ -19,10 +19,10 @@ PIPS=(
   "pip-autoremove"
   "awscli"
   "beautysh"
-  "black"
   "grc"
   "pipenv"
   "pynvim"
+  "ruff"
   "yamllint"
   "yt-dlp"
 )

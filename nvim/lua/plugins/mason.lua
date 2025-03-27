@@ -34,8 +34,8 @@ return {
         "graphql",
         "html",
         "lua_ls",
-        "pyright",
         "svelte",
+        "ruff",
         "ts_ls",
         "yamlls",
       },
@@ -43,11 +43,8 @@ return {
 
     mason_tool_installer.setup({
       ensure_installed = {
-        "black",
         "eslint",
-        "isort",
         "prettierd",
-        "pylint",
         "shfmt",
         "stylua",
       },
