@@ -34,6 +34,7 @@ return {
             ".cursorrules",
             ".gitignore",
             ".env",
+            "*.db",
           },
           -- remain hidden even if visible is toggled to true, this overrides always_show
           never_show = {
