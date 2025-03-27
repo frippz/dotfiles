@@ -15,9 +15,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Editor stuff
-.tm_properties
 .vimsession
-tags
 .cursorrules
 .vscode
 
