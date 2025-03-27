@@ -7,9 +7,10 @@ source $HOME/.dotfiles/zsh/msg.zsh
 VERSIONS=(
   "3.9.18"
   "3.11.1"
+  "3.11.11"
 )
 
-GLOBAL_VERSION="3.11.1"
+GLOBAL_VERSION="3.11.11"
 
 PLUGINS=(
   "https://github.com/pyenv/pyenv-pip-migrate.git"
