@@ -22,7 +22,7 @@ return {
         markdown = formatters.prettierd,
         python = {
           formatters.remove_trailing_whitespace,
-          formatters.ruff,
+          formatters.shell({ cmd = { "ruff", "format", "--stdin-filename", "%", "-" } }),
         },
         scss = formatters.prettierd,
         sh = formatters.shfmt,
