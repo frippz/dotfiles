@@ -23,7 +23,7 @@ return {
         },
         center = {
           {
-            icon = "♻️  ",
+            icon = "♻️ ",
             icon_hl = "Title",
             desc = "Restore previous session",
             desc_hl = "String",
@@ -47,7 +47,7 @@ return {
             action = "Lazy",
           },
           {
-            icon = "⚙️  ",
+            icon = "⚙️ ",
             icon_hl = "Title",
             desc = "Mason",
             desc_hl = "String",
