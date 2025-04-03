@@ -69,5 +69,6 @@ return {
     telescope.load_extension("noice")
     telescope.load_extension("notify")
     telescope.load_extension("todo-comments")
+    telescope.load_extension("project")
   end,
 }
