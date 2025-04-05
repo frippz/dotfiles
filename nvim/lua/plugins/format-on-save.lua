@@ -13,6 +13,7 @@ return {
         ".local/share/nvim/lazy",
       },
       formatter_by_ft = {
+        astro = formatters.prettierd,
         css = formatters.prettierd,
         html = formatters.lsp,
         javascript = formatters.prettierd,
