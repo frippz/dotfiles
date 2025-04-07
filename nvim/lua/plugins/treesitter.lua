@@ -19,6 +19,7 @@ return {
         "lua",
         "markdown",
         "regex",
+        "scss",
         "svelte",
         "typescript",
       },
