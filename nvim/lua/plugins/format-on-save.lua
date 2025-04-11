@@ -31,7 +31,7 @@ return {
         typescript = formatters.prettierd,
         typescriptreact = formatters.prettierd,
         yaml = formatters.prettierd,
-        zsh = formatters.beautysh,
+        zsh = formatters.shfmt,
       },
 
       -- fallback formatter to use when no formatters match the current filetype
