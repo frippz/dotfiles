@@ -5,6 +5,7 @@ tap "epk/epk"
 
 # Casks
 # cask "google-cloud-sdk"
+cask "rectangle"
 
 # Packages
 brew "autoconf"
