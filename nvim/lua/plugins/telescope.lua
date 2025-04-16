@@ -47,6 +47,7 @@ return {
         file_ignore_patterns = {
           ".git",
           "node_modules",
+          "__bundled",
         },
         vimgrep_arguments = {
           "rg",
