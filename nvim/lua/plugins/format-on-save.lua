@@ -14,6 +14,7 @@ return {
       },
       formatter_by_ft = {
         astro = formatters.prettierd,
+        bash = formatters.beautysh,
         css = formatters.prettierd,
         html = formatters.lsp,
         javascript = formatters.prettierd,
@@ -26,12 +27,12 @@ return {
           formatters.shell({ cmd = { "ruff", "format", "--stdin-filename", "%", "-" } }),
         },
         scss = formatters.prettierd,
-        sh = formatters.shfmt,
+        sh = formatters.beautysh,
         svelte = formatters.lsp,
         typescript = formatters.prettierd,
         typescriptreact = formatters.prettierd,
         yaml = formatters.prettierd,
-        zsh = formatters.shfmt,
+        zsh = formatters.beautysh,
       },
 
       -- fallback formatter to use when no formatters match the current filetype
