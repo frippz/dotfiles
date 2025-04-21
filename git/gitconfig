@@ -1,6 +1,7 @@
 [user]
   name = Fredrik Frodlund
   email = fredrik@frodlund.se
+  signingkey = ~/.ssh/id_ed25519.pub
 [color]
   diff = auto
   status = auto
@@ -48,3 +49,7 @@
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
+[gpg]
+  format = ssh
+[commit]
+  gpgsign = true
