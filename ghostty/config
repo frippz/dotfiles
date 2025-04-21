@@ -1,0 +1,14 @@
+# Fonts
+font-family = SF Mono
+font-style = Medium
+font-style-bold = Bold
+font-style-italic = Medium Italic
+font-style-bold-italic = Bold Italic
+font-size = 18
+font-thicken = true
+
+# Theme
+theme = light:everforest-light-hard.ghostty,dark:everforest-dark-hard.ghostty
+
+# Misc
+quit-after-last-window-closed = true
