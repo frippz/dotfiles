@@ -7,6 +7,7 @@ brew "autoconf"
 brew "automake"
 brew "bat"
 brew "ccat"
+brew "colima"
 brew "coreutils"
 brew "dos2unix"
 brew "docker"
@@ -40,61 +41,63 @@ brew "zoxide"
 brew "zsh-syntax-highlighting"
 
 # Casks
-# cask "appcleaner"
-# cask "bankid"
-# cask "bettermouse"
-# cask "chatgpt"
-# cask "coconutbattery"
-# cask "cursor"
-# cask "daisydisk"
-# cask "db-browser-for-sqlite"
-# cask "etrecheckpro"
-# cask "firefox"
-# cask "fork"
+cask "1Password"
+cask "appcleaner"
+cask "bankid"
+cask "bettermouse"
+cask "chatgpt"
+cask "coconutbattery"
+cask "cursor"
+cask "daisydisk"
+cask "db-browser-for-sqlite"
+cask "etrecheckpro"
+cask "firefox"
+cask "fork"
 cask "ghostty"
-# cask "google-chrome"
+cask "google-chrome"
 # cask "handbrake"
-# cask "home-assistant"
-# cask "iina"
-# cask "imageoptim"
-# cask "iterm2"
-# cask "keepingyouawake"
-# cask "lingon-x"
-# cask "maccy"
-# cask "macmediakeyforwarder"
-# cask "monitorcontrol"
-# cask "name-mangler"
-# cask "netnewswire"
-# cask "numi"
-# cask "ollama"
-# cask "onyx"
-# cask "openemu"
-# cask "postman"
+cask "home-assistant"
+cask "iina"
+cask "imageoptim"
+cask "iterm2"
+cask "keepingyouawake"
+cask "lingon-x"
+cask "maccy"
+cask "macmediakeyforwarder"
+cask "monitorcontrol"
+cask "name-mangler"
+cask "netnewswire"
+cask "numi"
+cask "ollama"
+cask "onyx"
+cask "openemu"
+cask "postman"
 cask "rectangle"
-# cask "rocket"
-# cask "safari-technology-preview"
-# cask "signal"
-# cask "silicon"
-# cask "sim-daltonism"
-# cask "sonos"
-# cask "suspicious-package"
-# cask "syntax-highlight"
-# cask "the-unarchiver"
-# cask "transmission"
-# cask "transmit"
+cask "rocket"
+cask "safari-technology-preview"
+cask "signal"
+cask "silicon"
+cask "sim-daltonism"
+cask "sonos"
+cask "suspicious-package"
+cask "syntax-highlight"
+cask "the-unarchiver"
+cask "transmission"
+cask "transmit"
 # cask "usage"
-# cask "via"
-# cask "virtualbuddy"
-# cask "visual-studio-code"
+cask "via"
+cask "virtualbuddy"
+cask "visual-studio-code"
 
 # Mac App Store
-# mas "1Password", id: 568903335
-# mas "Boop", id: 1518425043
-# mas "CotEditor", id: 1024640650
-# mas "Hidden Bar", id: 1452453066
-# mas "Infuse", id: 1136220934
-# mas "Slack", id: 803453959
-# mas "System Color Picker", id: 1545870783
-# mas "Week", id: 931204394
-# mas "Xcode", id: 497799835
-# mas "xScope", id: 889428659
+mas "1Blocker", id: 1365531024
+mas "Boop", id: 1518425043
+mas "CotEditor", id: 1024640650
+mas "Hidden Bar", id: 1452453066
+mas "Infuse", id: 1136220934
+mas "Pixelmator Pro", id: 1289583905
+mas "Slack", id: 803453959
+mas "System Color Picker", id: 1545870783
+mas "Week", id: 931204394
+mas "Xcode", id: 497799835
+mas "xScope", id: 889428659
