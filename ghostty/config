@@ -1,13 +1,29 @@
+##
 # Fonts
+##
 font-family = SF Mono
-font-style = Medium
+font-style = Regular
 font-style-bold = Bold
 font-style-italic = Medium Italic
 font-style-bold-italic = Bold Italic
 font-size = 18
+font-thicken = true
+alpha-blending = native
 
+##
 # Theme
+##
 theme = light:everforest-light-hard.ghostty,dark:everforest-dark-hard.ghostty
 
+##
 # Misc
+##
 quit-after-last-window-closed = true
+
+##
+# Keybindings
+##
+
+# Switch tabs with Cmd and arrow keys
+keybind = cmd+left=previous_tab
+keybind = cmd+right=next_tab
