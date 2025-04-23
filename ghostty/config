@@ -2,7 +2,7 @@
 # Fonts
 ##
 font-family = SF Mono
-font-style = Regular
+font-style = Medium
 font-style-bold = Bold
 font-style-italic = Medium Italic
 font-style-bold-italic = Bold Italic
@@ -19,6 +19,8 @@ theme = light:everforest-light-hard.ghostty,dark:everforest-dark-hard.ghostty
 # Misc
 ##
 quit-after-last-window-closed = true
+link-url = true
+window-subtitle = working-directory
 
 ##
 # Keybindings
