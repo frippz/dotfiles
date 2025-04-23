@@ -48,14 +48,13 @@ cask "bettermouse"
 cask "chatgpt"
 cask "coconutbattery"
 cask "cursor"
-cask "daisydisk"
 cask "db-browser-for-sqlite"
 cask "etrecheckpro"
 cask "firefox"
 cask "fork"
 cask "ghostty"
 cask "google-chrome"
-# cask "handbrake"
+cask "handbrake"
 cask "home-assistant"
 cask "iina"
 cask "imageoptim"
@@ -84,7 +83,6 @@ cask "syntax-highlight"
 cask "the-unarchiver"
 cask "transmission"
 cask "transmit"
-# cask "usage"
 cask "via"
 cask "virtualbuddy"
 cask "visual-studio-code"
@@ -93,6 +91,7 @@ cask "visual-studio-code"
 mas "1Blocker", id: 1365531024
 mas "Boop", id: 1518425043
 mas "CotEditor", id: 1024640650
+mas "DaisyDisk", id: 411643860
 mas "Hidden Bar", id: 1452453066
 mas "Infuse", id: 1136220934
 mas "Pixelmator Pro", id: 1289583905
