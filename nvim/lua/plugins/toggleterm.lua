@@ -16,7 +16,7 @@ return {
   opts = {
     direction = "float",
     float_opts = {
-      border = "double",
+      border = "rounded",
     },
   },
 }
