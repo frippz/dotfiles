@@ -6,11 +6,11 @@ source $HOME/.dotfiles/zsh/msg.zsh
 
 VERSIONS=(
   "3.9.18"
-  "3.11.1"
   "3.11.11"
+  "3.13.3"
 )
 
-GLOBAL_VERSION="3.11.11"
+GLOBAL_VERSION="3.13.3"
 
 PLUGINS=(
   "https://github.com/pyenv/pyenv-update.git"
@@ -25,6 +25,7 @@ PIPS=(
   "pipenv"
   "pynvim"
   "ruff"
+  "uv"
   "yamllint"
   "yt-dlp"
 )
