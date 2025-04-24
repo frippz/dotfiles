@@ -13,6 +13,7 @@ VERSIONS=(
 GLOBAL_VERSION="3.11.11"
 
 PLUGINS=(
+  "https://github.com/pyenv/pyenv-update.git"
   "https://github.com/pyenv/pyenv-pip-migrate.git"
 )
 
