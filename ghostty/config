@@ -20,7 +20,7 @@ theme = light:everforest-light-hard.ghostty,dark:everforest-dark-hard.ghostty
 ##
 quit-after-last-window-closed = true
 link-url = true
-window-subtitle = working-directory
+shell-integration-features = no-title
 
 ##
 # Keybindings
