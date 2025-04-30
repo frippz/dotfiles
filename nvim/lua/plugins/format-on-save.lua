@@ -28,7 +28,17 @@ return {
         },
         scss = formatters.prettierd,
         sh = formatters.beautysh,
-        svelte = formatters.lsp,
+        svelte = {
+          formatters.if_file_exists({
+            pattern = ".eslintrc.*",
+            formatter = formatters.eslint_d_fix,
+          }),
+          formatters.if_file_exists({
+            pattern = { ".prettierrc", ".prettierrc.*", "prettier.config.*" },
+            formatter = formatters.prettierd,
+          }),
+          formatters.lsp,
+        },
         typescript = formatters.prettierd,
         typescriptreact = formatters.prettierd,
         yaml = formatters.prettierd,

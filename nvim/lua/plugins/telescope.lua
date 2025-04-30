@@ -48,6 +48,7 @@ return {
           ".git",
           "node_modules",
           "__bundled",
+          "__published",
         },
         vimgrep_arguments = {
           "rg",
