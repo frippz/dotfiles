@@ -10,6 +10,7 @@ VERSIONS=(
 )
 
 PLUGINS=(
+  "https://github.com/nodenv/node-build.git"
   "https://github.com/nodenv/nodenv-update.git"
   "https://github.com/nodenv/nodenv-npm-migrate.git"
   "https://github.com/ouchxp/nodenv-nvmrc.git"
