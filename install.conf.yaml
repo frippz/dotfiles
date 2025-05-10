@@ -30,10 +30,6 @@
       command: ./homebrew/install.sh
       stdout: true
 
-    # - description: Install Python
-    #   command: ./python/install.sh
-    #   stdout: true
-
     - description: Install Node
       command: ./node/install.sh
       stdout: true
