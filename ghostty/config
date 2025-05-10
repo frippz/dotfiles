@@ -22,6 +22,7 @@ macos-icon = blueprint
 quit-after-last-window-closed = true
 link-url = true
 shell-integration-features = no-title
+window-inherit-working-directory = false
 
 ##
 # Keybindings
