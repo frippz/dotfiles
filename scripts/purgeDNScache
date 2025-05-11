@@ -1,9 +1,16 @@
 #!/bin/sh
 
+source $HOME/.dotfiles/zsh/msg.zsh
+
 case "$OSTYPE" in
   *darwin*)
+    msg_info "Kill mDNSResponder"
     sudo killall -HUP mDNSResponder
+
+    msg_info "Kill mDNSResponderHelper"
     sudo killall mDNSResponderHelper
+
+    msg_info "Flush cache (dscacheutil)"
     sudo dscacheutil -flushcache
     ;;
 esac
