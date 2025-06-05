@@ -10,6 +10,11 @@ font-size = 18
 font-thicken = true
 alpha-blending = native
 
+# Disable ligatures
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+
 ##
 # Theme
 ##
