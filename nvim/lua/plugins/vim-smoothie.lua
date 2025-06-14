@@ -3,6 +3,9 @@
 return {
   "psliwka/vim-smoothie",
 
+  -- disable plugin
+  enabled = false,
+
   init = function()
     vim.g.smoothie_enabled = 1
   end,

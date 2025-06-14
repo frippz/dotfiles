@@ -1,7 +1,8 @@
 return {
   "nvimdev/dashboard-nvim",
 
-  -- dependencies = { "nvim-tree/nvim-web-devicons" },
+  -- disable plugin
+  enabled = false,
 
   event = "VimEnter",
 

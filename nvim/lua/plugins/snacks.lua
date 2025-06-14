@@ -3,6 +3,7 @@ return {
 
   priority = 1000,
   lazy = false,
+
   opts = {
     bigfile = { enabled = true },
     dashboard = { enabled = true },
@@ -16,5 +17,23 @@ return {
     scroll = { enabled = true },
     statuscolumn = { enabled = true },
     words = { enabled = true },
+  },
+
+  keys = {
+    {
+      "<C-p>",
+      ":lua Snacks.picker.files()<cr>",
+      desc = "Toggle file picker",
+    },
+    {
+      "<C-f>",
+      ":lua Snacks.picker.explorer()<cr>",
+      desc = "Toggle file explorer",
+    },
+    {
+      "<leader>fg",
+      ":lua Snacks.picker.grep()<cr>",
+      desc = "Toggle search",
+    },
   },
 }

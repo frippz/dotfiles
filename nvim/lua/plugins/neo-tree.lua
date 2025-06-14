@@ -3,6 +3,9 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
 
+  -- disable plugin
+  enabled = false,
+
   branch = "v3.x",
 
   keys = {

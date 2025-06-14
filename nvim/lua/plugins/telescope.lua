@@ -3,6 +3,9 @@
 return {
   "nvim-telescope/telescope.nvim",
 
+  -- disable plugin
+  enabled = false,
+
   branch = "0.1.x",
   lazy = false,
 
