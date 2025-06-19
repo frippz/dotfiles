@@ -31,6 +31,11 @@ return {
       desc = "Toggle file explorer",
     },
     {
+      "<C-b>",
+      ":lua Snacks.picker.buffers()<cr>",
+      desc = "Toggle buffers explorer",
+    },
+    {
       "<leader>fg",
       ":lua Snacks.picker.grep()<cr>",
       desc = "Toggle search",
