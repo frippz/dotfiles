@@ -1,3 +1,5 @@
+-- Faster LuaLS setup for Neovim
+
 return {
   "folke/lazydev.nvim",
 
