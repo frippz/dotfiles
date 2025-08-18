@@ -4,12 +4,14 @@ return {
   "saghen/blink.cmp",
 
   dependencies = {
-    "rafamadriz/friendly-snippets",
+    -- "rafamadriz/friendly-snippets",
     "onsails/lspkind.nvim",
   },
 
-  version = "*",
+  version = "1.*",
 
+  ---@module 'blink.cmp'
+  ---@type blink.cmp.Config
   opts = {
     completion = {
 
@@ -109,28 +111,33 @@ return {
       enabled = false,
     },
 
-    --[[
     sources = {
+      default = { "lazydev", "lsp", "path", "snippets", "buffer" },
       providers = {
-        lsp = {
-          min_keyword_length = 1, -- Number of characters to trigger provider
-          score_offset = 3, -- Boost/penalize the score of the items
+        lazydev = {
+          name = "LazyDev",
+          module = "lazydev.integrations.blink",
+          -- make lazydev completions top priority (see `:h blink.cmp`)
+          score_offset = 100,
         },
-        path = {
-          min_keyword_length = 2,
-          score_offset = 1, -- Boost/penalize the score of the items
-        },
-        snippets = {
-          min_keyword_length = 3,
-          score_offset = 0, -- Boost/penalize the score of the items
-        },
-        buffer = {
-          min_keyword_length = 2,
-          max_items = 5,
-          score_offset = 2, -- Boost/penalize the score of the items
-        },
+        -- lsp = {
+        --   min_keyword_length = 1, -- Number of characters to trigger provider
+        --   score_offset = 3, -- Boost/penalize the score of the items
+        -- },
+        -- path = {
+        --   min_keyword_length = 2,
+        --   score_offset = 1, -- Boost/penalize the score of the items
+        -- },
+        -- snippets = {
+        --   min_keyword_length = 3,
+        --   score_offset = 0, -- Boost/penalize the score of the items
+        -- },
+        -- buffer = {
+        --   min_keyword_length = 2,
+        --   max_items = 5,
+        --   score_offset = 2, -- Boost/penalize the score of the items
+        -- },
       },
     },
-    ]]
   },
 }
