@@ -4,13 +4,26 @@ return {
   priority = 1000,
   lazy = false,
 
+  ---@module 'snacks.nvim'
+  ---@type snacks.Config
   opts = {
+
+    -- Bigfile
     bigfile = { enabled = true },
+
+    -- Dashboard
     dashboard = { enabled = true },
+
+    -- Explorer
     explorer = { enabled = true },
+
+    -- Indent
     indent = { enabled = true },
+
+    -- Input
     input = { enabled = true },
-    picker = { enabled = true },
+
+    -- File picker
     picker = {
       enabled = true,
 
@@ -68,11 +81,23 @@ return {
         },
       },
     },
+
+    -- Notifier
     notifier = { enabled = true },
+
+    -- Quickfile
     quickfile = { enabled = true },
+
+    -- Scope
     scope = { enabled = true },
+
+    -- Scroll
     scroll = { enabled = true },
+
+    -- Statuscolumn
     statuscolumn = { enabled = true },
+
+    -- Words
     words = { enabled = true },
   },
 
