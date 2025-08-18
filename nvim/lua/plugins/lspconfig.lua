@@ -62,6 +62,7 @@ return {
     -- eslint
     lspconfig.eslint.setup({
       capabilities = capabilities,
+      ---@diagnostic disable-next-line unused-local
       on_attach = function(client, bufnr)
         vim.api.nvim_create_autocmd("BufWritePre", {
           buffer = bufnr,
@@ -115,22 +116,6 @@ return {
     -- lua
     lspconfig.lua_ls.setup({
       capabilities = capabilities,
-      settings = {
-        Lua = {
-          -- make the lsp recognize "vim" global
-          diagnostics = {
-            disable = { "lowercase-global" },
-            globals = { "vim" },
-          },
-          workspace = {
-            -- make the lsp aware of runtime files
-            library = {
-              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-              [vim.fn.stdpath("config") .. "/lua"] = true,
-            },
-          },
-        },
-      },
     })
 
     -- yaml
