@@ -7,8 +7,9 @@ return {
 
   opts = {
     library = {
-      "blink.cmp",
-      "snacks.nvim",
+      "lazy.nvim",
+      "blink",
+      "snacks",
     },
   },
 }
