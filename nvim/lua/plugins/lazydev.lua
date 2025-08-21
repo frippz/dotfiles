@@ -8,6 +8,7 @@ return {
   opts = {
     library = {
       "blink.cmp",
+      "snacks.nvim",
     },
   },
 }
