@@ -10,7 +10,7 @@ return {
 
   version = "1.*",
 
-  ---@module 'blink.cmp'
+  ---@module 'blink'
   ---@type blink.cmp.Config
   opts = {
     completion = {
