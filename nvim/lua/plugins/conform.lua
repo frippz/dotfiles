@@ -54,6 +54,10 @@ return {
       typescriptreact = { "prettierd" },
       yaml = { "prettierd" },
       zsh = { "beautysh" },
+
+      -- Use the "_" filetype to run formatters on filetypes that don't
+      -- have other formatters configured.
+      ["_"] = { "trim_whitespace" },
     },
 
     -- Set default options
