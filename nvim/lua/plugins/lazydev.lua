@@ -7,6 +7,7 @@ return {
 
   opts = {
     library = {
+      "conform",
       "lazy.nvim",
       "blink",
       "snacks",
