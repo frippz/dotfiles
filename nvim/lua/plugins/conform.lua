@@ -22,7 +22,7 @@ return {
   ---@type conform.setupOpts
   opts = {
 
-    formatter_by_ft = {
+    formatters_by_ft = {
       astro = { "prettierd" },
       bash = { "beautysh" },
       css = { "prettierd" },
