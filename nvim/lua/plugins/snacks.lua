@@ -9,19 +9,29 @@ return {
   opts = {
 
     -- Bigfile
-    bigfile = { enabled = true },
+    bigfile = {
+      enabled = true,
+    },
 
     -- Dashboard
-    dashboard = { enabled = true },
+    dashboard = {
+      enabled = true,
+    },
 
     -- Explorer
-    explorer = { enabled = true },
+    explorer = {
+      enabled = true,
+    },
 
     -- Indent
-    indent = { enabled = true },
+    indent = {
+      enabled = true,
+    },
 
     -- Input
-    input = { enabled = true },
+    input = {
+      enabled = true,
+    },
 
     -- File picker
     picker = {
