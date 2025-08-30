@@ -51,6 +51,12 @@ return {
             section = "session",
           },
           {
+            icon = " ",
+            key = "O",
+            desc = "Overseer",
+            action = ":lua require('overseer').run_template()",
+          },
+          {
             icon = "󰒲 ",
             key = "L",
             desc = "Lazy",
