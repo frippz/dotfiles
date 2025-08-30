@@ -32,24 +32,10 @@ return {
       json = { "prettierd" },
       lua = { "stylua" },
       markdown = { "prettierd" },
-      python = {
-        "ruff",
-        -- remove_trailing_whitespace,
-        -- shell({ cmd = { "ruff", "format", "--stdin-filename", "%", "-" } }),
-      },
+      python = { "ruff" },
       scss = { "prettierd" },
       sh = { "beautysh" },
-      svelte = {
-        -- if_file_exists({
-        --   pattern = ".eslintrc.*",
-        --   formatter = eslint_d_fix,
-        -- }),
-        -- if_file_exists({
-        --   pattern = { ".prettierrc", ".prettierrc.*", "prettier.config.*" },
-        --   formatter = prettierd,
-        -- }),
-        "lsp",
-      },
+      svelte = { "lsp" },
       typescript = { "prettierd" },
       typescriptreact = { "prettierd" },
       yaml = { "prettierd" },
