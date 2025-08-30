@@ -33,10 +33,10 @@ return {
             action = ":lua Snacks.dashboard.pick('files')",
           },
           {
-            icon = " ",
-            key = "n",
-            desc = "New File",
-            action = ":ene | startinsert",
+            icon = " ",
+            key = "e",
+            desc = "Explorer",
+            action = ":lua Snacks.picker.explorer()",
           },
           {
             icon = " ",
