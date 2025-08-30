@@ -1,5 +1,7 @@
 # My very own dotfiles
 
+[![Scan for secrets 👀](https://github.com/frippz/dotfiles/actions/workflows/trufflehog.yml/badge.svg)](https://github.com/frippz/dotfiles/actions/workflows/trufflehog.yml)
+
 These dotfiles are made for [Zsh](https://www.zsh.org), so first switch over.
 
 ```zsh
