@@ -16,6 +16,80 @@ return {
     -- Dashboard
     dashboard = {
       enabled = true,
+
+      sections = {
+        {
+          section = "header",
+        },
+
+        -- Quick Actions
+        {
+          gap = 1,
+          padding = 2,
+          {
+            icon = " ",
+            key = "f",
+            desc = "Find File",
+            action = ":lua Snacks.dashboard.pick('files')",
+          },
+          {
+            icon = " ",
+            key = "n",
+            desc = "New File",
+            action = ":ene | startinsert",
+          },
+          {
+            icon = " ",
+            key = "g",
+            desc = "Find Text",
+            action = ":lua Snacks.dashboard.pick('live_grep')",
+          },
+          {
+            icon = " ",
+            key = "s",
+            desc = "Restore Session",
+            section = "session",
+          },
+          {
+            icon = "󰒲 ",
+            key = "L",
+            desc = "Lazy",
+            action = ":Lazy",
+            enabled = package.loaded.lazy ~= nil,
+          },
+          {
+            icon = "",
+            key = "M",
+            desc = "Mason",
+            action = ":Mason",
+          },
+          {
+            icon = " ",
+            key = "q",
+            desc = "Quit",
+            action = ":qa",
+          },
+        },
+
+        -- Git Status
+        {
+          icon = " ",
+          title = "Git Status",
+          section = "terminal",
+          enabled = function()
+            return Snacks.git.get_root() ~= nil
+          end,
+          cmd = "git status --short --branch --renames",
+          height = 5,
+          gap = 2,
+          ttl = 5 * 60,
+          indent = 3,
+        },
+
+        {
+          section = "startup",
+        },
+      },
     },
 
     -- Explorer
