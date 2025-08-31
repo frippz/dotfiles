@@ -38,8 +38,4 @@ return {
       desc = "LSP references (Trouble)",
     },
   },
-
-  config = function()
-    require("trouble").setup({})
-  end,
 }
