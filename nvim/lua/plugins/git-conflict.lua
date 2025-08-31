@@ -2,6 +2,6 @@
 
 return {
   "akinsho/git-conflict.nvim",
-  version = "*",
+  version = "v2.*",
   config = true,
 }
