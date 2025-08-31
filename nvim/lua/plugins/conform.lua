@@ -24,7 +24,7 @@ return {
 
     formatters_by_ft = {
       astro = { "prettierd" },
-      bash = { "beautysh" },
+      bash = { "shfmt" },
       css = { "prettierd" },
       html = { "lsp" },
       javascript = { "prettierd" },
