@@ -13,6 +13,11 @@ return {
       enabled = true,
     },
 
+    -- Bufdelete - Delete buffers without disrupting window layout
+    bufdelete = {
+      enabled = true,
+    },
+
     -- Dashboard
     dashboard = {
       enabled = true,
@@ -211,6 +216,16 @@ return {
       "<leader>fg",
       ":lua Snacks.picker.grep()<cr>",
       desc = "Toggle search",
+    },
+    {
+      "<Leader>bc",
+      ":lua Snacks.bufdelete()<cr>",
+      desc = "Close current buffer",
+    },
+    {
+      "<Leader>bk",
+      ":lua Snacks.bufdelete.other()<cr>",
+      desc = "Close others buffers",
     },
   },
 }
