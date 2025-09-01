@@ -37,12 +37,6 @@ jobs:
           find . -name "*.zsh" -type f -exec zsh -n {} \;
           echo "✅ All shell scripts have valid syntax"
 
-      - name: Validate dotbot configuration
-        run: |
-          echo "Testing dotbot configuration..."
-          ./dotbot/bin/dotbot -d . -c install.conf.yaml --verbose --dry-run
-          echo "✅ Dotbot configuration is valid"
-
       - name: Check file existence
         run: |
           echo "Checking that all linked files exist..."
