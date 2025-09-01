@@ -40,7 +40,7 @@ jobs:
       - name: Validate dotbot configuration
         run: |
           echo "Testing dotbot configuration..."
-          ./dotbot/dotbot/bin/dotbot -d . -c install.conf.yaml --verbose --dry-run
+          ./dotbot/bin/dotbot -d . -c install.conf.yaml --verbose --dry-run
           echo "✅ Dotbot configuration is valid"
 
       - name: Check file existence
