@@ -1,0 +1,133 @@
+name: Test Dotfiles 🧪
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyyaml
+
+    - name: Validate YAML syntax
+      run: |
+        python -c "import yaml; yaml.safe_load(open('install.conf.yaml'))"
+        echo "✅ install.conf.yaml is valid YAML"
+
+    - name: Check shell script syntax
+      run: |
+        echo "Checking shell script syntax..."
+        find . -name "*.sh" -type f -exec bash -n {} \;
+        find . -name "*.zsh" -type f -exec zsh -n {} \;
+        echo "✅ All shell scripts have valid syntax"
+
+    - name: Validate dotbot configuration
+      run: |
+        echo "Testing dotbot configuration..."
+        python dotbot/dotbot/bin/dotbot -d . -c install.conf.yaml --verbose --dry-run
+        echo "✅ Dotbot configuration is valid"
+
+    - name: Check file existence
+      run: |
+        echo "Checking that all linked files exist..."
+        python -c "
+        import yaml
+        import os
+        with open('install.conf.yaml', 'r') as f:
+            config = yaml.safe_load(f)
+
+        missing_files = []
+        for section in config:
+            if 'link' in section:
+                for link in section['link']:
+                    if isinstance(link, dict):
+                        for target, source in link.items():
+                            if not source.startswith('~'):
+                                if not os.path.exists(source):
+                                    missing_files.append(source)
+                    else:
+                        # Handle simple string format
+                        source = link
+                        if not source.startswith('~') and not os.path.exists(source):
+                            missing_files.append(source)
+
+        if missing_files:
+            print('❌ Missing files:', missing_files)
+            exit(1)
+        else:
+            print('✅ All linked files exist')
+        "
+
+    - name: Check git submodules
+      run: |
+        echo "Checking git submodules..."
+        git submodule status
+        echo "✅ Git submodules are properly configured"
+
+    - name: Validate specific config files
+      run: |
+        echo "Validating specific configuration files..."
+
+        # Check if tmux config exists and has content
+        if [ -f "tmux/tmux.conf" ] && [ -s "tmux/tmux.conf" ]; then
+          echo "✅ tmux/tmux.conf exists and has content"
+        else
+          echo "❌ tmux/tmux.conf is missing or empty"
+          exit 1
+        fi
+
+        # Check if nvim config exists and has content
+        if [ -f "nvim/init.lua" ] && [ -s "nvim/init.lua" ]; then
+          echo "✅ nvim/init.lua exists and has content"
+        else
+          echo "❌ nvim/init.lua is missing or empty"
+          exit 1
+        fi
+
+        # Check if zsh config exists and has content
+        if [ -f "zsh/zshrc" ] && [ -s "zsh/zshrc" ]; then
+          echo "✅ zsh/zshrc exists and has content"
+        else
+          echo "❌ zsh/zshrc is missing or empty"
+          exit 1
+        fi
+
+    - name: Test install script permissions
+      run: |
+        echo "Checking script permissions..."
+        if [ -x "install" ]; then
+          echo "✅ install script is executable"
+        else
+          echo "❌ install script is not executable"
+          exit 1
+        fi
+
+        if [ -x "homebrew/install.sh" ]; then
+          echo "✅ homebrew/install.sh is executable"
+        else
+          echo "❌ homebrew/install.sh is not executable"
+          exit 1
+        fi
+
+        if [ -x "node/install.sh" ]; then
+          echo "✅ node/install.sh is executable"
+        else
+          echo "❌ node/install.sh is not executable"
+          exit 1
+        fi
