@@ -6,27 +6,25 @@ return {
 
   build = ":TSUpdate",
 
-  config = function()
-    require("nvim-treesitter.configs").setup({
-      ensure_installed = {
-        "css",
-        "diff",
-        "git_rebase",
-        "gitcommit",
-        "gitignore",
-        "javascript",
-        "jsdoc",
-        "lua",
-        "markdown",
-        "regex",
-        "scss",
-        "svelte",
-        "typescript",
-      },
-      auto_install = true,
-      highlight = {
-        enable = true,
-      },
-    })
-  end,
+  auto_install = true,
+
+  highlight = {
+    enable = true,
+  },
+
+  ensure_installed = {
+    "css",
+    "diff",
+    "git_rebase",
+    "gitcommit",
+    "gitignore",
+    "javascript",
+    "jsdoc",
+    "lua",
+    "markdown",
+    "regex",
+    "scss",
+    "svelte",
+    "typescript",
+  },
 }
