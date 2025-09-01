@@ -59,6 +59,10 @@ return {
 
     -- Customize formatters
     formatters = {
+      ruff = {
+        command = "ruff",
+        args = { "format", "--stdin-filename", "%", "-" },
+      },
       shfmt = {
         append_args = { "-i", "2" },
       },
