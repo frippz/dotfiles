@@ -5,7 +5,7 @@ g.mapleader = " "
 map("n", "<Leader>w", ":w<CR>", { desc = "Save file" })
 
 -- Save with no autocmd
-map("n", "<Leader>n", ":noa w<CR>", { desc = "Save file (no autocmd)" })
+-- map("n", "<Leader>n", ":noa w<CR>", { desc = "Save file (no autocmd)" })
 
 -- Quickly reload init.lua
 map("n", "<Leader>sv", ":luafile ~/.config/nvim/init.lua<CR>", { desc = "Reload init.lua" })

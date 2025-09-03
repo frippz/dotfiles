@@ -227,5 +227,12 @@ return {
       ":lua Snacks.bufdelete.other()<cr>",
       desc = "Close others buffers",
     },
+    {
+      "<leader>n",
+      function()
+        Snacks.picker.notifications()
+      end,
+      desc = "Notification History",
+    },
   },
 }
