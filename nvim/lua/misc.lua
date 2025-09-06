@@ -87,3 +87,12 @@ nvimCmd("set ssop-=folds") -- do not store folds
 
 -- Make copy operations work with the clipboard
 o.clipboard = "unnamed"
+
+-- Nice and simple folding:
+o.foldenable = true
+o.foldlevel = 99
+o.foldmethod = "expr"
+o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+o.foldtext = ""
+o.foldcolumn = "1"
+o.fillchars:append({ fold = " " })
