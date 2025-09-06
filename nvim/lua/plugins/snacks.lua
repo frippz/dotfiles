@@ -229,9 +229,7 @@ return {
     },
     {
       "<leader>n",
-      function()
-        Snacks.picker.notifications()
-      end,
+      ":lua Snacks.picker.notifications()<cr>",
       desc = "Notification History",
     },
   },
