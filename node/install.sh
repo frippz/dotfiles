@@ -2,11 +2,10 @@
 
 source $HOME/.dotfiles/zsh/msg.zsh
 
-GLOBAL_VERSION="22.11.0"
+GLOBAL_VERSION="22.18.0"
 
 VERSIONS=(
-  "20.16.0"
-  "22.11.0"
+  "22.18.0"
 )
 
 PLUGINS=(
@@ -30,14 +29,14 @@ DIR="$(cd "$(dirname "$0")" && pwd)"
 set -e
 
 # Install nodenv
-if command -v git > /dev/null 2>&1; then
-  if ! command -v nodenv > /dev/null 2>&1; then
+if command -v git >/dev/null 2>&1; then
+  if ! command -v nodenv >/dev/null 2>&1; then
     msg_info "Installing nodenv using git"
 
     git clone https://github.com/nodenv/nodenv.git $NODENV_HOME
 
     # Compile dynamic extensions
-    if command -v make > /dev/null 2>&1; then
+    if command -v make >/dev/null 2>&1; then
       msg_info "Compiling dynamic extensions for nodenv"
       cd $NODENV_HOME && src/configure && make -C src
     else
@@ -80,7 +79,7 @@ if [ -d $HOME/.nodenv ]; then
 fi
 
 # nodenv update
-if command -v nodenv > /dev/null 2>&1; then
+if command -v nodenv >/dev/null 2>&1; then
 
   msg_info "Running nodenv update"
   nodenv update
