@@ -178,7 +178,13 @@ return {
     },
 
     -- Notifier
-    notifier = { enabled = true },
+    notifier = {
+      enabled = true,
+
+      ---@type snacks.notifier.style
+      style = "fancy",
+      top_down = false,
+    },
 
     -- Quickfile
     quickfile = { enabled = true },
