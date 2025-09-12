@@ -8,7 +8,6 @@ return {
 
   keys = {
     {
-      -- Customize or remove this keymap to your liking
       "<leader>F",
       function()
         require("conform").format({ async = true })
