@@ -4,6 +4,8 @@ return {
   priority = 1000,
   lazy = false,
 
+  dependencies = { "nvim-mini/mini.icons" },
+
   ---@module 'snacks'
   ---@type snacks.Config
   opts = {
@@ -124,6 +126,9 @@ return {
 
       sources = {
         explorer = {
+
+          include = { ".github", ".gitignore", ".env" },
+
           actions = {
 
             -- Custom action to copy file path in file picker
