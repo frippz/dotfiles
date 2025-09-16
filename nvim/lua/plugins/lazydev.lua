@@ -10,6 +10,7 @@ return {
       "conform",
       "lazy.nvim",
       "blink",
+      "oil",
       "snacks",
     },
   },
