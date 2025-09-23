@@ -6,6 +6,8 @@ return {
 
   cmd = "Trouble",
 
+  opts = {},
+
   keys = {
     {
       "<leader>xx",
