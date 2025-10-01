@@ -15,6 +15,12 @@ return {
   opts = {
     completion = {
 
+      accept = {
+        auto_brackets = {
+          enabled = true,
+        },
+      },
+
       documentation = {
         auto_show = true,
         auto_show_delay_ms = 250,
@@ -116,7 +122,7 @@ return {
     },
 
     sources = {
-      default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+      default = { "lazydev", "lsp", "path", "buffer" },
       providers = {
         lazydev = {
           name = "LazyDev",
@@ -134,6 +140,7 @@ return {
         snippets = {
           min_keyword_length = 3,
           score_offset = 0,
+          enabled = false,
         },
         -- buffer = {
         --   min_keyword_length = 2,
