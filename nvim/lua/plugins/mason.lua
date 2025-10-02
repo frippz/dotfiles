@@ -30,7 +30,7 @@ return {
         "cssls",
         "css_variables",
         "eslint",
-        "emmet_ls",
+        "emmet_language_server",
         "graphql",
         "html",
         "lua_ls",
