@@ -29,65 +29,43 @@ return {
   },
 
   config = function()
-    local lspconfig = require("lspconfig")
+    -- capabilities from your completion plugin
+    local capabilities = require("blink.cmp").get_lsp_capabilities({
+      textDocument = { completion = { completionItem = { snippetSupport = false } } },
+    })
 
-    -- used to enable autocompletion (assign to every lsp server config)
-    local capabilities = require("blink.cmp").get_lsp_capabilities()
-
-    -- custom diagnostic symbols in the gutter
+    -- gutter signs
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    -- typescript
-    -- lspconfig.ts_ls.setup({
-    --   capabilities = capabilities,
-    --   root_dir = lspconfig.util.root_pattern("package.json"),
-    --   single_file_support = false,
-    -- })
-
-    -- astro
-    lspconfig.astro.setup({
+    -- global defaults (applies to all servers unless overridden)
+    vim.lsp.config("*", {
       capabilities = capabilities,
+      -- put other shared defaults here, e.g. on_attach if you have one
     })
 
-    -- deno
-    lspconfig.denols.setup({
-      capabilities = capabilities,
-      root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc", "deno.lock"),
+    -- server configs
+    vim.lsp.config("astro", {})
+
+    vim.lsp.config("denols", {
+      root_markers = { "deno.json", "deno.jsonc", "deno.lock" },
     })
 
-    -- eslint
-    lspconfig.eslint.setup({
-      capabilities = capabilities,
-      ---@diagnostic disable-next-line unused-local
-      on_attach = function(client, bufnr)
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          buffer = bufnr,
-          command = "EslintFixAll",
-        })
-      end,
+    vim.lsp.config("eslint", {
+      root_markers = { "tsconfig.json", "package.json", "jsconfig.json", ".git" },
+      cmd = { "EslintFixAll" },
     })
 
-    -- bash
-    lspconfig.bashls.setup({
-      capabilities = capabilities,
-    })
+    vim.lsp.config("bashls", {})
 
-    -- cssls
-    lspconfig.cssls.setup({
-      capabilities = capabilities,
-    })
+    vim.lsp.config("cssls", {})
 
-    -- css variables completion
-    lspconfig.css_variables.setup({
-      capabilities = capabilities,
-    })
+    vim.lsp.config("css_variables", {})
 
-    -- stylelint
-    lspconfig.stylelint_lsp.setup({
+    vim.lsp.config("stylelint_lsp", {
       filetypes = { "css", "scss" },
       settings = {
         stylelintplus = {
@@ -95,32 +73,57 @@ return {
           autoFixOnFormat = true,
         },
       },
-      capabilities = capabilities,
     })
 
-    -- svelte
-    lspconfig.svelte.setup({
-      capabilities = capabilities,
+    vim.lsp.config("svelte", {
+      init_options = {
+        configuration = {
+          svelte = {
+            plugin = {
+              svelte = {
+                completions = {
+                  enable = true,
+                  insertSnippets = false, -- this disables snippets
+                },
+              },
+            },
+          },
+        },
+      },
     })
 
-    -- python
-    lspconfig.ruff.setup({
-      capabilities = capabilities,
+    vim.lsp.config("ts_ls", {
+      filetypes = {
+        "typescript",
+        "javascript",
+        -- "svelte",
+      },
+      single_file_support = false,
+      root_markers = { "package.json" },
     })
 
-    -- html
-    lspconfig.html.setup({
-      capabilities = capabilities,
-    })
+    vim.lsp.config("ruff", {})
 
-    -- lua
-    lspconfig.lua_ls.setup({
-      capabilities = capabilities,
-    })
+    vim.lsp.config("html", {})
 
-    -- yaml
-    lspconfig.yamlls.setup({
-      capabilities = capabilities,
+    vim.lsp.config("lua_ls", {})
+
+    vim.lsp.config("yamlls", {})
+
+    vim.lsp.enable({
+      "astro",
+      "bashls",
+      "css_variables",
+      "cssls",
+      "denols",
+      "eslint",
+      "html",
+      "lua_ls",
+      "ruff",
+      "stylelint_lsp",
+      "svelte",
+      "ts_ls",
+      "yamlls",
     })
   end,
 }
