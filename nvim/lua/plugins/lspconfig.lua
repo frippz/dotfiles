@@ -59,6 +59,10 @@ return {
       cmd = { "EslintFixAll" },
     })
 
+    vim.lsp.config("emmet_language_server", {
+      filetypes = { "html" },
+    })
+
     vim.lsp.config("bashls", {})
 
     vim.lsp.config("cssls", {})
