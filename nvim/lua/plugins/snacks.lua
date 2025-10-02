@@ -240,7 +240,8 @@ return {
     },
     {
       "<leader>n",
-      ":lua Snacks.picker.notifications()<cr>",
+      -- ":lua Snacks.picker.notifications()<cr>",
+      ":lua Snacks.notifier.show_history()<cr>",
       desc = "Notification History",
     },
   },
