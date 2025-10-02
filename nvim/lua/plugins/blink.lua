@@ -4,7 +4,7 @@ return {
   "saghen/blink.cmp",
 
   dependencies = {
-    -- "rafamadriz/friendly-snippets",
+    "rafamadriz/friendly-snippets",
     "onsails/lspkind.nvim",
   },
 
@@ -137,11 +137,10 @@ return {
         --   min_keyword_length = 2,
         --   score_offset = 1, -- Boost/penalize the score of the items
         -- },
-        snippets = {
-          min_keyword_length = 3,
-          score_offset = 0,
-          enabled = false,
-        },
+        -- snippets = {
+        --   min_keyword_length = 4,
+        --   score_offset = 0, -- Boost/penalize the score of the items
+        -- },
         -- buffer = {
         --   min_keyword_length = 2,
         --   max_items = 5,
