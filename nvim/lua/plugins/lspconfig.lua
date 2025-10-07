@@ -79,22 +79,7 @@ return {
       },
     })
 
-    vim.lsp.config("svelte", {
-      init_options = {
-        configuration = {
-          svelte = {
-            plugin = {
-              svelte = {
-                completions = {
-                  enable = true,
-                  insertSnippets = false, -- this disables snippets
-                },
-              },
-            },
-          },
-        },
-      },
-    })
+    vim.lsp.config("svelte", {})
 
     vim.lsp.config("ts_ls", {
       filetypes = {
