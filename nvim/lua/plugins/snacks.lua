@@ -37,19 +37,19 @@ return {
             icon = " ",
             key = "f",
             desc = "Find File",
-            action = ":lua Snacks.dashboard.pick('files')",
+            action = ":lua Snacks.dashboard.pick('files')<cr>",
           },
           {
             icon = " ",
             key = "e",
             desc = "Explorer",
-            action = ":lua Snacks.picker.explorer()",
+            action = ":lua Snacks.picker.explorer()<cr>",
           },
           {
             icon = " ",
             key = "g",
             desc = "Find Text",
-            action = ":lua Snacks.dashboard.pick('live_grep')",
+            action = ":lua Snacks.dashboard.pick('live_grep')<cr>",
           },
           {
             icon = " ",
@@ -61,7 +61,7 @@ return {
             icon = " ",
             key = "O",
             desc = "Overseer",
-            action = ":lua require('overseer').run_template()",
+            action = ":lua require('overseer').run_template()<cr>",
           },
           {
             icon = "󰒲 ",
@@ -240,9 +240,28 @@ return {
     },
     {
       "<leader>n",
-      -- ":lua Snacks.picker.notifications()<cr>",
       ":lua Snacks.notifier.show_history()<cr>",
       desc = "Notification History",
+    },
+    {
+      "gR",
+      ":lua Snacks.picker.lsp_references()<cr>",
+      desc = "LSP references",
+    },
+    {
+      "gi",
+      ":lua Snacks.picker.lsp_implementations()<cr>",
+      desc = "LSP implementations",
+    },
+    {
+      "<leader>gt",
+      ":lua Snacks.picker.lsp_type_definitions()<cr>",
+      desc = "LSP type definitions",
+    },
+    {
+      "<leader>D",
+      ":lua Snacks.picker.diagnostics()<cr>",
+      desc = "Buffer diagnostics",
     },
   },
 }

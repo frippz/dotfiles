@@ -11,19 +11,27 @@ return {
   },
 
   keys = {
-    { "gR", "<cmd>Telescope lsp_references<CR>", desc = "Show LSP references" },
     { "gr", vim.lsp.buf.references, desc = "Show references (vim.lsp.buf)" },
     { "gD", vim.lsp.buf.declaration, desc = "Go to declaration" },
     { "gd", vim.lsp.buf.definition, desc = "Show LSP definitions" },
-    { "gi", "<cmd>Telescope lsp_implementations<CR>", desc = "Show LSP implementations" },
     { "gI", vim.lsp.buf.implementation, desc = "Go to implementation" },
-    { "<leader>gt", "<cmd>Telescope lsp_type_definitions<CR>", desc = "Show LSP type definitions" },
     { "<leader>ca", vim.lsp.buf.code_action, { "n", "v" }, desc = "See available code actions" },
     { "<leader>rn", vim.lsp.buf.rename, desc = "Smart rename" },
-    { "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", desc = "Show buffer diagnostics" },
     { "<leader>d", vim.diagnostic.open_float, desc = "Show line diagnostics" },
-    -- { "<leader>dp", vim.diagnostic.jump({ count = -1, float = true }), desc = "Go to previous diagnostic" },
-    -- { "<leader>dn", vim.diagnostic.jump({ count = 1, float = true }), desc = "Go to next diagnostic" },
+    {
+      "dp",
+      function()
+        vim.diagnostic.jump({ count = -1, float = true })
+      end,
+      desc = "Go to previous diagnostic",
+    },
+    {
+      "dn",
+      function()
+        vim.diagnostic.jump({ count = 1, float = true })
+      end,
+      desc = "Go to next diagnostic",
+    },
     { "K", vim.lsp.buf.hover, desc = "Show documentation for what is under cursor" },
     { "<leader>rs", ":LspRestart<CR>", desc = "Restart LSP" },
   },
