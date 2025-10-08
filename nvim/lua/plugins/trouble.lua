@@ -34,10 +34,5 @@ return {
       "<cmd>Trouble quickfix<cr>",
       desc = "Quickfix List (Trouble)",
     },
-    {
-      "gR",
-      "<cmd>TroubleToggle lsp_references<cr>",
-      desc = "LSP references (Trouble)",
-    },
   },
 }
