@@ -37,19 +37,19 @@ return {
             icon = " ",
             key = "f",
             desc = "Find File",
-            action = ":lua Snacks.dashboard.pick('files')<cr>",
+            action = ":lua Snacks.dashboard.pick('files')",
           },
           {
             icon = " ",
             key = "e",
             desc = "Explorer",
-            action = ":lua Snacks.picker.explorer()<cr>",
+            action = ":lua Snacks.picker.explorer()",
           },
           {
             icon = " ",
             key = "g",
             desc = "Find Text",
-            action = ":lua Snacks.dashboard.pick('live_grep')<cr>",
+            action = ":lua Snacks.dashboard.pick('live_grep')",
           },
           {
             icon = " ",
@@ -61,7 +61,7 @@ return {
             icon = " ",
             key = "O",
             desc = "Overseer",
-            action = ":lua require('overseer').run_template()<cr>",
+            action = ":lua require('overseer').run_template()",
           },
           {
             icon = "󰒲 ",
