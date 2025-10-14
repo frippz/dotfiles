@@ -38,7 +38,7 @@ return {
       typescript = { "prettierd" },
       typescriptreact = { "prettierd" },
       yaml = { "prettierd" },
-      zsh = { "shfmt" },
+      zsh = { "lsp" },
 
       -- Use the "_" filetype to run formatters on filetypes that don't
       -- have other formatters configured.
