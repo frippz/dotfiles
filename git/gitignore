@@ -18,6 +18,9 @@ yarn-error.log*
 .vimsession
 .cursorrules
 
+# GitHub/Co-pilot
+.github/copilot-instructions.md
+
 # Thumbnail cache files
 ._*
 Thumbs.db
