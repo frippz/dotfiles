@@ -127,7 +127,16 @@ return {
       sources = {
         explorer = {
 
-          include = { ".github", ".gitignore", ".env" },
+          include = {
+            ".*ignore",
+            ".env",
+            ".github",
+            ".node-version",
+            ".nvmrc",
+            ".prettierrc",
+            ".ruby-version",
+            ".stylelintrc",
+          },
 
           actions = {
 
