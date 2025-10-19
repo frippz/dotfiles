@@ -1,10 +1,27 @@
 return {
-  "github/copilot.vim",
+  "zbirenbaum/copilot.lua",
 
-  event = { "InsertEnter" },
+  cmd = "Copilot",
+  build = ":Copilot auth",
+  event = "BufReadPost",
 
-  init = function()
-    vim.g.copilot_no_tab_map = true
-    vim.g.copilot_workspace_folders = { vim.fn.getcwd() }
-  end,
+  opts = {
+    suggestion = {
+      enabled = not vim.g.ai_cmp,
+      auto_trigger = true,
+      hide_during_completion = vim.g.ai_cmp,
+      keymap = {
+        accept = "<C-y>", -- handled by nvim-cmp / blink.cmp
+        -- next = "<M-]>",
+        -- prev = "<M-[>",
+      },
+    },
+
+    panel = { enabled = false },
+
+    filetypes = {
+      markdown = true,
+      help = true,
+    },
+  },
 }
