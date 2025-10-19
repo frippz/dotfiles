@@ -96,7 +96,6 @@ return {
       filetypes = {
         "typescript",
         "javascript",
-        -- "svelte",
       },
       single_file_support = false,
       root_markers = { "package.json" },
