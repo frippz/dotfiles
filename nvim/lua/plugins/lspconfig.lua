@@ -59,7 +59,10 @@ return {
     vim.lsp.config("astro", {})
 
     vim.lsp.config("denols", {
-      root_markers = { "deno.json", "deno.jsonc", "deno.lock" },
+      root_dir = function(fname)
+        local util = require("lspconfig.util")
+        return util.root_pattern("deno.json", "deno.jsonc", "deno.lock")(fname)
+      end,
     })
 
     vim.lsp.config("eslint", {
