@@ -1,6 +1,7 @@
 # Taps
 tap "neovim/neovim"
 tap "epk/epk"
+tap "natesales/repo"
 
 # Packages
 brew "autoconf"
@@ -33,6 +34,7 @@ brew "luarocks"
 brew "neovim"
 brew "node@22"
 brew "pnpm"
+brew "q"
 brew "reattach-to-user-namespace"
 brew "ripgrep"
 brew "speedtest-cli"
