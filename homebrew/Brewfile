@@ -1,7 +1,7 @@
 # Taps
 tap "neovim/neovim"
 tap "epk/epk"
-tap "natesales/repo"
+tap "natesales/repo", "https://github.com/natesales/repo"
 
 # Packages
 brew "autoconf"
@@ -32,7 +32,7 @@ brew "libtool"
 brew "lua-language-server"
 brew "luarocks"
 brew "neovim"
-brew "node@22"
+brew "node@22", link: :overwrite
 brew "pnpm"
 brew "q"
 brew "reattach-to-user-namespace"
