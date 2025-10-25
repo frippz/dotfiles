@@ -129,7 +129,7 @@ return {
 
           include = {
             ".*ignore",
-            ".env",
+            ".env*",
             ".github",
             ".node-version",
             ".nvmrc",
