@@ -110,6 +110,11 @@ return {
       enabled = true,
     },
 
+    -- GitHub CLI
+    gh = {
+      enabled = true,
+    },
+
     -- Indent
     indent = {
       enabled = true,
@@ -271,6 +276,36 @@ return {
       "<leader>D",
       ":lua Snacks.picker.diagnostics()<cr>",
       desc = "Buffer diagnostics",
+    },
+
+    -- GitHub
+    {
+      "<leader>gi",
+      function()
+        Snacks.picker.gh_issue()
+      end,
+      desc = "GitHub Issues (open)",
+    },
+    {
+      "<leader>gI",
+      function()
+        Snacks.picker.gh_issue({ state = "all" })
+      end,
+      desc = "GitHub Issues (all)",
+    },
+    {
+      "<leader>gp",
+      function()
+        Snacks.picker.gh_pr()
+      end,
+      desc = "GitHub Pull Requests (open)",
+    },
+    {
+      "<leader>gP",
+      function()
+        Snacks.picker.gh_pr({ state = "all" })
+      end,
+      desc = "GitHub Pull Requests (all)",
     },
   },
 }
