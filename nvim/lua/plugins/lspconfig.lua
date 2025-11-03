@@ -52,7 +52,6 @@ return {
     -- global defaults (applies to all servers unless overridden)
     vim.lsp.config("*", {
       capabilities = capabilities,
-      -- put other shared defaults here, e.g. on_attach if you have one
     })
 
     -- server configs
