@@ -141,6 +141,8 @@ return {
             ".prettierrc",
             ".ruby-version",
             ".stylelintrc",
+            ".moon",
+            ".husky",
           },
 
           actions = {
