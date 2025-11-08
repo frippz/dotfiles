@@ -5,6 +5,7 @@ source $HOME/.dotfiles/zsh/msg.zsh
 # Global packages to install with PNPM
 PACKAGES=(
   "@anthropic-ai/claude-code"
+  "@github/copilot"
   "neovim"
   "npm-check-updates"
   "wrangler"
