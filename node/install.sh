@@ -2,8 +2,9 @@
 
 source $HOME/.dotfiles/zsh/msg.zsh
 
-# Global packages to install with npm (merged from default-packages)
+# Global packages to install with PNPM
 PACKAGES=(
+  "@anthropic-ai/claude-code"
   "neovim"
   "npm-check-updates"
   "wrangler"
@@ -12,16 +13,16 @@ PACKAGES=(
 
 set -e
 
-# Check if Node.js is available (via Homebrew)
-if command -v node >/dev/null 2>&1 && command -v npm >/dev/null 2>&1; then
+# Check if Node.js is available
+if command -v node >/dev/null 2>&1 && command -v pnpm >/dev/null 2>&1; then
   msg_info "Node.js found. Installing global packages..."
 
   for PACKAGE in ${PACKAGES[@]}; do
-    if npm list -g "$PACKAGE" >/dev/null 2>&1; then
+    if pnpm list -g --depth 0 2>/dev/null | grep -q "$PACKAGE"; then
       msg_done "$PACKAGE is already installed globally. Skipping..."
     else
       msg_info "Installing $PACKAGE globally"
-      npm install -g "$PACKAGE"
+      pnpm install -g "$PACKAGE"
     fi
   done
 
