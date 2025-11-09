@@ -1,6 +1,6 @@
 # Check if HOMEBREW_PREFIX is set
 if [[ -z "${HOMEBREW_PREFIX}" ]]; then
-  PREFIX="/usr/local"
+  PREFIX="/opt/homebrew"
 else
   PREFIX="${HOMEBREW_PREFIX}"
 fi
