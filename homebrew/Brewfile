@@ -32,7 +32,7 @@ brew "node@22", link: :overwrite
 brew "pnpm"
 brew "q"
 brew "ripgrep"
-brew "speedtest-cli"
+brew "speedtest"
 brew "tmux"
 brew "tree"
 brew "unzip"
