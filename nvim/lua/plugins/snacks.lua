@@ -138,6 +138,7 @@ return {
             ".github",
             ".node-version",
             ".nvmrc",
+            ".npmrc",
             ".prettierrc",
             ".ruby-version",
             ".stylelintrc",
