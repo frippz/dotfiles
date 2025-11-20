@@ -21,6 +21,9 @@ case "$OSTYPE" in
     alias df="df -H"
     alias dfl="df -T --type btrfs --type ext4 --type ext3 --type ext2 --type vfat --type iso9660 --type nfs --type cifs"
     alias free="free -wh"
+
+    # Theme toggle - must be sourced to affect current shell
+    alias toggleTermTheme="source ~/.dotfiles/system/toggleTermTheme.sh"
     ;;
 esac
 
