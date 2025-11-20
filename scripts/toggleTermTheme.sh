@@ -6,8 +6,10 @@ if [[ "$OSTYPE" != "linux"* ]]; then
   exit 0
 fi
 
-# Toggle the theme
-if [ "$TERM_THEME" = "dark" ]; then
+# Toggle the theme (default to light if unset)
+if [ -z "$TERM_THEME" ]; then
+  export TERM_THEME="light"
+elif [ "$TERM_THEME" = "dark" ]; then
   export TERM_THEME="light"
 else
   export TERM_THEME="dark"
