@@ -20,7 +20,7 @@ case "$OSTYPE" in
 
     fi
     ;;
-  *)
+  *darwin*)
     echo ""
     echo " ⏭  Skipping zoxide installation (Linux only)"
     echo ""
