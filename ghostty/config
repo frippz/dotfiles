@@ -27,6 +27,7 @@ quit-after-last-window-closed = true
 link-url = true
 shell-integration-features = no-title
 window-inherit-working-directory = false
+shell-integration-features = ssh-terminfo
 
 ##
 # Keybindings
