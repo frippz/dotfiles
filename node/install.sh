@@ -14,9 +14,9 @@ PACKAGES=(
 
 set -e
 
-# Check if Node.js is available
-if command -v node >/dev/null 2>&1 && command -v pnpm >/dev/null 2>&1; then
-  msg_info "Node.js found. Installing global packages..."
+# Check if PNPM is available
+if command -v pnpm >/dev/null 2>&1; then
+  msg_info "PNPM found. Installing global packages..."
 
   for PACKAGE in ${PACKAGES[@]}; do
     if pnpm list -g --depth 0 2>/dev/null | grep -q "$PACKAGE"; then
@@ -29,6 +29,6 @@ if command -v node >/dev/null 2>&1 && command -v pnpm >/dev/null 2>&1; then
 
   msg_done "Global package installation complete"
 else
-  msg_fail "Node.js not found. Please install Node.js via Homebrew first."
+  msg_fail "PNPM not found. Please install PNPM via Homebrew first."
   exit 1
 fi
