@@ -3,7 +3,7 @@
 # Install zoxide on Linux systems
 
 case "$OSTYPE" in
-  linux*)
+  *linux*)
     if ! command -v zoxide >/dev/null 2>&1 ; then
 
       echo ""
