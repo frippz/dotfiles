@@ -2,28 +2,25 @@
 #
 # Install zoxide on Linux systems
 
+source $HOME/.dotfiles/zsh/msg.zsh
+
 case "$OSTYPE" in
   *linux*)
     if ! command -v zoxide >/dev/null 2>&1 ; then
 
-      echo ""
-      echo "  ✅ Installing zoxide"
-      echo ""
+      msg_info "Installing zoxide"
 
       curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
 
     else
 
-      echo ""
-      echo " ⏭  zoxide is already installed! 👍"
-      echo ""
+      msg_info "zoxide is already installed! 👍"
 
     fi
     ;;
+
   *darwin*)
-    echo ""
-    echo " ⏭  Skipping zoxide installation (Linux only)"
-    echo ""
+    msg_warn "Skipping zoxide installation (Linux only)"
     ;;
 esac
 
