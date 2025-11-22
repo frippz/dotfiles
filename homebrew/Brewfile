@@ -1,7 +1,8 @@
 # Taps
-tap "neovim/neovim"
 tap "epk/epk"
 tap "natesales/repo", "https://github.com/natesales/repo"
+tap "neovim/neovim"
+tap "teamookla/speedtest"
 
 # Packages
 brew "autoconf"
