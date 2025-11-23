@@ -20,7 +20,8 @@ if command -v pnpm >/dev/null 2>&1; then
 
   for PACKAGE in ${PACKAGES[@]}; do
     if pnpm list -g --depth 0 2>/dev/null | grep -q "$PACKAGE"; then
-      msg_done "$PACKAGE is already installed globally. Skipping..."
+      msg_done "$PACKAGE is already installed globally. Checking for updates instead."
+      pnpm update -g "$PACKAGE"
     else
       msg_info "Installing $PACKAGE globally"
       pnpm install -g "$PACKAGE"
