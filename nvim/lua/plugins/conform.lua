@@ -26,8 +26,8 @@ return {
       bash = { "shfmt" },
       css = { "prettierd" },
       html = { "lsp" },
-      javascript = { "prettierd" },
-      javascriptreact = { "prettierd" },
+      javascript = { "prettierd", "eslint_d" },
+      javascriptreact = { "prettierd", "eslint_d" },
       json = { "prettierd" },
       lua = { "stylua" },
       markdown = { "prettierd" },
@@ -35,10 +35,10 @@ return {
       scss = { "prettierd" },
       sh = { "beautysh" },
       svelte = { "lsp" },
-      typescript = { "prettierd" },
-      typescriptreact = { "prettierd" },
+      typescript = { "prettierd", "eslint_d" },
+      typescriptreact = { "prettierd", "eslint_d" },
       yaml = { "prettierd" },
-      zsh = { "lsp" },
+      zsh = { "shfmt" },
 
       -- Use the "_" filetype to run formatters on filetypes that don't
       -- have other formatters configured.
@@ -58,6 +58,23 @@ return {
 
     -- Customize formatters
     formatters = {
+      prettier = {
+        condition = function(_, ctx)
+          return vim.fs.find({
+            ".prettierrc",
+            ".prettierrc.json",
+            ".prettierrc.yml",
+            ".prettierrc.yaml",
+            ".prettierrc.json5",
+            ".prettierrc.js",
+            ".prettierrc.cjs",
+            ".prettierrc.mjs",
+            "prettier.config.js",
+            "prettier.config.cjs",
+            "prettier.config.mjs",
+          }, { path = ctx.filename, upward = true })[1] ~= nil
+        end,
+      },
       ruff = {
         command = "ruff",
         args = { "format", "--stdin-filename", "%", "-" },

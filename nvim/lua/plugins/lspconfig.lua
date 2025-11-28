@@ -65,7 +65,19 @@ return {
     })
 
     vim.lsp.config("eslint", {
-      root_markers = { "tsconfig.json", "package.json", "jsconfig.json", ".git" },
+      root_dir = function(fname)
+        local util = require("lspconfig.util")
+        return util.root_pattern(
+          "eslint.config.mjs",
+          "eslint.config.js",
+          ".eslintrc.js",
+          ".eslintrc.json",
+          "tsconfig.json",
+          "package.json",
+          "jsconfig.json",
+          ".git"
+        )(fname)
+      end,
       cmd = { "EslintFixAll" },
     })
 
