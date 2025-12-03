@@ -6,10 +6,13 @@ return {
 
   build = ":TSUpdate",
 
+  dependencies = { "virchau13/tree-sitter-astro" },
+
   config = function()
     ---@diagnostic disable
     require("nvim-treesitter.configs").setup({
       ensure_installed = {
+        "astro",
         "css",
         "diff",
         "git_rebase",
@@ -23,6 +26,7 @@ return {
         "scss",
         "svelte",
         "typescript",
+        "tsx",
       },
 
       auto_install = true,

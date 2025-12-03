@@ -82,7 +82,7 @@ return {
     })
 
     vim.lsp.config("emmet_language_server", {
-      filetypes = { "html" },
+      filetypes = { "html", "astro", "typescriptreact", "javascriptreact", "svelte" },
     })
 
     vim.lsp.config("bashls", {})
