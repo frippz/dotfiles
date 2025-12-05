@@ -87,7 +87,9 @@ return {
 
     vim.lsp.config("bashls", {})
 
-    vim.lsp.config("cssls", {})
+    vim.lsp.config("cssls", {
+      filetypes = { "css", "scss", "svelte", "astro" },
+    })
 
     vim.lsp.config("css_variables", {})
 
