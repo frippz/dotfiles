@@ -105,14 +105,14 @@ return {
 
     vim.lsp.config("svelte", {})
 
-    vim.lsp.config("ts_ls", {
-      filetypes = {
-        "typescript",
-        "javascript",
-      },
-      single_file_support = false,
-      root_markers = { "package.json" },
-    })
+    -- vim.lsp.config("ts_ls", {
+    --   filetypes = {
+    --     "typescript",
+    --     "javascript",
+    --   },
+    --   single_file_support = false,
+    --   root_markers = { "package.json" },
+    -- })
 
     vim.lsp.config("ruff", {})
 
