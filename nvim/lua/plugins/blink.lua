@@ -6,6 +6,7 @@ return {
   dependencies = {
     "rafamadriz/friendly-snippets",
     "onsails/lspkind.nvim",
+    "jdrupal-dev/css-vars.nvim",
   },
 
   version = "1.*",
@@ -129,10 +130,18 @@ return {
           module = "lazydev.integrations.blink",
           score_offset = 100, -- Boost to the top 🚀
         },
-        -- lsp = {
-        --   min_keyword_length = 1, -- Number of characters to trigger provider
-        --   score_offset = 3, -- Boost/penalize the score of the items
-        -- },
+        css_vars = {
+          name = "css-vars",
+          module = "css-vars.blink",
+          opts = {
+            search_extensions = { ".css", ".scss" },
+          },
+        },
+        lsp = {
+          -- min_keyword_length = 1, -- Number of characters to trigger provider
+          -- score_offset = 3, -- Boost/penalize the score of the items
+          fallbacks = {},
+        },
         -- path = {
         --   min_keyword_length = 2,
         --   score_offset = 1, -- Boost/penalize the score of the items

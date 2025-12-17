@@ -87,9 +87,14 @@ return {
 
     vim.lsp.config("bashls", {})
 
-    vim.lsp.config("cssls", {})
+    local cssCapabilities = vim.lsp.protocol.make_client_capabilities()
+    cssCapabilities.textDocument.completion.completionItem.snippetSupport = true
 
-    vim.lsp.config("css_variables", {})
+    vim.lsp.config("cssls", {
+      capabilities = cssCapabilities,
+    })
+
+    -- vim.lsp.config("css_variables", {})
 
     vim.lsp.config("stylelint_lsp", {
       filetypes = { "css", "scss" },
