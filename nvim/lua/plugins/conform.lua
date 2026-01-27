@@ -1,5 +1,12 @@
 -- Lightweight yet powerful formatter plugin for Neovim
 
+local js_formatters = {
+  "biome",
+  "biome-check",
+  "prettierd",
+  "eslint_d",
+}
+
 return {
   "stevearc/conform.nvim",
 
@@ -26,8 +33,8 @@ return {
       bash = { "shfmt" },
       css = { "prettierd" },
       html = { "lsp" },
-      javascript = { "prettierd", "eslint_d" },
-      javascriptreact = { "prettierd", "eslint_d" },
+      javascript = js_formatters,
+      javascriptreact = js_formatters,
       json = { "prettierd" },
       lua = { "stylua" },
       markdown = { "prettierd" },
@@ -35,8 +42,8 @@ return {
       scss = { "prettierd" },
       sh = { "beautysh" },
       svelte = { "lsp" },
-      typescript = { "prettierd", "eslint_d" },
-      typescriptreact = { "prettierd", "eslint_d" },
+      typescript = js_formatters,
+      typescriptreact = js_formatters,
       yaml = { "prettierd" },
       zsh = { "shfmt" },
 
