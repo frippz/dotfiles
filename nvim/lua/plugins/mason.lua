@@ -44,6 +44,7 @@ return {
     mason_tool_installer.setup({
       ensure_installed = {
         "biome",
+        "jsonlint",
         "eslint",
         "eslint_d",
         "prettierd",

@@ -35,7 +35,7 @@ return {
       html = { "lsp" },
       javascript = js_formatters,
       javascriptreact = js_formatters,
-      json = { "prettierd" },
+      json = { "jsonlint", "prettierd" },
       lua = { "stylua" },
       markdown = { "prettierd" },
       python = { "ruff" },
