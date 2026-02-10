@@ -1,0 +1,17 @@
+{
+  "rangeStrategy": "pin",
+  "extends": ["config:recommended", "schedule:weekdays"],
+  "timezone": "CET",
+  "automergeSchedule": ["after 8am and before 4pm every weekday"],
+  "major": {
+    "dependencyDashboardApproval": true
+  },
+  "addLabels": ["renovate"],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    }
+  ]
+}
