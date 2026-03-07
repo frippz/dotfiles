@@ -19,13 +19,8 @@ if command -v pnpm >/dev/null 2>&1; then
   msg_info "PNPM found. Installing global packages..."
 
   for PACKAGE in ${PACKAGES[@]}; do
-    if pnpm list -g --depth 0 2>/dev/null | grep -q "$PACKAGE"; then
-      msg_done "$PACKAGE is already installed globally. Checking for updates instead."
-      pnpm update -g "$PACKAGE"
-    else
-      msg_info "Installing $PACKAGE globally"
-      pnpm install -g "$PACKAGE"
-    fi
+    msg_info "Installing (or upgrading) $PACKAGE globally"
+    pnpm install -g "$PACKAGE"
   done
 
   msg_done "Global package installation complete"
