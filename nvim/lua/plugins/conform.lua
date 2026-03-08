@@ -29,7 +29,7 @@ return {
   opts = {
 
     formatters_by_ft = {
-      astro = { "prettierd" },
+      astro = { "biome", "prettierd" },
       bash = { "shfmt" },
       css = { "prettierd" },
       html = { "lsp" },
