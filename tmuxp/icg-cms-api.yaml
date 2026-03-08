@@ -1,0 +1,23 @@
+session_name: icg-cms-api
+start_directory: ~/dev/icg-cms-api
+shell_command_before:
+  - colima status || colima start
+
+windows:
+  - window_name: main
+    layout: "81c8,126x37,0,0{63x37,0,0[63x18,0,0,0,63x18,0,19,2],62x37,64,0[62x11,64,0,1,62x12,64,12,4,62x12,64,25,5]}"
+    panes:
+      - shell_command:
+          - pnpm run infra:start
+      - shell_command:
+          - c
+        focus: true
+      - shell_command:
+          - pnpm api dev
+        sleep_before: 1
+      - shell_command:
+          - pnpm inventory dev
+        sleep_before: 2
+      - shell_command:
+          - pnpm strapi5 dev
+        sleep_before: 3
