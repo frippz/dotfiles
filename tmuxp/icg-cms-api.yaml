@@ -1,5 +1,5 @@
 session_name: icg-cms-api
-start_directory: ~/dev/icg-cms-api
+start_directory: ${DEV_CODE_DIR}/icg-cms-api
 shell_command_before:
   - colima status || colima start
 
