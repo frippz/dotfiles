@@ -6,7 +6,7 @@ case "$OSTYPE" in
     # System utils
     # alias ls="ls -GF"
     # alias l="ls -GF"
-    if command -v gdf >/dev/null 2>&1 ; then
+    if command -v gdf >/dev/null 2>&1; then
       alias df="gdf -PH"
     else
       alias df="df -Ph"
@@ -27,7 +27,6 @@ case "$OSTYPE" in
     ;;
 esac
 
-
 # General aliases
 #
 
@@ -40,13 +39,18 @@ alias x="exit"
 alias grep="grep --color"
 
 # Colorize tree if it’s installed
-if command -v tree >/dev/null 2>&1 ; then
+if command -v tree >/dev/null 2>&1; then
   alias tree="tree -C"
 fi
 
 # Colored cat
-if command -v ccat >/dev/null 2>&1 ; then
+if command -v ccat >/dev/null 2>&1; then
   alias cat="ccat"
+fi
+
+# GNU ip
+if command -v ip >/dev/null 2>&1; then
+  alias ip="ip -color -br"
 fi
 
 # Nice looking time stamp
