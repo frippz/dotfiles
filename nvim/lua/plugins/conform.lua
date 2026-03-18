@@ -87,7 +87,7 @@ return {
         args = { "format", "--stdin-filename", "%", "-" },
       },
       shfmt = {
-        append_args = { "-i", "2" },
+        append_args = { "-i", "2", "-ci" },
       },
     },
   },
