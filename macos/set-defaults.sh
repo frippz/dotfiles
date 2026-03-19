@@ -14,6 +14,9 @@ done 2> /dev/null &
 echo " ✅ Disable press-and-hold for keys in favor of key repeat."
 defaults write -g ApplePressAndHoldEnabled -bool false
 
+echo " ✅ Enable keyboard navigation ⌨"
+defaults write -g AppleKeyboardUIMode -int 2
+
 echo " ✅ Re-enable the classic Mac startup chime! 🎶"
 sudo nvram StartupMute=%00
 
