@@ -11,10 +11,6 @@ return {
   },
 
   keys = {
-    { "gr", vim.lsp.buf.references, desc = "Show references (vim.lsp.buf)" },
-    { "gD", vim.lsp.buf.declaration, desc = "Go to declaration" },
-    { "gd", vim.lsp.buf.definition, desc = "Show LSP definitions" },
-    { "gI", vim.lsp.buf.implementation, desc = "Go to implementation" },
     { "<leader>ca", vim.lsp.buf.code_action, { "n", "v" }, desc = "See available code actions" },
     { "<leader>rn", vim.lsp.buf.rename, desc = "Smart rename" },
     { "<leader>d", vim.diagnostic.open_float, desc = "Show line diagnostics" },
@@ -137,7 +133,6 @@ return {
       "ruff",
       "stylelint_lsp",
       "svelte",
-      "ts_ls",
       "yamlls",
     })
   end,

@@ -260,24 +260,48 @@ return {
       ":lua Snacks.notifier.show_history()<cr>",
       desc = "Notification History",
     },
+
+    -- LSP
     {
-      "gR",
-      ":lua Snacks.picker.lsp_references()<cr>",
-      desc = "LSP references",
+      "gd",
+      function()
+        Snacks.picker.lsp_definitions({ jump = true })
+      end,
+      desc = "LSP Definition",
+    },
+    {
+      "gD",
+      function()
+        Snacks.picker.lsp_declarations()
+      end,
+      desc = "LSP Declaration",
+    },
+    {
+      "gr",
+      function()
+        Snacks.picker.lsp_references()
+      end,
+      desc = "LSP References",
     },
     {
       "gi",
-      ":lua Snacks.picker.lsp_implementations()<cr>",
-      desc = "LSP implementations",
+      function()
+        Snacks.picker.lsp_implementations({ jump = true })
+      end,
+      desc = "LSP Implementations",
     },
     {
-      "<leader>gt",
-      ":lua Snacks.picker.lsp_type_definitions()<cr>",
-      desc = "LSP type definitions",
+      "gt",
+      function()
+        Snacks.picker.lsp_type_definitions({ jump = true })
+      end,
+      desc = "LSP Type Definition",
     },
     {
       "<leader>D",
-      ":lua Snacks.picker.diagnostics()<cr>",
+      function()
+        Snacks.picker.diagnostics()
+      end,
       desc = "Buffer diagnostics",
     },
 
