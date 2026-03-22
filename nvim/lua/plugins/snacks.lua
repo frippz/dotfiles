@@ -268,7 +268,7 @@ return {
     {
       "gd",
       function()
-        Snacks.picker.lsp_definitions({ jump = true })
+        Snacks.picker.lsp_definitions()
       end,
       desc = "LSP Definition",
     },
