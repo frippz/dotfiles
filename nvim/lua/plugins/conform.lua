@@ -31,7 +31,7 @@ return {
     formatters_by_ft = {
       astro = { "biome", "prettierd" },
       bash = { "shfmt" },
-      css = { "prettierd" },
+      css = { "biome", "prettierd" },
       html = { "lsp" },
       javascript = js_formatters,
       javascriptreact = js_formatters,
