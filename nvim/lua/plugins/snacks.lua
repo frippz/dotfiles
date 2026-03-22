@@ -214,6 +214,9 @@ return {
     -- Scope
     scope = { enabled = true },
 
+    -- Scratch
+    scratch = { enabled = false },
+
     -- Scroll
     scroll = { enabled = true },
 
