@@ -93,7 +93,7 @@ return {
             return Snacks.git.get_root() ~= nil
           end,
           cmd = "git status --short --branch --renames",
-          height = 5,
+          height = 4,
           gap = 2,
           ttl = 5 * 60,
           indent = 3,
@@ -101,6 +101,14 @@ return {
 
         {
           section = "startup",
+          padding = 1,
+        },
+
+        -- Neovim version
+        {
+          text = "v" .. vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch,
+          align = "center",
+          padding = 1,
         },
       },
     },
