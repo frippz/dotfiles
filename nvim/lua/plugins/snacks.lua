@@ -276,7 +276,7 @@ return {
     {
       "gd",
       function()
-        Snacks.picker.lsp_definitions()
+        Snacks.picker.lsp_definitions({ tagstack = true, reuse_win = true })
       end,
       desc = "LSP Definition",
     },
@@ -297,14 +297,14 @@ return {
     {
       "gi",
       function()
-        Snacks.picker.lsp_implementations({ jump = true })
+        Snacks.picker.lsp_implementations({ tagstack = true, reuse_win = true })
       end,
       desc = "LSP Implementations",
     },
     {
       "gt",
       function()
-        Snacks.picker.lsp_type_definitions({ jump = true })
+        Snacks.picker.lsp_type_definitions({ tagstack = true, reuse_win = true })
       end,
       desc = "LSP Type Definition",
     },
