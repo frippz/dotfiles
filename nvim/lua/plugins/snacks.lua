@@ -302,7 +302,7 @@ return {
       desc = "LSP Implementations",
     },
     {
-      "gt",
+      "<leader>gt",
       function()
         Snacks.picker.lsp_type_definitions({ tagstack = true, reuse_win = true })
       end,
