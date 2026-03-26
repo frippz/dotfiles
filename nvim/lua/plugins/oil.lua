@@ -18,12 +18,19 @@ return {
       -- "size",
       -- "mtime",
     },
+
+    float = {
+      padding = 2,
+      max_width = 0.7,
+      max_height = 0.7,
+      border = "rounded",
+    },
   },
 
   keys = {
     {
       "<Leader>e",
-      ":Oil<CR>",
+      ":Oil --float<CR>",
       desc = "Open file explorer (oil.nvim)",
     },
   },
