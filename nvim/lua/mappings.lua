@@ -48,3 +48,6 @@ map("n", "<Leader>i", ":set list!<CR>", { desc = "Toggle invisibles" })
 
 -- Toggle relative line numbers
 map("n", "<Leader>l", ":set relativenumber!<CR>", { desc = "Toggle relative line numbers" })
+
+-- Yank current buffer relative file path
+map("n", "<Leader>yp", ":let @+ = expand('%:.')<CR>", { desc = "Yank relative path of current buffer" })
