@@ -28,6 +28,7 @@ link-url = true
 shell-integration-features = no-title
 window-inherit-working-directory = false
 shell-integration-features = ssh-terminfo
+confirm-close-surface = false
 
 ##
 # Keybindings
