@@ -78,7 +78,7 @@ o.relativenumber = true
 -- " Default netrw list style
 g.netrw_liststyle = 3
 
--- Disable netrwhist
+-- Disable netrw history
 g.netrw_dirhistmax = 0
 
 -- Session options
