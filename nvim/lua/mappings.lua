@@ -33,7 +33,7 @@ map("n", "<Leader>fo", ":foldopen<CR>", { desc = "Open fold" })
 map("n", "<Leader>fc", ":foldclose<CR>", { desc = "Close fold" })
 
 -- Reload file in buffer
-map("n", "<Leader>r", ":e!<CR>", { desc = "Reload file in buffer" })
+map("n", "<Leader>rl", ":e!<CR>", { desc = "Reload file in buffer" })
 
 -- Remove search highlight with Ctrl-L
 map(
