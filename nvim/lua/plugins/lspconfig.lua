@@ -29,7 +29,7 @@ return {
       desc = "Go to next diagnostic",
     },
     { "K", vim.lsp.buf.hover, desc = "Show documentation for what is under cursor" },
-    { "<leader>rs", ":LspRestart<CR>", desc = "Restart LSP" },
+    { "<leader>rs", ":lsp restart<CR>", desc = "Restart LSP" },
   },
 
   config = function()
