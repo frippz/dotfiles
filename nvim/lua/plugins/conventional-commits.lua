@@ -5,7 +5,7 @@ return {
 
   config = function()
     require("conventional-commits").setup({
-      -- Optional configuration here
+      show_emoji_step = false,
     })
   end,
 
