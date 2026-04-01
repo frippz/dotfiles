@@ -28,7 +28,6 @@ return {
       end,
       desc = "Go to next diagnostic",
     },
-    { "K", vim.lsp.buf.hover, desc = "Show documentation for what is under cursor" },
     { "<leader>rs", ":lsp restart<CR>", desc = "Restart LSP" },
   },
 
@@ -74,7 +73,6 @@ return {
           ".git"
         )(fname)
       end,
-      cmd = { "EslintFixAll" },
     })
 
     vim.lsp.config("emmet_language_server", {
