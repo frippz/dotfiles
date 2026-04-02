@@ -5,7 +5,7 @@ return {
   "f-person/auto-dark-mode.nvim",
 
   -- only run on macOS
-  cond = vim.fn.has("unixmacos") == 1,
+  cond = vim.fn.has("mac") == 1,
 
   opts = {
     fallback = "light",
