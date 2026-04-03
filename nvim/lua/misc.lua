@@ -82,8 +82,8 @@ g.netrw_liststyle = 3
 g.netrw_dirhistmax = 0
 
 -- Session options
-nvimCmd("set ssop-=options") -- do not store global and local values in a session
-nvimCmd("set ssop-=folds") -- do not store folds
+o.sessionoptions:remove({ "options", "blank" }) -- do not store options or empty windows
+o.sessionoptions:append("globals") -- store globals for plugin state (e.g. Snacks)
 
 -- Make copy operations work with the clipboard
 o.clipboard = "unnamed"
