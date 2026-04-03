@@ -4,6 +4,15 @@ g.mapleader = " "
 -- Remap save
 map("n", "<Leader>w", ":w<CR>", { desc = "Save file" })
 
+-- Restart nvim
+map("n", "<leader>R", ":restart<cr>", { desc = "Restart Neovim" })
+
+-- Close current buffer
+map("n", "<leader>q", ":close<cr>", { desc = "Close current window" })
+
+-- Quit Neovim
+map("n", "<leader>Q", ":qa<cr>", { desc = "Quit Neovim" })
+
 -- Tabs
 map("n", "<C-t>", ":tabnew<CR>", { desc = "New tab" })
 
