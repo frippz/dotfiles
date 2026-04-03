@@ -11,6 +11,7 @@ return {
           statusline = {
             "neo-tree",
             "Outline",
+            "Dashboard",
           },
         },
       },
