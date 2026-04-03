@@ -47,8 +47,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 o.autoread = true
 
 -- check for changes after inactivity
-nvimCmd("au CursorHold * checktime")
-nvimCmd("au FocusGained * checktime")
+-- nvimAutoCmd("CursorHold",  { pattern = "*", command = "checktime" })
+-- nvimAutoCmd("FocusGained", { pattern = "*", command = "checktime" })
+vim.api.nvim_create_autocmd({ "CursorHold", "FocusGained" }, {
+  pattern = "*",
+  callback = function()
+    vim.cmd.checktime()
+  end,
+})
 
 -- disable swap files
 o.updatecount = 0
@@ -82,7 +88,7 @@ g.netrw_liststyle = 3
 g.netrw_dirhistmax = 0
 
 -- Session options
-o.sessionoptions:remove({ "options", "blank" }) -- do not store options or empty windows
+o.sessionoptions:remove({ "options", "blank", "winsize", "localoptions" }) -- do not store options, empty windows, window sizes, or local options
 o.sessionoptions:append("globals") -- store globals for plugin state (e.g. Snacks)
 
 -- Make copy operations work with the clipboard

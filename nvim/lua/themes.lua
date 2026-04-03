@@ -1,7 +1,12 @@
-nvimCmd("syntax enable")
-nvimCmd("highlight! link SignColumn LineNr")
-nvimCmd("hi Normal guibg=NONE ctermbg=NONE")
-nvimCmd("highlight Comment cterm=italic gui=italic")
+-- match sign column bg to line numbers
+vim.api.nvim_set_hl(0, "SignColumn", { link = "LineNr" })
+
+-- transparent background
+vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+
+-- italic comments
+vim.api.nvim_set_hl(0, "Comment", { italic = true })
+
 g.everforest_transparent_background = 1
 
 -- Dark
