@@ -15,4 +15,4 @@ local session_restart = function()
   vim.cmd(restart_cmd:format(esc_tmp_session, ("%q"):format(vim.v.this_session)))
 end
 
-vim.keymap.set("n", "<Leader>R", session_restart, { desc = "Restart" })
+map("n", "<Leader>R", session_restart, { desc = "Restart" })
