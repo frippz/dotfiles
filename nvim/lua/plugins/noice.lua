@@ -3,6 +3,8 @@
 return {
   "folke/noice.nvim",
 
+  enable = false,
+
   dependencies = {
     "MunifTanjim/nui.nvim",
     "rcarriga/nvim-notify",

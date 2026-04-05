@@ -195,7 +195,7 @@ return {
 
     -- Notifier
     notifier = {
-      enabled = true,
+      enabled = false,
 
       ---@type snacks.notifier.style
       style = "fancy",
