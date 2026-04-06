@@ -20,6 +20,15 @@ defaults write -g AppleKeyboardUIMode -int 2
 echo " ✅ Re-enable the classic Mac startup chime! 🎶"
 sudo nvram StartupMute=%00
 
+echo " ✅ Position dock to the left"
+defaults write com.apple.dock "orientation" -string "left"
+
+echo " ✅ Autohide dock"
+defaults write com.apple.dock "autohide" -bool "true"
+
+echo " ✅ Remove autohide delay for dock"
+defaults write com.apple.dock "autohide-delay" -float "0" && killall Dock
+
 echo " ✅ Automatically quit printer app once the print jobs complete"
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
