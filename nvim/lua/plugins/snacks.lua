@@ -195,7 +195,7 @@ return {
 
     -- Notifier
     notifier = {
-      enabled = false,
+      enabled = true,
 
       ---@type snacks.notifier.style
       style = "fancy",
@@ -219,6 +219,12 @@ return {
 
     -- Words
     words = { enabled = true },
+
+    styles = {
+      notification = {
+        wo = { wrap = true }, -- Wrap notifications
+      },
+    },
   },
 
   keys = {
