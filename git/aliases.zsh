@@ -64,7 +64,7 @@ alias glgga='git log --graph --decorate --all'
 alias glo='git log --oneline --decorate --color'
 alias glog='git log --oneline --decorate --color --graph'
 alias gcount='git shortlog -snc'
-alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
+alias gwc='git log --raw --no-merges'
 
 # Other (unsorted)
 alias gcl='git config --list'
