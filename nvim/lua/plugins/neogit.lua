@@ -12,6 +12,10 @@ return {
 
   cmd = "Neogit",
 
+  config = {
+    kind = "floating",
+  },
+
   keys = {
     { "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" },
   },
