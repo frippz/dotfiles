@@ -77,6 +77,12 @@ return {
             action = ":Mason",
           },
           {
+            icon = "󰜉 ",
+            key = "R",
+            desc = "Restart",
+            action = ":restart",
+          },
+          {
             icon = " ",
             key = "q",
             desc = "Quit",
