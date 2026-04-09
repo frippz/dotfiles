@@ -35,6 +35,7 @@ return {
         "graphql",
         "html",
         "lua_ls",
+        "somesass_ls",
         "svelte",
         "ruff",
         -- "ts_ls", -- disabled in favor of typescript-tools plugin
