@@ -35,3 +35,7 @@
     - description: Install Node
       command: ./node/install.sh
       stdout: true
+
+    - description: Install bob
+      command: ./bob/install.sh
+      stdout: true
