@@ -19,6 +19,8 @@ font-feature = -dlig
 # Theme
 ##
 theme = light:everforest-light-hard.ghostty,dark:everforest-dark-hard.ghostty
+background-opacity = 0.72
+background-blur = macos-glass-regular
 
 ##
 # Misc
