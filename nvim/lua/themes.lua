@@ -7,17 +7,17 @@ vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
 -- italic comments
 vim.api.nvim_set_hl(0, "Comment", { italic = true })
 
-g.everforest_transparent_background = 1
+vim.g.everforest_transparent_background = 1
 
 -- Dark
 function ThemeDark()
-  o.background = "dark"
+  vim.opt.background = "dark"
   vim.cmd.colorscheme("everforest")
 end
 
 -- Light
 function ThemeLight()
-  o.background = "light"
+  vim.opt.background = "light"
   vim.cmd.colorscheme("everforest")
 end
 

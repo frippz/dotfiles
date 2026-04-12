@@ -1,5 +1,4 @@
 require("helpers")
-require("netrw")
 require("mappings")
 require("lsp")
 require("ui2")

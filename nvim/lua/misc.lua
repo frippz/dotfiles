@@ -1,28 +1,33 @@
+-- Disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 --  Live substitution
-o.inccommand = "nosplit"
+vim.opt.inccommand = "nosplit"
 
 -- Search
-o.hlsearch = true -- highlight all results
-o.incsearch = true -- but do highlight as you type your search.
-o.ignorecase = true -- make searches case-insensitive...
-o.smartcase = true -- ... unless they contain at least one capital letter
-o.gdefault = true -- have :s///g flag by default on"
+vim.opt.hlsearch = true -- highlight all results
+vim.opt.incsearch = true -- but do highlight as you type your search.
+vim.opt.ignorecase = true -- make searches case-insensitive...
+vim.opt.smartcase = true -- ... unless they contain at least one capital letter
+vim.opt.gdefault = true -- have :s///g flag by default on"
 
 -- Visual Stuff
-o.number = true -- show line numbers
-o.cursorline = true -- highlight the current line
-o.history = 200 -- remember a lot of stuff
-o.ruler = true -- Always show info along bottom.
-o.wrap = true -- Wrap lines
-o.linebreak = true -- Don't break words
-o.termguicolors = true -- Enable 24-bit colors
-o.signcolumn = "yes"
-o.shortmess = "c"
+vim.opt.number = true -- show line numbers
+vim.opt.cursorline = true -- highlight the current line
+vim.opt.history = 200 -- remember a lot of stuff
+vim.opt.ruler = true -- Always show info along bottom.
+vim.opt.wrap = true -- Wrap lines
+vim.opt.linebreak = true -- Don't break words
+vim.opt.termguicolors = true -- Enable 24-bit colors
+vim.opt.signcolumn = "yes"
+vim.opt.shortmess = "c"
+vim.opt.shortmess:append("F")
 
 -- Specify listchars (invisibles) with literal unicode in a :set command
 vim.scriptencoding = "utf-8"
-o.list = false
-o.listchars = {
+vim.opt.list = false
+vim.opt.listchars = {
   tab = "▸ ",
   eol = "¬",
   trail = "·",
@@ -44,7 +49,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- auto-reload files changed on disk
-o.autoread = true
+vim.opt.autoread = true
 
 -- check for changes after inactivity
 -- nvimAutoCmd("CursorHold",  { pattern = "*", command = "checktime" })
@@ -57,48 +62,48 @@ vim.api.nvim_create_autocmd({ "CursorHold", "FocusGained" }, {
 })
 
 -- disable swap files
-o.updatecount = 0
-o.backup = false
-o.swapfile = false
+vim.opt.updatecount = 0
+vim.opt.backup = false
+vim.opt.swapfile = false
 
 -- Indentation
-o.autoindent = true -- auto-indent
-o.tabstop = 2 -- tab spacing
-o.softtabstop = 2 -- unify
-o.shiftwidth = 2 -- indent/outdent by 2 columns
-o.expandtab = true -- use spaces instead of tabs
-o.smarttab = true -- use tabs at the start of a line, spaces elsewhere
-o.backspace = { "indent", "eol", "start" } -- Backspace through anything in insert mode
+vim.opt.autoindent = true -- auto-indent
+vim.opt.tabstop = 2 -- tab spacing
+vim.opt.softtabstop = 2 -- unify
+vim.opt.shiftwidth = 2 -- indent/outdent by 2 columns
+vim.opt.expandtab = true -- use spaces instead of tabs
+vim.opt.smarttab = true -- use tabs at the start of a line, spaces elsewhere
+vim.opt.backspace = { "indent", "eol", "start" } -- Backspace through anything in insert mode
 
 -- Enable mouse
-o.mouse = "a"
+vim.opt.mouse = "a"
 
 -- Disable delays for <Leader>
-o.timeoutlen = 1000
-o.ttimeout = true
-o.ttimeoutlen = 0
+vim.opt.timeoutlen = 1000
+vim.opt.ttimeout = true
+vim.opt.ttimeoutlen = 0
 
 -- Use relative line numbers
-o.relativenumber = true
+vim.opt.relativenumber = true
 
 -- " Default netrw list style
-g.netrw_liststyle = 3
+vim.g.netrw_liststyle = 3
 
 -- Disable netrw history
-g.netrw_dirhistmax = 0
+vim.g.netrw_dirhistmax = 0
 
 -- Session options
-o.sessionoptions:remove({ "options", "blank", "winsize", "localoptions" }) -- do not store options, empty windows, window sizes, or local options
-o.sessionoptions:append("globals") -- store globals for plugin state (e.g. Snacks)
+vim.opt.sessionoptions:remove({ "options", "blank", "winsize", "localoptions" }) -- do not store options, empty windows, window sizes, or local options
+vim.opt.sessionoptions:append("globals") -- store globals for plugin state (e.g. Snacks)
 
 -- Make copy operations work with the clipboard
-o.clipboard = "unnamed"
+vim.opt.clipboard = "unnamed"
 
 -- Nice and simple folding:
-o.foldenable = true
-o.foldlevel = 99
-o.foldmethod = "expr"
-o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-o.foldtext = ""
-o.foldcolumn = "1"
-o.fillchars:append({ fold = " " })
+vim.opt.foldenable = true
+vim.opt.foldlevel = 99
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldtext = ""
+vim.opt.foldcolumn = "1"
+vim.opt.fillchars:append({ fold = " " })

@@ -1,5 +1,5 @@
 -- Map leader to spacebar
-g.mapleader = " "
+vim.g.mapleader = " "
 
 -- Remap save
 map("n", "<Leader>w", ":w<CR>", { desc = "Save file" })
