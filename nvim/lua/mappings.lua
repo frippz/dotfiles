@@ -55,5 +55,10 @@ map("n", "<Leader>i", ":set list!<CR>", { desc = "Toggle invisibles" })
 -- Toggle relative line numbers
 map("n", "<Leader>l", ":set relativenumber!<CR>", { desc = "Toggle relative line numbers" })
 
--- Yank current buffer relative file path
-map("n", "<Leader>yp", ":let @+ = expand('%:.')<CR>", { desc = "Yank relative path of current buffer" })
+-- Yank current buffer relative file path and push notification
+-- map("n", "<Leader>yp", ":let @+ = expand('%:.')<CR>", { desc = "Yank relative path of current buffer" })
+map("n", "<Leader>yp", function()
+  local path = vim.fn.expand("%:.")
+  vim.fn.setreg("+", path)
+  vim.notify(path, vim.log.levels.INFO, { title = "File path copied" })
+end, { desc = "Yank relative path of current buffer" })
