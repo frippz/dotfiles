@@ -2,6 +2,7 @@ session_name: icg-cms-api
 start_directory: ${DEV_CODE_DIR}/icg-cms-api
 shell_command_before:
   - colima status || colima start
+  - until docker info > /dev/null 2>&1; do sleep 1; done
 
 windows:
   - window_name: main
