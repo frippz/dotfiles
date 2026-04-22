@@ -50,7 +50,8 @@ fi
 
 # GNU ip
 if command -v ip >/dev/null 2>&1; then
-  alias ip="ip -color -br"
+  alias ip="ip -color"
+  alias ipb="ip -color -br"
 fi
 
 # Nice looking time stamp
