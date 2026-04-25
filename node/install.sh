@@ -4,6 +4,7 @@ source $HOME/.dotfiles/zsh/msg.zsh
 
 # Global packages to install with PNPM
 PACKAGES=(
+  "@fission-ai/openspec"
   "@github/copilot"
   "neovim"
   "npm-check-updates"
