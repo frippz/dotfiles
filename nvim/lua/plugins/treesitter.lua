@@ -17,6 +17,7 @@ local parsers = {
   "markdown_inline", -- needed alongside `markdown` for proper rendering
   "regex",
   "scss",
+  "ssh_config",
   "svelte",
   "typescript",
   "tsx",
