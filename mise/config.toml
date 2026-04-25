@@ -1,7 +1,7 @@
 [tools]
 node = "24"
 python = "3.12"
-tree-sitter = "latest"
+tree-sitter = { version = "latest", os = ["linux"] }
 
 [settings]
 idiomatic_version_file_enable_tools = ["python", "node"]
