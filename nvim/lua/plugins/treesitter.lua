@@ -19,6 +19,7 @@ local parsers = {
   "scss",
   "ssh_config",
   "svelte",
+  "toml",
   "typescript",
   "tsx",
 }
