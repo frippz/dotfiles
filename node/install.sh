@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 source $HOME/.dotfiles/zsh/msg.zsh
+source $HOME/.dotfiles/node/pnpm.zsh
 
 # Global packages to install with PNPM
 PACKAGES=(
@@ -9,7 +10,6 @@ PACKAGES=(
   "neovim"
   "npm-check-updates"
   "wrangler"
-  "yarn"
 )
 
 set -e
