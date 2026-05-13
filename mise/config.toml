@@ -1,5 +1,6 @@
 [tools]
 node = "24"
+pnpm = { version = "latest", os = ["linux"] }
 python = "3.12"
 tree-sitter = { version = "latest", os = ["linux"] }
 
