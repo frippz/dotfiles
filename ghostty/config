@@ -39,3 +39,6 @@ confirm-close-surface = false
 # Switch tabs with Cmd and arrow keys
 keybind = cmd+left=previous_tab
 keybind = cmd+right=next_tab
+
+# Optional local config
+config-file = ?~/.ghostty-local.conf
