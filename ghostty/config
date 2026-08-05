@@ -33,6 +33,11 @@ shell-integration-features = ssh-terminfo
 confirm-close-surface = false
 
 ##
+# System
+##
+auto-update-channel = tip
+
+##
 # Keybindings
 ##
 
