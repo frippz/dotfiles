@@ -55,6 +55,7 @@ return {
     -- Set default options
     default_format_opts = {
       lsp_format = "fallback",
+      stop_after_first = true,
     },
 
     -- Set up format-on-save
@@ -65,6 +66,14 @@ return {
 
     -- Customize formatters
     formatters = {
+      biome = {
+        condition = function(_, ctx)
+          return vim.fs.find({
+            "biome.json",
+            "biome.jsonc",
+          }, { path = ctx.filename, upward = true })[1] ~= nil
+        end,
+      },
       prettier = {
         condition = function(_, ctx)
           return vim.fs.find({
