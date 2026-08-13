@@ -35,7 +35,8 @@ confirm-close-surface = false
 ##
 # System
 ##
-auto-update-channel = tip
+auto-update = download
+auto-update-channel = stable
 
 ##
 # Keybindings
