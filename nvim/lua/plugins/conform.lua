@@ -3,6 +3,7 @@
 local js_formatters = {
   "biome",
   "biome-check",
+  "biome-organize-imports",
   "prettierd",
   "eslint_d",
 }
