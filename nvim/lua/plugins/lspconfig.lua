@@ -102,6 +102,8 @@ return {
 
     vim.lsp.config("svelte", {})
 
+    vim.lsp.config("somesass_ls", {})
+
     -- vim.lsp.config("ts_ls", {
     --   filetypes = {
     --     "typescript",
@@ -130,6 +132,7 @@ return {
       "lua_ls",
       "ruff",
       "stylelint_lsp",
+      "somesass_ls",
       "svelte",
       "yamlls",
     })

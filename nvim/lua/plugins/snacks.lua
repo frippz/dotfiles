@@ -274,6 +274,24 @@ return {
     {
       "gd",
       function()
+        -- somesass_ls can navigate imported Sass symbols, but it does not
+        -- provide definitions or document links for the module path itself.
+        -- For @use/@forward in Svelte style blocks, fall back to Neovim's
+        -- native `gf`, which resolves these relative paths correctly.
+        if vim.bo.filetype == "svelte" then
+          local line = vim.api.nvim_get_current_line()
+          local module = line:match("@use%s+['\"](.-)['\"]") or line:match("@forward%s+['\"](.-)['\"]")
+
+          if module then
+            local start = line:find(module, 1, true)
+            if start then
+              vim.api.nvim_win_set_cursor(0, { vim.api.nvim_win_get_cursor(0)[1], start - 1 })
+              vim.cmd("normal! gf")
+              return
+            end
+          end
+        end
+
         Snacks.picker.lsp_definitions({ tagstack = true, reuse_win = true })
       end,
       desc = "LSP Definition",

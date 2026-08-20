@@ -4,6 +4,7 @@ return {
   "saghen/blink.cmp",
 
   dependencies = {
+    "saghen/blink.lib",
     "rafamadriz/friendly-snippets",
     "onsails/lspkind.nvim",
     "jdrupal-dev/css-vars.nvim",
@@ -123,7 +124,7 @@ return {
     },
 
     sources = {
-      default = { "lazydev", "lsp", "path", "buffer" },
+      default = { "lazydev", "lsp", "css_vars", "path", "buffer" },
       providers = {
         lazydev = {
           name = "LazyDev",
@@ -134,7 +135,7 @@ return {
           name = "css-vars",
           module = "css-vars.blink",
           opts = {
-            search_extensions = { ".css", ".scss" },
+            search_extensions = { ".css", ".scss", ".astro", ".svelte" },
           },
         },
         lsp = {
