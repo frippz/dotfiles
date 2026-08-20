@@ -17,7 +17,7 @@ windows:
           - pnpm api dev
         sleep_before: 1
       - shell_command:
-          - pnpm inventory dev
+          - pnpm --filter @workers/inventory dev
         sleep_before: 2
       - shell_command:
           - pnpm strapi5 dev
