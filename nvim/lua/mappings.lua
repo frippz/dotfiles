@@ -7,6 +7,9 @@ map("n", "<Leader>w", ":w<CR>", { desc = "Save file" })
 -- Close current buffer
 map("n", "<leader>q", ":close<cr>", { desc = "Close current window" })
 
+-- Restart Neovim
+map("n", "<leader>R", ":restart<cr>", { desc = "Restart Neovim" })
+
 -- Quit Neovim
 map("n", "<leader>Q", ":qa<cr>", { desc = "Quit Neovim" })
 

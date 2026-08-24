@@ -1,4 +1,10 @@
 -- Restart the current session without saving it by using a temporary session
+-- Neovim versions after 0.12.4 provide this functionality natively.
+local version = vim.version()
+if version.major > 0 or version.minor > 12 or (version.minor == 12 and version.patch > 4) then
+  return
+end
+
 local tmp_session = vim.fn.stdpath("state") .. "/Restart.vim"
 local esc_tmp_session = vim.fn.fnameescape(tmp_session)
 
