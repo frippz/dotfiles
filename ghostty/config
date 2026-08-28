@@ -19,8 +19,14 @@ font-feature = -dlig
 # Theme
 ##
 theme = light:everforest-light-hard.ghostty,dark:everforest-dark-hard.ghostty
-#background-opacity = 0.90
-#background-blur = macos-glass-regular
+# background-opacity = 0.90
+# background-blur = macos-glass-regular
+
+##
+# Eye candy
+##
+custom-shader = ./shaders/cursor-warp.glsl
+custom-shader-animation = true
 
 ##
 # Misc
