@@ -37,6 +37,7 @@ return {
         "lua_ls",
         "somesass_ls",
         "svelte",
+        "tailwindcss",
         "ruff",
         -- "ts_ls", -- disabled in favor of typescript-tools plugin
         "yamlls",
