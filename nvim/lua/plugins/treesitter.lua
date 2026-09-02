@@ -12,9 +12,11 @@ local parsers = {
   "gitignore",
   "javascript",
   "jsdoc",
+  "json",
   "lua",
   "markdown",
   "markdown_inline", -- needed alongside `markdown` for proper rendering
+  "python",
   "regex",
   "scss",
   "ssh_config",
