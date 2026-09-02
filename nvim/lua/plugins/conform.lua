@@ -39,7 +39,11 @@ return {
       json = { "jsonlint", "prettierd" },
       lua = { "stylua" },
       markdown = { "prettierd" },
-      python = { "ruff" },
+      python = {
+        "ruff_fix",
+        "ruff_format",
+        stop_after_first = false,
+      },
       scss = { "prettierd" },
       sh = { "beautysh" },
       svelte = { "lsp" },
@@ -91,10 +95,6 @@ return {
             "prettier.config.mjs",
           }, { path = ctx.filename, upward = true })[1] ~= nil
         end,
-      },
-      ruff = {
-        command = "ruff",
-        args = { "format", "--stdin-filename", "%", "-" },
       },
       shfmt = {
         append_args = { "-i", "2", "-ci" },
