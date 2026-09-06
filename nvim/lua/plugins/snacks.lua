@@ -361,5 +361,22 @@ return {
       end,
       desc = "GitHub Pull Requests (all)",
     },
+
+    -- ChatGPT/Codex
+    {
+      "<leader>ac",
+      function()
+        Snacks.terminal.toggle("codex", {
+          win = {
+            position = "float",
+            border = "rounded",
+            width = 0.9,
+            height = 0.9,
+          },
+        })
+      end,
+      mode = { "n", "t" },
+      desc = "Toggle Codex",
+    },
   },
 }
