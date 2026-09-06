@@ -53,6 +53,7 @@ return {
         "prettierd",
         "shfmt",
         "stylua",
+        "typescript-language-server",
       },
     })
   end,
