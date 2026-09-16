@@ -33,7 +33,7 @@ return {
   lazy = false,
 
   config = function()
-    -- Install (or update) the parsers we care about.
+    -- Install any missing parsers we care about
     require("nvim-treesitter").install(parsers)
 
     -- Start treesitter highlighting whenever we open a file with a parser.
