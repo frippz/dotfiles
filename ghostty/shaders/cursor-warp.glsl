@@ -99,7 +99,11 @@ float getSdfRectangle(in vec2 p, in vec2 xy, in vec2 b)
 float seg(in vec2 p, in vec2 a, in vec2 b, inout float s, float d) {
     vec2 e = b - a;
     vec2 w = p - a;
-    vec2 proj = a + e * clamp(dot(w, e) / dot(e, e), 0.0, 1.0);
+    float edgeLengthSquared = dot(e, e);
+    vec2 proj = a;
+    if (edgeLengthSquared > 0.0) {
+        proj += e * clamp(dot(w, e) / edgeLengthSquared, 0.0, 1.0);
+    }
     float segd = dot(p - proj, p - proj);
     d = min(d, segd);
 
@@ -130,6 +134,9 @@ vec2 normalize(vec2 value, float isPosition) {
 }
 
 float antialising(float distance, float blurAmount) {
+  if (blurAmount <= 0.0) {
+    return step(distance, 0.0);
+  }
   return 1. - smoothstep(0., normalize(vec2(blurAmount, blurAmount), 0.).x, distance);
 }
 
@@ -154,6 +161,12 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord){
     fragColor = texture(iChannel0, fragCoord.xy / iResolution.xy);
     #endif
 
+    // Most frames have no active trail. Keep them on the texture-only path.
+    float baseProgress = iTime - iTimeCursorChange;
+    if (baseProgress < 0.0 || baseProgress >= DURATION - 0.001) {
+        return;
+    }
+
     // normalization & setup(-1, 1 coords)
     vec2 vu = normalize(fragCoord, 1.);
     vec2 offsetFactor = vec2(-.5, 0.5);
@@ -164,16 +177,10 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord){
     vec2 centerCC = currentCursor.xy - (currentCursor.zw * offsetFactor);
     vec2 halfSizeCC = currentCursor.zw * 0.5;
     vec2 centerCP = previousCursor.xy - (previousCursor.zw * offsetFactor);
-    vec2 halfSizeCP = previousCursor.zw * 0.5;
-
-    float sdfCurrentCursor = getSdfRectangle(vu, centerCC, halfSizeCC);
-
     float lineLength = distance(centerCC, centerCP);
     float minDist = currentCursor.w * THRESHOLD_MIN_DISTANCE;
 
     vec4 newColor = vec4(fragColor);
-
-    float baseProgress = iTime - iTimeCursorChange;
 
     if (lineLength > minDist && baseProgress < DURATION - 0.001) {
         // defining corners of cursors
@@ -264,6 +271,17 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord){
         vec2 v_br = mix(cp_br, cc_br, prog_br);
         vec2 v_bl = mix(cp_bl, cc_bl, prog_bl);
 
+        // Only pixels near the animated quad need its four-edge distance field.
+        vec2 boundsMin = min(min(v_tl, v_tr), min(v_br, v_bl));
+        vec2 boundsMax = max(max(v_tl, v_tr), max(v_br, v_bl));
+        float blurPadding = 2.0 * BLUR / iResolution.y;
+        if (any(lessThan(vu, boundsMin - vec2(blurPadding))) ||
+            any(greaterThan(vu, boundsMax + vec2(blurPadding)))) {
+            return;
+        }
+
+        float sdfCurrentCursor = getSdfRectangle(vu, centerCC, halfSizeCC);
+
         // DRAWING THE TRAIL
         float sdfTrail = getSdfConvexQuad(vu, v_tl, v_tr, v_br, v_bl);
 
@@ -281,7 +299,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord){
         if (BLUR < 2.5) {
           // no antialising on horizontal/vertical movement, fixes 'pulse' like thing on end cursor
           float isDiagonal = abs(s.x) * abs(s.y); // 1.0 if diagonal, 0.0 if H/V
-          float effectiveBlur = mix(0.0, BLUR, isDiagonal);
+          effectiveBlur = mix(0.0, BLUR, isDiagonal);
         }
         float shapeAlpha = antialising(sdfTrail, effectiveBlur); // shape mask
 
