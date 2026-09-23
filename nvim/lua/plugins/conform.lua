@@ -45,7 +45,7 @@ return {
         stop_after_first = false,
       },
       scss = { "prettierd" },
-      sh = { "beautysh" },
+      sh = { "shfmt" },
       svelte = { "lsp" },
       typescript = js_formatters,
       typescriptreact = js_formatters,
