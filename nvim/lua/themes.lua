@@ -7,6 +7,11 @@ vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
 -- italic comments
 vim.api.nvim_set_hl(0, "Comment", { italic = true })
 
+-- override the awful contrast of Everforest's NonText
+vim.api.nvim_set_hl(0, "NonText", {
+  fg = "#b7b5a5",
+})
+
 vim.g.everforest_transparent_background = 1
 
 -- Dark
