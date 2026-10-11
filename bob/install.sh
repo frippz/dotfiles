@@ -18,4 +18,8 @@ case "$OSTYPE" in
 
     fi
     ;;
+
+  *)
+    msg_info "Not on Linux. Skipping bob..."
+    ;;
 esac
