@@ -4,6 +4,26 @@ return {
   priority = 1000,
   lazy = false,
 
+  init = function()
+    local function apply_highlights()
+      -- Hidden files: use Everforest's muted/italic comment styling
+      vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", {
+        link = "Comment",
+      })
+
+      -- Untracked files: use GitSigns' theme-aware color, but italic
+      vim.api.nvim_set_hl(0, "SnacksPickerGitStatusUntracked", {
+        link = "Comment",
+      })
+    end
+
+    vim.api.nvim_create_autocmd("ColorScheme", {
+      callback = apply_highlights,
+    })
+
+    apply_highlights()
+  end,
+
   dependencies = { "nvim-mini/mini.icons" },
 
   ---@module 'snacks'
@@ -129,11 +149,19 @@ return {
     picker = {
       enabled = true,
 
+      icons = {
+        git = {
+          untracked = " 󰡯",
+        },
+      },
+
       sources = {
         explorer = {
 
           include = {
             ".*ignore",
+            ".agents",
+            ".claude",
             ".env*",
             ".github",
             ".node-version",
