@@ -44,3 +44,7 @@
     - description: Install bob
       command: ./bob/install.sh
       stdout: true
+
+    - description: Install Claude Code
+      command: ./claude/install.sh
+      stdout: true
