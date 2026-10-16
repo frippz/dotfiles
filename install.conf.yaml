@@ -10,6 +10,7 @@
     - ~/.config/mise
     - ~/.config/tmux
     - ~/.config/gh-dash
+    - ~/.claude/skills
 
 - link:
     ~/.zshrc: zsh/zshrc
@@ -26,6 +27,8 @@
     ~/.ripgreprc: ripgrep/ripgreprc
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
+    ~/.claude/settings.json: claude/settings.json
+    ~/.claude/skills/retro: claude/skills/retro
 
 - shell:
     - description: Install Homebrew & predefined packages

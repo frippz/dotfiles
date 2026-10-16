@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "model": "opus",
+  "enabledPlugins": {
+    "mattpocock-skills@claude-plugins-official": true
+  },
+  "tui": "fullscreen",
+  "theme": "auto",
+  "agentPushNotifEnabled": true
+}
