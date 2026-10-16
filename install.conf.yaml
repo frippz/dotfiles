@@ -28,7 +28,9 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.claude/settings.json: claude/settings.json
-    ~/.claude/skills/retro: claude/skills/retro
+    ~/.claude/skills/:
+      glob: true
+      path: claude/skills/*
 
 - shell:
     - description: Install Homebrew & predefined packages
