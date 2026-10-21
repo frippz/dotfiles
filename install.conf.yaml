@@ -9,7 +9,6 @@
     - ~/.config/nvim
     - ~/.config/mise
     - ~/.config/tmux
-    - ~/.config/gh-dash
     - ~/.claude/skills
 
 - link:
@@ -43,6 +42,14 @@
 
     - description: Install bob
       command: ./bob/install.sh
+      stdout: true
+
+    - description: Install eza
+      command: ./eza/install.sh
+      stdout: true
+
+    - description: Install zoxide
+      command: ./zoxide/install.sh
       stdout: true
 
     - description: Install Claude Code
