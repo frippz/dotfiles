@@ -9,7 +9,7 @@ alias gf='git fetch --prune'
 alias gm='git merge'
 alias gl='git pull'
 alias gp='git push'
-alias gpf='git push -f'
+alias gpf='git push --force-with-lease'
 alias gcp='git cherry-pick'
 alias gr='git remote'
 
