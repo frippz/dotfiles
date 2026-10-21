@@ -294,7 +294,7 @@ return {
     },
     {
       "<leader>n",
-      ":lua Snacks.notifier.show_history()<cr>",
+      "<cmd>Noice history<cr>",
       desc = "Notification History",
     },
 

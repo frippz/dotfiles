@@ -12,7 +12,7 @@ return {
 
   cmd = "Neogit",
 
-  config = {
+  opts = {
     kind = "floating",
   },
 
