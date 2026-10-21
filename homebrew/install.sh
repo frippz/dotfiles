@@ -10,20 +10,12 @@ case "$OSTYPE" in
       echo "  ✅ Installing Homebrew"
       echo ""
 
-      HOMEBREW_PREFIX="/usr/local"
+      bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-      if [ -d "$HOMEBREW_PREFIX" ]; then
-        if ! [ -r "$HOMEBREW_PREFIX" ]; then
-          sudo chown -R "$LOGNAME:admin" /usr/local
-        fi
-      else
-        sudo mkdir "$HOMEBREW_PREFIX"
-        sudo chflags norestricted "$HOMEBREW_PREFIX"
-        sudo chown -R "$LOGNAME:admin" "$HOMEBREW_PREFIX"
+      # A fresh install isn't on PATH yet in this shell
+      if [ -x /opt/homebrew/bin/brew ]; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
       fi
-
-      sudo -v
-      bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
     else
 
