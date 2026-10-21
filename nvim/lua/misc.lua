@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     -- Only highlight when the yank is done via visual mode or a normal mode command
     if vim.v.event.operator == "y" and vim.v.event.regtype ~= "" then
       -- Temporarily highlight the yanked region
-      vim.highlight.on_yank({ higroup = "IncSearch", timeout = 500 })
+      vim.hl.on_yank({ higroup = "IncSearch", timeout = 500 })
     end
   end,
   group = highlight_group,
