@@ -32,9 +32,8 @@ custom-shader-animation = true
 ##
 quit-after-last-window-closed = true
 link-url = true
-shell-integration-features = no-title
+shell-integration-features = no-title,ssh-terminfo
 window-inherit-working-directory = false
-shell-integration-features = ssh-terminfo
 confirm-close-surface = false
 
 ##
