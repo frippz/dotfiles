@@ -36,7 +36,7 @@ Conventions for install scripts: `#!/usr/bin/env zsh`, `source $HOME/.dotfiles/z
 
 ### Notable topics
 
-- **`homebrew/`**: `Brewfile` (formulas), `Brewfile.casks` (GUI apps), `Brewfile.mas` (App Store). Adding/removing a package means editing the right Brewfile.
+- **`homebrew/`**: `Brewfile` (formulas), `Brewfile.casks` (GUI apps), `Brewfile.mas` (App Store). Adding/removing a package means editing the right Brewfile. Only `Brewfile` is installed by `./install`; the casks and App Store files are intentionally manual (`brew bundle --file=…`) — don't wire them into the install script.
 - **`node/install.sh`**: global packages are a `PACKAGES` array installed with `pnpm -g`.
 - **`nvim/`**: Lua config using lazy.nvim. `init.lua` requires the modules in `nvim/lua/`; `plugin.lua` imports every spec in `nvim/lua/plugins/` (one plugin per file, returning a lazy spec). Formatters are configured in `plugins/conform.lua`, LSP servers via `plugins/mason.lua`/`lspconfig.lua`. Theme is Everforest (also used in Ghostty).
 - **`claude/`**: `settings.json` and `skills/*` are symlinked into `~/.claude/`. Machine-private settings live in `~/.claude/settings.private.json` (not in the repo); `claude/claude.zsh` wraps `claude` to pass it via `--settings`. Never put private settings in `claude/settings.json`.
