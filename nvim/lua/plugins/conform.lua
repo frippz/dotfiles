@@ -8,6 +8,14 @@ local js_formatters = {
   "eslint_d",
 }
 
+-- Only run biome formatters in projects that have a biome config
+local function has_biome_config(_, ctx)
+  return vim.fs.find({
+    "biome.json",
+    "biome.jsonc",
+  }, { path = ctx.filename, upward = true })[1] ~= nil
+end
+
 return {
   "stevearc/conform.nvim",
 
@@ -72,14 +80,22 @@ return {
     -- Customize formatters
     formatters = {
       biome = {
+        condition = has_biome_config,
+      },
+      ["biome-check"] = {
+        condition = has_biome_config,
+      },
+      ["biome-organize-imports"] = {
+        condition = has_biome_config,
+      },
+      eslint_d = {
         condition = function(_, ctx)
-          return vim.fs.find({
-            "biome.json",
-            "biome.jsonc",
-          }, { path = ctx.filename, upward = true })[1] ~= nil
+          return vim.fs.find(function(name)
+            return name:match("^eslint%.config%.[cm]?[jt]s$") or name:match("^%.eslintrc")
+          end, { path = ctx.filename, upward = true })[1] ~= nil
         end,
       },
-      prettier = {
+      prettierd = {
         condition = function(_, ctx)
           return vim.fs.find({
             ".prettierrc",
