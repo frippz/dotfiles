@@ -27,7 +27,7 @@ function ThemeLight()
 end
 
 -- Fallback: set theme based on $TERM_THEME
-if vim.fn.has("linux") then
+if vim.fn.has("linux") == 1 then
   if vim.env.TERM_THEME == "light" then
     ThemeLight()
   else

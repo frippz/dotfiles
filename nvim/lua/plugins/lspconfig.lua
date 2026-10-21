@@ -52,16 +52,17 @@ return {
     vim.lsp.config("astro", {})
 
     vim.lsp.config("denols", {
-      root_dir = function(fname)
-        local util = require("lspconfig.util")
-        return util.root_pattern("deno.json", "deno.jsonc", "deno.lock")(fname)
+      root_dir = function(bufnr, on_dir)
+        local root = vim.fs.root(bufnr, { "deno.json", "deno.jsonc", "deno.lock" })
+        if root then
+          on_dir(root)
+        end
       end,
     })
 
     vim.lsp.config("eslint", {
-      root_dir = function(fname)
-        local util = require("lspconfig.util")
-        return util.root_pattern(
+      root_dir = function(bufnr, on_dir)
+        local root = vim.fs.root(bufnr, {
           "eslint.config.mjs",
           "eslint.config.js",
           ".eslintrc.js",
@@ -69,8 +70,11 @@ return {
           "tsconfig.json",
           "package.json",
           "jsconfig.json",
-          ".git"
-        )(fname)
+          ".git",
+        })
+        if root then
+          on_dir(root)
+        end
       end,
     })
 
