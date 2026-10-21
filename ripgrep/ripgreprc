@@ -9,7 +9,6 @@ web:*.{html,css,js}*
 # Search hidden files / directories (e.g. dotfiles) by default
 --hidden
 
-# Exlude/include
---glob
-!git/*
-!node_modules/*
+# Exclude
+--glob=!.git/*
+--glob=!node_modules/*
