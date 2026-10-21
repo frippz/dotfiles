@@ -51,33 +51,6 @@ return {
     -- server configs
     vim.lsp.config("astro", {})
 
-    vim.lsp.config("denols", {
-      root_dir = function(bufnr, on_dir)
-        local root = vim.fs.root(bufnr, { "deno.json", "deno.jsonc", "deno.lock" })
-        if root then
-          on_dir(root)
-        end
-      end,
-    })
-
-    vim.lsp.config("eslint", {
-      root_dir = function(bufnr, on_dir)
-        local root = vim.fs.root(bufnr, {
-          "eslint.config.mjs",
-          "eslint.config.js",
-          ".eslintrc.js",
-          ".eslintrc.json",
-          "tsconfig.json",
-          "package.json",
-          "jsconfig.json",
-          ".git",
-        })
-        if root then
-          on_dir(root)
-        end
-      end,
-    })
-
     vim.lsp.config("emmet_language_server", {
       filetypes = { "html", "astro", "typescriptreact", "javascriptreact", "svelte" },
     })

@@ -5,10 +5,11 @@ return {
 
   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 
-  filetypes = {
+  ft = {
     "typescript",
+    "typescriptreact",
     "javascript",
-    "svelte",
+    "javascriptreact",
   },
 
   opts = {

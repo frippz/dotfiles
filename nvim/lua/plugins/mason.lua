@@ -42,6 +42,10 @@ return {
         -- "ts_ls", -- disabled in favor of typescript-tools plugin
         "yamlls",
       },
+      -- typescript-language-server is installed below, but TS is served by typescript-tools
+      automatic_enable = {
+        exclude = { "ts_ls" },
+      },
     })
 
     mason_tool_installer.setup({
