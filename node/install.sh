@@ -5,10 +5,7 @@ source $HOME/.dotfiles/node/pnpm.zsh
 
 # Global packages to install with PNPM
 PACKAGES=(
-  "@fission-ai/openspec"
-  "@github/copilot"
   "neovim"
-  "npm-check-updates"
   "wrangler"
 )
 
