@@ -30,6 +30,7 @@ custom-shader-animation = true
 ##
 # Misc
 ##
+# Defaults to false on macOS; quit instead of idling in the Dock
 quit-after-last-window-closed = true
 link-url = true
 shell-integration-features = no-title,ssh-terminfo
