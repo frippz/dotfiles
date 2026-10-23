@@ -1,13 +1,18 @@
-# npm completion, cached since generating it takes ~70ms per shell start
-if command -v npm > /dev/null 2>&1; then
-  () {
-    local cache="$XDG_CACHE_HOME/zsh/npm-completion.zsh"
+# npm and pnpm completions, cached since generating them takes ~70ms per shell
+# start, and regenerated whenever the binary is updated
+() {
+  local cmd cache
 
-    if [[ ! -s $cache ]]; then
+  for cmd in npm pnpm; do
+    (( $+commands[$cmd] )) || continue
+
+    cache="$XDG_CACHE_HOME/zsh/$cmd-completion.zsh"
+
+    if [[ ! -s $cache || $commands[$cmd] -nt $cache ]]; then
       mkdir -p ${cache:h}
-      npm completion >| $cache 2>/dev/null
+      $cmd completion zsh >| $cache 2>/dev/null
     fi
 
     source $cache
-  }
-fi
+  done
+}
