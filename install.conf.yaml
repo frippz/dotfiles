@@ -36,6 +36,10 @@
       command: ./homebrew/install.sh
       stdout: true
 
+    - description: Install mise
+      command: ./mise/install.sh
+      stdout: true
+
     - description: Install Node
       command: ./node/install.sh
       stdout: true
