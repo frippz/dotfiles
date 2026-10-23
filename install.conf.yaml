@@ -27,6 +27,7 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.claude/settings.json: claude/settings.json
+    ~/.claude/statusline.sh: claude/statusline.sh
     ~/.claude/skills/:
       glob: true
       path: claude/skills/*
