@@ -27,6 +27,6 @@ if command -v mise >/dev/null 2>&1; then
 
   msg_done "Global package installation complete"
 else
-  msg_fail "mise not found. Run ./mise/install.sh (Linux) or install it via Homebrew (macOS) first."
+  msg_fail "mise not found. Run ./mise/install.sh first."
   exit 1
 fi
