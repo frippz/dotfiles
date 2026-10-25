@@ -75,14 +75,21 @@ return {
 
     vim.lsp.config("somesass_ls", {})
 
-    -- vim.lsp.config("ts_ls", {
-    --   filetypes = {
-    --     "typescript",
-    --     "javascript",
-    --   },
-    --   single_file_support = false,
-    --   root_markers = { "package.json" },
-    -- })
+    -- Default root_dir already leaves Deno projects to denols
+    vim.lsp.config("vtsls", {
+      settings = {
+        typescript = {
+          referencesCodeLens = { enabled = true },
+          implementationsCodeLens = { enabled = true },
+        },
+        javascript = {
+          referencesCodeLens = { enabled = true },
+        },
+      },
+      on_attach = function(_, bufnr)
+        vim.lsp.codelens.enable(true, { bufnr = bufnr })
+      end,
+    })
 
     vim.lsp.config("ruff", {})
 
