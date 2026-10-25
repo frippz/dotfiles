@@ -6,7 +6,17 @@ if (( $+commands[wrangler] )); then
 
     if [[ ! -s $cache || $commands[wrangler] -nt $cache ]]; then
       mkdir -p ${cache:h}
-      wrangler complete zsh >| $cache 2>/dev/null
+
+      # Only keep real completion scripts: older wranglers without `complete`
+      # (or a missing node) print help/errors instead, and sourcing that would
+      # run it as commands
+      if wrangler complete zsh >| $cache.tmp 2>/dev/null &&
+        [[ $(head -n 1 $cache.tmp) == '#compdef wrangler' ]]; then
+        mv -f $cache.tmp $cache
+      else
+        rm -f $cache.tmp $cache
+        return
+      fi
     fi
 
     source $cache
