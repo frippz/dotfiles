@@ -3,15 +3,16 @@
     "defaultMode": "auto"
   },
   "model": "opus",
-  "enabledPlugins": {
-    "mattpocock-skills@claude-plugins-official": true
-  },
-  "tui": "fullscreen",
-  "theme": "auto",
-  "agentPushNotifEnabled": true,
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh",
     "padding": 0
-  }
+  },
+  "enabledPlugins": {
+    "mattpocock-skills@claude-plugins-official": true,
+    "swift-lsp@claude-plugins-official": true
+  },
+  "tui": "fullscreen",
+  "theme": "auto",
+  "agentPushNotifEnabled": true
 }
