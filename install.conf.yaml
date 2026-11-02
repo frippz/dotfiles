@@ -58,6 +58,10 @@
       command: ./zoxide/install.sh
       stdout: true
 
+    - description: Install Tailscale
+      command: ./tailscale/install.sh
+      stdout: true
+
     - description: Install Claude Code
       command: ./claude/install.sh
       stdout: true
