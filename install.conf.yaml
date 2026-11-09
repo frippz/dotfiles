@@ -62,6 +62,10 @@
       command: ./tailscale/install.sh
       stdout: true
 
+    - description: Install GitHub CLI
+      command: ./gh/install.sh
+      stdout: true
+
     - description: Install Claude Code
       command: ./claude/install.sh
       stdout: true
