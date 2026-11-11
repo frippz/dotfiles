@@ -14,5 +14,8 @@
   },
   "tui": "fullscreen",
   "theme": "auto",
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "env": {
+    "CLAUDE_CODE_PLUGIN_DIRS": "~/.dotfiles/claude/mods/hud"
+  }
 }

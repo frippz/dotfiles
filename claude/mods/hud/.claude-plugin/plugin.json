@@ -1,0 +1,6 @@
+{
+  "name": "hud",
+  "version": "0.1.0",
+  "description": "Band above the prompt and a /quota pane with charts for prompt-cache warmth and plan quota",
+  "types": "./types/index.d.ts"
+}
