@@ -1,4 +1,7 @@
 {
+  "env": {
+    "CLAUDE_CODE_PLUGIN_DIRS": "~/.dotfiles/claude/mods/hud"
+  },
   "permissions": {
     "defaultMode": "auto"
   },
@@ -10,12 +13,33 @@
   },
   "enabledPlugins": {
     "mattpocock-skills@claude-plugins-official": true,
-    "swift-lsp@claude-plugins-official": true
+    "swift-lsp@claude-plugins-official": true,
+    "lot-map@lot-map": true
+  },
+  "extraKnownMarketplaces": {
+    "lot-map": {
+      "source": {
+        "source": "github",
+        "repo": "alexeyw/lot-map"
+      }
+    }
   },
   "tui": "fullscreen",
   "theme": "auto",
   "agentPushNotifEnabled": true,
-  "env": {
-    "CLAUDE_CODE_PLUGIN_DIRS": "~/.dotfiles/claude/mods/hud"
+  "pluginConfigs": {
+    "lot-map@lot-map": {
+      "options": {
+        "language": "en",
+        "hookRecords": false,
+        "hookReasons": false,
+        "theme": "auto",
+        "background": "solid",
+        "layout": "you-top",
+        "motion": "full",
+        "textSize": "footnote",
+        "terminalView": "text"
+      }
+    }
   }
 }
