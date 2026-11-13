@@ -40,6 +40,10 @@ done
 
 unset config_files
 
+# direnv: per-directory env via .envrc (e.g. AZURE_CONFIG_DIR to scope az logins
+# per project). Hooked here, after every PATH change and the prompt setup.
+(( $+commands[direnv] )) && eval "$(direnv hook zsh)"
+
 # zsh-syntax-highlighting must be sourced last, after every other widget
 () {
   local prefix=${HOMEBREW_PREFIX:-/opt/homebrew}
