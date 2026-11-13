@@ -27,3 +27,9 @@ Refresh your environment or just open an new tab and run the install script agai
 ```
 
 Done! 👍
+
+## Topic notes
+
+Some topics have extra setup that can't live in the repo:
+
+- [Azure CLI](azure/README.md): install, completion and per-project logins with direnv
