@@ -39,3 +39,6 @@ brew "xcodegen"
 brew "yt-dlp"
 brew "zoxide"
 brew "zsh-syntax-highlighting"
+
+# CLI tools only distributed as casks
+cask "azure-cli"
