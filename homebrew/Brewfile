@@ -3,7 +3,6 @@ tap "teamookla/speedtest"
 
 # Packages
 brew "bat"
-brew "ccat"
 brew "coreutils"
 brew "direnv"
 brew "dos2unix"

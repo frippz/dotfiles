@@ -43,9 +43,11 @@ if command -v tree >/dev/null 2>&1; then
   alias tree="tree -C"
 fi
 
-# Colored cat
-if command -v ccat >/dev/null 2>&1; then
-  alias cat="ccat"
+# Colored cat (Debian/Ubuntu ship bat as batcat)
+if command -v bat >/dev/null 2>&1; then
+  alias cat="bat --paging=never --style=plain"
+elif command -v batcat >/dev/null 2>&1; then
+  alias cat="batcat --paging=never --style=plain"
 fi
 
 # GNU ip
