@@ -1,2 +1,6 @@
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$HOME/.scripts:$HOME/.local/bin:/bin:$PATH"
-export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
+# Drop duplicate entries when files prepend to PATH (or zshrc is re-sourced)
+typeset -U path
+
+# Homebrew's dirs come from `brew shellenv` (homebrew/path.zsh) and system dirs
+# from the default PATH, so only add our own here
+export PATH="$HOME/.scripts:$HOME/.local/bin:$PATH"
