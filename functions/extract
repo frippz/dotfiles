@@ -1,26 +1,26 @@
-# credit: http://nparikh.org/notes/zshrc.txt
-# Usage: extract <file>
-# Description: extracts archived files / mounts disk images
-# Note: .dmg/hdiutil is Mac OS X-specific.
-extract () {
-  if [ -f $1 ]; then
-    case $1 in
-      *.tar.bz2)  tar -jxvf $1;;
-      *.tar.gz)   tar -zxvf $1;;
-      *.bz2)      bunzip2 $1;;
-      *.dmg)      hdiutil mount $1;;
-      *.gz)       gunzip $1;;
-      *.tar)      tar -xvf $1;;
-      *.tbz2)     tar -jxvf $1;;
-      *.tgz)      tar -zxvf $1;;
-      *.zip)      unzip $1;;
-      *.ZIP)      unzip $1;;
-      *.pax)      cat $1 | pax -r;;
-      *.pax.Z)    uncompress $1 --stdout | pax -r;;
-      *.Z)        uncompress $1;;
-      *)          echo "'$1' cannot be extracted/mounted via extract()";;
+# Usage: extract <file> [file …]
+# Description: extracts archives / mounts disk images
+# Note: .dmg/hdiutil is macOS-only; .7z and .rar need p7zip and unrar.
+extract() {
+  local file
+  for file in "$@"; do
+    if [[ ! -f $file ]]; then
+      echo "'$file' is not a valid file" >&2
+      continue
+    fi
+
+    case ${file:l} in
+      *.tar.*|*.tgz|*.tbz2|*.txz|*.tar) tar -xvf "$file" ;; # tar detects gz/bz2/xz/zst itself
+      *.zip) unzip "$file" ;;
+      *.7z) 7z x "$file" ;;
+      *.rar) unrar x "$file" ;;
+      *.gz) gunzip -k "$file" ;;
+      *.bz2) bunzip2 -k "$file" ;;
+      *.xz) unxz -k "$file" ;;
+      *.zst) unzstd "$file" ;;
+      *.z) uncompress "$file" ;;
+      *.dmg) hdiutil mount "$file" ;;
+      *) echo "'$file' cannot be extracted via extract()" >&2 ;;
     esac
-  else
-    echo "'$1' is not a valid file"
-  fi
+  done
 }
