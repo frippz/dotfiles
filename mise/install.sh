@@ -8,7 +8,10 @@ if ! [ -x $HOME/.local/bin/mise ]; then
 
   msg_info "Installing mise"
 
-  curl -fsSL https://mise.run | sh
+  # Fetch first so a failed download isn't piped to sh as an empty script
+  installer=$(curl -fsSL https://mise.run) \
+    && sh -c "$installer" \
+    || { msg_fail "mise installation failed"; exit 1; }
 
 else
 

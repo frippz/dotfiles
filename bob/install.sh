@@ -10,7 +10,10 @@ case "$OSTYPE" in
 
       msg_info "Installing bob"
 
-      curl -fsSL https://raw.githubusercontent.com/MordechaiHadad/bob/master/scripts/install.sh | bash
+      # Fetch first so a failed download isn't piped to bash as an empty script
+      installer=$(curl -fsSL https://raw.githubusercontent.com/MordechaiHadad/bob/master/scripts/install.sh) \
+        && bash -c "$installer" \
+        || { msg_fail "bob installation failed"; exit 1; }
 
     else
 

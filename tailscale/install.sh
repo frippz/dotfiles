@@ -11,7 +11,10 @@ case "$OSTYPE" in
       msg_info "Installing Tailscale"
 
       # Adds Tailscale's package repo for the detected distro and installs it (uses sudo)
-      curl -fsSL https://tailscale.com/install.sh | sh
+      # Fetch first so a failed download isn't piped to sh as an empty script
+      installer=$(curl -fsSL https://tailscale.com/install.sh) \
+        && sh -c "$installer" \
+        || { msg_fail "Tailscale installation failed"; exit 1; }
 
       msg_info "Run 'sudo tailscale up' to connect this machine to your tailnet"
 

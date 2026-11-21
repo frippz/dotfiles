@@ -8,7 +8,10 @@ if ! [ -x $HOME/.local/bin/claude ]; then
 
   msg_info "Installing Claude Code"
 
-  curl -fsSL https://claude.ai/install.sh | bash
+  # Fetch first so a failed download isn't piped to bash as an empty script
+  installer=$(curl -fsSL https://claude.ai/install.sh) \
+    && bash -c "$installer" \
+    || { msg_fail "Claude Code installation failed"; exit 1; }
 
 else
 
