@@ -41,14 +41,11 @@ return {
       capabilities = capabilities,
     })
 
-    -- server configs
-    vim.lsp.config("astro", {})
-
+    -- Per-server settings. Servers are installed and enabled by mason-lspconfig
+    -- (see mason.lua); only the ones that need overrides are configured here.
     vim.lsp.config("emmet_language_server", {
       filetypes = { "html", "astro", "typescriptreact", "javascriptreact", "svelte" },
     })
-
-    vim.lsp.config("bashls", {})
 
     local cssCapabilities = vim.lsp.protocol.make_client_capabilities()
     cssCapabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -56,8 +53,6 @@ return {
     vim.lsp.config("cssls", {
       capabilities = cssCapabilities,
     })
-
-    -- vim.lsp.config("css_variables", {})
 
     vim.lsp.config("stylelint_lsp", {
       filetypes = { "css", "scss" },
@@ -68,12 +63,6 @@ return {
         },
       },
     })
-
-    vim.lsp.config("svelte", {})
-
-    vim.lsp.config("tailwindcss", {})
-
-    vim.lsp.config("somesass_ls", {})
 
     -- Default root_dir already leaves Deno projects to denols
     vim.lsp.config("vtsls", {
@@ -89,31 +78,6 @@ return {
       on_attach = function(_, bufnr)
         vim.lsp.codelens.enable(true, { bufnr = bufnr })
       end,
-    })
-
-    vim.lsp.config("ruff", {})
-
-    vim.lsp.config("html", {})
-
-    vim.lsp.config("lua_ls", {})
-
-    vim.lsp.config("yamlls", {})
-
-    vim.lsp.enable({
-      "astro",
-      "bashls",
-      "css_variables",
-      "cssls",
-      "denols",
-      "eslint",
-      "html",
-      "lua_ls",
-      "ruff",
-      "stylelint_lsp",
-      "somesass_ls",
-      "svelte",
-      "tailwindcss",
-      "yamlls",
     })
   end,
 }

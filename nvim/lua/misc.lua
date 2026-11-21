@@ -15,14 +15,12 @@ vim.opt.gdefault = true -- have :s///g flag by default on"
 -- Visual Stuff
 vim.opt.number = true -- show line numbers
 vim.opt.cursorline = true -- highlight the current line
-vim.opt.history = 200 -- remember a lot of stuff
 vim.opt.ruler = true -- Always show info along bottom.
 vim.opt.wrap = true -- Wrap lines
 vim.opt.linebreak = true -- Don't break words
 vim.opt.termguicolors = true -- Enable 24-bit colors
 vim.opt.signcolumn = "yes"
-vim.opt.shortmess = "c"
-vim.opt.shortmess:append("F")
+vim.opt.shortmess:append("cF") -- no completion menu messages, no file info on open
 
 -- Specify listchars (invisibles) with literal unicode in a :set command
 vim.scriptencoding = "utf-8"
@@ -86,18 +84,13 @@ vim.opt.ttimeoutlen = 0
 -- Use relative line numbers
 vim.opt.relativenumber = true
 
--- " Default netrw list style
-vim.g.netrw_liststyle = 3
-
--- Disable netrw history
-vim.g.netrw_dirhistmax = 0
-
 -- Session options
 vim.opt.sessionoptions:remove({ "options", "blank", "winsize", "localoptions" }) -- do not store options, empty windows, window sizes, or local options
 vim.opt.sessionoptions:append("globals") -- store globals for plugin state (e.g. Snacks)
 
--- Make copy operations work with the clipboard
-vim.opt.clipboard = "unnamed"
+-- Make copy operations work with the system clipboard (unnamed is the X11
+-- selection on Linux; on macOS both are the same)
+vim.opt.clipboard = "unnamedplus"
 
 -- Nice and simple folding:
 vim.opt.foldenable = true

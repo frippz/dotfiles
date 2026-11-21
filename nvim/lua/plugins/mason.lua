@@ -26,19 +26,24 @@ return {
     })
 
     mason_lspconfig.setup({
+      -- Every server listed here is installed and enabled automatically; per-server
+      -- settings live in lspconfig.lua.
       ensure_installed = {
         "astro",
+        "bashls",
         "cssls",
         "css_variables",
-        "eslint",
+        "denols",
         "emmet_language_server",
+        "eslint",
         "graphql",
         "html",
         "lua_ls",
+        "ruff",
         "somesass_ls",
+        "stylelint_lsp",
         "svelte",
         "tailwindcss",
-        "ruff",
         "vtsls",
         "yamlls",
       },

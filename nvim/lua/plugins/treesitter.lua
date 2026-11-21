@@ -5,11 +5,13 @@
 
 local parsers = {
   "astro",
+  "bash",
   "css",
   "diff",
   "git_rebase",
   "gitcommit",
   "gitignore",
+  "html",
   "javascript",
   "jsdoc",
   "json",
@@ -24,6 +26,7 @@ local parsers = {
   "toml",
   "typescript",
   "tsx",
+  "yaml",
 }
 
 return {
