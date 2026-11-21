@@ -68,8 +68,15 @@ alias gwc='git log --raw --no-merges'
 
 # Other (unsorted)
 alias gcl='git config --list'
-alias gclean='git reset --hard && git clean -dfx'
-alias gcom='git checkout master'
+# Keeps ignored files (.env, node_modules); use `git clean -dfx` to wipe those too
+alias gclean='git reset --hard && git clean -df'
+
+# Check out the remote's default branch (main, master, …), falling back to main
+function gcom {
+  local branch
+  branch=$(git rev-parse --abbrev-ref origin/HEAD 2>/dev/null) && branch=${branch#origin/} || branch=main
+  git checkout "$branch"
+}
 
 # Will cd into the top of the current repository or submodule.
 alias grt='cd $(git rev-parse --show-toplevel || echo ".")'

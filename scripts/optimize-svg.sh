@@ -1,14 +1,14 @@
 #!/bin/sh
 
-if command -v svgo ; then
+if command -v svgo >/dev/null 2>&1; then
 
-  BASEDIR=$(dirname $0)
+  BASEDIR=$(dirname "$0")
   svgoConf='svgo_conf.yml'
 
   svgPath=$1
 
-  if [[ -n "$svgPath" ]]; then
-    svgo -f "$svgPath" -o "$svgPath" --pretty --multipass --config=${BASEDIR}/$svgoConf
+  if [ -n "$svgPath" ]; then
+    svgo -f "$svgPath" -o "$svgPath" --pretty --multipass --config="${BASEDIR}/$svgoConf"
   else
     echo "Usage:"
     echo "svgo.sh path/to/svg/folder"
