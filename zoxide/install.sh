@@ -10,7 +10,10 @@ case "$OSTYPE" in
 
       msg_info "Installing zoxide"
 
-      curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+      # Fetch first so a failed download isn't piped to bash as an empty script
+      installer=$(curl -fsSL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh) \
+        && bash -c "$installer" \
+        || { msg_fail "zoxide installation failed"; exit 1; }
 
     else
 
