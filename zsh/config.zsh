@@ -21,6 +21,7 @@ setopt IGNORE_EOF
 setopt SHARE_HISTORY        # append incrementally and share history across sessions
 setopt HIST_IGNORE_ALL_DUPS # don't record dupes in history
 setopt HIST_REDUCE_BLANKS
+setopt HIST_IGNORE_SPACE   # commands starting with a space stay out of history
 
 bindkey '^[^[[D' backward-word
 bindkey '^[^[[C' forward-word

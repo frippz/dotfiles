@@ -5,6 +5,9 @@
 # v0.0.7
 # Copyright (c) 2020 Sunlei <guizaicn@gmail.com>
 
+# Needs fzf; without it keep the stock ssh completion
+(( $+commands[fzf] )) || return
+
 setopt no_beep # don't beep
 zstyle ':completion:*:ssh:*' hosts off # disable built-in hosts completion
 

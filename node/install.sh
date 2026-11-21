@@ -6,7 +6,6 @@ source $HOME/.dotfiles/node/pnpm.zsh
 
 # Global packages to install with PNPM
 PACKAGES=(
-  "neovim"
   "wrangler"
 )
 
