@@ -29,9 +29,23 @@ for file in ${${${config_files:#*/path.zsh}:#*/completion.zsh}:#*/system/*.zsh};
   source $file
 done
 
-# Autocomplete
-autoload -U compinit
-compinit
+# Autocomplete. Loading the dump with -C skips compinit's slow scan; rebuild it
+# only when it's missing or a completion dir changed (e.g. a new install)
+autoload -Uz compinit
+() {
+  local dump=$XDG_CACHE_HOME/zsh/zcompdump dir
+
+  for dir in $fpath; do
+    if [[ ! -s $dump || $dir -nt $dump ]]; then
+      mkdir -p ${dump:h}
+      rm -f $dump
+      compinit -d $dump
+      return
+    fi
+  done
+
+  compinit -C -d $dump
+}
 
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}; do
