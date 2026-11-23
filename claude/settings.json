@@ -14,7 +14,7 @@
   "enabledPlugins": {
     "mattpocock-skills@claude-plugins-official": true,
     "swift-lsp@claude-plugins-official": true,
-    "lot-map@lot-map": true
+    "lot-map@lot-map": false
   },
   "extraKnownMarketplaces": {
     "lot-map": {
